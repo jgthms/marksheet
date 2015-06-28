@@ -1,0 +1,119 @@
+.header{ background: $background; height: 48px; position: relative; text-align: center;
+  @include on($laptop) {
+    background: none; height: auto;
+  }
+}
+
+$mobileOffset: 8px; // 48px - ((48px - 32px) / 2)
+$desktopOffset: 32px; // 32px - ((32px - 22px) / 2)
+
+.toggle{ @include replace(none, 32px, 32px); left: $mobileOffset; position: absolute; top: $mobileOffset;
+  &:before,
+  &:after,
+  span{ background: $html5; background: $light; content: " "; display: block; height: 2px; left: 8px; position: absolute; top: 15px; width: 16px;}
+  &:before{ top: 10px;}
+  &:after{ top: 20px;}
+  &:hover{ background: $black;
+    &:before{ background: $web !important;}
+    &:after{ background: $css3 !important;}
+    span{ background: $html5 !important;}
+  }
+  @include on($laptop) {
+    left: $desktopOffset; position: fixed; top: $desktopOffset;
+  }
+}
+
+.navigation{ font-size: $small; min-width: 120px; position: absolute; right: $mobileOffset; text-align: left; top: $mobileOffset;
+  a{ @include arrow(); position: absolute; right: 0; top: 0; transform: rotate(-90deg);
+    &:nth-child(2){ right: 40px; transform: rotate(90deg);
+      &:hover{ background: $html5;}
+    }
+    &:nth-child(3){ display: none; right: $desktopOffset; transform: rotate(180deg);
+      &:hover{ background: $web;}
+    }
+  }
+  @include on($laptop) {
+    a{ position: fixed; right: $desktopOffset; top: $desktopOffset;
+      &:nth-child(2){ right: $desktopOffset + 32px;}
+      &:nth-child(3){ bottom: $desktopOffset; display: block; top: auto;}
+    }
+  }
+}
+
+.logo{ @include replace(url("/images/marksheet-icon.png"), 32px, 32px); height: 48px; left: 50%; margin-left: -24px; position: absolute; top: 0; width: 48px;
+  &:hover{ background-color: $background;}
+  @include on($laptop) {
+    top: $desktopOffset - 8px;
+  }
+}
+
+$menuWidth: 252px;
+
+.menu{ @include overlay(); @include scrollbar(5px, 5px, $black); background: $black; font-size: 0.9rem; overflow: hidden; overflow-y: auto; position: fixed; right: auto; transform: translate3d(-$menuWidth, 0, 0); transition: 100ms ease-out; width: $menuWidth;
+  section{ border-bottom: 1px solid rgba(white, 0.05); padding: 0.5rem 0;}
+  a{ color: $medium; display: block; padding: 0.75rem 2rem; position: relative;
+    strong{ color: $lighter; font-weight: 400;}
+    &:hover{ background: rgba(white, 0.05);}
+    &.active{
+      &, &:hover{ background: $css3; color: rgba(white, 0.7);
+        strong{ color: white;}
+      }
+    }
+  }
+  p{ font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    a{ color: $css3;
+      em{ font-style: normal; margin-right: -1.75rem; opacity: 0.5; position: absolute; right: 100%;}
+    }
+  }
+  .menu-section-web{
+    a.active{
+      &, &:hover{ background: $web;}
+    }
+    p a{ color: $web;}
+  }
+  .menu-section-html{
+    a.active{
+      &, &:hover{ background: $html5;}
+    }
+    p a{ color: $html5;}
+  }
+  .menu-section-sass{
+    a.active{
+      &, &:hover{ background: $sass;}
+    }
+    p a{ color: $sass;}
+  }
+}
+
+.main{ flex: 1; padding: 2rem;
+  @include on($laptop) {
+    padding: 2rem 6rem 6rem 6rem;
+  }
+}
+
+.footer{ background: $black; color: $dark; font-size: 0.9rem; padding: 4rem 2rem;
+  p{
+    strong{ color: $light; font-weight: normal;}
+    a{
+      color: $medium; text-decoration: underline;
+      &:hover{ color: $light;}
+    }
+    + p{ margin-top: 2em;}
+    &:first-child{
+      a{ text-decoration: none;}
+    }
+  }
+  @include on($tablet){
+    p + p{ margin-top: 1em;}
+  }
+  @include on($laptop) {
+    padding: 6rem;
+  }
+}
+
+.overlay{ @include overlay(); display: none; position: fixed;}
+
+html.open-menu{ overflow: hidden;
+  .menu{ box-shadow: 0 0 10rem rgba(black, 0.5); opacity: 1; transform: translate3d(0, 0, 0); visibility: visible;}
+  .overlay{ display: block;}
+}

@@ -1,0 +1,6 @@
+name: MarkSheet
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: :title.html

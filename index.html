@@ -1,0 +1,72 @@
+---
+layout: default
+title: "MarkSheet: a free guide to learn HTML & CSS"
+route: index
+---
+
+<section class="heading">
+  <img src="/images/marksheet-logo.png" alt="MarkSheet logo">
+  <h1>MarkSheet</h1>
+  <h2>A free <strong>guide</strong> to learn <strong>HTML</strong> and <strong>CSS</strong></h2>
+</section>
+
+<section class="intro">
+  <ul>
+    <li>
+      <strong>Short</strong>
+      Just as long as a 50 page book
+    </li>
+    <li>
+      <strong>Simple</strong>
+      For everyone: beginners, designers, developers
+    </li>
+    <li>
+      <strong>Free</strong>
+      As in "free beer" and "free speech"
+    </li>
+  </ul>
+</section>
+
+<section class="chapters">
+  <p><strong>4</strong> chapters, <strong>50</strong> articles</p>
+  <ul>
+    <li>
+      <a href="/introduction.html">
+        <i class="fa fa-globe"></i>
+        <strong>The Web</strong>
+        <em><strong>3</strong> articles</em>
+        <span>For absolute <strong>beginners</strong>.</span>
+      </a>
+    </li>
+    <li>
+      <a href="/html-basics.html">
+        <i class="fa fa-html5"></i>
+        <strong>HTML 5</strong>
+        <em><strong>13</strong> articles</em>
+        <span>For <strong>designers</strong> willing to start coding right away.</span>
+      </a>
+    </li>
+    <li>
+      <a href="/css-basics.html">
+        <i class="fa fa-css3"></i>
+        <strong>CSS 3</strong>
+        <em><strong>29</strong> articles</em>
+        <span>For <strong>developers</strong> eager to learn how CSS can define the style and layout of a webpage.</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sass.html">
+        <i class="fa fa-rocket"></i>
+        <strong>Sass</strong>
+        <em><strong>5</strong> articles</em>
+        <span>For the <strong>smart and lazy</strong>.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+{% comment %}
+{% for post in site.posts reversed %}
+  <p><a href="{{post.url}}">{{post.id}}</a></p>
+{% endfor %}
+{% endcomment %}

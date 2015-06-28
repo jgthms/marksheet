@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="route-{{ page.route }}{% if page.section %} section-{{ page.section }}{% endif %}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    {% include menu.html %}
+
+    <main class="main {{ page.route }}">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+  </body>
+</html>

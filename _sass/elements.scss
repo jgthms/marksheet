@@ -1,0 +1,214 @@
+.button{
+  background: $link; border-radius: 3px; display: block; color: white; cursor: pointer; font-weight: 300; padding: 1em 2em; position: relative; text-align: center; vertical-align: top;
+  em{ display: block; font-size: 0.6em; font-style: normal; letter-spacing: 0.2em; opacity: 0.5; text-transform: uppercase;}
+  strong{ color: inherit;}
+  &:hover{ background: $black !important;}
+}
+
+$chaptersOffset: 1.5rem;
+
+.chapters{ margin-top: 2rem;
+  ul{
+    font-family: $serif; text-align: left;
+    li{
+      display: inline;
+      a{
+        background: $web; border-radius: 3px; color: rgba(white, 0.5); display: block; margin-top: 1rem; padding: 1.25rem $chaptersOffset 2rem; position: relative;
+        &:hover{ background: $black;}
+        .fa{ float: right; font-size: 28px;}
+        strong{ color: white;}
+        > strong{ display: block; font-size: 1.2rem; font-weight: 700;}
+        em{
+          font-size: $small; display: block; margin-bottom: 1rem;
+          strong{ font-style: normal; font-weight: 400;}
+        }
+        span{
+          display: block; font-family: $sans-serif;
+          strong{ font-weight: 400;}
+        }
+      }
+      &:nth-child(2) a{ background: $html5;
+        &:hover{ background: $black;}
+      }
+      &:nth-child(3) a{ background: $css3;
+        &:hover{ background: $black;}
+      }
+      &:nth-child(4) a{ background: $sass;
+        &:hover{ background: $black;}
+      }
+    }
+  }
+  @include on($laptop) {
+    ul{
+      display: flex;
+      li{
+        display: flex; flex: 3; margin-right: 1px; min-width: 10rem;
+        &:nth-child(2){ flex: 13;}
+        &:nth-child(3){ flex: 29;}
+        &:nth-child(4){ flex: 5; margin-right: 0;}
+        a{ flex: 1; margin: 0;}
+      }
+    }
+  }
+}
+
+.content{
+  a{ text-decoration: underline;}
+  code{ background-color: #222; border-radius: 3px; color: #66d9ef; font-size: $small; padding: 3px 5px 3px; position: relative; top: -1px;}
+  > dl{
+    background: $background; color: $medium; font-size: $small;
+    dt{ font-weight: bold; padding: 1rem; padding-bottom: 0;}
+    dd{
+      padding: 1rem; padding-top: 0;
+      + dt{ border-top: 1px solid white;}
+    }
+  }
+  h3{
+    color: $medium; font-size: 1.25rem; font-weight: 700; margin: 1rem 0; padding-top: 2rem; position: relative; top: 1px;
+    a{
+      font-weight: 400; margin-right: 0.5em; position: absolute; right: 100%; text-decoration: none; top: 2rem;
+      &:visited{ color: $blue;}
+      &:hover{ color: $blue;}
+    }
+  }
+  h4{ color: $medium; font-size: 1.125rem; font-weight: 700; margin: 2rem 0 1rem;}
+  p{
+    margin: 1em 0;
+    &:first-child{ margin-top: 0;}
+    &:last-child{ margin-bottom: 0;}
+  }
+  pre{ line-height: 1; position: relative;}
+  ul{
+    list-style: disc outside; margin: 1rem 0; padding-left: 1.5em;
+    ul{
+      list-style-type: circle;
+      ul{ list-style-type: square;}
+    }
+    &.files{ font-family: $monospace;}
+    &.software{
+      @include clear(); list-style: none; padding-left: 0; text-align: center;
+      li{ float: left; margin-bottom: 1rem; width: 50%;
+        img{ max-height: 64px;}
+        strong{ display: block; line-height: 1; margin-top: 5px;}
+        @include on($laptop) {
+          margin: 0; width: 20%;
+        }
+      }
+    }
+  }
+  div.highlighter-rouge{
+    @include label(); margin: 2rem -2rem; overflow: auto;
+    &.html{ @include label("HTML", $html5, white);}
+    &.css{ @include label("CSS", $css3, white);}
+    &.scss{
+      @include label("SCSS", $sass, white);
+      &.css{ @include label("SCSS CSS", $sass, white);}
+    }
+    pre{
+      padding: 2rem;
+      code{ background: inherit; color: inherit; padding: 0; top: 0;}
+    }
+    @include on($laptop) {
+      margin: 2rem 0;
+    }
+  }
+  .answer,
+  .important,
+  .info{ background: rgba($blue, 0.1); border-left: 0.25em solid $blue; color: rgba(black, 0.5c); font-size: $small; padding: 1rem;}
+  .answer{
+    background: rgba($green, 0.1); border-left-color: $green;
+    .question{
+      color: $dark; display: block; font-weight: bold;
+      + br{ display: none;}
+    }
+  }
+  .important{ background: rgba($red, 0.1); border-left-color: $red;}
+  .result{
+    @include label("Result"); border: 1px solid $yellow; color: black; margin: 2rem 0; padding: 1rem;
+    &:before{ top: -1rem;}
+  }
+  @include on($laptop) {
+    dl,
+    p,
+    ol,
+    ul{ max-width: 50%;}
+  }
+  .table{
+    margin: 2rem -2rem; overflow: auto;
+    table{
+      background: $background; border-radius: 3px; font-size: $small; width: 100%;
+      th,
+      td{ border-top: 1px solid $lighter; color: $medium; padding: 0.5em 1em; vertical-align: top;
+        &.empty{ background: white; border-top: none;}
+        &.no{ color: $red;}
+        &.yes span{ background: $green; color: white; padding: 2px 5px;}
+      }
+      th{
+        background: $light-yellow; border-top-color: $yellow; color: $dark-yellow; font-weight: 400; text-align: left; white-space: nowrap;
+        strong{ display: block;}
+      }
+      tr:nth-child(2n){ background: #fafafa;}
+      code{ display: inline-block; margin-bottom: 5px; vertical-align: top;}
+      pre{ margin: 0; padding: 0;
+        &:before{ display: none;}
+      }
+    }
+    @include on($laptop) {
+      margin: 2rem 0;
+    }
+  }
+}
+
+.fa{ font-size: 14px; vertical-align: top;}
+
+.footnotes{
+  border: 1px solid $lighter; border-width: 1px 0; color: $light; font-size: 0.8em; margin-top: 2rem; padding: 1rem 0;
+  li:hover{ color: $medium;}
+  a{ color: inherit;}
+  em{ color: inherit;}
+}
+
+.heading{
+  line-height: 1.125; margin-bottom: 2rem;
+  img{ margin-bottom: 1rem; max-width: 160px;}
+  h1{ color: $dark; font-size: 1.2rem; font-style: italic; font-weight: 400; letter-spacing: -0.04em; position: relative;
+    em{ font-style: normal; opacity: 0.5;}
+    @include on($laptop) {
+      padding-top: 5px;
+    }
+  }
+  h2{
+    color: $black; font-size: 2.4rem; font-weight: 700; letter-spacing: -0.04em; margin-top: 1rem;
+    @include on($laptop) {
+      margin-top: 2rem;
+    }
+  }
+  @include on($laptop) {
+    max-width: 50%;
+  }
+}
+
+.intro{
+  font-size: 1.2rem;
+  strong{ display: block;}
+}
+
+.pagination{
+  margin-top: 2rem;
+  a{ @extend .button;}
+  @include on($laptop) {
+    width: 21rem;
+  }
+}
+
+.table-of-contents{
+  @include label("Table of Contents"); background: $background; font-size: 0.9rem; line-height: 1.25; margin: 3rem 0 2rem; padding: 0.75rem 1rem 0.75rem 1.5rem; position: relative;
+  &:before{ background: $light; color: white; top: -1rem;}
+  ul{ list-style: disc outside;}
+  li{ margin: 1em;}
+  a:visited{ color: $light;}
+  a:hover{ text-decoration: underline;}
+  @include on($laptop) {
+    float: right; margin: 0 0 2rem 2rem; max-width: 20rem; min-width: 12rem;
+  }
+}
