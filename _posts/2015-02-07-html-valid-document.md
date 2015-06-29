@@ -23,10 +23,9 @@ There used to be multiple versions of HTML coexisting (XHTML and HTML 4.01 have 
 
 To tell the browser that the HTML document is an HTML 5, just start your document with the following line:
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
-```
-{: .html}
+{% endhighlight %}
 
 That's it. Just set it and forget it.
 
@@ -37,13 +36,12 @@ You may wonder why this HTML 5 doctype doesn't mention the number "5". The W3C t
 
 Apart from the doctype line, **all** your HTML document must be wrapped inside an `<html>` element:
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
   <!-- The rest of your HTML code is here -->
 </html>
-```
-{: .html}
+{% endhighlight %}
 
 The `<html>` is technically the **ancestor** of all HTML elements.
 
@@ -53,12 +51,11 @@ The same way attributes carry additional information for an HTML element, the `<
 
 For example, the **title** of the page (displayed on the tab) is located in the `<head>`:
 
-```html
+{% highlight html %}
 <head>
   <title>My fabulous blog</title>
 </head>
-```
-{: .html}
+{% endhighlight %}
 
 Other HTML elements can appear in the `<head>`, and _only_ in the `<head>`:
 
@@ -74,7 +71,7 @@ While the `<head>` only contains metadata not meant to be displayed anywhere (ap
 
 Combining all these requirements, we can write a simple and valid HTML document:
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -86,8 +83,7 @@ Combining all these requirements, we can write a simple and valid HTML document:
     <p>Hello World!</p>
   </body>
 </html>
-```
-{: .html}
+{% endhighlight %}
 
 If you view this example in your browser, you'll see that:
 

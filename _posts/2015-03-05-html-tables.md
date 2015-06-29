@@ -21,7 +21,7 @@ This **hierarchy** is required, and all 3 elements are necessary to build a tabl
 
 When writing the code, you need to define your table cells from left to right, and _then_ from to bottom.
 
-```html
+{% highlight html %}
 <table>
   <tr>
     <td>John Lennon</td>
@@ -40,8 +40,7 @@ When writing the code, you need to define your table cells from left to right, a
     <td>Drums</td>
   </tr>
 </table>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <table>
@@ -76,7 +75,7 @@ Just like a webpage can have a header and a footer, a **table** can have a head,
 
 Let's enhance the previous table with a head and a body:
 
-```html
+{% highlight html %}
 <table>
   <thead>
     <tr>
@@ -103,8 +102,7 @@ Let's enhance the previous table with a head and a body:
     </tr>
   </tbody>
 </table>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <table>
@@ -139,7 +137,7 @@ Let's enhance the previous table with a head and a body:
 
 Let's also add a foot to the table:
 
-```html
+{% highlight html %}
 <table>
   <thead>
     <tr>
@@ -172,8 +170,7 @@ Let's also add a foot to the table:
     </tr>
   </tbody>
 </table>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <table>
@@ -220,7 +217,7 @@ You can **merge** columns or rows by using the `rowspan` and `colspan` respectiv
 
 Keep in mind that in order to merge _columns_ you need to use the `rowspan` attribute, as it allows to _span_ a **column** across several _rows_.
 
-```html
+{% highlight html %}
 <table>
   <tr>
     <th colspan="2">Michael Jackson Singles</th>
@@ -236,8 +233,7 @@ Keep in mind that in order to merge _columns_ you need to use the `rowspan` attr
     <td>Off the Wall</td>
   </tr>
 </table>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <table>

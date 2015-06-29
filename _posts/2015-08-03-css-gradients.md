@@ -24,15 +24,13 @@ The syntax for linear gradients is [quite complex](https://developer.mozilla.org
 
 Let's start with a simple 2 color gradient:
 
-```css
+{% highlight css %}
 div{ background-image: linear-gradient(red, blue);}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>A simple vertical background gradient</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" style="padding: 1rem;">
   <div style="background-image: linear-gradient(red, blue);">A simple vertical background gradient</div>
@@ -53,15 +51,13 @@ If the top to bottom direction doesn't suit you, you can alter it by either:
 
 This direction must be set _before_ the colors:
 
-```css
+{% highlight css %}
 div{ background-image: linear-gradient(to bottom right, yellow, purple); width: 200px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>A diagonal gradient from the top left corner to the bottom right one</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" style="padding: 1rem;">
   <div style="background-image: linear-gradient(to bottom right, yellow, purple); width: 200px;">A diagonal gradient from the top left corner to the bottom left one</div>
@@ -74,15 +70,13 @@ If you want a more **specific angle**, you can use a value in **degrees**:
 * `90deg` is like 3pm, from right to left
 * `180deg` is from bottom to top
 
-```css
+{% highlight css %}
 div{ background-image: linear-gradient(20deg, green, blue); width: 150px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>A diagonal gradient with an angle of 20 degrees</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" style="padding: 1rem;">
   <div style="background-image: linear-gradient(20deg, green, blue); width: 150px;">A diagonal gradient with an angle of 20 degrees</div>
@@ -96,15 +90,13 @@ You can insert as many colors as you want. They will be **equally distributed** 
 * **3 colors**: 0%, 50% and 100%
 * **4 colors**: 0%, 33%, 67% and 100%
 
-```css
+{% highlight css %}
 div{ background-image: linear-gradient(orange, grey, yellow); width: 150px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>A rather ugly gradient, but you get the idea</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" style="padding: 1rem;">
   <div style="background-image: linear-gradient(orange, grey, yellow); width: 150px;">A rather ugly gradient, but you get the idea</div>
@@ -114,15 +106,13 @@ div{ background-image: linear-gradient(orange, grey, yellow); width: 150px;}
 
 If you don't want colors to equally distributed, you can set specific **color stop positions**, using either percentages `%` or pixels `px`:
 
-```css
+{% highlight css %}
 div{ background-image: linear-gradient(orange, grey 10%, yellow 50%); width: 150px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>An even uglier gradient, but you get the idea</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" style="padding: 1rem;">
   <div style="background-image: linear-gradient(orange, grey 10%, yellow 50%); width: 150px;">An even uglier gradient, but you get the idea</div>
@@ -142,15 +132,13 @@ While linear gradients follow a single-line axis, **radial gradients** spread ou
 * a **starting point**: which will be the center of the circle/ellipse
 * an **end point**: where the edge of the circle/ellipse will be
 
-```css
+{% highlight css %}
 div{ background-image: radial-gradient(red, yellow); padding: 1rem; width: 300px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>This looks like the sun, doesn't it?</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" style="padding: 1rem;">
   <div style="background-image: radial-gradient(red, yellow); padding: 1rem; width: 300px;">This looks like the sun, doesn't it?</div>
@@ -166,15 +154,13 @@ By default:
 
 The **start position** works like **[background positions](/css-background.html#background-position)**. You set it with the `at` keyword.
 
-```css
+{% highlight css %}
 div{ background-image: radial-gradient(at top right, black, lightgrey); padding: 1rem; width: 300px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>A gloomy day.</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" style="padding: 1rem;">
   <div style="background-image: radial-gradient(at top right, black, lightgrey); padding: 1rem; width: 300px;">A gloomy day.</div>
@@ -191,16 +177,14 @@ By default, the shape will end at the **farthest corner**. You can either choose
 
 The difference is both hard to grasp and to visualize, so I won't go into details. Mozilla has a [good description of the different values](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient#Values).
 
-```css
+{% highlight css %}
 div{ background-image: radial-gradient(closest-corner at 20px 20px, green, blue); padding: 1rem; width: 300px;}
 div:hover{ background-image: radial-gradient(farthest-side at 20px 20px, green, blue)}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>Hover this green star in the sky to see it expand.</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" id="result-831">
   <div>Hover this green star in the sky to see it expand.</div>
@@ -210,15 +194,13 @@ div:hover{ background-image: radial-gradient(farthest-side at 20px 20px, green, 
 
 Instead of setting both start _and_ end positions, you can just set **specific dimensions**:
 
-```css
+{% highlight css %}
 div{ background-image: radial-gradient(20px 10px at 75% 50%, darkviolet, pink); padding: 1rem; width: 300px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>A small violet disc in a sea of pink.</div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <div style="background-image: radial-gradient(20px 10px at 75% 50%, darkviolet, pink); padding: 1rem; width: 300px;">A small violet disc in a sea of pink.</div>
@@ -230,7 +212,7 @@ The examples of this page are voluntarily "ugly", with pronounced color differen
 
 But it's quite easy to write more **subtle** gradients, especially for buttons:
 
-```css
+{% highlight css %}
 .button-grey  { background-image: linear-gradient(#f2f2f2, #f2f2f2);}
 .button-yellow{ background-image: linear-gradient(#fce374, #fcdf5b);}
 .button-orange{ background-image: linear-gradient(#f58a38, #f57c20);}
@@ -238,8 +220,7 @@ But it's quite easy to write more **subtle** gradients, especially for buttons:
 .button-purple{ background-image: linear-gradient(#847bba, #7568ba);}
 .button-blue  { background-image: linear-gradient(#42b0e3, #2ba9e3);}
 .button-green { background-image: linear-gradient(#97cc76, #8bcc62);}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-832">
   <a class="button-grey">Button</a>

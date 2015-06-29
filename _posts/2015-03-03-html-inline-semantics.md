@@ -11,12 +11,11 @@ While paragraphs and lists are meant to identify whole **blocks** of text, we so
 
 For **important** words, use the `<strong>` tag:
 
-```html
+{% highlight html %}
 <p>
   This is <strong>important</strong> but this is not.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>
@@ -30,12 +29,11 @@ By default, `<strong>` elements are displayed in **bold**, but keep in mind that
 
 For _emphasized_ words, use the `<em>` tag:
 
-```html
+{% highlight html %}
 <p>
   This is <em>emphasized</em> but this is not.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>
@@ -49,21 +47,19 @@ By default, `<em>` elements are displayed in _italic_, but keep in mind that it 
 
 Abbreviations like W3C or CD can use the `<abbr>` element:
 
-```html
+{% highlight html %}
 <p>
   I just bought a <abbr>CD</abbr>.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 You can add a `title` **attribute** to specify the abbreviation's description, which will appear by hovering the element:
 
-```html
+{% highlight html %}
 <p>
   I just bought a <abbr title="Compact Disc">CD</abbr>.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>
@@ -75,12 +71,11 @@ You can add a `title` **attribute** to specify the abbreviation's description, w
 
 The `<blockquote>` element is a **block-level** element. It has an **inline** version: `<q>`:
 
-```html
+{% highlight html %}
 <p>
   He said <q>“Hello World”</q> and just left.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>

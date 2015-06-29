@@ -13,7 +13,7 @@ Sass mixins are **CSS functions** that you can **include** whenever you want.
 
 Remember how we wrote `@keyframes` when creating **[CSS animations](/css-animations.html)**? The Sass mixin syntax is fairly similar:
 
-```scss
+{% highlight scss %}
 @mixin overlay() {
   bottom: 0;
   left: 0;
@@ -21,23 +21,21 @@ Remember how we wrote `@keyframes` when creating **[CSS animations](/css-animati
   right: 0;
   top: 0;
 }
-```
-{: .scss}
+{% endhighlight %}
 
 The **name** of this mixin is `overlay`. You can reference this mixin in any CSS rule by using `@include`:
 
-```scss
+{% highlight scss %}
 .modal-background{
   @include overlay();
   background: black;
   opacity: 0.9;
 }
-```
-{: .scss}
+{% endhighlight %}
 
 As usual, this `.scss` will be compiled into `.css`:
 
-```css
+{% highlight css %}
 .modal-background{
   bottom: 0;
   left: 0;
@@ -47,8 +45,7 @@ As usual, this `.scss` will be compiled into `.css`:
   background: black;
   opacity: 0.9;
 }
-```
-{: .css}
+{% endhighlight %}
 
 ### Reusability
 
@@ -58,7 +55,7 @@ Like Sass variables (where you define your **values** on a single location), Sas
 
 The previous mixin can be reused in other rules:
 
-```scss
+{% highlight scss %}
 .modal-background{
   @include overlay();
 }
@@ -70,10 +67,9 @@ The previous mixin can be reused in other rules:
 .image-pattern{
   @include overlay();
 }
-```
-{: .scss}
+{% endhighlight %}
 
-```css
+{% highlight css %}
 .modal-background{
   bottom: 0;
   left: 0;
@@ -97,8 +93,7 @@ The previous mixin can be reused in other rules:
   right: 0;
   top: 0;
 }
-```
-{: .css}
+{% endhighlight %}
 
 ### Parameters
 
@@ -106,7 +101,7 @@ Because mixins are **functions** and because you might want to **alter** the _ou
 
 For example, this [border-radius mixin](http://sass-lang.com/guide#topic-6-SCSS) prevents rewriting **vendor prefixes** and takes the actual _radius_ value as a parameter:
 
-```scss
+{% highlight scss %}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -117,18 +112,16 @@ For example, this [border-radius mixin](http://sass-lang.com/guide#topic-6-SCSS)
 .box{
   @include border-radius(3px);
 }
-```
-{: .scss}
+{% endhighlight %}
 
-```css
+{% highlight css %}
 .box{
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
       -ms-border-radius: 3px;
           border-radius: 3px;
 }
-```
-{: .css}
+{% endhighlight %}
 
 The mixin circumvents the hassle of having to write all vendor prefixes, and uses the `$radius` to allow defining the same radius value for every vendor property.
 
@@ -136,7 +129,7 @@ The mixin circumvents the hassle of having to write all vendor prefixes, and use
 
 If you want a parameter to have a **default** value while providing the possibility to _set_ one occasionally, you can create **optional paramaters**:
 
-```scss
+{% highlight scss %}
 @mixin label($text: "Code", $background: $yellow, $color: rgba(black, 0.5)) {
   position: relative;
   &:before{
@@ -156,14 +149,13 @@ If you want a parameter to have a **default** value while providing the possibil
     top: 0;
   }
 }
-```
-{: .scss}
+{% endhighlight %}
 
 This mixin is the one used by this website to add **labels** in the top left corner of code snippets. It has 3 optional parameters, each of them with their own default value set with a colon `:`.
 
 This mixin is used several times throughout the code:
 
-```scss
+{% highlight scss %}
 div.highlighter-rouge{
   @include label();
   &.css{
@@ -173,7 +165,7 @@ div.highlighter-rouge{
     @include label("SCSS", #c69, white);
   }
 }
-```
+{% endhighlight %}
 
 The `div.highlighter-rouge` will use the mixin's default values:
 

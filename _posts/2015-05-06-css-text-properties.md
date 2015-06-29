@@ -11,10 +11,9 @@ Alongside the several `font-*` properties, CSS provides many `text-*` properties
 
 The `text-align` property must be applied on a block-level element and defines how its text and children inline elements are horizontally aligned.
 
-```css
+{% highlight css %}
 body{ text-align: left;}
-```
-{: .css}
+{% endhighlight %}
 
 The most used values are:
 
@@ -43,10 +42,9 @@ The `text-decoration` property is used to add a line on your text.
 
 Default value: `none`
 
-```css
+{% highlight css %}
 .deleted{ text-decoration: line-through;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p style="text-decoration: line-through;">Deleted</p>
@@ -60,10 +58,9 @@ Possible values:
 
 By default, HTML links (`<a>`) have a `text-decoration: underline;` applied to them. One of the first things coders usually do is to remove this default styling:
 
-```css
+{% highlight css %}
 a{ text-decoration: none;}
-```
-{: .css}
+{% endhighlight %}
 
 ### text-indent
 
@@ -71,10 +68,9 @@ The `text-indent` property allows to add space before the first letter of the fi
 
 Default value: `0` (zero)
 
-```css
+{% highlight css %}
 blockquote{ text-indent: 30px;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" style="max-width: 400px;">
   <blockquote style="text-indent: 30px;">People always make the mistake of thinking art is created for them. But really, art is a private language for sophisticates to congratulate themselves on their superiority to the rest of the world. As my artist’s statement explains, my work is utterly incomprehensible and is therefore full of deep significance.</blockquote>
@@ -97,10 +93,9 @@ You define:
 * the `blur`
 * the `color`
 
-```css
+{% highlight css %}
 h1{ text-shadow: 0 2px 5px rgba(0,0,0,0.5);}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <h1 style="text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Hello World</h1>

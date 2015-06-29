@@ -49,7 +49,7 @@ We need to write **blocks** in our CSS that will only be used by devices that ma
 
 The media query syntax is reminiscent of the [animation keyframes syntax](/css-animations.html#keyframes), as it defines **a block within the CSS**, in which you write additional CSS rules _that are only applied in certain cases_.
 
-```css
+{% highlight css %}
 /* This part is read by every device/viewport */
 body{ font-size: 14px;}
 
@@ -57,8 +57,7 @@ body{ font-size: 14px;}
   /* This part is only read by viewports wider than 1200 pixels */
   body{ font-size: 16px;}
 }
-```
-{: .css}
+{% endhighlight %}
 
 Here, the default text size is `14px`. But to accomodate for larger viewports, the text size is set to `16px` if the viewport is _wider_ than **1200 pixels**.
 
@@ -70,14 +69,13 @@ On mobile, considering browsers are running in fullscreen, the two widths are in
 
 You can require **2 conditions** for a media query to be activated.
 
-```css
+{% highlight css %}
 body{ font-size: 18px;}
 
 @media (min-width: 1000px) and (orientation: landscape) {
   body{ font-size: 20px;}
 }
-```
-{: .css}
+{% endhighlight %}
 
 The font size will only be set to `20px` if the viewport is at least _1000px wide_ **and** in _landscape_ mode (as opposed to portrait mode).
 
@@ -88,7 +86,7 @@ You can also use `not` and `only`. These are called [logical operators](https://
 
 You can include as many **CSS rules** as you want in the media query.
 
-```css
+{% highlight css %}
 body{ font-size: 14px;}
 .button{ display: block;}
 .title{ text-align: center;}
@@ -99,8 +97,7 @@ body{ font-size: 14px;}
   .button{ display: inline-block;}
   .title{ text-align: left;}
 }
-```
-{: .css}
+{% endhighlight %}
 
 ### Parameters
 
@@ -138,7 +135,7 @@ The **orientation** parameter can detect if the viewport is in either of the fol
 * **landscape**: the viewport is **wider** than it is tall
 * **portrait**: the viewport is **taller** than it is wide
 
-```css
+{% highlight css %}
 @media (orientation: portrait) {
   /* For vertical viewports */
 }
@@ -146,8 +143,7 @@ The **orientation** parameter can detect if the viewport is in either of the fol
 @media (orientation: landscape) {
   /* For horizontal viewports */
 }
-```
-{: .css}
+{% endhighlight %}
 
 Although it's mostly used for tablets and smartphones, be aware that even on a widescreen monitor, the viewport can be in portrait if its width is smaller than its height.
 
@@ -165,12 +161,11 @@ It depends on:
 
 The pixel density basically tells how **crisp** your display is (the higher the dpi, the crisper the display).
 
-```css
+{% highlight css %}
 @media (min-resolution: 300dpi) {
   /* */
 }
-```
-{: .css}
+{% endhighlight %}
 
 Desktop screens usually have a pixel density around **100** dpi. Smartphones on the other hand have an [incredible range of dpi](http://dpi.lv/). For example:
 
@@ -193,7 +188,7 @@ Source: [sitepoint.com](http://www.sitepoint.com/css-techniques-for-retina-displ
 
 A use case would be to provide a default background image for every device, and apply **high resolution background images** on Retina displays.
 
-```css
+{% highlight css %}
 /* 40x40 logo */
 .logo{ background-image: url(marksheet-logo.png); background-size: 40px 40px;}
 
@@ -201,8 +196,7 @@ A use case would be to provide a default background image for every device, and 
   /* 80x80 logo resized to 40x40 */
   .logo{ background-image: url(marksheet-logo@2x.png);}
 }
-```
-{: .css}
+{% endhighlight %}
 
 Keep in mind that the **background size must be set**. Otherwise, the `@2x` Retina image would take twice the space.
 
@@ -219,7 +213,7 @@ Using [the Flow](/css-the-flow.html) is straightforward to design a mobile site:
 
 A mobile-first CSS would use `min-width` media queries in order to apply specific rules for larger viewports:
 
-```css
+{% highlight css %}
 /* General CSS rules for every viewport, including smartphones */
 body{ }
 .title{ }
@@ -236,12 +230,11 @@ body{ }
 @media (min-width: 1200px) {
   /* Rules for larger desktop screens only */
 }
-```
-{: .css}
+{% endhighlight %}
 
 A desktop-first approach starts with styles for large screens and  `min-width` media queries in order to apply specific rules for larger viewports:
 
-```css
+{% highlight css %}
 /* General CSS rules for every viewport, including large desktop screens */
 body{ }
 .title{ }
@@ -258,8 +251,7 @@ body{ }
 @media (max-width: 767px) {
   /* Rules for smartphones only */
 }
-```
-{: .css}
+{% endhighlight %}
 
 Notice how the desktop-first `max-width` values are _1 fewer than_ the mobile-first `min-width`. For example:
 

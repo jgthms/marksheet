@@ -7,33 +7,29 @@ section: css
 
 An HTML element can be targeted by **multiple CSS rules**. Let's use a simple paragraph for example:
 
-```html
+{% highlight html %}
 <p class="message" id="introduction">
   MarkSheet is a free HTML and CSS tutorial.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 We can alter this paragraph just by using its **tag name**:
 
-```css
+{% highlight css %}
 p{ color: blue;}
-```
-{: .css}
+{% endhighlight %}
 
 Or we can use its **class name**:
 
-```css
+{% highlight css %}
 .message{ color: green;}
-```
-{: .css}
+{% endhighlight %}
 
 Or we can use its **id**:
 
-```css
+{% highlight css %}
 #introduction{ color: red;}
-```
-{: .css}
+{% endhighlight %}
 
 Because the browser can only pick **one color** to apply on this paragraph, it will have to decide which CSS rule takes **priority** over other ones. This is what CSS priority (or CSS _specificity_ is about).
 
@@ -43,12 +39,11 @@ In our example, the paragraph will be **red** because an `#id` selector is more 
 
 If similar selectors are in your CSS, the last one defined will take priority.
 
-```css
+{% highlight css %}
 p{ color: green;}
 p{ color: red;}
 /* Paragraphs will be red */
-```
-{: .css}
+{% endhighlight %}
 
 ### The 100 measure
 
@@ -60,19 +55,17 @@ One quick way to figure out how "powerful" a CSS rule is, is by measuring the sp
 
 The selector with the highest "score" will prevail, _no matter the order in which the CSS rules appear_.
 
-```css
+{% highlight css %}
 #introduction{ color: red;}
 .message{ color: green;}
 p{ color: blue;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <p class="message" id="introduction">
   MarkSheet is a free HTML and CSS tutorial.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p style="color: red;">

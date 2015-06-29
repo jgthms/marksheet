@@ -15,10 +15,9 @@ Like any language, HTML comes with a set of **rules**. These rules are relativel
 
 Here is a sample paragraph in HTML:
 
-```html
+{% highlight html %}
 <p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result"><p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p></div>
 
@@ -45,10 +44,9 @@ For such a text file to become an **HTML document** (instead of a text document)
 
 Open your **text editor**, and copy paste the following:
 
-```html
+{% highlight html %}
 <p>This is my firstwebpage!</p>
-```
-{: .html}
+{% endhighlight %}
 
 Save this file as `my-first-webpage.html` and just open it with your browser, and you'll see:
 
@@ -65,10 +63,9 @@ Attributes act like **extra** information tied to an HTML element. There are wri
 
 For example, the `href` attribute is used to define the target of a **link** (which uses an **a**chor tag): 
 
-```html
+{% highlight html %}
 <a href="http://www.mozilla.com/firefox">Download Firefox</a>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result"><a href="http://www.mozilla.com/firefox">Download Firefox</a></div>
 
@@ -78,10 +75,9 @@ You'll mostly use `class` (which is used for CSS), and `title` (which is the too
 
 Some HTML elements have **obligatory** attributes. For example, when inserting an image, you have to provide the location of the image, using the `src` (source) attribute:
 
-```html
+{% highlight html %}
 <img src="#" alt="Description of the image">
-```
-{: .html}
+{% endhighlight %}
 
 Considering that the purpose of the `<img>` element is to display an image, it makes sense for the path to the image to be **required**.
 
@@ -91,11 +87,10 @@ If you write something in your code without disrupting how the browser will disp
 
 A comment starts wih `<!--` and ends with `-->`.
 
-```html
+{% highlight html %}
 <!-- This sentence will be ignored by the browser -->
 <p>Hello World!</p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result"><p>Hello World!</p></div>
 
@@ -103,11 +98,10 @@ A comment starts wih `<!--` and ends with `-->`.
 
 Some HTML elements only have an opening tag:
 
-```html
+{% highlight html %}
 <br> <!-- line-break -->
 <img src="http://placehold.it/50x50" alt="Description"> <!-- image -->
 <input type="text"> <!-- text input -->
-```
-{: .html}
+{% endhighlight %}
 
 Because they don't have a closing tag and consequently can't contain anything _inside_ them, self-enclosing elements usually carry a few attributes, to provide them with additional information.

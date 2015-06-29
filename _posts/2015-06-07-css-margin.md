@@ -7,15 +7,14 @@ section: css
 
 If padding adds space _inside_ an element (between its border and its content), margins adds space _outside_ between an element and _other elements_.
 
-```html
+{% highlight html %}
 <p>Hey, you know what sucks?</p>
 <p>vaccuums</p>
 <p>Hey, you know what sucks in a metaphorical sense?</p>
 <p>black holes</p>
 <p>Hey, you know what just isn't cool?</p>
 <p>lava?</p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>Hey, you know what sucks?</p>
@@ -26,10 +25,9 @@ If padding adds space _inside_ an element (between its border and its content), 
   <p>lava?</p>
 </div>
 
-```css
+{% highlight css %}
 p{ margin: 40px;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p style="margin: 40px;">Hey, you know what sucks?</p>
@@ -44,17 +42,15 @@ p{ margin: 40px;}
 
 Let's have a title and a subtitle.
 
-```css
+{% highlight css %}
 .title{ margin-bottom: 30px;}
 .subtitle{ margin-top: 15px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <h1 class="title">MarkSheet</h1>
 <h2 class="subtitle">A simple HTML/CSS tutorial</h2>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <h1 style="margin: 0 0 30px;">MarkSheet</h1>

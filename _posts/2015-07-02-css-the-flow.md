@@ -58,14 +58,13 @@ First in the code -> first in the browser.
 
 Each <code>block</code> appears in the order in which they appear in the HTML code, from <strong>top</strong> to <strong>bottom</strong>.
 
-```html
+{% highlight html %}
 <p>First</p>
 <p>Second</p>
 <p>Third</p>
 <p>Fourth</p>
 <p>Fifth</p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>First</p>
@@ -86,15 +85,14 @@ The **stack order** depends on how elements are **nested**: child elements appea
 * Each **nested** element appears _on top_ of its parent.
 * The **deeper** in the hierarchy, the _higher_ in the stack.
 
-```html
+{% highlight html %}
 <div>
   This parent is behind
   <p>
     This nested child appears <strong>on top</strong> of its parent
   </p>
 </div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <div style="background: midnightblue; color: white; padding: 20px;">

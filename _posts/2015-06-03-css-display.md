@@ -9,10 +9,9 @@ We've seen how there are mainly [2 types of HTML elements](/html-block-inline.ht
 
 The `display` property allows to change the _type_ of HTML element. By default, a paragraph `<p>` (a **block-level** element) will have a default `display` value of `block`, but can be rendered as an **inline** one:
 
-```css
+{% highlight css %}
 p{ display: inline;}
-```
-{: .css}
+{% endhighlight %}
 
 ### Why not use an HTML inline element, like `<span>` then?
 
@@ -34,12 +33,11 @@ This will turn any element into a **block** element.
 
 This technique is often used on **links** in order to increase their clickable zone, which can be easily evaluated by setting a background color.
 
-```css
+{% highlight css %}
 .menu a{ background: red; color: white;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <ul class="menu">
   <li>
     <a>Home</a>
@@ -54,8 +52,7 @@ This technique is often used on **links** in order to increase their clickable z
     <a>About</a>
   </li>
 </ul>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <ul>
@@ -76,10 +73,9 @@ This technique is often used on **links** in order to increase their clickable z
 
 If we turn these links into **blocks**, we increase their target area:
 
-```css
+{% highlight css %}
 .menu a{ background: red; color: white; display: block;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <ul>
@@ -105,7 +101,7 @@ This turns any element into **inline** elements, as if they were just simple **t
 
 It's often used to create **horizontal navigations**, where **list items** are semantically but not visually useful.
 
-```html
+{% highlight html %}
 <ul class="menu">
   <li>
     <a>Home</a>
@@ -120,8 +116,7 @@ It's often used to create **horizontal navigations**, where **list items** are s
     <a>About</a>
   </li>
 </ul>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <ul>
@@ -140,10 +135,9 @@ It's often used to create **horizontal navigations**, where **list items** are s
   </ul>
 </div>
 
-```css
+{% highlight css %}
 .menu li{ display: inline;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <ul>
@@ -174,17 +168,15 @@ Because the rendering of these bullet points and numbers varies across browsers,
 
 Applying `display: none;` to an HTML element removes it from your webpage, as if it never existed in your code.
 
-```css
+{% highlight css %}
 .gone-baby-gone{ display: none;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <p>Did I hear someone speaking??</p>
 <p class="gone-baby-gone">Hahahahahah</p>
 <p>I must be dreaming...</p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>Did I hear someone speaking??</p>
@@ -198,19 +190,17 @@ There are 3 paragraphs in the code, but only 2 appear, as if the 2nd one never e
 
 The CSS property `visibility` is slightly similar to `display`. Applying `visibility: hidden;` _hides_ an element from your page, but only turns it **invisible**: it still takes up the space it was supposed to.
 
-```css
+{% highlight css %}
 .hollow-man{ visibility: hidden;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <p>So far away from me </p>
 <p class="hollow-man">So far i just can't see</p>
 <p class="hollow-man">So far away from me</p>
 <p class="hollow-man">You're so far away from me</p>
 <p>You're so far away...</p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>So far away from me </p>

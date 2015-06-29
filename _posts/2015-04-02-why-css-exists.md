@@ -23,7 +23,7 @@ Several HTML attributes could also be used:
 
 But most of all, in order to create columns, visually align elements, and generally position elements relatively to each other, Web developers used the `<table>` element to design their webpages because it naturally provided a visual **grid**:
 
-```html
+{% highlight html %}
 <table>
   <thead>
     <tr>
@@ -44,8 +44,7 @@ But most of all, in order to create columns, visually align elements, and genera
     </tr>
   </tbody>
 </table>
-```
-{: .html}
+{% endhighlight %}
 
 This approach was cumbersome for several reasons:
 
@@ -67,10 +66,9 @@ CSS brings an HTML document to **life**, by choosing fonts, applying colors, def
 
 How CSS works is by **selecting** an HTML element (like a paragraph), choosing a **property** to alter (like the color), and applying a certain **value** (like red):
 
-```css
+{% highlight css %}
 p{ color: red;}
-```
-{: .css}
+{% endhighlight %}
 
 The word _"Style"_ can be deceiving. You might think CSS is only used to change the text's color, size, and font. But CSS is able to define an HTML document's **layout**, by defining heights, widths, inner and outer margins, positions, columns...
 {: .info}
@@ -81,16 +79,15 @@ The word _"Style"_ can be deceiving. You might think CSS is only used to change 
 
 You can write CSS directly on an HTML elements, by using the `style` attribute:
 
-```html
+{% highlight html %}
 <p style="color: red;">This text is important.</p>
-```
-{: .html}
+{% endhighlight %}
 
 #### CSS in the <head>
 
 You can use a `<style>` tag in the `<head>` of your HTML document:
 
-```html
+{% highlight html %}
 <html>
   <head>
     <title>Hello World</title>
@@ -102,19 +99,17 @@ You can use a `<style>` tag in the `<head>` of your HTML document:
     <p>This paragraph will be red.</p>
   </body>
 </html>
-```
-{: .html}
+{% endhighlight %}
 
 #### CSS in a separate file
 
 You can write your CSS in a separate file with a `.css` extension, and then link it to your HTML by using the `<link>` HTML tag.
 
-```css
+{% highlight css %}
 p{ color: red;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <html>
   <head>
     <title>Hello World</title>
@@ -124,8 +119,7 @@ p{ color: red;}
     <p>This paragraph will be red.</p>
   </body>
 </html>
-```
-{: .html}
+{% endhighlight %}
 
 It is the HTML document who "calls" the CSS file, in this case a file called `style.css` located in the same folder as the HTML file.
 

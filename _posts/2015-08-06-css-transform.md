@@ -41,7 +41,7 @@ It's like using [relative positioning](/css-position.html#relative) with `left` 
 
 Let's redo our [circuit animation](/css-animations.html#result-2) using translation instead of left/top positioning:
 
-```css
+{% highlight css %}
 @keyframes translating {
   0%  { transform: translate(0, 0);}
   25% { transform: translate(240px, 0);}
@@ -50,8 +50,7 @@ Let's redo our [circuit animation](/css-animations.html#result-2) using translat
   100%{ transform: translate(0, 0);}
 }
 p{ animation: translating 4s linear infinite;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="translate-animation">
   <p>Hello</p>
@@ -81,14 +80,13 @@ The `rotate()` function allows to make an element **revolve around a fixed point
 
 `rotate()` accepts only **1** parameter, which is an **angle** value defined in degrees `deg`, gradians `grad`, radians `rad` or turns `turn` (with 1 turn being equivalent to a full circle).
 
-```css
+{% highlight css %}
 @keyframes rotating {
   0%  { transform: rotate(0deg);}
   100%{ transform: rotate(360deg);}
 }
 p{ animation: rotating 4s linear infinite;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="rotate-animation">
   <p>Vinyl</p>
@@ -119,7 +117,7 @@ The **range** of possible value is:
 * `0`: the element basically disappears (as its height and width are equal to zero)
 * `-1`: the element is mirrored
 
-```css
+{% highlight css %}
 @keyframes scaling {
   0%  { transform: scale(1);}
   20%{ transform: scale(2);}
@@ -129,8 +127,7 @@ The **range** of possible value is:
   100%{ transform: scale(1);}
 }
 p{ animation: scaling 10s steps(1) 0s infinite;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="scale-animation">
   <p><strong>scale(1)</strong>: normal size</p>
@@ -188,7 +185,7 @@ Like `scale()`, the `skew()` functions accepts either:
 
 And like `rotate()`, `skew()` only accepts **angle** values like degrees `deg`.
 
-```css
+{% highlight css %}
 @keyframes skewing {
   0%  { transform: skew(0deg);}
   20% { transform: skew(10deg);}
@@ -198,8 +195,7 @@ And like `rotate()`, `skew()` only accepts **angle** values like degrees `deg`.
   100%{ transform: skew(0deg);}
 }
 p{ animation: skewing 10s steps(1) 0s infinite;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="skew-animation">
   <p><strong>skew(0deg)</strong>: no distortion</p>
@@ -259,14 +255,13 @@ For example, `translate()` has a `translate3d()` version that performs transform
 
 The **z** parameter basically make the element move closer and further, whether we increase or decrease its value. It's like zooming in and out.
 
-```css
+{% highlight css %}
 @keyframes zooming {
   0%  { transform: translate3d(0, 0, 0);}
   100%{ transform: translate3d(0, 0, 200px);}
 }
 p{ animation: zooming 5s alternate;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="zoom-animation">
   <div>Original</div>

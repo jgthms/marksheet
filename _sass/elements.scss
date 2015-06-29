@@ -77,7 +77,7 @@ $chaptersOffset: 1.5rem;
     &:first-child{ margin-top: 0;}
     &:last-child{ margin-bottom: 0;}
   }
-  pre{ line-height: 1; position: relative;}
+  pre{ line-height: 1.25; position: relative;}
   ul{
     list-style: disc outside; margin: 1rem 0; padding-left: 1.5em;
     ul{
@@ -96,17 +96,16 @@ $chaptersOffset: 1.5rem;
       }
     }
   }
-  div.highlighter-rouge{
-    @include label(); margin: 2rem -2rem; overflow: auto;
-    &.html{ @include label("HTML", $html5, white);}
-    &.css{ @include label("CSS", $css3, white);}
-    &.scss{
-      @include label("SCSS", $sass, white);
-      &.css{ @include label("SCSS CSS", $sass, white);}
-    }
-    pre{
-      padding: 2rem;
-      code{ background: inherit; color: inherit; padding: 0; top: 0;}
+  div.highlight{
+    margin: 2rem -2rem; overflow: auto;
+    pre code{
+      @include label(); background: inherit; color: inherit; display: block; padding: 2rem; top: 0;
+      &.language-html{ @include label("HTML", $html5, white);}
+      &.language-css{ @include label("CSS", $css3, white);}
+      &.language-scss{
+        @include label("SCSS", $sass, white);
+        &.language-css{ @include label("SCSS CSS", $sass, white);}
+      }
     }
     @include on($laptop) {
       margin: 2rem 0;

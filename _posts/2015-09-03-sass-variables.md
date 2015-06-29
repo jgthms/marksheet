@@ -13,10 +13,9 @@ Have you ever had to search and replace many occurrences of the same CSS _value_
 
 You need to prepend a variable with a `$` dollar sign:
 
-```scss
+{% highlight scss %}
 $yellow: #fce473;
-```
-{: .scss}
+{% endhighlight %}
 
 This line doesn't do anything apart from **defining** a variable, in our case a shade of yellow:
 
@@ -24,17 +23,15 @@ This line doesn't do anything apart from **defining** a variable, in our case a 
 
 We can then use it throughout our CSS, whenever a [color unit](/css-color-units.html) is required:
 
-```scss
+{% highlight scss %}
 .quote{ border-left: 5px solid $yellow;}
-```
-{: .scss}
+{% endhighlight %}
 
 This `.scss` file will be **compiled** into a `.css` file, where all variables will be _replaced_ with their actual _value_:
 
-```css
+{% highlight css %}
 .quote{ border-left: 5px solid #fce473;}
-```
-{: .css}
+{% endhighlight %}
 
 _Why is it called a variable?_{:.question}
 Well here, the **value** `#fce473` is variable. Meaning the name `$yellow` remains _fixed_ but the value can _change_.
@@ -46,24 +43,22 @@ To illustrate the purpose of using variables, you need to use it more than once,
 
 <div style="background: #ff1493; color: white; display: inline-block; padding: 10px; vertical-align: top;">#ff1493</div>
 
-```scss
+{% highlight scss %}
 $pink: #ff1493;
 .quote{ border-left: 5px solid $pink;}
 .button{ background: $pink;}
 .sidebar a:hover{ border-bottom-color: $pink;}
 .footer a{ color: $pink;}
-```
-{: .scss}
+{% endhighlight %}
 
 This will be compiled into:
 
-```css
+{% highlight css %}
 .quote{ border-left: 5px solid #ff1493;}
 .button{ background: #ff1493;}
 .sidebar a:hover{ border-bottom-color: #ff1493;}
 .footer a{ color: #ff1493;}
-```
-{: .css}
+{% endhighlight %}
 
 If you decided to go for a _different_ shade of pink:
 
@@ -72,20 +67,18 @@ If you decided to go for a _different_ shade of pink:
 
 You'd only have to change the color value **once**:
 
-```scss
+{% highlight scss %}
 $pink: #c71585;
-```
-{: .scss}
+{% endhighlight %}
 
 And the resulting CSS would be **automatically** updated:
 
-```css
+{% highlight css %}
 .quote{ border-left: 5px solid #c71585;}
 .button{ background: #c71585;}
 .sidebar a:hover{ border-bottom-color: #c71585;}
 .footer a{ color: #c71585;}
-```
-{: .css}
+{% endhighlight %}
 
 ### Even more abstraction
 
@@ -97,7 +90,7 @@ You'd have to define a `$green: #32cd32;` variable **and** replace all the insta
 
 There is a better way:
 
-```scss
+{% highlight scss %}
 // Defining color values
 $yellow: #fce473;
 $pink: #c71585;
@@ -111,8 +104,7 @@ $primary-color: $green;
 .button{ background: $primary-color;}
 .sidebar a:hover{ border-bottom-color: $primary-color;}
 .footer a{ color: $primary-color;}
-```
-{: .scss}
+{% endhighlight %}
 
 Instead of _directly_ referencing the variable `$green`, you define a **primary color** variable that is _set_ to `$green`.
 
@@ -124,7 +116,7 @@ If you decided to use `$blue` as your primary color, you'd only have to modify a
 
 We've used variables to define colors, but you can set **any type of content**:
 
-```scss
+{% highlight scss %}
 // Colors
 $yellow:              #fce473;
 $pink:                #c71585;
@@ -145,5 +137,4 @@ $secondary-font:      $serif;
 // Spacing
 $mobile-space:        10px;
 $desktop-space:       35px;
-```
-{: .scss}
+{% endhighlight %}

@@ -29,10 +29,9 @@ In HTML, you'll mainly come across 2 types of HTML elements:
 **Inline** elements are meant to differentiate _part_ of a text, to give it a particular function or meaning. Inline elements usually comprise a single or few words.
 
 
-```html
+{% highlight html %}
 <p>Have you seen this <a href="http://www.youtube.com">amazing video</a> on YouTube?</p>
-```
-{: .html}
+{% endhighlight %}
 
 ### Opening and closing tags
 

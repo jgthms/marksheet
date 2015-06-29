@@ -20,7 +20,7 @@ There are some **structural HTML elements** you can use as **containers** for ot
 
 The `header` is usually the **first** HTML element in the code. It acts as an **introduction** to the webpage, with the logo, a tagline, and navigation links.
 
-```html
+{% highlight html %}
 <header>
   <p>
     <a>
@@ -36,14 +36,13 @@ The `header` is usually the **first** HTML element in the code. It acts as an **
     </li>
   </ul>
 </header>
-```
-{: .html}
+{% endhighlight %}
 
 ### Footer
 
 As opposed to the `header`, the `footer` is usually the **last** element of a page, where the main navigation links are repeated and secondary ones added.
 
-```html
+{% highlight html %}
 <footer>
   <p>MarkSheet.io | Copyright 2015</p>
   <ul>
@@ -66,8 +65,7 @@ As opposed to the `header`, the `footer` is usually the **last** element of a pa
     </li>
   </ul>
 </footer>
-```
-{: .html}
+{% endhighlight %}
 
 ### Main
 

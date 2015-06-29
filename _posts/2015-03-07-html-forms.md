@@ -26,15 +26,14 @@ To accomodate for these needs, HTML provides interactive **form controls**:
 
 These controls use different HTML **tags**, but most of them use the `<input>` tag. Because it is a self-closing element, the _type_ of input is defined by its `type` attribute:
 
-```html
+{% highlight html %}
 <!-- A text input -->
 <input type="text">
 <!-- A checkbox -->
 <input type="checkbox">
 <!-- A radio button -->
 <input type="radio">
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <input type="text">
@@ -130,10 +129,9 @@ And number inputs allow their value to be increased/decreased using up and down 
 
 Text inputs can display a **placeholder** text, that will disappear as soon as some text is entered.
 
-```html
+{% highlight html %}
 <input type="text" placeholder="Enter your name">
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <input type="text" placeholder="Enter your name">
@@ -145,11 +143,10 @@ If you start typing something, you'll see the text _"Enter your name"_ disappear
 
 Because form elements on their own are not very descriptive, they are usually preceded by a text **label**.
 
-```html
+{% highlight html %}
 <label>Email</label>
 <input type="email">
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <label>Email</label>
@@ -160,11 +157,10 @@ While placeholders already provide some hint at what content is expected, labels
 
 Although you could use short paragraphs to describe form elements, using `<label>` is semantically more valid because they only exist within forms, and can be paired with a specific form control by using the `for` attribute and matching its value with the input's `id`.
 
-```html
+{% highlight html %}
 <label for="first_name">First name</label>
 <input id="first_name" type="text">
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <label for="first_name">First name</label>
@@ -177,10 +173,9 @@ Clicking on the label will focus the text input and place the text cursor inside
 
 **Checkboxes** are form controls that only have 2 states: checked or unchecked. They basically allow the user to say "Yes" or "No" to something.
 
-```html
+{% highlight html %}
 <input type="checkbox"> Remember me
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <input type="checkbox"> Remember me
@@ -188,12 +183,11 @@ Clicking on the label will focus the text input and place the text cursor inside
 
 Because it can be hard to click on a small checkbox, it is recommended to wrap a `<label>` around the checkbox **and** its description.
 
-```html
+{% highlight html %}
 <label>
   <input type="checkbox"> I agree to the terms
 </label>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <label>
@@ -205,12 +199,11 @@ You can click on _"I agree to the terms"_ to toggle the checkbox.
 
 By default, a checkbox input is unchecked. You can mark it as checked by using the simply called `checked` attribute.
 
-```html
+{% highlight html %}
 <label>
   <input type="checkbox" checked> Use as my billing address
 </label>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <label>
@@ -224,7 +217,7 @@ You can present the user a **list of options** to choose from by using radio but
 
 For this form control to work, your HTML code needs to **group** a list of radio buttons together. This is achieved by using the _same_ value for the `name` attribute:
 
-```html
+{% highlight html %}
 <label>Marital status</label>
 <label>
   <input type="radio" name="status">
@@ -242,8 +235,7 @@ For this form control to work, your HTML code needs to **group** a list of radio
   <input type="radio" name="status">
   Widowed
 </label>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <label>Marital status</label>
@@ -283,7 +275,7 @@ If the number of options to choose from takes up too much space, you can use `<s
 
 They work like radio buttons. Only their layout is different.
 
-```html
+{% highlight html %}
 <select>
   <option>January</option>
   <option>February</option>
@@ -298,8 +290,7 @@ They work like radio buttons. Only their layout is different.
   <option>November</option>
   <option>December</option>
 </select>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <select>
@@ -322,7 +313,7 @@ They work like radio buttons. Only their layout is different.
 
 If you add the `multiple` attribute, you can provide the ability to select multiple choices.
 
-```html
+{% highlight html %}
 <label>Which browsers do you have?</label>
 <select multiple>
   <option>Google Chrome</option>
@@ -331,8 +322,7 @@ If you add the `multiple` attribute, you can provide the ability to select multi
   <option>Opera</option>
   <option>Safari</option>
 </select>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <label>Which browsers do you have?</label>
@@ -350,7 +340,7 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
 
 ### Example: a complete signup form
 
-```html
+{% highlight html %}
 <form action="/signup" method="POST">
   <p>
     <label>Title</label>
@@ -416,8 +406,7 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
     </button>
   </p>
 </form>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <form action="/signup" method="POST">

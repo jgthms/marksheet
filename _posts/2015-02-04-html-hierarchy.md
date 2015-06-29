@@ -13,12 +13,11 @@ It comes from the ability to **nest** HTML elements within one another.
 
 Let's write a simple paragraph and enhance it by _differentiating_ parts of the text, by inserting two **inline** elements:
 
-```html
+{% highlight html %}
 <p>
   Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi:<q>"That lad must have been born offside."</q>.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result"><p>Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi: <q>"That lad must have been born offside."</q>.</p></div>
 
@@ -42,23 +41,21 @@ How **nesting** works depends on the location of _opening_ and _closing_ tags.
 Because an HTML element comprises an opening tag, a closing tag, and _everything in between_, a _child_ element must be closed **before** closing the _parent_ element.
 
 
-```html
+{% highlight html %}
 <!-- This is INVALID code! :-( -->
 <p>
   This HTML code won't work because I the "strong" tag is opened here <strong>but is only closed after the paragraph.
 </p></strong>
-```
-{: .html}
+{% endhighlight %}
 
 Because the `<strong>` was opened _after_ the `<p>` (and is thus considered a **child** of `<p>`), the `<strong>` element must be closed **before** its parent `<p>`. 
 
-```html
+{% highlight html %}
 <!-- This is valid code. :-) -->
 <p>
   This HTML code will work because I the "strong" tag is opened <strong>and closed</strong> properly.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 ### Depth
 
@@ -66,7 +63,7 @@ Because child elements can themselves contain _other_ child elements, it's possi
 
 Our above paragraph could be part of a blog **article**:
 
-```html
+{% highlight html %}
 <article>
   <h1>Famous football quotes</h1>
   <p>
@@ -79,8 +76,7 @@ Our above paragraph could be part of a blog **article**:
     <strong>George Best</strong> said <q>"I spent a lot of money on booze, birds and fast cars. The rest I just squandered."</q> when asked about his lifestyle.
   </p>
 </article>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <article>
@@ -119,13 +115,12 @@ The family tree analogy still applies when **traversing** several layers of HTML
 
 However, **inline** elements can only contain other _inline_ elements [^1].
 
-```html
+{% highlight html %}
 <!-- This is INVALID code! :-( -->
 <strong>
   <p>You can't put a paragraph inside a "strong" tag.
 </strong>
-```
-{: .html}
+{% endhighlight %}
 
 Just remember ancestor/descendant, parent/child, and siblings. This hierarchy will be useful in CSS.
 

@@ -7,10 +7,9 @@ section: css
 
 The dimensions (or height and width) of an element are **dynamic**, as they fluctuate in order to fit the content. It is somehow possible to set **specific** dimensions.
 
-```css
+{% highlight css %}
 blockquote{ width: 600px;}
-```
-{: .css}
+{% endhighlight %}
 
 The blockquote will not take up the whole width available, but will remain 600px wide **in any situation**:
 
@@ -30,15 +29,13 @@ Because we prevent the element to dynamically alter its dimensions, there is a c
 
 The default behavior can be surprising: the content will be displayed anyway!
 
-```css
+{% highlight css %}
 blockquote{ background: yellow; height: 50px; width: 100px;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <blockquote>The content er... finds a way</blockquote>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <blockquote style="background: yellow; height: 50px; width: 100px;">The content er... finds a way</blockquote>

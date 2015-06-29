@@ -22,12 +22,11 @@ Keep in mind that a **transition is a specific kind of _animation_, where there'
 
 Transitions are often used on **hover states**.
 
-```css
+{% highlight css %}
 a{ background: lightgrey; color: grey;}
 a:hover{ background: yellow; color: red;}
 a.with-transition{ transition: 1s;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-841">
   <a>Without transition</a>
@@ -42,13 +41,12 @@ A transition's duration is the only CSS property needed to create a transition. 
 
 If you want your transition to last **half a second**, you can either write `0.5s` or `500ms`. Depending on how fast you want your transitions to be, one unit might be easier and/or quicker to write.
 
-```css
+{% highlight css %}
 a{ background: lightgrey; color: grey;}
 a:hover{ background: yellow; color: green;}
 a.with-fast-transition{ transition-duration: 0.5s;}
 a.with-slow-transition{ transition: 3s;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-842">
   <a>Without transition</a>
@@ -64,13 +62,12 @@ By default, the `transition-property` property has a value of `all`, which simpl
 
 You can decide to only animate 1 or several properties.
 
-```css
+{% highlight css %}
 a{ background: lightgrey; color: grey;}
 a:hover{ background: yellow; border: 5px solid blue; color: green;}
 a.with-background-transition{ transition-duration: 2s; transition-property: background;}
 a.with-all-transition{ transition-duration: 2s;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-843">
   <a>Without transition</a>
@@ -90,7 +87,7 @@ You can meaning that the transition will happen at a **constant speed**. Timing 
 
 The easiest way to visualize timing functions is by altering **position properties**, like `left`.
 
-```css
+{% highlight css %}
 div{ left: 0; position: relative; transition: 1s;}
 main:hover div{ left: 200px;}
 .ease{ transition-timing-function: ease;} /* Default behavior */
@@ -98,10 +95,9 @@ main:hover div{ left: 200px;}
 .ease-in{ transition-timing-function: ease-in;}
 .ease-out{ transition-timing-function: ease-out;}
 .ease-in-out{ transition-timing-function: ease-out;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <main>
   <p><strong>Ease</strong>: slow start, fast middle, slow end</p>
   <div class="ease"></div>
@@ -114,8 +110,7 @@ main:hover div{ left: 200px;}
   <p><strong>Ease In Out</strong>: like ease, but with more pronounced acceleration/deceleration curves</p>
   <div class="ease-in-out"></div>
 </main>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" id="result-844">
   <p><strong>Ease</strong>: slow start, fast middle, slow end</p>
@@ -146,21 +141,19 @@ A **delay** will define how long the transitions has to **wait** _before_ actual
 
 Like `transition-duration`, you can either use seconds `s` or milliseconds `ms`.
 
-```css
+{% highlight css %}
 a{ background: blue; color: white; transition: all 1s;}
 div:hover a{ background: red;}
 a.with-delay{ transition-delay: 1s;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <div>
   <p>Hover the grey area</p>
   <a>Without any delay</a>
   <a class="with-delay">With a second delay</a>
 </div>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" id="result-845">
   <div>

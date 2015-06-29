@@ -7,18 +7,16 @@ section: css
 
 The purpose of CSS is to define the layout _and_ styling of your HTML elements. The syntax is very simple:
 
-```css
+{% highlight css %}
 /* A CSS rule */
 selector{ property: value;}
-```
-{: .css}
+{% endhighlight %}
 
 You can read that as:
 
-```css
+{% highlight css %}
 who{ what: how;}
-```
-{: .css}
+{% endhighlight %}
 
 CSS is a 3-part process:
 
@@ -32,29 +30,26 @@ This whole block (selector/property/value) is a **CSS rule**.
 
 Let's say you want to change the color of all your **blockquotes**.
 
-```html
+{% highlight html %}
 <blockquote>Something something</blockquote>
-```
-{: .html}
+{% endhighlight %}
 
 Focus on the **tag name** (and forget about the angle brackets <> and the text). In our case, all that remains is _"blockquote"_. There's a direct relation between the tag name and the selector.
 
 Let's use that in our CSS as a **selector**, and let's apply some styling:
 
-```css
+{% highlight css %}
 blockquote{ background: lightgreen;}
-```
-{: .css}
+{% endhighlight %}
 
 Interesting. But now, the text color doesn't really match the background color. Let's improve that:
 
-```css
+{% highlight css %}
 blockquote{
   background: lightgreen;
   color: darkgreen;
 }
-```
-{: .css}
+{% endhighlight %}
 
 So 2 things happened:
 
@@ -63,14 +58,13 @@ So 2 things happened:
 
 The `<blockquote>` HTML tag is a **block** element. It has an **inline** counterpart: `<q>`. As they both serve the same purpose (but in different contexts), we'd like to style them identically. We could copy-paste the CSS rule and just change the selector, but there is as you would have guessed, a quicker way:
 
-```css
+{% highlight css %}
 q,
 blockquote{
   background: lightgreen;
   color: darkgreen;
 }
-```
-{: .css}
+{% endhighlight %}
 
 Now we have 2 selectors and 2 properties. We consequently have a _set_ of selectors and a _set_ of properties (with their respective values).
 
@@ -81,7 +75,7 @@ We can have multiple selectors, multiple properties, and sometimes (but rarely) 
 
 As in HTML, it can be handy to write CSS comments:
 
-```css
+{% highlight css %}
 /* This is a CSS comment */
 q,
 blockquote{
@@ -92,5 +86,4 @@ blockquote{
 Comments are only meant to be read by humans
 and won't be parsed by the computer
 */
-```
-{: .css}
+{% endhighlight %}

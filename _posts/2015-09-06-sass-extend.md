@@ -25,9 +25,9 @@ How would that look like in your CSS? You could:
 
 #### Common CSS Class
 
-```css
+{% highlight css %}
 .small-uppercase{ color: lightslategrey; font-size: 10px; letter-spacing: 0.1em; line-height: 12px; text-transform: uppercase;}
-```
+{% endhighlight %}
 
 Having a `.small-uppercase` CSS rule is **semantically incorrect** because you'd end up writing your HTML as `<p class="small-uppercase">` which reverts to basically writing styles _within_ your HTML.
 
@@ -35,12 +35,12 @@ Having a `.small-uppercase` CSS rule is **semantically incorrect** because you'd
 
 Because a CSS rule can accept any number of _selectors_, you could combine the shared properties under a **list** of selectors:
 
-```css
+{% highlight css %}
 .button,
 .navigation a,
 .sidebar h3,
 .tabs a{ color: lightslategrey; font-size: 10px; letter-spacing: 0.1em; line-height: 12px; text-transform: uppercase;}
-```
+{% endhighlight %}
 
 This approach remains **semantically valid** because each selector describes the HTML element they're attached to.
 
@@ -55,7 +55,7 @@ Sass helps solving these problems.
 
 A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector**:
 
-```scss
+{% highlight scss %}
 // scss
 .small-uppercase{
   color: lightslategrey;
@@ -88,8 +88,7 @@ A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector*
   line-height: 12px;
   text-transform: uppercase;
 }
-```
-{: .scss.css}
+{% endhighlight %}
 
 The `@extend` will **regroup** common properties under a **list** of selectors.
 
@@ -108,7 +107,7 @@ There are 2 differences:
 
 Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.overlay` rule:
 
-```scss
+{% highlight scss %}
 // scss
 @mixin small-uppercase() {
   color: lightslategrey;
@@ -155,8 +154,7 @@ Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.ov
   line-height: 12px;
   text-transform: uppercase;
 }
-```
-{: .scss.css}
+{% endhighlight %}
 
 The list of properties is simply **repeated** as many times as the `@include overlay()` is called.
 
@@ -170,7 +168,7 @@ You're right, and that's why **placeholders** exist in Sass.
 
 If you don't want or need the `.small-uppercase` selector, transform it into a **Sass placeholder** by replacing the dot with a **percentage sign** `%`:
 
-```scss
+{% highlight scss %}
 // scss
 %small-uppercase{
   color: lightslategrey;
@@ -202,7 +200,7 @@ If you don't want or need the `.small-uppercase` selector, transform it into a *
   line-height: 12px;
   text-transform: uppercase;
 }
-```
+{% endhighlight %}
 
 Note that the generated CSS **doesn't include the `.small-uppercase` selector anymore**. That's because the `%small-uppercase` rule is only here to provide a **location** for common properties.
 

@@ -30,14 +30,13 @@ The `src` attribute defines the **location** of the image. As with links, you ca
   </li>
 </ul>
 
-```html
+{% highlight html %}
 <p>
   Look at this spacecraft landing!
   <br>
   <img src="soyuz-spacecraft.jpg">
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>
@@ -64,14 +63,13 @@ This is due to the `<img>` element being a **self-closing** element: it can't te
 
 This inline behavior can have unexpected results:
 
-```html
+{% highlight html %}
 <p>
   There is a frog
   <img src="frog.jpg">
   in the middle of the paragraph!
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>

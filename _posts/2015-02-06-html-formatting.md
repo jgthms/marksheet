@@ -21,7 +21,7 @@ Another kind of written code _ignored_ by the browser is **whitespace**, which i
 
 Line-breaks and empty lines (which are a succession of line-breaks) in HTML code are **ignored** by the browser. They only account for a **single** space.
 
-```html
+{% highlight html %}
 <blockquote>
 The original idea of the web was that it should be a collaborative
 
@@ -31,8 +31,7 @@ space
 
 where you can communicate through sharing information.
 </blockquote>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <blockquote>
@@ -42,10 +41,9 @@ where you can communicate through sharing information.
 
 In order to actually **force** a line-break, you need to use the `<br>` HTML element:
 
-```html
+{% highlight html %}
 <p>At its best, life is completely<br>unpredictable.</p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>At its best, life is completely<br>unpredictable.</p>
@@ -57,13 +55,12 @@ A **tabulation** is a special character obtained by pressing the _"Tab"_ key. It
 
 Anyway, like a regular space, a tabulation is **invisible**. It's also ignored by the browser:
 
-```html
+{% highlight html %}
 <p>
   Let's push      this text
   with tabulations.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>
@@ -81,10 +78,9 @@ If you want to **close** an HTML element, you first have to close all its _child
 
 As HTML elements can be nested within each other, you have to keep track of the **order** in which they have been opened, as it will affect the order in which they are closed.
 
-```html
+{% highlight html %}
 <article><p>This code is writing on a <strong>single</strong> line.</p></article>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <article><p>This code is writing on a <strong>single</strong> line.</p></article>
@@ -92,7 +88,7 @@ As HTML elements can be nested within each other, you have to keep track of the 
 
 As it can be hard to keep track of the order in which HTML elements have been opened, it is recommended to write HTML in a **tree format**:
 
-```html
+{% highlight html %}
 <article>
   <p>
     This code is written on
@@ -103,8 +99,7 @@ As it can be hard to keep track of the order in which HTML elements have been op
     one.
   </p>
 </article>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <article>

@@ -7,7 +7,7 @@ section: css
 
 Let's say we want to change the **text color** of a webpage. It would be tedious to specify a color for _every_ HTML element:
 
-```css
+{% highlight css %}
 p,
 ul,
 ol,
@@ -18,17 +18,15 @@ h3,
 h4,
 h5,
 h6{ color: grey;}
-```
-{: .css}
+{% endhighlight %}
 
 ### Value propagation
 
 The `color` value can be inherited from an **ancestor**. Considering we want to alter the _whole_ webpage, we will choose the ancestor of all HTML elements, the `body` tag:
 
-```css
+{% highlight css %}
 body{ color: grey;}
-```
-{: .css}
+{% endhighlight %}
 
 All child and descendant elements will **inherit** the value `grey` from their common ancestor `body`, which naturally encompasses _all_ elements.
 

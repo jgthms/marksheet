@@ -22,9 +22,10 @@ Fonts are grouped in 5 **generic** families:
 
 Because the `font-family` property is inherited by all HTML children elements, you can apply a font for the whole HTML document by applying it on the ancestor of all HTML elements: the `<body>` element.
 
-```css
+{% highlight css %}
 body{ font-family: sans-serif;}
-```
+{% endhighlight %}
+
 With this CSS rule, the webpage will use the **sans-serif** font defined by the user in his preferences.
 
 ### Web-safe fonts
@@ -33,9 +34,10 @@ The problem with using generic font names is that the design of your webpage wil
 
 As you probably want your webpage to look the same on anyone's computer, you'll want to define a **specific** font to be used. To do so, just use the **name** of the font.
 
-```css
+{% highlight css %}
 body{ font-family: Arial;}
-{: .css}
+{% endhighlight %}
+
 Your webpage will use Arial **provided it is installed on the user's computer**. If the Arial font is not available on the user's computer, it will use the browser's default serif font (which is usually Times).
 
 Arial is a safe choice though, because it is installed on all Windows and Mac computers, and on most Linux systems. That is why Arial is considered a **web-safe** font: you can safely use it in your CSS and be almost sure that the user's computer will have it installed.
@@ -56,8 +58,9 @@ There are **9** web-safe fonts:
 
 Although using _any_ of these values for the `font-family` property is a safe bet, you can define **fallback** values by writing a **list of font families**:
 
-```css
+{% highlight css %}
 body{ font-family: Arial, Verdana, sans-serif;}
+{% endhighlight %}
 
 By defining **multiple values** for `font-family`, the browser will look for the first value `Arial` and use it. If it's not available, it will use the following one `Verdana`. Finally, if that one isn't available either, it will use the browser's default sans-serif font.
 

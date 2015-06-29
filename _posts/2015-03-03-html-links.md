@@ -13,12 +13,11 @@ In HTML, links are **inline elements** written with the `<a>` tag.
 
 The `href` attribute (hypertext reference) is used to define the **target** of the link (where you navigate to when you click).
 
-```html
+{% highlight html %}
 <p>
   To search for something, visit <a href="http://www.google.com">Google</a>.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>
@@ -69,12 +68,11 @@ In `home.html`, you want to define a link to `contact.html`.
 
 As the two files are **in the same folder**, you can simply write in `home.html`:
 
-```html
+{% highlight html %}
 <p>
   Go to the <a href="contact.html">contact page</a>.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p>
@@ -105,12 +103,11 @@ Let's say you have a website called `http://ireallylovecats.com` on which you ha
 
 In `index.html` you could write the following link:
 
-```html
+{% highlight html %}
 <p>
   Visit the <a href="gallery.html">Gallery</a>!
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 Remember: websites are hosted on **computers** just like the one you're currently using. They are simply called **"servers"** because their sole purpose is to host websites. But they still have **files** and **folders** like "regular" computers.
 {: .info}
@@ -133,12 +130,11 @@ You usually use absolute URLs defining a link from _your_ website to _another_ w
 
 In your `http://ireallylovecats.com/gallery.html` file, you could write:
 
-```html
+{% highlight html %}
 <p>
   Find more images of my cats on my <a href="https://twitter.com/ireallylovecats">Twitter account</a>!
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 ### Relative or absolute links?
 

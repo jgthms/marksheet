@@ -53,7 +53,7 @@ There are a lot of inline elements available, but you'll usually come across the
   Just by reading this HTML code, you can easily understand what each <strong>HTML element</strong> means.
 </aside>
 
-```html
+{% highlight html %}
 <article>
   <h1>Main title of the page</h1>
   <h2>A subtitle</h2>
@@ -80,8 +80,7 @@ There are a lot of inline elements available, but you'll usually come across the
     <li><a href="#">One</a></li>
   </ul>
 </aside>
-```
-{: .html}
+{% endhighlight %}
 
 
 ### Generic elements

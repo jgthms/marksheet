@@ -24,17 +24,15 @@ Because computer screens use pixels to display the content, it is the **most com
 
 It can be used to fix the **width** of an element:
 
-```css
+{% highlight css %}
 body{ width: 400px;}
-```
-{: .css}
+{% endhighlight %}
 
 Or set the **text size**:
 
-```css
+{% highlight css %}
 body{ font-size: 20px;}
-```
-{: .css}
+{% endhighlight %}
 
 Pixels in CSS are straightforward because they define **absolute values**: they are not affected by other inherited CSS properties.
 
@@ -46,22 +44,19 @@ Percentages are **relative units**: they rely upon the element's parent and/or a
 
 For example, block-level elements like paragraphs naturally take up the **whole width available**. The following CSS rule will resize them to **half** of the width available.
 
-```css
+{% highlight css %}
 p{ width: 50%;}
-```
-{: .css}
+{% endhighlight %}
 
 Percentages can help set other CSS properties, like text size:
 
-```css
+{% highlight css %}
 strong{ font-size: 150%;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <p>There are <strong>important</strong> challenges ahead of us.</p>
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p>There are <strong style="font-size: 150%;">important</strong> challenges ahead of us.</p>
@@ -78,37 +73,34 @@ Don't confuse the `em` CSS size unit and the `em` CSS selector, which targets `<
 
 The `em` unit is interesting as you define font sizes of HTML elements _relative_ to one another. To design a pleasing and easy to read webpage, you need consistent visual depth. For example, you want your `<h1>` to be twice as big as your body text, your `<h2>` only 1.5 times as big, and your sidebar slightly smaller. This could easily be achieved in CSS:
 
-```css
+{% highlight css %}
 body{ font-size: 16px;}
 h1{ font-size: 2em;}        /* = 32px */
 h2{ font-size: 1.5em;}      /* = 24px */
 aside{ font-size: 0.75em;}  /* = 12px */
-```
-{: .css}
+{% endhighlight %}
 
 If you decide to change the size of your body text, the relative sizes of your headings and sidebar will **change accordingly**, and your webpage will remain **visually balanced**.
 
 By just changing one value, all other values are altered:
 
-```css
+{% highlight css %}
 body{ font-size: 20px;}
 h1{ font-size: 2em;}        /* = 40px */
 h2{ font-size: 1.5em;}      /* = 30px */
 aside{ font-size: 0.75em;}  /* = 16px */
-```
-{: .css}
+{% endhighlight %}
 
 ### Rem
 
 The `rem` unit is similar to `em`, but instead of depending upon the _parent's_ value, it relies upon the **root element's** value, which is the `<html>` element.
 
-```css
+{% highlight css %}
 html{ font-size: 18px;}
 body{ font-size: 1rem;}     /* = 18px */
 h1{ font-size: 2rem;}       /* = 36px */
 h2{ font-size: 1.5rem;}     /* = 27px */
-```
-{: .css}
+{% endhighlight %}
 
 The difference between `rem` and `em` is that `rem` values are **fixed** while `em` values can _multiply_ between each other.
 
@@ -119,13 +111,12 @@ If you set your `html{ font-size: 18px;}`:
 
 Quick example where `2em` is different from `2rem`:
 
-```css
+{% highlight css %}
 html{ font-size: 20px;}
 p{ font-size: 0.8rem;}        /* = 16px */
 p span{ font-size: 2em;}      /* = 16px * 2 = 32px */
 p strong{ font-size: 2rem;}   /* = 20px * 2 = 40px */
-```
-{: .css}
+{% endhighlight %}
 
 The `span` rely upon the `p` font-size value while the `strong` rely upon the `html` font-size value.
 

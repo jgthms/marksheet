@@ -22,10 +22,9 @@ A pseudo-class **can't exist on its own**. It must be **attached to a selector**
 
 The syntax looks like this:
 
-```css
+{% highlight css %}
 .selector:pseudo-class{ }
-```
-{: .css}
+{% endhighlight %}
 
 There is **no space** between the selector and the pseudo-class, to signify that they are **linked together**.
 
@@ -33,11 +32,10 @@ There is **no space** between the selector and the pseudo-class, to signify that
 
 For example, a common pseudo-class used is `:hover`, which will apply a CSS style when the targeted element is **hovered**. Let's test it on **links**.
 
-```css
+{% highlight css %}
 a{ color: blue;}
 a:hover{ color: red;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-821">
   <p>Hover <a>this link</a> and see how it turns red.</p>
@@ -52,20 +50,18 @@ The second line targets the **same HTML elements** but _only_ when something spe
 
 This pseudo-class targets **links that have been visited**. By default, links are **blue** and turn **purple** when you've visited them. Google results work like that.
 
-```css
+{% highlight css %}
 a{ color: dodgerblue;}
 a:visited{ color: rebeccapurple;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <a href="https://www.google.com">Google</a>
 <a href="https://twitter.com">Twitter</a>
 <a href="https://www.facebook.com">Facebook</a>
 <a href="https://www.mozilla.org">Mozilla</a>
 <a href="http://marksheet.io/visited.html">MarkSheet</a>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result" id="result-8211">
   <a href="https://www.google.com">Google</a>
@@ -81,11 +77,10 @@ Applying a different for visited links is often overlooked but comes in handy fo
 
 This pseudo-class happens when an HTML element is **in focus**. This is particularly useful for HTML **inputs**.
 
-```css
+{% highlight css %}
 .form-input{ border: 2px solid grey; padding: 5px;}
 .form-input:focus{ background: lightyellow; border-color: blue; outline: none;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-822">
   <input class="form-input" placeholder="First name">
@@ -98,21 +93,19 @@ The `outline: none;` rule removes the glow from the input.
 
 These pseudo-classes are related to the **[HTML hierarchy](/html-hierarchy.html)**. They target HTML elements depending on the **order** in which they appear in the code.
 
-```html
+{% highlight html %}
 <ul>
   <li>One</li>
   <li>Two</li>
   <li>Three</li>
   <li>Four</li>
 </ul>
-```
-{: .html}
+{% endhighlight %}
 
-```css
+{% highlight css %}
 li:first-child{ background: greenyellow;}
 li:last-child{ background: lightsalmon;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-823">
   <ul>
@@ -143,10 +136,9 @@ This pseudo-class is a more **global** version of `:first-child` and `:last-chil
 
 For example, if you want to target the **second** child, you would use `:nth-child(2)`:
 
-```css
+{% highlight css %}
 li:nth-child(2){ background: violet;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-825">
   <ul>
@@ -164,10 +156,9 @@ While using a number is straightforward, the `:nth-child` comes with 2 keywords:
 * `:nth-child(odd)` will target every odd element
 * `:nth-child(even)` will target every even element
 
-```css
+{% highlight css %}
 li:nth-child(odd){ background: gold;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-826">
   <ul>
@@ -186,10 +177,9 @@ The `n` value increments from **zero** `0` to the **number** of child elements p
 
 What if you want to target every **third** element?
 
-```css
+{% highlight css %}
 li:nth-child(3n){ background: hotpink;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-827">
   <ul>
@@ -218,10 +208,9 @@ You can read `:nth-child(3n)` as _"Target each element whose position is dividab
 
 What if you want to target the 1st item and _every third item after that_?
 
-```css
+{% highlight css %}
 li:nth-child(3n+1){ background: limegreen;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-828">
   <ul>

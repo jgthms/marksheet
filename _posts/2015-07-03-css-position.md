@@ -27,17 +27,15 @@ This is the **default** `position` value: static elements just follow the [natur
 
 When the `position` is set to **relative**, an element can move according to its **current position**.
 
-```html
+{% highlight html %}
 <p>Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
 <p>I imagine the slow-witted sithic, as Ja called him, suddenly realized our intentions and that he was quite likely to lose all his meal instead of having it doubled as he had hoped</p>
 <p>When he saw me clambering up that spear he let out a hiss that fairly shook the ground, and came charging after me at a terrific rate</p>
-```
-{: .css}
+{% endhighlight %}
 
-```css
+{% highlight css %}
 p{ border: 1px solid blue;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p style="border: 1px solid blue;">Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
@@ -47,17 +45,15 @@ p{ border: 1px solid blue;}
 
 Let's move the **second** paragraph:
 
-```html
+{% highlight html %}
 <p>Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
 <p class="second">I imagine the slow-witted sithic, as Ja called him, suddenly realized our intentions and that he was quite likely to lose all his meal instead of having it doubled as he had hoped</p>
 <p>When he saw me clambering up that spear he let out a hiss that fairly shook the ground, and came charging after me at a terrific rate</p>
-```
-{: .html}
+{% endhighlight %}
 
-```css
+{% highlight css %}
 .second{ position: relative; border-color: red; left: 20px; top: 10px;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p style="border: 1px solid blue;">Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
@@ -81,17 +77,16 @@ The characteristic of a _positioned_ element is that it can act as a **reference
 
 Let's imagine a simple **hierarchy**:
 
-```html
+{% highlight html %}
 <section>
   I'm in position relative.
   <p>
     I'm in position absolute!
   </p>
 </section>
-```
-{: .html}
+{% endhighlight %}
 
-```css
+{% highlight css %}
 section {
   background: gold;
   height: 200px;
@@ -107,8 +102,7 @@ p {
   bottom: 10px; /* 10px from the bottom */
   left: 20px; /* 20px from the left */
 }
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <section style="background: gold; height: 200px; margin: 1em 0; padding: 10px; position: relative;">

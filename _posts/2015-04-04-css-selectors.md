@@ -13,13 +13,12 @@ CSS selectors define _which_ elements we want our styling to be applied to.
 
 Targeting generic HTML tags is easy: just use the tag name.
 
-```css
+{% highlight css %}
 a{ /* Links */ }
 p{ /* Paragraphs */ }
 ul{ /* Unordered lists */ }
 li{ /* List items */ }
-```
-{: .css}
+{% endhighlight %}
 
 There's a direct connection between the _name_ of the HTML tag and the CSS _selector_ used.
 
@@ -29,12 +28,11 @@ Considering we probably don't want to style all paragraphs or all titles identic
 
 Of all HTML attributes, the `class` attribute is the most important for CSS. It allows us to define a **group** of HTML elements that we can _target specifically_. Just put a dot `.` in front of the class name you want to use:
 
-```css
+{% highlight css %}
 .date {
   color: red;
 }
-```
-{: .css}
+{% endhighlight %}
 
 On one side, there is the HTML `class` attribute with the value `date`. It must match the name of the CSS class.
 
@@ -43,15 +41,14 @@ You can use any name for your CSS class, as long as it doesn't start with a numb
 
 The `.date` class selector will target all HTML elements that have the `class="date"` attribute. So, the following HTML elements will **all** be styled:
 
-```html
+{% highlight html %}
 <p class="date">
   Saturday Feb 21
 </p>
 <p>
   The event will be on <em class="date">Saturday</em>.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p style="color:red;">Saturday Feb 21</p>
@@ -64,15 +61,13 @@ Bear in mind that the tag name is **irrelevant**. Only the `class` HTML attribut
 
 You can also use the `id` attribute in your HTML, and target it with a hash `#` in your CSS:
 
-```css
+{% highlight css %}
 #tagline{ color: orange;}
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <h1 id="tagline">This heading will be orange.</h1>
-```
-{: .html}
+{% endhighlight %}
 
 ID are similar to Classes, as they rely upon an HTML attribute.
 
@@ -141,22 +136,20 @@ ID are similar to Classes, as they rely upon an HTML attribute.
 
 Let's reuse our previous example where we want our dates to be red:
 
-```css
+{% highlight css %}
 .date {
   color: red;
 }
-```
-{: .css}
+{% endhighlight %}
 
-```html
+{% highlight html %}
 <p class="date">
   Saturday Feb 21
 </p>
 <p>
   The event will be on <em class="date">Saturday</em>.
 </p>
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p style="color:red;">Saturday Feb 21</p>
@@ -165,12 +158,11 @@ Let's reuse our previous example where we want our dates to be red:
 
 What if we want our dates that are in `em` elements to blue instead? We can **add** the following CSS rule:
 
-```css
+{% highlight css %}
 em.date {
   color: green;
 }
-```
-{: .css}
+{% endhighlight %}
 
 The `em.date` combines:
 
@@ -183,12 +175,11 @@ It will only apply to `<em class="date"></em>` HTML elements. It **won't** affec
 
 A **space** in a selector defines a ancestor/descendant relationship. Let's say we want the links in our header to be in red:
 
-```css
+{% highlight css %}
 header a {
   color: red;
 }
-```
-{: .css}
+{% endhighlight %}
 
 This can be read from right to left as: _"Select all `a` elements that are within a `header` element"_. This will prevent all other links (that aren't in the header) to remain unaffected.
 
@@ -198,7 +189,7 @@ HTML elements can have different **states**. The most common case is when you ho
 
 Pseudo-class selectors are attached to usual selectors and start with a **colon** `:`:
 
-```css
+{% highlight css %}
 a {
   color: blue;
 }
@@ -206,5 +197,4 @@ a {
 a:hover {
   color: red;
 }
-```
-{: .css}
+{% endhighlight %}

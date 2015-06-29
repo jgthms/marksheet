@@ -9,22 +9,20 @@ section: sass
 
 In Sass, **nesting CSS rules** allows to define **hierarchy selectors**:
 
-```scss
+{% highlight scss %}
 .title{
   strong{}
   em{}
 }
-```
-{: .scss}
+{% endhighlight %}
 
 This will be compiled into:
 
-```css
+{% highlight css %}
 .title{}
 .title strong{}
 .title em{}
-```
-{: .css}
+{% endhighlight %}
 
 Because `strong` and `em` appear _within_ the `.title` rule (between the 2 curly braces `{` `}`), both will be **prepended** with the parent selector `.title`.
 
@@ -32,7 +30,7 @@ Because `strong` and `em` appear _within_ the `.title` rule (between the 2 curly
 
 Because [CSS priority](/css-priority.html) can be tricky, it's common to use be **specific** when writing selectors, by combining multiple classes/tags to prevent CSS rules to cancel each other out.
 
-```css
+{% highlight css %}
 .description{}
 .description p{}
 .description p a{}
@@ -46,12 +44,11 @@ Because [CSS priority](/css-priority.html) can be tricky, it's common to use be 
 .description table td.empty,
 .description table th.empty{}
 .description table th{}
-```
-{: .css}
+{% endhighlight %}
 
 To prevent rewriting `.description`, let's use the ampersand `&`:
 
-```scss
+{% highlight scss %}
 .description{}
   p{}
   p a{}
@@ -66,12 +63,11 @@ To prevent rewriting `.description`, let's use the ampersand `&`:
   table td.empty,
   table th.empty{}
 }
-```
-{: .scss}
+{% endhighlight %}
 
 You can go even further by replacing `& p` and `& table` with `&` to create **nested** selectors:
 
-```scss
+{% highlight scss %}
 .description{}
   p{
     a{
@@ -90,8 +86,7 @@ You can go even further by replacing `& p` and `& table` with `&` to create **ne
     th{}
   }
 }
-```
-{: .scss}
+{% endhighlight %}
 
 Remember **[HTML nesting](/html-hierarchy.html)**? The indentation in Sass allows to _replicate_ how HTML elements are nested.
 
@@ -99,7 +94,7 @@ Notice how we only wrote `table` and `.empty` **once** for example.
 
 It will generate exactly the CSS we started with:
 
-```css
+{% highlight css %}
 .description{}
 .description p{}
 .description p a{}
@@ -113,14 +108,13 @@ It will generate exactly the CSS we started with:
 .description table td.empty,
 .description table th.empty{}
 .description table th{}
-```
-{: .css}
+{% endhighlight %}
 
 ### The ampersand parent selector
 
 When you nest selectors in Sass, it basically adds a **space** between the _parent_ selector and the _child_ one. So:
 
-```scss
+{% highlight scss %}
 //scss
 .parent{
   .child{}
@@ -128,14 +122,13 @@ When you nest selectors in Sass, it basically adds a **space** between the _pare
 
 // becomes in css
 .parent .child{}
-```
-{: .scss.css}
+{% endhighlight %}
 
 The **space** between `.parent` and `.child` defines a **hierarchy**: this selector targets HTML elements with `class="child"` nested _within_ `class="parent"`.
 
 Now, what if you want to use **pseudo-selectors** like `:hover`? Or you want to have a selector with **joined classes**? You can use the **ampersand** which is shortcut for the parent selector:
 
-```scss
+{% highlight scss %}
 //scss
 .parent{
   &:hover{}
@@ -145,8 +138,7 @@ Now, what if you want to use **pseudo-selectors** like `:hover`? Or you want to 
 // becomes in css
 .parent:hover{}
 .parent.other-class{}
-```
-{: .scss.css}
+{% endhighlight %}
 
 Notice how there is **no space** between `.parent` and either `:hover` or `.other-class`.
 
@@ -154,7 +146,7 @@ The `.parent.other-class` will target HTML elements that have `class="parent oth
 
 ### Full example
 
-```css
+{% highlight css %}
 .post-content{}
 .post-content a{}
 .post-content a:hover{}
@@ -189,10 +181,9 @@ The `.parent.other-class` will target HTML elements that have `class="parent oth
 .post-content table code{}
 .post-content table pre{}
 .post-content table pre:before{}
-```
-{: .css}
+{% endhighlight %}
 
-```scss
+{% highlight scss %}
 .post-content{
   a{
     &:hover{}
@@ -239,6 +230,5 @@ The `.parent.other-class` will target HTML elements that have `class="parent oth
     }
   }
 }
-```
-{: .scss}
+{% endhighlight %}
 

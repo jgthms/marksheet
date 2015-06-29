@@ -22,13 +22,12 @@ The purpose of **floating** an element is to **push it to one side** and make th
 
 To explain the behaviour, let's use a common example: floating an image within a paragraph.
 
-```html
+{% highlight html %}
 <p>
   <img src="http://placehold.it/150x150">
   The bells of the neighbouring church made a jangling tumult, a cart carelessly driven smashed, amid shrieks and curses, against the water trough up the street.  Sickly yellow lights went to and fro in the houses, and some of the passing cabs flaunted unextinguished lamps. And overhead the dawn was growing brighter, clear and steady and calm.
 </p>
-```
-{: .html}
+{% endhighlight %}
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">
@@ -41,10 +40,9 @@ The problem when inserting an image within a text is that **an image must fit on
 
 What we want is to wrap the text _around_ the image:
 
-```css
+{% highlight css %}
 img{ float: left;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">
@@ -85,19 +83,17 @@ Floating elements will have a `display: block` applied to them automatically, an
 
 The `clear` property allows to **push elements _after_ the float**. It can only be applied on **block** elements.
 
-```html
+{% highlight html %}
 <p>
   <img src="http://placehold.it/150x150">
   <span>He heard footsteps running to and fro in the rooms, and up and down stairs behind him</span>
 </p>
-```
-{: .html}
+{% endhighlight %}
 
-```css
+{% highlight css %}
 img{ float: left;}
 span{ clear: left; display: block;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">

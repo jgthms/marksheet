@@ -41,15 +41,14 @@ Like the `transition` property, `animation` is a **shorthand** property for seve
 
 To animate a loading button, you could write a **bouncing** animation:
 
-```css
+{% highlight css %}
 @keyframes bouncing{
   0%  { bottom: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5);}
   100%{ bottom: 50px; box-shadow: 0 50px 50px rgba(0,0,0,0.1);}
 }
 
 .loading-button{ animation: bouncing 0.5s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-1">
   <a>Loading</a>
@@ -84,7 +83,7 @@ Each keyframe is **CSS rule**, meaning that you can write CSS properties just li
 
 To define an animation, just write the keyword `@keyframes` followed by its **name**:
 
-```css
+{% highlight css %}
 @keyframes around {
   0%  { left: 0; top: 0;}
   25% { left: 240px; top: 0;}
@@ -93,8 +92,7 @@ To define an animation, just write the keyword `@keyframes` followed by its **na
   100%{ left: 0; top: 0;}
 }
 p{ animation: around 4s linear infinite;}
-```
-{: .css}
+{% endhighlight %}
 
 <div class="result" id="result-2">
   <p>Hello</p>
@@ -109,14 +107,13 @@ The animation's **name** is used at least **twice**:
 * when **writing** the animation using `@keframes`
 * when **using** the animation using the `animation-name` property (or withing the `animation` shorthand)
 
-```css
+{% highlight css %}
 @keyframes whatever{
   /* ... */
 }
 
 .selector{ animation-name: whatever;}
-```
-{: .css}
+{% endhighlight %}
 
 Like CSS class names, animation names can only include:
 
@@ -131,10 +128,9 @@ It can not start with a number or two dashes.
 
 Just like [transition durations](/css-transitions.html#transition-duration), animation durations can be set in **seconds** `1s` or **milliseconds** `200ms`.
 
-```css
+{% highlight css %}
 .selector{ animation-duration: 0.5s;}
-```
-{: .css}
+{% endhighlight %}
 
 It defaults to `0s`, which means no animation at all.
 
@@ -142,10 +138,9 @@ It defaults to `0s`, which means no animation at all.
 
 Just like [transition timing functions](/css-transitions.html#transition-timing-function), animation timing functions can use **keywords** like `linear`, `ease-out`, or be defined using custom **cubic bezier** functions.
 
-```css
+{% highlight css %}
 .selector{ animation-timing-function: ease-in-out;}
-```
-{: .css}
+{% endhighlight %}
 
 It defaults to `ease`.
 
@@ -160,12 +155,11 @@ It defaults to `0s`, which means no delay at all.
 
 It's useful when triggering multiple animations **in sequence**.
 
-```css
+{% highlight css %}
 .a,.b,.c{ animation: bouncing 1s;}
 .b{ animation-delay: 0.25s;}
 .c{ animation-delay: 0.5s;}
-```
-{: .css}
+{% endhighlight %}
 
 ### animation-iteration-count
 
@@ -175,10 +169,9 @@ By default, animations are only played **once** (value of `1`). You can set 3 ty
 * **non-integers** like `0.5` which will play only half the animation
 * the **keyword** `infinite` which will repeat the animation indefinitely
 
-```css
+{% highlight css %}
 .selector{ animation-duration: infinite;}
-```
-{: .css}
+{% endhighlight %}
 
 ### animation-direction
 

@@ -13,11 +13,10 @@ The `color` property defines the color of the **text**. It is pretty straightfor
 
 CSS provides [145 colors names](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), from the most basic (black, white, orange, yellow, blue...) to the more specific (lawngreen, orchid, crimson...).
 
-```css
+{% highlight css %}
 body{ color: black;}
 a{ color: orange;}
-```
-{: .css}
+{% endhighlight %}
 
 Because the color names are hard to remember, and because you probably want very specific colors, color names are not often used.
 
@@ -31,33 +30,29 @@ Because the RGB model is directly related to how colors are _physically_ rendere
 
 For example, the red color of this website is 219 amounts of Red, 78 of Green, and 68 of Blue:
 
-```css
+{% highlight css %}
 a{ color: rgb(219, 78, 68);}
-```
-{: .css}
+{% endhighlight %}
 
 The black color is no amount of either Red, Green or Blue:
 
-```css
+{% highlight css %}
 body{ color: rgb(0, 0, 0);}
-```
-{: .css}
+{% endhighlight %}
 
 On the other side of the spectrum, white is the full amount of each Red, Green and Blue:
 
-```css
+{% highlight css %}
 body{ color: rgb(255, 255, 255);}
-```
-{: .css}
+{% endhighlight %}
 
 ### rgba
 
 The `rgba` color unit is `rgb` to which we add an **alpha** value (ranging from 0 to 1, in decimal values), which defines how transparent the color is:
 
-```css
+{% highlight css %}
 body{ color: rgba(0, 0, 0, 0.8);}
-```
-{: .css}
+{% endhighlight %}
 
 A slightly transparent black color.
 {: .info}
@@ -78,10 +73,9 @@ Instead of a color being a combination of Red, Green and Blue, you define:
 
 Again, the red color of this website is define this way in HSL:
 
-```css
+{% highlight css %}
 a{ color: hsl(4, 68%, 56%);}
-```
-{: .css}
+{% endhighlight %}
 
 `4` indicates it's red
 `68%` indicates the red is quite prominent
@@ -93,10 +87,9 @@ I consider `hsl` to be **human-readable**, whereas `rgb` is more **computer-read
 
 `hsla` is the same as `hsl`, with the added value of being able to define an **alpha** value:
 
-```css
+{% highlight css %}
 body{ color: hsl(4, 68%, 56%, 0.5);}
-```
-{: .css}
+{% endhighlight %}
 
 A transparent red color.
 {: .info}
