@@ -1,8 +1,8 @@
 @mixin arrow() {
   &{ @include replace(none, 32px, 32px);
     &:before,
-    &:after{ background: $light; content: " "; display: block; height: 2px; left: 8px; position: absolute; top: 16px; transform: rotate(45deg); width: 10px;}
-    &:after{ left: auto; right: 8px; transform: rotate(-45deg);}
+    &:after{ background: $light; content: " "; display: block; height: 2px; left: 8px; position: absolute; top: 16px; @include transform(rotate(45deg)); width: 10px;}
+    &:after{ left: auto; right: 8px; @include transform(rotate(-45deg));}
     &:hover{ background: $blue;
       &:before,
       &:after{ background: white !important;}

@@ -40,13 +40,13 @@ $chaptersOffset: 1.5rem;
   }
   @include on($laptop) {
     ul{
-      display: flex;
+      @include display(flex);
       li{
-        display: flex; flex: 3; margin-right: 1px; min-width: 10rem;
-        &:nth-child(2){ flex: 13;}
-        &:nth-child(3){ flex: 29;}
-        &:nth-child(4){ flex: 5; margin-right: 0;}
-        a{ flex: 1; margin: 0;}
+        @include display(flex); @include flex(3); margin-right: 1px; min-width: 10rem;
+        &:nth-child(2){ @include flex(13);}
+        &:nth-child(3){ @include flex(29);}
+        &:nth-child(4){ @include flex(5); margin-right: 0;}
+        a{ @include flex(1); margin: 0;}
       }
     }
   }
@@ -113,7 +113,7 @@ $chaptersOffset: 1.5rem;
   }
   .answer,
   .important,
-  .info{ background: rgba($blue, 0.1); border-left: 0.25em solid $blue; color: rgba(black, 0.5c); font-size: $small; padding: 1rem;}
+  .info{ background: rgba($blue, 0.1); border-left: 0.25em solid $blue; color: rgba(black, 0.5); font-size: $small; padding: 1rem;}
   .answer{
     background: rgba($green, 0.1); border-left-color: $green;
     .question{
@@ -210,4 +210,9 @@ $chaptersOffset: 1.5rem;
   @include on($laptop) {
     float: right; margin: 0 0 2rem 2rem; max-width: 20rem; min-width: 12rem;
   }
+}
+
+.tweet{
+  height: 28px; margin-top: 10px;
+  a{ display: inline-block; line-height: 28px; vertical-align: top;}
 }

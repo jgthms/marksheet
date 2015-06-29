@@ -1,11 +1,11 @@
 // Index
 
 .route-index{
+  .heading{ text-align: center;}
   @include on($laptop) {
     .logo{ display: none;}
-    .main{ align-items: center; display: flex; flex-direction: column; justify-content: center; height: 100vh; padding: 0 4rem 4rem;
+    .main{ @include align-items(center); @include display(flex); @include flex-direction(column); @include justify-content(center); height: 100vh; padding: 0 4rem 4rem;
       section{ max-width: 86rem; width: 100%;}
-      .heading{ text-align: center;}
     }
   }
 }
@@ -32,6 +32,17 @@
     h3 a:visited{ color: $html5;}
   }
   .pagination a{ background: $html5;}
+}
+
+.section-sass{
+  .table-of-contents a{ color: $sass;}
+  .content{
+    a{ color: $sass;
+      &:visited{ color: $visited;}
+    }
+    h3 a:visited{ color: $sass;}
+  }
+  .pagination a{ background: $sass;}
 }
 
 // Chapters
@@ -79,7 +90,7 @@
     }
   }
   @include on($laptop) {
-    .main{ display: flex; flex-direction: column; justify-content: center; padding: 4rem 6rem 6rem;
+    .main{ @include display(flex); @include flex-direction(column); @include justify-content(center); padding: 4rem 6rem 6rem;
       .heading h1{ left: 6rem; position: fixed; top: 2rem;}
       .content{ max-width: 50%;
         p{ max-width: none;}

@@ -24,11 +24,11 @@ $desktopOffset: 32px; // 32px - ((32px - 22px) / 2)
 }
 
 .navigation{ font-size: $small; min-width: 120px; position: absolute; right: $mobileOffset; text-align: left; top: $mobileOffset;
-  a{ @include arrow(); position: absolute; right: 0; top: 0; transform: rotate(-90deg);
-    &:nth-child(2){ right: 40px; transform: rotate(90deg);
+  a{ @include arrow(); position: absolute; right: 0; top: 0; @include transform(rotate(-90deg));
+    &:nth-child(2){ right: 40px; @include transform(rotate(90deg));
       &:hover{ background: $html5;}
     }
-    &:nth-child(3){ display: none; right: $desktopOffset; transform: rotate(180deg);
+    &:nth-child(3){ display: none; right: $desktopOffset; @include transform(rotate(180deg));
       &:hover{ background: $web;}
     }
   }
@@ -49,7 +49,7 @@ $desktopOffset: 32px; // 32px - ((32px - 22px) / 2)
 
 $menuWidth: 252px;
 
-.menu{ @include overlay(); @include scrollbar(5px, 5px, $black); background: $black; font-size: 0.9rem; overflow: hidden; overflow-y: auto; position: fixed; right: auto; transform: translate3d(-$menuWidth, 0, 0); transition: 100ms ease-out; width: $menuWidth;
+.menu{ @include overlay(); @include scrollbar(5px, 5px, $black); background: $black; font-size: 0.9rem; overflow: hidden; overflow-y: auto; position: fixed; right: auto; @include transform(translate3d(-$menuWidth, 0, 0)); transition: 100ms ease-out; width: $menuWidth;
   section{ border-bottom: 1px solid rgba(white, 0.05); padding: 0.5rem 0;}
   a{ color: $medium; display: block; padding: 0.75rem 2rem; position: relative;
     strong{ color: $lighter; font-weight: 400;}
@@ -85,7 +85,7 @@ $menuWidth: 252px;
   }
 }
 
-.main{ flex: 1; padding: 2rem;
+.main{ @include flex(1); padding: 2rem;
   @include on($laptop) {
     padding: 2rem 6rem 6rem 6rem;
   }
@@ -114,6 +114,6 @@ $menuWidth: 252px;
 .overlay{ @include overlay(); display: none; position: fixed;}
 
 html.open-menu{ overflow: hidden;
-  .menu{ box-shadow: 0 0 10rem rgba(black, 0.5); opacity: 1; transform: translate3d(0, 0, 0); visibility: visible;}
+  .menu{ box-shadow: 0 0 10rem rgba(black, 0.5); opacity: 1; @include transform(translate3d(0, 0, 0)); visibility: visible;}
   .overlay{ display: block;}
 }
