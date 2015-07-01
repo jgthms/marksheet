@@ -5,15 +5,14 @@
   &:hover{ background: $black !important;}
 }
 
-$chaptersOffset: 1.5rem;
-
-.chapters{ margin-top: 2rem;
+.chapters{
+  margin-top: 2rem;
   ul{
     font-family: $serif; text-align: left;
     li{
       display: inline;
       a{
-        background: $web; border-radius: 3px; color: rgba(white, 0.5); display: block; margin-top: 1rem; padding: 1.25rem $chaptersOffset 2rem; position: relative;
+        background: $web; border-radius: 3px; color: rgba(white, 0.5); display: block; margin-top: 1rem; padding: 1.25rem 1.5rem 2rem; position: relative;
         &:hover{ background: $black;}
         .fa{ float: right; font-size: 28px;}
         strong{ color: white;}
@@ -192,6 +191,11 @@ $chaptersOffset: 1.5rem;
   strong{ display: block;}
 }
 
+.like,
+.tweet{
+  display: inline-block; height: 20px; line-height: 20px; margin: 0 0.5rem; vertical-align: top;
+}
+
 .pagination{
   margin-top: 2rem;
   a{ @extend .button;}
@@ -210,9 +214,4 @@ $chaptersOffset: 1.5rem;
   @include on($laptop) {
     float: right; margin: 0 0 2rem 2rem; max-width: 20rem; min-width: 12rem;
   }
-}
-
-.tweet{
-  height: 28px; margin-top: 10px;
-  a{ display: inline-block; line-height: 28px; vertical-align: top;}
 }

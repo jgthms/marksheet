@@ -1,10 +1,13 @@
 // Index
 
 .route-index{
-  .heading{ text-align: center;}
+  .heading{
+    text-align: center;
+    h2{ margin-bottom: 1rem;}
+  }
   @include on($laptop) {
     .logo{ display: none;}
-    .main{ @include align-items(center); @include display(flex); @include flex-direction(column); @include justify-content(center); height: 100vh; padding: 0 4rem 4rem;
+    .main{ @include align-items(center); @include display(flex); @include flex-direction(column); @include justify-content(center); min-height: 100vh; padding: 2rem 4rem 4rem;
       section{ max-width: 86rem; width: 100%;}
     }
   }
