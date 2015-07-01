@@ -66,7 +66,7 @@ $desktopOffset: 32px; // 32px - ((32px - 22px) / 2)
 $menuWidth: 252px;
 
 .menu{
-  @include overlay(); @include scrollbar(5px, 5px, $black); background: $black; font-size: 0.9rem; overflow: hidden; overflow-y: auto; position: fixed; right: auto; @include transform(translate3d(-$menuWidth, 0, 0)); transition: 100ms ease-out; width: $menuWidth;
+  @include overlay(); @include scrollbar(5px, 5px, $black); background: $black; background: rgba($black, 0.96); font-size: $small; overflow: hidden; overflow-y: auto; position: fixed; right: auto; @include transform(translate3d(-$menuWidth, 0, 0)); transition: 100ms ease-out; width: $menuWidth;
   section{ border-bottom: 1px solid rgba(white, 0.05); padding: 0.5rem 0;}
   a{
     color: $medium; display: block; padding: 0.75rem 2rem; position: relative;
@@ -113,8 +113,9 @@ $menuWidth: 252px;
 }
 
 .footer{
-  background: $black; color: $dark; font-size: 0.9rem; padding: 4rem 2rem;
+  background: $black; color: $dark; font-size: $small; padding: 4rem 2rem;
   p{
+    position: relative; z-index: 1;
     strong{ color: $light; font-weight: normal;}
     a{
       color: $medium; text-decoration: underline;

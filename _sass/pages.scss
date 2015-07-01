@@ -1,9 +1,12 @@
 // Index
 
 .route-index{
-  .heading{
-    text-align: center;
-    h2{ margin-bottom: 1rem;}
+  .main{
+    section{ position: relative;}
+    .heading{
+      text-align: center;
+      h2{ margin-bottom: 1rem;}
+    }
   }
   @include on($laptop) {
     .logo{ display: none;}

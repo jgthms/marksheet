@@ -4,6 +4,8 @@ title: "MarkSheet: a free guide to learn HTML and CSS"
 route: index
 ---
 
+<div id="dots" class="dots"></div>
+
 <section class="heading">
   <img src="/images/marksheet-logo.png" alt="MarkSheet logo">
   <h1>MarkSheet</h1>
@@ -71,9 +73,3 @@ route: index
     </li>
   </ul>
 </section>
-
-{% comment %}
-{% for post in site.posts reversed %}
-  <p><a href="{{post.url}}">{{post.id}}</a></p>
-{% endfor %}
-{% endcomment %}

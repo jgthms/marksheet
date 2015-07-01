@@ -157,6 +157,8 @@
   }
 }
 
+.dots{ @include overlay(); position: fixed;}
+
 .fa{ font-size: 14px; vertical-align: top;}
 
 .footnotes{
@@ -205,7 +207,7 @@
 }
 
 .table-of-contents{
-  @include label("Table of Contents"); background: $background; font-size: 0.9rem; line-height: 1.25; margin: 3rem 0 2rem; padding: 0.75rem 1rem 0.75rem 1.5rem; position: relative;
+  @include label("Table of Contents"); background: $background; font-size: $small; line-height: 1.25; margin: 3rem 0 2rem; padding: 0.75rem 1rem 0.75rem 1.5rem; position: relative;
   &:before{ background: $light; color: white; top: -1rem;}
   ul{ list-style: disc outside;}
   li{ margin: 1em;}

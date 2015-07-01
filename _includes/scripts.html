@@ -17,6 +17,10 @@
 <script type="text/javascript" src="/javascript/mode/xml/xml.js"></script>
 <script type="text/javascript" src="/javascript/mode/htmlmixed/htmlmixed.js"></script>
 <script type="text/javascript" src="/javascript/marksheet.js"></script>
+{% if page.route == 'index' %}
+  <script type="text/javascript" src="/javascript/d3.min.js"></script>
+  <script type="text/javascript" src="/javascript/index.js"></script>
+{% endif %}
 {% if page.route == 'post' %}
   <script type="text/javascript" src="/javascript/post.js"></script>
 {% endif %}
