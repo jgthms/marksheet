@@ -85,6 +85,6 @@ By default, a background image will repeat itself indefinitely. You can choose t
 
 {% highlight css %}
 body{ background-repeat: repeat-x;} /* Only horizontally */
-body{ background-repeat: repeat-x;} /* Only vertically */
+body{ background-repeat: repeat-y;} /* Only vertically */
 body{ background-repeat: no-repeat;} /* The background image will only appear once */
 {% endhighlight %}
