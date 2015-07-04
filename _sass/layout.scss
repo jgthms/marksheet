@@ -55,7 +55,7 @@ $desktopOffset: 32px; // 32px - ((32px - 22px) / 2)
   }
 }
 
-.logo{
+.icon{
   @include replace(url("/images/marksheet-icon.png"), 32px, 32px); height: 48px; left: 50%; margin-left: -24px; position: absolute; top: 0; width: 48px;
   &:hover{ background-color: $background;}
   @include on($laptop) {

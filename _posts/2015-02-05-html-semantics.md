@@ -31,7 +31,7 @@ You'll mainly use:
 
 * `<p>` for paragraphs
 * `<ul>` for (unordered) lists
-* `<ol>` for (unordered) lists
+* `<ol>` for (ordered) lists
 * `<li>` for individual list items
 * `<blockquote>` for quotes
 

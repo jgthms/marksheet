@@ -70,7 +70,7 @@
 
 @mixin replace($bg, $h, $w) {
   background: $bg center center no-repeat;
-  background-size: $h $w; 
+  background-size: $w $h; 
   display: block;
   height: $h;
   outline: none;

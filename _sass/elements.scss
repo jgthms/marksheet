@@ -157,7 +157,7 @@
   }
 }
 
-.dots{ @include overlay(); position: fixed;}
+.dots{ @include overlay(); position: fixed; text-align: center;}
 
 .fa{ font-size: 14px; vertical-align: top;}
 
@@ -170,17 +170,20 @@
 
 .heading{
   line-height: 1.125; margin-bottom: 2rem;
-  img{ margin-bottom: 1rem; max-width: 160px;}
+  img{ margin-bottom: 2rem; max-width: 160px;}
   h1{ color: $dark; font-size: 1.2rem; font-style: italic; font-weight: 400; letter-spacing: -0.04em; position: relative;
     em{ font-style: normal; opacity: 0.5;}
+    &.type{ @include replace(url("/images/marksheet-type.png"), 41px, 217px); margin: 0 auto;}
     @include on($laptop) {
       padding-top: 5px;
     }
   }
   h2{
     color: $black; font-size: 2.4rem; font-weight: 700; letter-spacing: -0.04em; margin-top: 1rem;
+    &.tagline{ @include replace(url("/images/marksheet-tagline.png"), 25px, 323px); background-size: 100%; margin: 1rem auto 2rem; max-width: 100%;}
     @include on($laptop) {
       margin-top: 2rem;
+      &.tagline{ background-size: 323px 25px;}
     }
   }
   @include on($laptop) {
@@ -188,14 +191,19 @@
   }
 }
 
+.hello{
+  height: 20px; opacity: 0; position: relative;
+  .like,
+  .tweet{
+    color: white; display: inline-block; height: 20px; font-size: 12px; line-height: 20px; margin: 0 0.5rem; position: absolute; top: 0; vertical-align: top;
+  }
+  .like{ left: 50%;}
+  .tweet{ right: 50%;}
+}
+
 .intro{
   font-size: 1.2rem;
   strong{ display: block;}
-}
-
-.like,
-.tweet{
-  display: inline-block; height: 20px; line-height: 20px; margin: 0 0.5rem; vertical-align: top;
 }
 
 .pagination{

@@ -3,13 +3,10 @@
 .route-index{
   .main{
     section{ position: relative;}
-    .heading{
-      text-align: center;
-      h2{ margin-bottom: 1rem;}
-    }
+    .heading{ text-align: center;}
   }
   @include on($laptop) {
-    .logo{ display: none;}
+    .icon{ display: none;}
     .main{ @include align-items(center); @include display(flex); @include flex-direction(column); @include justify-content(center); min-height: 100vh; padding: 2rem 4rem 4rem;
       section{ max-width: 86rem; width: 100%;}
     }
