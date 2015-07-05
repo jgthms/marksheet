@@ -95,7 +95,7 @@ As it can be hard to keep track of the order in which HTML elements have been op
     <strong>multiple</strong>
     lines but will be nevertheless
     be displayed on a
-    <strong>single</strong>
+    <em>single</em>
     one.
   </p>
 </article>

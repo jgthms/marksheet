@@ -113,9 +113,8 @@ $menuWidth: 252px;
 }
 
 .footer{
-  background: $black; color: $dark; font-size: $small; padding: 4rem 2rem;
+  background: $black; color: $dark; font-size: $small; padding: 4rem 2rem; position: relative; z-index: 1;
   p{
-    position: relative; z-index: 1;
     strong{ color: $light; font-weight: normal;}
     a{
       color: $medium; text-decoration: underline;
@@ -123,7 +122,15 @@ $menuWidth: 252px;
     }
     + p{ margin-top: 2em;}
     &:first-child{
-      a{ text-decoration: none;}
+      height: 31px;
+      .follow{
+        float: right; height: 31px; line-height: 31px;
+        a{ color: #55acee;}
+      }
+      a[rel="license"]{
+        float: left; text-decoration: none;
+        img{ display: block;}
+      }
     }
   }
   @include on($tablet){
