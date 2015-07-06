@@ -160,7 +160,7 @@ What if we want our dates that are in `em` elements to blue instead? We can **ad
 
 {% highlight css %}
 em.date {
-  color: green;
+  color: blue;
 }
 {% endhighlight %}
 
