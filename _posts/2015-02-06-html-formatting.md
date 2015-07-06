@@ -79,11 +79,11 @@ If you want to **close** an HTML element, you first have to close all its _child
 As HTML elements can be nested within each other, you have to keep track of the **order** in which they have been opened, as it will affect the order in which they are closed.
 
 {% highlight html %}
-<article><p>This code is writing on a <strong>single</strong> line.</p></article>
+<article><p>This code is written on a <strong>single</strong> line.</p></article>
 {% endhighlight %}
 
 <div class="result">
-  <article><p>This code is writing on a <strong>single</strong> line.</p></article>
+  <article><p>This code is written on a <strong>single</strong> line.</p></article>
 </div>
 
 As it can be hard to keep track of the order in which HTML elements have been opened, it is recommended to write HTML in a **tree format**:
