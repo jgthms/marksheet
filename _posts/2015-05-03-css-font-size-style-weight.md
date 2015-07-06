@@ -45,7 +45,7 @@ font-weight: 200; /* Extra Light */
 font-weight: 300; /* Light */
 font-weight: 400; /* Which is like font-weight: normal; */
 font-weight: 500; /* Medium */
-font-weight: 500; /* Semi Bold */
+font-weight: 600; /* Semi Bold */
 font-weight: 700; /* Which is like font-weight: bold; */
 font-weight: 800; /* Extra Bold */
 font-weight: 900; /* Ultra Bold */
