@@ -22,7 +22,7 @@ route: post
 <nav class="pagination">
   {% if page.next %}
     <a href="{{ page.next.url }}">
-      <em>Next &rarr;</em>
+      <em>Далее &rarr;</em>
       <strong>{{ page.next.title }}</strong>
     </a>
   {% endif %}
@@ -30,10 +30,10 @@ route: post
 
 <nav id="navigation" class="navigation">
   {% if page.next %}
-    <a href="{{ page.next.url }}">Next article</a>
+    <a href="{{ page.next.url }}">Следующая статья</a>
   {% endif %}
   {% if page.previous %}
-    <a href="{{ page.previous.url }}">Previous</a>
+    <a href="{{ page.previous.url }}">Назад</a>
   {% endif %}
-  <a id="top">Back to top</a>
+  <a id="top">Вверх</a>
 </nav>
