@@ -1,12 +1,13 @@
 ---
 layout: chapter
-title: "HTML <strong>Basics</strong>"
-subtitle: "HTML is like <strong>Word</strong> but for the <strong>Web</strong>"
+title: "HTML <strong>Основы</strong>"
+subtitle: "HTML похож на <strong>Мир</strong> но, создан для <strong>Веба</strong>"
 section: html
 ---
 
-You're certainly already acquainted with document editors, like **Microsoft <strong>Word</strong>**, with which you can **structure** your document with titles, paragraph, lists, tables, images, **bold** and _italic_ text.
+Вы наверное сталкивались, а возможно даже работали в программах вроде **Microsoft <strong>Word</strong>**, с помощью которых вы можете создавать **структуру** документа с помощью названий, параграфов, списков, таблиц, картинок, **жирных** и _курсивных_ текстов.
 
 **HTML** provides roughly the same elements of formatting. The key difference is that formatting text in Microsoft Word is _visual_, whereas HTML code is purely **semantic**: you provide _meaning_ to your text.
+**HTML** позволяет использовать те же элементы для форматирования. Отличие лишь в том, что форматирование текста в Microsoft Word _визуальное_, в то время как в HTML оно **семантичное**: вы пишите ваши _задумки_ с помощью текста, и тегов.
 
-The same way you use ♫ **notes** ♬ to write **music**, you use **HTML** to write **webpages**.
+Точно так же как вы используете ♫ **ноты** ♬ для написания **музыки**, вы используете **HTML** для написания **веб страниц**.
