@@ -1,6 +1,6 @@
 # [Marksheet](http://marksheet.io): беслатный учебник HTML и CSS
 
-[![Marksheet screenshot](https://raw.github.com/jgthms/marksheet/master/images/marksheet-free-guide-html-css.png)](http://marksheet.io)
+[![Marksheet screenshot](https://raw.github.com/wielski/wielski.github.io/master/images/marksheet-free-guide-html-css.png)](http://marksheet.io)
 
 # License
 
