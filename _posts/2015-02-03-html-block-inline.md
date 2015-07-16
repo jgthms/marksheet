@@ -1,53 +1,53 @@
 ---
 layout: post
-title: "HTML <strong>Block</strong> and <strong>Inline</strong>"
-subtitle: "HTML has 2 main <strong>types</strong> of elements"
+title: "<strong>Строчно</strong> - <strong>Блочные</strong> элементы HTML"
+subtitle: "HTML имеет 2 основных <strong>типа</strong> элементов"
 section: html
 ---
 
-In HTML, you'll mainly come across 2 types of HTML elements:
+В HTML, Вам, в основном, будет попадаться 2 типа элементов:
 
-* **block** elements like:
+* **блочные** как:
 
-    * paragraphs `<p>`
-    * lists: unordered (with bullet points) `<ul>` or ordered lists (with numbers) `<ol>`
-    * headings: from 1st level `<h1>` to 6th level headings `<h6>`
-    * articles `<article>`
-    * sections `<section>`
-    * long quotes `<blockquote>`
+    * параграф `<p>`
+    * списки: неупорядоченные (с точками в начале) `<ul>` или упорядоченные списки (с номерами) `<ol>`
+    * заголовки: от 1-го уровня `<h1>` до 6-го `<h6>`
+    * содержание `<article>`
+    * секции `<section>`
+    * длинные цитаты `<blockquote>`
 
-* **inline** elements like:
+* **строчные** как:
 
-    * links `<a>`
-    * emphasised words `<em>`
-    * important words `<strong>`
-    * short quotes `<q>`
-    * abbreviations `<abbr>`
+    * ссылки `<a>`
+    * выделяемые слова `<em>`
+    * ажные (жирные) слова `<strong>`
+    * короткие цитаты `<q>`
+    * сокращения `<abbr>`
 
-**Block** elements are meant to **structure** the main parts of your page, by dividing your content in _coherent_ blocks.
+**Блочные** элементы предназначены для **структурирования** tосновных частей вашей страницы,  путем деления содержимого в _связанных между собой_ блоках.
 
-**Inline** elements are meant to differentiate _part_ of a text, to give it a particular function or meaning. Inline elements usually comprise a single or few words.
+**Строчные** элементы предназначены для предназначены для дифференциации _части_ текста, чтобы дать ему определенную функцию или смысл. Строчные элементы, как правило, включают в себя одно или несколько слов.
 
 
 {% highlight html %}
-<p>Have you seen this <a href="http://www.youtube.com">amazing video</a> on YouTube?</p>
+<p>Вы видели это <a href="http://www.youtube.com">изумительное  видео</a> на YouTube?</p>
 {% endhighlight %}
 
-### Opening and closing tags
+### Открывающиеся и закрывающиеся теги
 
-**All** block-level elements have an opening and closing tags.
+**Все** блочные элементы имеют открывающиеся и закрывающиеся теги.
 
-As a result, self-enclosing elements are **inline** elements, simply because their syntax don't allow them to contain any other HTML element.
+В результате, Самозакрывающиеся элементы являются **строчными** элементами, просто потому, что их синтаксис не позволяет им содержать любой другой HTML элемент.
 
 <div class="table">
   <table>
     <tr>
       <th class="empty"></th>
-      <th>Have opening and closing tags</th>
-      <th>Self-enclosing</th>
+      <th>Имеют открывающиеся и закрывающиеся теги</th>
+      <th>Самозакрывающиеся</th>
     </tr>
     <tr>
-      <th>Block elements</th>
+      <th>Блочные элементы</th>
       <td>
         <code>&lt;p&gt;</code>
         <code>&lt;/p&gt;</code>
@@ -59,11 +59,11 @@ As a result, self-enclosing elements are **inline** elements, simply because the
         <code>&lt;/ol&gt;</code>
       </td>
       <td>
-        <strong>Impossible</strong>
+        <strong>Невозможно</strong>
       </td>
     </tr>
     <tr>
-      <th>Inline elements</th>
+      <th>Строчные элементы</th>
       <td>
         <code>&lt;a&gt;</code>
         <code>&lt;/a&gt;</code>
@@ -85,9 +85,9 @@ As a result, self-enclosing elements are **inline** elements, simply because the
   </table>
 </div>
 
-### Other types of HTML elements
+### Другие типы HTML элементов
 
-There are several exceptions to the block/inline elements, but the ones you will most often encounter are:
+Есть несколько исключений блочных / строчных элементов, но те, с которыми Вы чаще всего будете сталкиваться являются:
 
-* **list items** for the `<li>`
-* **table**, **table rows**, **table cells** for `<table>`, `<tr>` and `<td>` respectively
+* **элементы списка** для `<li>`
+* **таблица**, **строки таблиц**, **ячейки таблиц** для `<table>`, `<tr>` и `<td>` соответственно
