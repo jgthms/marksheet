@@ -1,107 +1,108 @@
 ---
 layout: post
-title: "HTML <strong>Syntax</strong>"
-subtitle: "As any language, HTML has <strong>rules</strong>"
+title: "HTML <strong>Синтаксис</strong>"
+subtitle: "Как и любой язык, HTML имеет свои <strong>правила</strong>"
 section: html
 ---
 
-**HTML** stands for **H**yper**T**ext **M**arkup **L**anguage:
+**HTML**(от англ. **H**yper**T**ext **M**arkup **L**anguage) переводится, как язык гипертекстовой разметки:
 
-* **HyperText** means that it uses the HTTP part of the Internet
-* **Markup** means the code you write is annotated with keywords
-* **Language** means it can be read by both a human and a computer
+* **Язык** означает, что он может быть прочитан как человеком, так и компьютером
+* **Гипертекстовой** означает, что он использует HTTP часть Интернета
+* **Разметка** означает, что код, который Вы пишите помечается ключевыми словами
 
-Like any language, HTML comes with a set of **rules**. These rules are relatively simple. It comes down to defining **boundaries**, to know where something _starts_ and where something _ends_.
 
-Here is a sample paragraph in HTML:
+Как и любой язык, HTML поставляется с набором **правил**. Эти правила относительно просты. Они сводятся к определению **границы**, чтобы знать где что-то  _начинается_ и где оно _заканчивается_.
 
-{% highlight html %}
-<p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p>
-{% endhighlight %}
-
-<div class="result"><p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p></div>
-
-What you see in **angle brackets** `<`{:.language-html} and `>`{:.language-html} are HTML **tags**. They define where something _starts_ and where it _ends_.
-
-Each of them carry a specific **meaning**. In this case, `p`{:.language-html} stands for **paragraph**.
-
-They usually go in pairs:
-
-* the _opening_ tag `<p>`{:.language-html} defines the **start** of the paragraph
-* the _closing_ tag `</p>`{:.language-html} defines its **end**
-
-The only difference between an opening and closing tag is the **slash** `/`{:.language-html} that precedes the name of the tag.
-
-When you combine an opening tag, a closing tag, and everything in between, you obtain an **HTML element**. The whole line is an HTML element that uses the HTML tags `<p>`{:.language-html} and `</p>`{:.language-html}.
-
-If you [view this sample in your browser](/html/sample-paragraph.html), you'll notice that **HTML tags are not displayed** by the browser. They are only _read_ by the browser to know what _type_ of **content** you've written.
-
-### Where to write HTML
-
-You've probably come across simple text files, those that have a `.txt` extension.
-
-For such a text file to become an **HTML document** (instead of a text document), you need to use an `.html` extension.
-
-Open your **text editor**, and copy paste the following:
+Вот пример параграфа в HTML:
 
 {% highlight html %}
-<p>This is my firstwebpage!</p>
+<p>Если тетрис и научил меня чему-то, так это тому, что ошибки накаплливаются, а достижения исчезают.</p>
 {% endhighlight %}
 
-Save this file as `my-first-webpage.html` and just open it with your browser, and you'll see:
+<div class="result"><p>Если тетрис и научил меня чему-то, так это тому, что ошибки накаплливаются, а достижения исчезают.</p></div>
 
-<div class="result"><p>This is my firstwebpage!</p></div>
+То, что вы видите в **угловых скобках** `<`{:.language-html} и `>`{:.language-html} называют HTML **тегами**. Они определяют, где что-то _начинается_ и где оно  _заканчивается_.
 
-Remember:
+Каждая из них несет определенный **смысл**. В этом случае, `p`{:.language-html} обозначает **Параграф**.
 
-* use a text editor like Notepad++ to **create** HTML documents
-* use a browser like Firefox to **open** HTML documents
+Они, как правило, ходят парами:
 
-### Attributes
+*  _открывающий_ тег `<p>`{:.language-html} обозначает **начало** параграфа
+* _закрывающий_ тег `</p>`{:.language-html} обозначает его  **окончание**
 
-Attributes act like **extra** information tied to an HTML element. There are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
+Единственым отличием между открывающим и закрывающим тегом является **слэш** `/`{:.language-html} что предшествует имени тега.
 
-For example, the `href` attribute is used to define the target of a **link** (which uses an **a**chor tag): 
+Если вы объедините открывающий тэг, закрывающий тег, и все между ними, вы получите **HTML элемент**. Вся линия - это HTML элемент, который использует HTML теги `<p>`{:.language-html} и `</p>`{:.language-html}.
+
+Если Вы [просмотрите этот образец в Вашем браузере](/html/sample-paragraph.html), вы заметите, что **HTML-теги не отображаются** в браузере. Они _читаются_ только браузером, чтобы определить _тип_ **контента**,который Вы написали.
+
+### Где писать HTML
+
+Вы,наверное,встречали простые текстовые файлы, которые имеют расширение `.txt`.
+
+Для таких текстовых файлов Вы должны использовать расширение `.html`, чтобы он стал  **HTML документом**.
+
+Откройте Ваш **текстовый редактор** и вставьте следующее:
 
 {% highlight html %}
-<a href="http://www.mozilla.com/firefox">Download Firefox</a>
+<p>Это моя первая веб-страница!</p>
 {% endhighlight %}
 
-<div class="result"><a href="http://www.mozilla.com/firefox">Download Firefox</a></div>
+Сохраните этот файл как `my-first-webpage.html`,откройте его с помощью вашего браузера и вы увидите:
 
-There are [16 HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that can be used on _any_ HTML element. All of them are **optional**.
+<div class="result"><p>Это моя первая веб-страница!</p></div>
 
-You'll mostly use `class` (which is used for CSS), and `title` (which is the tooltip that appears when hovering an item like this one).
+Помните:
 
-Some HTML elements have **obligatory** attributes. For example, when inserting an image, you have to provide the location of the image, using the `src` (source) attribute:
+* Используйте текстовые редакторы, такие как Notepad++, чтобы **создавать** HTML документы
+* Используйте браузеры, такие как FireFox,чтобы **открывать** HTML документы
+
+### Атрибуты
+
+Атрибуты действуют как **дополнительная** информация, привязаная к HTML элементу. Она написаны  _внутри_ HTML _тега_.Как таковые, они не отображаются в браузере.
+
+Например атрибут `href` используют, чтобы определить **ссылку** (который использует тег якоря, **a**chor):
 
 {% highlight html %}
-<img src="#" alt="Description of the image">
+<a href="http://www.mozilla.com/firefox">Загрузить Firefox</a>
 {% endhighlight %}
 
-Considering that the purpose of the `<img>` element is to display an image, it makes sense for the path to the image to be **required**.
+<div class="result"><a href="http://www.mozilla.com/firefox">Загрузить Firefox</a></div>
 
-### Comments
+Есть [16 HTML атрибутов](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) которые могут использоваться в _любом_ HTML элементе. Все они **необязательные**.
 
-If you write something in your code without disrupting how the browser will display your page, you can write **comments**. They will be _ignored_ by the browser, and are only useful for us humans who write the code.
+Вы, в основном, будете использовать `class` (который используется для CSS), и `title` (Который является подсказкой,появляющейся при наведении на элемент, как этот).
 
-A comment starts wih `<!--` and ends with `-->`.
+Некоторые HTML элементы имеют **обязательные** атрибуты. Например, при вставке изображения, вы должны указать расположение изображения, используя `src` (начальный адрес) атрибут:
 
 {% highlight html %}
-<!-- This sentence will be ignored by the browser -->
-<p>Hello World!</p>
+<img src="#" alt="Описание изображения">
 {% endhighlight %}
 
-<div class="result"><p>Hello World!</p></div>
+Учитывая то, что цель элемента `<img>` - показ изображения, становится очевидным, что путь к изображению является **обязательным**.
 
-### Self-enclosing elements
+### Комментарии
 
-Some HTML elements only have an opening tag:
+Если вы хотите что-то написать в вашем коде, не нарушая вид в браузере, вы можете использовать **комментарии**. Они будут _игнорироваться_ браузером, и полезны только для нас, людей, пишущих код.
+
+Комментарий начинают с использованием `<!--` и заканчивают с `-->`.
 
 {% highlight html %}
-<br> <!-- line-break -->
-<img src="http://placehold.it/50x50" alt="Description"> <!-- image -->
-<input type="text"> <!-- text input -->
+<!-- Это предложение будет проигнорировано браузером -->
+<p>Привет Мир!</p>
 {% endhighlight %}
 
-Because they don't have a closing tag and consequently can't contain anything _inside_ them, self-enclosing elements usually carry a few attributes, to provide them with additional information.
+<div class="result"><p>Привет Мир!</p></div>
+
+### Самозакрывающиеся элементы
+
+Некоторые HTML элементы имеют только открывающий тег:
+
+{% highlight html %}
+<br> <!-- разрыв строки -->
+<img src="http://placehold.it/50x50" alt="Description"> <!-- изображение -->
+<input type="text"> <!-- текстовое поле -->
+{% endhighlight %}
+
+Потому что они не имеют закрывающего тега и, следовательно, не могут содержать ничего _внутри_ них, самозакрывающиеся элементы обычно несут несколько атрибутов, чтобы предоставить им дополнительную информацию.

@@ -1,28 +1,28 @@
 ---
 layout: post
-title: "Requirements"
-subtitle: "Before reading this tutorial"
+title: "Требования"
+subtitle: "Прежде чем вы начнете изучать этот урок"
 section: web
 published: false
 ---
 
 ### Show file extensions
 
-Let's say you have a solar eclipse picture on your computer, it will show up as:
+Давайте представим что у вас есть на компьютере картинка, к примеру эта:
 
 ![Solar Eclipse](/images/solar-eclipse.jpg)
 
-* the **name** of the file is `solar-eclipse`
-* the **extension** of the file is `.jpg`
+* **ия** файла - это `solar-eclipse`
+* **расширение** файла - это `.jpg`
 
-A file's extension defines the _type_ of file it is (in this case, an image). For HTML files, the extension is `.html`.
+Расширение файла определяет его _тип_ (в данном случае - картинка). Для HTML файлов используется расширение `.html`.
 
-By default, **file extensions** are hidden. In this tutorial, we'll need to be able to edit these extensions. So follow these instructions to display file extensions:
+По стандарту **расширения файлов** скрыты. В этом учебнике вы должны иметь возможность изменять эти расширения. Поэтому используйте эти инструкции чтобы сделать расширения файлов видимыми для глаз:
+**Windows**: [Show or hide file name extensions](http://windows.microsoft.com/en-us/windows/show-hide-file-name-extensions)  
+**Mac**: [Show and hide filename extensions](https://support.apple.com/kb/PH10845?locale=en_US)
+{: .info}
 
-* **Windows**: [Show or hide file name extensions](http://windows.microsoft.com/en-us/windows/show-hide-file-name-extensions)
-* **Mac**: [Show and hide filename extensions](https://support.apple.com/kb/PH10845?locale=en_US)
-
-### Download a good Web browser
+### Скачайте хороший веб браузер
 
 
 
