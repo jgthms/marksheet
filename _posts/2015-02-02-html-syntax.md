@@ -61,7 +61,7 @@ Remember:
 
 Attributes act like **extra** information tied to an HTML element. There are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
 
-For example, the `href` attribute is used to define the target of a **link** (which uses an **a**chor tag): 
+For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag): 
 
 {% highlight html %}
 <a href="http://www.mozilla.com/firefox">Download Firefox</a>
