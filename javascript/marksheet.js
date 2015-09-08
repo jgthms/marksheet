@@ -45,7 +45,7 @@ jQuery(document).ready(function ($) {
     callback = function() {
       return $('.hello').fadeTo(1000, 1);
     };
-    return setTimeout(callback, 2000);
+    return setTimeout(callback, 500);
   };
 
   $(window).load(function() {
@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
     callback = function() {
       return loadSocialScripts();
     };
-    return setTimeout(callback, 1000);
+    return setTimeout(callback, 2000);
   });
 
 });
