@@ -1,4 +1,4 @@
-# [Marksheet](http://marksheet.io): a free guide to HTML and CSS
+# [Marksheet](http://marksheet.io): a free HTML and CSS tutorial
 
 [![Marksheet screenshot](https://raw.github.com/jgthms/marksheet/master/images/marksheet-free-guide-html-css.png)](http://marksheet.io)
 

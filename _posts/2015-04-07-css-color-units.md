@@ -196,7 +196,7 @@ Usually, when choosing colors, you **don't write** them directly. You either use
 
 Hexadecimal values are easier to **copy and paste**, as they only comprise 6 characters.
 
-![Photoshop one field for hex](#)
+![Photoshop one field for hex](/images/photoshop-color-picker.png)
 
 #### It is easier to copy paste a single field than 3 separate ones.
 

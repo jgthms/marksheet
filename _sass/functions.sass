@@ -1,0 +1,98 @@
+=arrow
+  &
+    +replace(none, 32px, 32px)
+    &:before,
+    &:after
+      background: $light
+      content: " "
+      display: block
+      height: 2px
+      left: 8px
+      position: absolute
+      top: 16px
+      +transform(rotate(45deg))
+      width: 10px
+    &:after
+      left: auto
+      right: 8px
+      +transform(rotate(-45deg))
+    &:hover
+      background: $blue
+      &:before,
+      &:after
+        background: $blue !important
+
+=clear
+  &:after
+    clear: both
+    content: " "
+    display: table
+
+=center($size)
+  left: 50%
+  margin-left: -($size / 2)
+  margin-top: -($size / 2)
+  position: absolute
+  top: 50%
+
+=fa($size)
+  font-size: $size
+  height: $size
+  line-height: $size
+  text-align: center
+  width: $size
+
+=label($text: "Code", $background: $yellow, $color: rgba(black, 0.5))
+  position: relative
+  &:before
+    background: $background
+    color: $color
+    content: $text
+    display: inline-block
+    font-family: $sans-serif
+    font-size: 0.6rem
+    font-weight: 700
+    height: 1rem
+    left: -1px
+    letter-spacing: 0.1em
+    line-height: 1rem
+    padding: 0 0.5em
+    position: absolute
+    text-transform: uppercase
+    top: 0
+
+=replace($bg, $h, $w)
+  background: $bg center center no-repeat
+  background-size: $w $h
+  display: block
+  height: $h
+  outline: none
+  overflow: hidden
+  text-indent: -290486px
+  width: $w
+
+$tablet: 768px
+$laptop: 992px
+$desktop: 1200px
+$widescreen: 1400px
+
+=on($device)
+  @media screen and (min-width: $device)
+    @content
+
+=overlay
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+
+=scrollbar($a, $b, $c: $background)
+  &::-webkit-scrollbar
+    background: $c
+    width: $a
+    +on($laptop)
+      width: $b
+  &::-webkit-scrollbar-thumb
+    background: $css3
+    background-image: linear-gradient($web, $css3, $sass, $html5)
