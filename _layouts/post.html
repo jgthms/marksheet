@@ -11,29 +11,33 @@ route: post
   <h2>{{ page.subtitle }}</h2>
 </section>
 
-<nav id="table-of-contents" class="table-of-contents">
-  <ul></ul>
-</nav>
+<div class="page">
+  <header class="breadcrumb">
+    {% if page.next %}
+      <a href="{{ page.next.url }}">Next article</a>
+    {% endif %}
 
-<article class="content">
-  {{ content }}
-</article>
+    {% if page.previous %}
+      <a href="{{ page.previous.url }}">Previous</a>
+    {% endif %}
+  </header>
 
-<nav class="pagination">
-  {% if page.next %}
-    <a href="{{ page.next.url }}">
-      <em>Next &rarr;</em>
-      <strong>{{ page.next.title }}</strong>
-    </a>
-  {% endif %}
-</nav>
+  <nav id="table-of-contents" class="table-of-contents">
+    <ul></ul>
+  </nav>
 
-<nav id="navigation" class="navigation">
-  {% if page.next %}
-    <a href="{{ page.next.url }}">Next article</a>
-  {% endif %}
-  {% if page.previous %}
-    <a href="{{ page.previous.url }}">Previous</a>
-  {% endif %}
-  <a id="top">Back to top</a>
-</nav>
+  <article class="content">
+    {{ content }}
+  </article>
+
+  <nav class="pagination">
+    {% if page.next %}
+      <a href="{{ page.next.url }}">
+        <em>Next &rarr;</em>
+        <strong>{{ page.next.title }}</strong>
+      </a>
+    {% endif %}
+  </nav>
+</div>
+
+<a id="top">Back to top</a>

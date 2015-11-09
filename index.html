@@ -4,9 +4,61 @@ title: "MarkSheet: a free HTML and CSS tutorial"
 route: index
 ---
 
-<div id="dots" class="dots"></div>
+<section class="index-hello">
+  <div class="index-hello-content">
+    <hgroup class="hello">
+      <h1>MarkSheet</h1>
+      <h2>a free HTML and CSS tutorial</h2>
+    </hgroup>
+  </div>
+</section>
 
-<section class="heading">
+<section class="toc-component">
+  <div class="container">
+    <article class="toc-element">
+      <div class="toc-section">
+        <h3>Web</h3>
+        <small>
+          3 lessons
+        </small>
+        <em>
+          For absolute beginners
+        </em>
+      </div>
+      <div class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "sass" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              {% unless forloop.first %}</ol></section>{% endunless %}
+              <section class="toc-content-{{ post.section }}">
+                <p>
+                  <a href="{{ post.url }}">
+                    <em>{{currentmonth}}</em>
+                    {{ post.title | strip_html }}
+                  </a>
+                </p>
+                <ol>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+            {% if forloop.last %}
+              </ol></section>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- <section class="heading">
   <img src="/images/marksheet-logo.png" alt="MarkSheet logo">
   <h1 class="type">MarkSheet</h1>
   <h2 class="tagline">A free <strong>tutorial</strong> to learn <strong>HTML</strong> and <strong>CSS</strong></h2>
@@ -73,4 +125,4 @@ route: index
       </a>
     </li>
   </ul>
-</section>
+</section> -->

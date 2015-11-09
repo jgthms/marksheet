@@ -1,22 +1,20 @@
 html
-  +scrollbar(5px, 10px)
-  background: white
-  font-size: 14px
+  // +scrollbar(5px, 10px)
+  background: #f5f7f9
+  font-size: 16px
   min-width: 320px
   overflow: hidden
   overflow-y: scroll
-  +on($laptop)
-    font-size: 16px
 
 body
-  color: $dark
+  color: $text
   +display(flex)
   +flex-direction(column)
   font-size: 1rem
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   font-weight: 400
-  line-height: 1.5
+  line-height: 1.4
   min-height: 100vh
   position: relative
   text-rendering: optimizeLegibility
@@ -25,7 +23,6 @@ a
   color: $link
   cursor: pointer
   text-decoration: none
-  +transition(86ms ease-out)
   &:visited
     color: $visited
 
@@ -33,8 +30,8 @@ input[type="checkbox"]
   vertical-align: baseline
 
 strong
-  color: $black
-  font-weight: 700
+  color: $strong
+  font-weight: 600
 
 pre
   white-space: pre
@@ -45,10 +42,6 @@ button,
 input,
 textarea
   font-family: $sans-serif
-
-h1,
-h2
-  font-family: $serif
 
 code,
 pre

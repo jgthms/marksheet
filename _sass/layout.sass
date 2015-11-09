@@ -3,7 +3,7 @@
   height: 48px
   position: relative
   text-align: center
-  +on($laptop)
+  +from($laptop)
     background: none
     height: auto
 
@@ -43,7 +43,7 @@ $desktopOffset: 32px
       background: $css3 !important
     span
       background: $html5 !important
-  +on($laptop)
+  +from($laptop)
     left: $desktopOffset
     position: fixed
     top: $desktopOffset
@@ -78,7 +78,7 @@ $desktopOffset: 32px
         &:before,
         &:after
           background: $web !important
-  +on($laptop)
+  +from($laptop)
     a
       position: fixed
       right: $desktopOffset
@@ -100,7 +100,7 @@ $desktopOffset: 32px
   width: 48px
   &:hover
     background-color: $background
-  +on($laptop)
+  +from($laptop)
     top: $desktopOffset - 8px
 
 $menuWidth: 252px
@@ -171,7 +171,7 @@ $menuWidth: 252px
 .main
   +flex(1)
   padding: 2rem
-  +on($laptop)
+  +from($laptop)
     max-width: 71rem
     margin: 0 auto
     padding: 2rem 6rem 6rem 6rem
@@ -220,7 +220,7 @@ $menuWidth: 252px
       text-decoration: none
       img
         display: block
-  +on($laptop)
+  +from($laptop)
     padding: 6rem
 
 .overlay

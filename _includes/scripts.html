@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<!--script type="text/javascript">
   WebFontConfig = {
     google: { families: [ 'Lora:400,700,400italic,700italic:latin', 'Roboto:400,300,300italic,400italic,500italic,500,700,700italic:latin' ] }
   };
@@ -11,16 +11,18 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
   })();
-</script>
+</script-->
 <script type="text/javascript" src="/javascript/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/javascript/codemirror.js"></script>
 <script type="text/javascript" src="/javascript/mode/xml/xml.js"></script>
 <script type="text/javascript" src="/javascript/mode/htmlmixed/htmlmixed.js"></script>
 <script type="text/javascript" src="/javascript/marksheet.js"></script>
+
 {% if page.route == 'index' %}
   <script type="text/javascript" src="/javascript/d3.min.js"></script>
   <script type="text/javascript" src="/javascript/index.js"></script>
 {% endif %}
+
 {% if page.route == 'post' %}
   <script type="text/javascript" src="/javascript/post.js"></script>
 {% endif %}

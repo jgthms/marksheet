@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html class="route-{{ page.route }}{% if page.section %} section-{{ page.section }}{% endif %}">
-
   {% include head.html %}
-
   <body>
-
     {% include facebook.html %}
-
-    {% include header.html %}
-
-    {% include menu.html %}
-
-    <main class="main {{ page.route }}">
+    <div class="page-hero"></div>
+    <div class="page-body">
+      {% include header.html %}
       {{ content }}
-    </main>
-
-    {% include footer.html %}
-
-    {% include scripts.html %}
-
+    </div>
   </body>
 </html>

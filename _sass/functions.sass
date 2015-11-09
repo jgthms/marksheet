@@ -1,27 +1,3 @@
-=arrow
-  &
-    +replace(none, 32px, 32px)
-    &:before,
-    &:after
-      background: $light
-      content: " "
-      display: block
-      height: 2px
-      left: 8px
-      position: absolute
-      top: 16px
-      +transform(rotate(45deg))
-      width: 10px
-    &:after
-      left: auto
-      right: 8px
-      +transform(rotate(-45deg))
-    &:hover
-      background: $blue
-      &:before,
-      &:after
-        background: $blue !important
-
 =clear
   &:after
     clear: both
@@ -35,12 +11,12 @@
   position: absolute
   top: 50%
 
-=fa($size)
+=fa($size, $dimensions)
   font-size: $size
-  height: $size
-  line-height: $size
+  height: $dimensions
+  line-height: $dimensions
   text-align: center
-  width: $size
+  width: $dimensions
 
 =label($text: "Code", $background: $yellow, $color: rgba(black, 0.5))
   position: relative
@@ -61,7 +37,14 @@
     text-transform: uppercase
     top: 0
 
-=replace($bg, $h, $w)
+=overlay
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+
+=replace($bg, $w, $h)
   background: $bg center center no-repeat
   background-size: $w $h
   display: block
@@ -71,28 +54,28 @@
   text-indent: -290486px
   width: $w
 
+=scrollbar($a, $b, $c: $background)
+  &::-webkit-scrollbar
+    background: $c
+    width: $a
+    +from($laptop)
+      width: $b
+  &::-webkit-scrollbar-thumb
+    background: $link
+
 $tablet: 768px
 $laptop: 992px
 $desktop: 1200px
 $widescreen: 1400px
 
-=on($device)
+=from($device)
   @media screen and (min-width: $device)
     @content
 
-=overlay
-  bottom: 0
-  left: 0
-  position: absolute
-  right: 0
-  top: 0
+=until($device)
+  @media screen and (max-width: $device - 1px)
+    @content
 
-=scrollbar($a, $b, $c: $background)
-  &::-webkit-scrollbar
-    background: $c
-    width: $a
-    +on($laptop)
-      width: $b
-  &::-webkit-scrollbar-thumb
-    background: $css3
-    background-image: linear-gradient($web, $css3, $sass, $html5)
+=desktop
+  @media screen and (min-width: 1000px)
+    @content

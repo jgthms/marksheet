@@ -1,0 +1,93 @@
+.page-hero
+  +overlay
+  background: $hero-3
+  background-image: linear-gradient(142deg, $hero-1, $hero-2 31%, $hero-3 65%, $hero-4)
+  // bottom: auto
+  // height: 400px
+  position: fixed
+  &:before
+    +overlay
+    background: linear-gradient(rgba(black, 0), rgba(black, .2))
+    content: ""
+    display: block
+    height: 10px
+    top: auto
+  &:after
+    +overlay
+    background: url("/images/pattern.png") repeat
+    content: ""
+    display: block
+    mix-blend-mode: multiply
+  +desktop
+    border-bottom: 1px solid white
+    bottom: auto
+    height: 861px
+
+.page-body
+  position: relative
+
+.page-header
+  left: 0
+  position: absolute
+  top: 0
+  width: 100%
+  .container
+    border-bottom: 1px solid rgba(black, .1)
+    box-shadow: 0 1px 0 rgba(white, .1)
+    padding: 10px
+  +desktop
+    .container
+      height: 59px
+      padding: 10px 0
+
+.toc-component
+  position: relative
+  .container
+    background: white
+  +desktop
+    .container
+      box-shadow: 0 20px 40px rgba(black, .2)
+
+.toc-section
+  background: $dark
+  padding: 15px
+  h3
+    color: white
+    font-size: 1.2rem
+    font-weight: bold
+    line-height: 1
+  small
+    color: $light
+    display: block
+  em
+    font-style: normal
+    margin-top: 10px
+  +desktop
+    +overlay
+    padding: 20px 25px
+    right: auto
+    width: 240px
+
+.toc-content
+  padding: 15px
+  position: relative
+  li
+    display: block
+  a
+    display: block
+    &:hover
+      background: $background
+  +desktop
+    line-height: 30px
+    margin-left: 240px
+    padding: 20px 0
+    p
+      left: 0
+      position: absolute
+      width: 220px
+      z-index: 1
+      a
+        padding-left: 20px
+    li
+      a
+        padding-left: 240px
