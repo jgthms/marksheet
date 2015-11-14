@@ -2,8 +2,6 @@
   +overlay
   background: $hero-3
   background-image: linear-gradient(142deg, $hero-1, $hero-2 31%, $hero-3 65%, $hero-4)
-  // bottom: auto
-  // height: 400px
   position: fixed
   &:before
     +overlay
@@ -22,6 +20,7 @@
     border-bottom: 1px solid white
     bottom: auto
     height: 861px
+    position: absolute
 
 .page-body
   position: relative
@@ -37,8 +36,41 @@
     padding: 10px
   +desktop
     .container
-      height: 59px
+      height: 69px
       padding: 10px 0
+
+.toc-head
+  height: 40px
+  margin-top: -40px
+  .container
+    background-color: rgba(black, .2)
+    background-image: linear-gradient(rgba(black, 0), rgba(black, .2))
+    border-radius: 3px 3px 0 0
+    box-shadow: inset 0 -3px 3px rgba(black, .1), 0 -1px 0 rgba(white, .1)
+    height: 40px
+  +mobile
+    display: none
+
+.toc-column
+  +replace(url("/images/toc-head.png"), 240px, 40px)
+  position: absolute
+  top: 0
+  width: 80px
+
+.toc-column--sections
+  @extend .toc-column
+  background-position: 0 0
+  left: 20px
+
+.toc-column--chapters
+  @extend .toc-column
+  background-position: -80px 0
+  left: 265px
+
+.toc-column--lessons
+  @extend .toc-column
+  background-position: -160px 0
+  left: 480px
 
 .toc-component
   position: relative
@@ -49,22 +81,42 @@
       box-shadow: 0 20px 40px rgba(black, .2)
 
 .toc-section
+  min-height: 120px
+  position: relative
+
+.toc-heading
   background: $dark
-  padding: 15px
+  padding: 25px
+  .fa
+    +fa(21px, 25px)
+    left: 15px
+    position: absolute
   h3
     color: white
     font-size: 1.2rem
     font-weight: bold
     line-height: 1
+    a
+      color: white
+      &:hover
+        text-decoration: underline
   small
     color: $light
     display: block
   em
+    display: block
     font-style: normal
+    line-height: 1.2
     margin-top: 10px
+    strong
+      color: $light
+  +mobile
+    .fa
+      display: none
   +desktop
     +overlay
-    padding: 20px 25px
+    border-bottom: 1px solid lighten($dark, 10%)
+    padding-left: 50px
     right: auto
     width: 240px
 
@@ -74,20 +126,71 @@
   li
     display: block
   a
+    border: 1px solid transparent
+    border-radius: 3px
+    color: $light
     display: block
+    padding: 5px 10px 7px
+    strong
+      color: $text
+      font-weight: normal
     &:hover
+      background: linear-gradient(white, $background)
+      border-color: $border-dark
+      box-shadow: 0 1px 2px rgba(black, .07)
+      color: $text
+      strong
+        color: $strong
+    &:active,
+    &:focus
       background: $background
+      box-shadow: none
+  .toc-month
+    a
+      &,
+      &:hover
+        color: $strong
+        font-weight: bold
+        em
+          font-style: normal
   +desktop
-    line-height: 30px
+    border-bottom: 1px solid $border
     margin-left: 240px
-    padding: 20px 0
-    p
-      left: 0
+    padding: 20px 10px
+    li
+      a
+        padding-left: 230px
+    .toc-month
+      left: 10px
       position: absolute
       width: 220px
       z-index: 1
       a
-        padding-left: 20px
-    li
-      a
-        padding-left: 240px
+        padding-left: 10px
+
+.toc-section--web
+  .fa,
+  .toc-heading small span,
+  .toc-content .toc-month em
+    color: $web
+
+.toc-section--html5
+  .fa,
+  .toc-heading small span,
+  .toc-content .toc-month em
+    color: $html5
+
+.toc-section--css3
+  .fa,
+  .toc-heading small span,
+  .toc-content .toc-month em
+    color: $css3
+
+.toc-section--sass
+  .fa,
+  .toc-heading small span,
+  .toc-content .toc-month em
+    color: $sass
+  .toc-heading,
+  .toc-content
+    border-bottom: none

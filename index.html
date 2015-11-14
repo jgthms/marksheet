@@ -13,33 +13,49 @@ route: index
   </div>
 </section>
 
+<section class="toc-head">
+  <div class="container">
+    <p class="toc-column--sections">
+      <strong>4</strong> sections
+    </p>
+
+    <p class="toc-column--chapters">
+      <strong>9</strong> chapters
+    </p>
+
+    <p class="toc-column--lessons">
+      <strong>50</strong> lessons
+    </p>
+  </div>
+</section>
+
 <section class="toc-component">
   <div class="container">
-    <article class="toc-element">
-      <div class="toc-section">
-        <h3>Web</h3>
+    <article class="toc-section toc-section--web">
+      <div class="toc-heading">
+        <i class="fa fa-globe"></i>
+        <h3>
+          <a href="/introduction.html">Web</a>
+        </h3>
         <small>
-          3 lessons
+          <span>3</span> lessons
         </small>
         <em>
-          For absolute beginners
+          For absolute <strong>beginners</strong>
         </em>
       </div>
-      <div class="toc-content">
+      <ol class="toc-content">
         {% for post in site.posts reversed %}
           {% capture currentsection %}{{ post.section }}{% endcapture %}
-          {% if currentsection == "sass" %}
+          {% if currentsection == "web" %}
             {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
             {% if currentmonth != month %}
-              {% unless forloop.first %}</ol></section>{% endunless %}
-              <section class="toc-content-{{ post.section }}">
-                <p>
-                  <a href="{{ post.url }}">
-                    <em>{{currentmonth}}</em>
-                    {{ post.title | strip_html }}
-                  </a>
-                </p>
-                <ol>
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
               {% capture month %}{{currentmonth}}{% endcapture %}
             {% else %}
               <li>
@@ -48,81 +64,123 @@ route: index
                 </a>
               </li>
             {% endif %}
-            {% if forloop.last %}
-              </ol></section>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--html5">
+      <div class="toc-heading">
+        <i class="fa fa-html5"></i>
+        <h3>
+          <a href="/html-basics.html">HTML 5</a>
+        </h3>
+        <small>
+          <span>13</span> lessons
+        </small>
+        <em>
+          For <strong>designers</strong> willing start coding right away
+        </em>
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "html" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
             {% endif %}
           {% endif %}
         {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="/css-basics.html">CSS 3</a>
+        </h3>
+        <small>
+          <span>29</span> lessons
+        </small>
+        <em>
+          For <strong>developers</strong> eager to learn how CSS can define the style and layout of a webpage
+        </em>
       </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "css" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--sass">
+      <div class="toc-heading">
+        <i class="fa fa-rocket"></i>
+        <h3>
+          <a href="/sass.html">Sass</a>
+        </h3>
+        <small>
+          <span>5</span> lessons
+        </small>
+        <em>
+          For the <strong>smart and lazy</strong>
+        </em>
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "sass" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
     </article>
   </div>
 </section>
-
-<!-- <section class="heading">
-  <img src="/images/marksheet-logo.png" alt="MarkSheet logo">
-  <h1 class="type">MarkSheet</h1>
-  <h2 class="tagline">A free <strong>tutorial</strong> to learn <strong>HTML</strong> and <strong>CSS</strong></h2>
-  <div class="hello">
-    <div class="tweet">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://marksheet.io" data-text="MarkSheet: a free HTML and CSS tutorial" data-via="jgthms">Tweet</a>
-    </div>
-    <div class="like">
-      <div class="fb-like" data-href="https://www.facebook.com/marksheet.io" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false">Like</div>
-    </div>
-  </div>
-</section>
-
-<section class="intro">
-  <ul>
-    <li>
-      <strong>Short</strong>
-      Just as long as a 50 page book
-    </li>
-    <li>
-      <strong>Simple</strong>
-      For everyone: beginners, designers, developers
-    </li>
-    <li>
-      <strong>Free</strong>
-      As in "free beer" and "free speech"
-    </li>
-  </ul>
-</section>
-
-<section class="chapters">
-  <p><strong>4</strong> chapters, <strong>50</strong> lessons</p>
-  <ul>
-    <li>
-      <a href="/introduction.html">
-        <i class="fa fa-globe"></i>
-        <strong>The Web</strong>
-        <em><strong>3</strong> lessons</em>
-        <span>For absolute <strong>beginners</strong>.</span>
-      </a>
-    </li>
-    <li>
-      <a href="/html-basics.html">
-        <i class="fa fa-html5"></i>
-        <strong>HTML 5</strong>
-        <em><strong>13</strong> lessons</em>
-        <span>For <strong>designers</strong> willing to start coding right away.</span>
-      </a>
-    </li>
-    <li>
-      <a href="/css-basics.html">
-        <i class="fa fa-css3"></i>
-        <strong>CSS 3</strong>
-        <em><strong>29</strong> lessons</em>
-        <span>For <strong>developers</strong> eager to learn how CSS can define the style and layout of a webpage.</span>
-      </a>
-    </li>
-    <li>
-      <a href="/sass.html">
-        <i class="fa fa-rocket"></i>
-        <strong>Sass</strong>
-        <em><strong>5</strong> lessons</em>
-        <span>For the <strong>smart and lazy</strong>.</span>
-      </a>
-    </li>
-  </ul>
-</section> -->
