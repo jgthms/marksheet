@@ -1,0 +1,58 @@
+html.section-web
+  background-color: $web
+  .page-hero
+    background-color: $web
+    background-image: linear-gradient(142deg, adjust-hue($web, -40deg), adjust-hue($web, -20deg) 31%, $web 65%, adjust-hue($web, 20deg))
+
+html.section-html
+  background-color: $html5
+  .page-hero
+    background-color: $html5
+    background-image: linear-gradient(142deg, adjust-hue($html5, 20deg), adjust-hue($html5, 10deg) 31%, $html5 65%, adjust-hue($html5, -10deg))
+
+html.section-css
+  background-color: $css3
+  .page-hero
+    background-color: $css3
+    background-image: linear-gradient(142deg, adjust-hue($css3, -20deg), adjust-hue($css3, -10deg) 31%, $css3 65%, adjust-hue($css3, 10deg))
+
+html.section-sass
+  background-color: $sass
+  .page-hero
+    background-color: $sass
+    background-image: linear-gradient(142deg, adjust-hue($sass, -20deg), adjust-hue($sass, -10deg) 31%, $sass 65%, adjust-hue($sass, 10deg))
+
+html.route-chapter
+  .heading .container
+    +desktop
+      padding: 120px 180px
+  .page-content .container
+    background: none
+    box-shadow: none
+    +desktop
+      padding: 0 120px
+  .content
+    color: white
+    font-size: 20px
+    padding: 0 30px
+    text-shadow: 0 2px 3px rgba(black, .3)
+    strong
+      color: $yellow
+    +desktop
+      font-size: 32px
+      padding: 0 60px
+  .pagination
+    background: none
+    +desktop
+      padding: 60px
+  .pagination-next
+    float: none
+    font-size: 20px
+    padding: 20px 25px
+    width: auto
+    +desktop
+      border-radius: 7px
+      font-size: 24px
+      padding: 25px 30px
+      strong
+        margin-top: 5px

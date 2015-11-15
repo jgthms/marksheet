@@ -30,4 +30,10 @@ jQuery(document).ready(function ($) {
     $toc.hide();
   }
 
+  $breadcrumb.affix({
+    offset: {
+      top: $breadcrumb.offset().top
+    }
+  })
+
 });

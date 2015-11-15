@@ -28,9 +28,10 @@
 .heading
   color: white
   line-height: 1
-  padding: 60px 30px
   text-align: center
   text-shadow: 0 2px 3px rgba(black, .3)
+  .container
+    padding: 60px 30px
   strong
     color: inherit
   h1,
@@ -45,12 +46,32 @@
   h2
     font-size: 48px
     margin-top: 20px
+  +desktop
+    h1
+      font-size: 32px
+    h2
+      font-size: 60px
+    .container
+      padding: 120px
 
 .breadcrumb
   background-color: $yellow
   background-image: linear-gradient(#fffde9, $yellow)
   box-shadow: inset 0 1px 0 white, inset 0 -3px 5px rgba(black, .05)
   height: 40px
+  text-shadow: 0 1px 0 white
+  &.affix
+    box-shadow: 0 3px 5px rgba(black, .1), 0 1px 0 rgba(black, .1)
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 1986
+    +desktop
+      width: 960px
+    +from(1100px)
+      width: 1080px
+    +from(1200px)
+      width: 1140px
 
 .breadcrumb-toggle
   display: block
@@ -73,10 +94,31 @@
     background: linear-gradient(rgba(white, 0), white)
   span
     background: #b5b188
+    box-shadow: 0 1px 0 white
     display: block
     height: 1px
     & + span
       margin-top: 4px
+
+.breadcrumb-section
+  color: #b5b188
+  float: left
+  height: 40px
+  line-height: 30px
+  padding: 5px 10px
+  text-transform: capitalize
+  .fa
+    +fa(21px, 30px)
+    float: left
+    margin: 1px 5px 0 0
+  .fa-globe
+    color: $web
+  .fa-html5
+    color: $html5
+  .fa-css3
+    color: $css3
+  .fa-rocket
+    color: $sass
 
 .breadcrumb-next
   display: block
@@ -120,21 +162,23 @@
 .pagination
   +clearfix
   background: $background
+  box-shadow: inset 0 2px 3px rgba(black, .05), inset 0 1px 0 rgba(black, .05)
   padding: 30px
 
 %pagination-link
   display: block
+  font-size: 20px
   height: auto
   padding: 15px 20px 18px
   text-align: left
   em
     color: inherit
     display: block
-    font-size: 14px
+    font-size: .75em
     opacity: .5
   & > strong
     display: block
-    font-size: 20px
+    margin-top: 2px
 
 .pagination-previous
   @extend %button--secondary
@@ -191,7 +235,7 @@
     color: $text
     font-size: $small
     dt
-      font-weight: bold
+      font-weight: 700
       padding: 15px
       padding-bottom: 0
     dd
@@ -244,7 +288,7 @@
   h4
     color: $text
     font-size: 20px
-    font-weight: bold
+    font-weight: 700
     line-height: 1
     margin: 30px 0 15px
   p
@@ -322,7 +366,7 @@
     .question
       color: $dark
       display: block
-      font-weight: bold
+      font-weight: 700
       + br
         display: none
   .important
@@ -362,7 +406,6 @@
       th
         background: lighten($yellow, 10%)
         border-top-color: $yellow
-        color: darken($yellow, 10%)
         font-weight: 400
         text-align: left
         white-space: nowrap

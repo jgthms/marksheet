@@ -1,26 +1,14 @@
 .page-hero
   +overlay
-  background: $hero-3
+  background-color: $hero-3
   background-image: linear-gradient(142deg, $hero-1, $hero-2 31%, $hero-3 65%, $hero-4)
   position: fixed
-  &:before
-    +overlay
-    background: linear-gradient(rgba(black, 0), rgba(black, .2))
-    content: ""
-    display: block
-    height: 10px
-    top: auto
   &:after
     +overlay
     background: url("/images/pattern.png") repeat
     content: ""
     display: block
     mix-blend-mode: multiply
-  +desktop
-    border-bottom: 1px solid white
-    bottom: auto
-    height: 861px
-    position: absolute
 
 .page-body
   position: relative
@@ -103,7 +91,7 @@
   h3
     color: white
     font-size: 1.2rem
-    font-weight: bold
+    font-weight: 700
     line-height: 1
     a
       color: white
@@ -142,7 +130,7 @@
     padding: 5px 10px 7px
     strong
       color: $text
-      font-weight: normal
+      font-weight: 400
     &:hover
       background: linear-gradient(white, $background)
       border-color: $border-dark
@@ -159,7 +147,7 @@
       &,
       &:hover
         color: $strong
-        font-weight: bold
+        font-weight: 700
         em
           font-style: normal
   +desktop

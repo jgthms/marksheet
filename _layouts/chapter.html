@@ -3,32 +3,31 @@ layout: default
 route: chapter
 ---
 
-<section class="heading">
-  <h1>
-    <em>{{ page.date | date: "%m.%-d" | remove_first: '0' }}</em>
-    {{ page.title }}
-  </h1>
-  <h2>{{ page.subtitle }}</h2>
-</section>
+<main class="page-container">
+  <section class="heading">
+    <div class="container">
+      <h1>
+        <em>{{ page.date | date: "%m.%-d" | remove_first: '0' }}</em>
+        {{ page.title }}
+      </h1>
+      <h2>{{ page.subtitle }}</h2>
+    </div>
+  </section>
 
-<article class="content">
-  {{ content }}
-</article>
+  <div class="page-content">
+    <div class="container">
+      <article class="content">
+        {{ content }}
+      </article>
 
-<nav class="pagination">
-  {% if page.next %}
-    <a href="{{ page.next.url }}">
-      <em>Start &rarr;</em>
-      <strong>{{ page.next.title }}</strong>
-    </a>
-  {% endif %}
-</nav>
-
-<nav id="navigation" class="navigation">
-  {% if page.next %}
-    <a href="{{ page.next.url }}">Next article</a>
-  {% endif %}
-  {% if page.previous %}
-    <a href="{{ page.previous.url }}">Previous</a>
-  {% endif %}
-</nav>
+      <nav class="pagination">
+        {% if page.next %}
+          <a class="pagination-next" href="{{ page.next.url }}">
+            <em>Start &rarr;</em>
+            <strong>{{ page.next.title }}</strong>
+          </a>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+</main>

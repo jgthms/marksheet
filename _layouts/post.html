@@ -23,6 +23,20 @@ route: post
           <span></span>
         </a>
 
+        <span class="breadcrumb-section">
+          {% case page.section %}
+          {% when "web" %}
+            <i class="fa fa-globe"></i>
+          {% when "html" %}
+            <i class="fa fa-html5"></i>
+          {% when "css" %}
+            <i class="fa fa-css3"></i>
+          {% when "sass" %}
+            <i class="fa fa-rocket"></i>
+          {% endcase %}
+          {{ page.section }}
+        </span>
+
         {% if page.next %}
           <a class="breadcrumb-next" href="{{ page.next.url }}">
             <i class="fa fa-angle-right"></i>
