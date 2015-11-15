@@ -3,41 +3,69 @@ layout: default
 route: post
 ---
 
-<section class="heading">
-  <h1>
-    <em>{{ page.date | date: "%m.%-d" | remove_first: '0' }}</em>
-    {{ page.title }}
-  </h1>
-  <h2>{{ page.subtitle }}</h2>
-</section>
+<main class="page-container">
+  <section class="heading">
+    <div class="container">
+      <h1>
+        <em>{{ page.date | date: "%m.%-d" | remove_first: '0' }}</em>
+        {{ page.title }}
+      </h1>
+      <h2>{{ page.subtitle }}</h2>
+    </div>
+  </section>
 
-<div class="page">
-  <header class="breadcrumb">
-    {% if page.next %}
-      <a href="{{ page.next.url }}">Next article</a>
-    {% endif %}
+  <div class="page-content">
+    <div class="container">
+      <header id="breadcrumb" class="breadcrumb" data-spy="affix">
+        <a class="breadcrumb-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
 
-    {% if page.previous %}
-      <a href="{{ page.previous.url }}">Previous</a>
-    {% endif %}
-  </header>
+        {% if page.next %}
+          <a class="breadcrumb-next" href="{{ page.next.url }}">
+            <i class="fa fa-angle-right"></i>
+            <span>Next article</span>
+          </a>
+        {% endif %}
 
-  <nav id="table-of-contents" class="table-of-contents">
-    <ul></ul>
-  </nav>
+        {% if page.previous %}
+          <a class="breadcrumb-previous" href="{{ page.previous.url }}">
+            <i class="fa fa-angle-left"></i>
+            <span>Previous article</span>
+          </a>
+        {% endif %}
+      </header>
 
-  <article class="content">
-    {{ content }}
-  </article>
+      <nav id="menu" class="menu">
+        <ul></ul>
+      </nav>
 
-  <nav class="pagination">
-    {% if page.next %}
-      <a href="{{ page.next.url }}">
-        <em>Next &rarr;</em>
-        <strong>{{ page.next.title }}</strong>
-      </a>
-    {% endif %}
-  </nav>
-</div>
+      <article class="content">
+        {{ content }}
+      </article>
 
-<a id="top">Back to top</a>
+      <nav class="pagination">
+        {% if page.previous %}
+          <a class="pagination-previous" href="{{ page.previous.url }}">
+            <em>&larr; Previous</em>
+            <strong>{{ page.previous.title }}</strong>
+          </a>
+        {% endif %}
+
+        {% if page.next %}
+          <a class="pagination-next" href="{{ page.next.url }}">
+            <em>Next &rarr;</em>
+            <strong>{{ page.next.title }}</strong>
+          </a>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+</main>
+
+<a id="top" class="elevator">
+  <i class="fa fa-angle-up"></i>
+  <span>Back to top</span>
+</a>

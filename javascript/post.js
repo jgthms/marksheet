@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
 
-  var $toc = $('#table-of-contents');
+  var $breadcrumb = $('#breadcrumb');
+  var $toc = $('#menu');
   var $list = $toc.children('ul');
   var $headings = $('.content h3');
 

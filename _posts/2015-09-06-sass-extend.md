@@ -26,7 +26,13 @@ How would that look like in your CSS? You could:
 #### Common CSS Class
 
 {% highlight css %}
-.small-uppercase{ color: lightslategrey; font-size: 10px; letter-spacing: 0.1em; line-height: 12px; text-transform: uppercase;}
+.small-uppercase{
+  color: lightslategrey;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  line-height: 12px;
+  text-transform: uppercase;
+}
 {% endhighlight %}
 
 Having a `.small-uppercase` CSS rule is **semantically incorrect** because you'd end up writing your HTML as `<p class="small-uppercase">` which reverts to basically writing styles _within_ your HTML.
@@ -39,7 +45,13 @@ Because a CSS rule can accept any number of _selectors_, you could combine the s
 .button,
 .navigation a,
 .sidebar h3,
-.tabs a{ color: lightslategrey; font-size: 10px; letter-spacing: 0.1em; line-height: 12px; text-transform: uppercase;}
+.tabs a{
+  color: lightslategrey;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  line-height: 12px;
+  text-transform: uppercase;
+}
 {% endhighlight %}
 
 This approach remains **semantically valid** because each selector describes the HTML element they're attached to.

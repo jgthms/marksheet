@@ -43,12 +43,12 @@ jQuery(document).ready(function ($) {
     document.body.appendChild(script);
   };
 
-  $(window).load(function() {
-    var callback;
-    callback = function() {
-      return loadSocialScripts();
-    };
-    return setTimeout(callback, 2000);
-  });
+  // $(window).load(function() {
+  //   var callback;
+  //   callback = function() {
+  //     return loadSocialScripts();
+  //   };
+  //   return setTimeout(callback, 2000);
+  // });
 
 });

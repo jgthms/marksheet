@@ -1,0 +1,155 @@
+<section class="toc-component">
+  <div class="container">
+    <article class="toc-section toc-section--web">
+      <div class="toc-heading">
+        <i class="fa fa-globe"></i>
+        <h3>
+          <a href="/introduction.html">Web</a>
+        </h3>
+        <small>
+          <span>3</span> lessons
+        </small>
+        <em>
+          For absolute <strong>beginners</strong>
+        </em>
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "web" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--html5">
+      <div class="toc-heading">
+        <i class="fa fa-html5"></i>
+        <h3>
+          <a href="/html-basics.html">HTML 5</a>
+        </h3>
+        <small>
+          <span>13</span> lessons
+        </small>
+        <em>
+          For <strong>designers</strong> willing start coding right away
+        </em>
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "html" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="/css-basics.html">CSS 3</a>
+        </h3>
+        <small>
+          <span>29</span> lessons
+        </small>
+        <em>
+          For <strong>developers</strong> eager to learn how CSS can define the style and layout of a webpage
+        </em>
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "css" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--sass">
+      <div class="toc-heading">
+        <i class="fa fa-rocket"></i>
+        <h3>
+          <a href="/sass.html">Sass</a>
+        </h3>
+        <small>
+          <span>5</span> lessons
+        </small>
+        <em>
+          For the <strong>smart and lazy</strong>
+        </em>
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "sass" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+  </div>
+</section>

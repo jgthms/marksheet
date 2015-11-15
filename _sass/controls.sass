@@ -1,0 +1,32 @@
+=control($background, $border, $color)
+  -moz-appearance: none
+  -webkit-appearance: none
+  background: $background
+  border: 1px solid $border
+  border-radius: $radius
+  color: $color
+  display: inline-block
+  font-size: 16px
+  height: 32px
+  line-height: 20px
+  padding: 4px 10px 6px
+  position: relative
+  vertical-align: top
+  &:active,
+  &:focus
+    outline: none
+
+=control--small
+  font-size: 12px
+  height: 32px
+  padding: 4px 8px 6px
+
+=control--medium
+  font-size: 16px
+  height: 40px
+  padding: 8px 10px 10px
+
+=control--large
+  font-size: 20px
+  height: 60px
+  padding: 18px 30px 20px

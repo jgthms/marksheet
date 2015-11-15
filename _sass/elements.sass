@@ -3,6 +3,10 @@
   margin: 0 auto
   max-width: 960px
   position: relative
+  +from(1100px)
+    max-width: 1080px
+  +from(1200px)
+    max-width: 1140px
 
 .hello
   +replace(url("/images/marksheet-hello.png"), 210px, 192px)
@@ -16,3 +20,364 @@
   +mobile
     background-position: left center
     width: 48px
+
+.start
+  +replace(url("/images/button-start-reading.png"), 242px, 63px)
+  margin: 30px auto 0
+
+.heading
+  color: white
+  line-height: 1
+  padding: 60px 30px
+  text-align: center
+  text-shadow: 0 2px 3px rgba(black, .3)
+  strong
+    color: inherit
+  h1,
+  h2
+    font-weight: 300
+  h1
+    color: $yellow
+    font-size: 20px
+    em
+      font-style: normal
+      font-weight: 300
+  h2
+    font-size: 48px
+    margin-top: 20px
+
+.breadcrumb
+  background-color: $yellow
+  background-image: linear-gradient(#fffde9, $yellow)
+  box-shadow: inset 0 1px 0 white, inset 0 -3px 5px rgba(black, .05)
+  height: 40px
+
+.breadcrumb-toggle
+  display: block
+  float: left
+  height: 40px
+  padding: 15px 13px 0 12px
+  position: relative
+  width: 41px
+  &:before,
+  &:after
+    +overlay
+    background: linear-gradient(rgba(black, 0), rgba(black, .1))
+    content: ""
+    display: block
+    left: auto
+    width: 1px
+  &:before
+    right: 1px
+  &:after
+    background: linear-gradient(rgba(white, 0), white)
+  span
+    background: #b5b188
+    display: block
+    height: 1px
+    & + span
+      margin-top: 4px
+
+.breadcrumb-next
+  display: block
+  float: right
+  height: 40px
+  overflow: hidden
+  padding-left: 1px
+  position: relative
+  text-align: center
+  width: 41px
+  span
+    display: block
+    position: absolute
+    text-indent: -290486px
+  .fa
+    +fa(21px, 40px)
+    color: #b5b188
+  &:before,
+  &:after
+    +overlay
+    background: linear-gradient(rgba(black, 0), rgba(black, .1))
+    content: ""
+    display: block
+    right: auto
+    width: 1px
+  &:after
+    background: linear-gradient(rgba(white, 0), white)
+    left: 1px
+
+.breadcrumb-previous
+  @extend .breadcrumb-next
+
+.menu
+  background: $background
+  display: none
+  li
+    display: block
+  a
+    display: block
+
+.pagination
+  +clearfix
+  background: $background
+  padding: 30px
+
+%pagination-link
+  display: block
+  height: auto
+  padding: 15px 20px 18px
+  text-align: left
+  em
+    color: inherit
+    display: block
+    font-size: 14px
+    opacity: .5
+  & > strong
+    display: block
+    font-size: 20px
+
+.pagination-previous
+  @extend %button--secondary
+  @extend %pagination-link
+  +mobile
+    display: none
+  +desktop
+    float: left
+    width: 33.3333%
+
+.pagination-next
+  @extend %button--primary
+  @extend %pagination-link
+  +desktop
+    float: right
+    width: 33.3333%
+
+.elevator
+  @extend %button--dark
+  display: block
+  font-size: 16px
+  height: auto
+  line-height: 24px
+  margin: 15px
+  padding: 20px
+  text-align: center
+  +desktop
+    bottom: 15px
+    position: fixed
+    right: 15px
+    .fa
+      left: 50%
+      margin-left: -12px
+    span
+      display: none
+
+.content
+  padding: 30px
+  +desktop
+    font-size: 20px
+    padding: 60px
+  a
+    text-decoration: underline
+  code
+    background-color: #222
+    border-radius: 3px
+    color: #66d9ef
+    font-size: $small
+    padding: 3px 5px 3px
+    position: relative
+    top: -1px
+  & > dl
+    background: $background
+    color: $text
+    font-size: $small
+    dt
+      font-weight: bold
+      padding: 15px
+      padding-bottom: 0
+    dd
+      padding: 15px
+      padding-top: 0
+      & + dt
+        border-top: 1px solid white
+  h3
+    color: $strong
+    font-size: 32px
+    font-weight: 300
+    line-height: 1
+    margin: 30px 0
+    padding-top: 30px
+    position: relative
+    top: 1px
+    a
+      font-weight: 300
+      display: block
+      height: 30px
+      line-height: 30px
+      position: absolute
+      right: 100%
+      text-align: center
+      text-decoration: none
+      top: 30px
+      width: 30px
+      &:hover
+        color: $strong
+    &:first-child
+      margin-top: 0
+      padding-top: 0
+      a
+        top: 0
+    +desktop
+      a
+        background: rgba(white, 0.86)
+        border-radius: 25px
+        box-shadow: 0 1px 2px rgba(black, .2)
+        height: 50px
+        line-height: 50px
+        margin-right: 35px
+        top: 25px
+        width: 50px
+        &:hover
+          background: white
+      &:first-child
+        a
+          top: -5px
+  h4
+    color: $text
+    font-size: 20px
+    font-weight: bold
+    line-height: 1
+    margin: 30px 0 15px
+  p
+    margin: 1em 0
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+  pre
+    line-height: 1.25
+    position: relative
+  ul
+    list-style: disc outside
+    margin: 15px 0
+    padding-left: 1.5em
+    ul
+      list-style-type: circle
+      ul
+        list-style-type: square
+    &.files
+      font-family: $family-monospace
+    &.software
+      +clear
+      list-style: none
+      padding-left: 0
+      text-align: center
+      li
+        float: left
+        margin-bottom: 15px
+        width: 50%
+        img
+          max-height: 64px
+        strong
+          display: block
+          line-height: 1
+          margin-top: 5px
+        +desktop
+          margin: 0
+          width: 20%
+  div.highlight
+    margin: 30px -30px
+    overflow: auto
+    pre code
+      +label
+      background: inherit
+      color: inherit
+      display: block
+      padding: 30px
+      top: 0
+      &.language-html
+        +label("HTML", $html5, white)
+      &.language-css
+        +label("CSS", $css3, white)
+      &.language-scss
+        +label("SCSS", $sass, white)
+        &.language-css
+          +label("SCSS CSS", $sass, white)
+      +desktop
+        padding: 30px 60px
+    +desktop
+      margin: 30px -60px
+  .answer,
+  .important,
+  .info
+    background: rgba($blue, 0.1)
+    border-left: 0.25em solid $blue
+    color: rgba(black, 0.5)
+    font-size: $small
+    padding: 15px
+    +desktop
+      padding: 30px
+  .answer
+    background: rgba($green, 0.1)
+    border-left-color: $green
+    .question
+      color: $dark
+      display: block
+      font-weight: bold
+      + br
+        display: none
+  .important
+    background: rgba($red, 0.1)
+    border-left-color: $red
+  .result
+    +label("Result")
+    border: 1px solid $yellow
+    color: black
+    margin: 30px 0
+    padding: 15px
+    &:before
+      top: -15px
+  .table
+    margin: 30px -30px
+    overflow: auto
+    table
+      background: $background
+      border-radius: 3px
+      font-size: $small
+      width: 100%
+      th,
+      td
+        border-top: 1px solid $border
+        color: $text
+        padding: 0.5em 1em
+        vertical-align: top
+        &.empty
+          background: white
+          border-top: none
+        &.no
+          color: $red
+        &.yes span
+          background: $green
+          color: white
+          padding: 2px 5px
+      th
+        background: lighten($yellow, 10%)
+        border-top-color: $yellow
+        color: darken($yellow, 10%)
+        font-weight: 400
+        text-align: left
+        white-space: nowrap
+        strong
+          display: block
+      tr:nth-child(2n)
+        background: #fafafa
+      code
+        display: inline-block
+        margin-bottom: 5px
+        vertical-align: top
+      pre
+        margin: 0
+        padding: 0
+        &:before
+          display: none
+    +desktop
+      margin: 30px -60px
