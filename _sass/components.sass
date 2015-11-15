@@ -5,10 +5,14 @@
   position: fixed
   &:after
     +overlay
-    background: url("/images/pattern.png") repeat
+    background: rgba(black, .1)
     content: ""
     display: block
     mix-blend-mode: multiply
+  +from(700px)
+    &:after
+      background: url("/images/pattern.png") repeat
+      mix-blend-mode: multiply
 
 .page-body
   position: relative

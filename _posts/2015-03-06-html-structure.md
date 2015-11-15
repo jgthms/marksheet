@@ -81,11 +81,11 @@ The `aside` element usually lives alongside the `main` and contains _additional_
 
 ### Section
 
-The `section` element allows to **group** 
+The `section` element allows to **group**
 
 Sections _themselves_ don't carry a specific meaning. It's more about the _relation between its child elements_ rather than its own meaning within the overall page.
 
-The [MarkSheet homepage](/index.html) displays 3 sections:
+The [MarkSheet homepage](http://marksheet.io) displays 3 sections:
 
 * the **heading** (logo, title, subtitle)
 * the **introduction** (_"Short"_, _"Simple"_, _"Free"_)

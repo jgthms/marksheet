@@ -55,20 +55,6 @@
   text-indent: -290486px
   width: $w
 
-=scrollbar($a, $b, $c: $background)
-  &::-webkit-scrollbar
-    background: $c
-    width: $a
-    +from($laptop)
-      width: $b
-  &::-webkit-scrollbar-thumb
-    background: $link
-
-$tablet: 768px
-$laptop: 992px
-$desktop: 1200px
-$widescreen: 1400px
-
 =from($device)
   @media screen and (min-width: $device)
     @content
