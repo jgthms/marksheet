@@ -22,10 +22,38 @@
     border-bottom: 1px solid rgba(black, .1)
     box-shadow: 0 1px 0 rgba(white, .1)
     height: $height-header
-    padding: 10px
+  .share-buttons
+    position: absolute
+    right: 20px
+    top: 24px
+  %share-button
+    position: static
+    margin: 0 0 0 18px
   +desktop
-    .container
-      padding: 10px 0
+    .share-buttons
+      right: 0
+
+.page-header-icons
+  padding: 18px 0
+  text-align: center
+  text-shadow: 0 2px 3px rgba(black, .3)
+  a
+    color: $yellow
+    display: inline-block
+    height: 32px
+    margin: 0 5px
+    vertical-align: top
+    width: 32px
+    &:hover
+      color: white
+      +transform(scale(1.2))
+    &:active
+      text-shadow: none
+      +transform(scale(1.1))
+  .fa
+    +fa(21px, 32px)
+  +mobile
+    display: none
 
 .page-container
   padding-top: $height-header
@@ -34,7 +62,150 @@
   .container
     background: white
     +desktop
+      border-radius: 3px 3px 0 0
       box-shadow: 0 30px 60px rgba(black, .3)
+
+.page-footer
+  background: $dark
+  position: relative
+  text-shadow: 0 1px 2px rgba(black, .2)
+  .container
+    padding: 30px
+  a
+    color: $link
+    &:hover
+      text-decoration: underline
+  strong
+    color: white
+  form
+    color: white
+    font-size: 16px
+    margin-bottom: 30px
+    strong
+      color: #89ff6b
+      &:first-child
+        color: white
+    em
+      display: block
+      font-size: 14px
+      font-style: normal
+      margin-bottom: 10px
+    p
+      margin-top: 0
+  +mobile
+    form
+      text-align: center
+    p
+      margin-top: 1em
+    .share-buttons
+      margin: 30px 0
+  +desktop
+    .container
+      padding: 60px 0
+    .share-buttons
+      position: absolute
+      right: 0
+      top: 60px
+    %share-button
+      position: static
+      margin: 0 0 0 18px
+
+.page-overlay
+  +overlay
+  background: rgba(black, .7)
+  display: none
+  position: fixed
+
+.page-menu
+  +overlay
+  -webkit-overflow-scrolling: touch
+  bottom: 78px
+  display: none
+  min-height: calc(100vh - 30px)
+  overflow: scroll
+  overflow-x: hidden
+  position: fixed
+  +desktop
+    bottom: 0
+    box-shadow: 0 30px 60px rgba(black, .86)
+    left: 50%
+    margin-left: -480px
+    right: auto
+    position: fixed
+    width: 960px
+  +from(1100px)
+    margin-left: -540px
+    width: 1080px
+  +from(1200px)
+    margin-left: -570px
+    width: 1140px
+
+.page-close
+  +overlay
+  background: $background
+  box-shadow: inset 0 2px 3px rgba(black, .05), inset 0 1px 0 rgba(black, .05)
+  display: none
+  padding: 15px
+  position: fixed
+  top: auto
+  +desktop
+    display: none
+
+.page-close-button
+  @extend %button--primary
+  display: block
+  padding: 15px
+  text-align: center
+
+html.has-menu-open
+  overflow: hidden
+  .page-overlay,
+  .page-menu,
+  .page-close
+    display: block
+  +desktop
+    .page-close
+      display: none
+
+.share-buttons
+  height: 20px
+  overflow: hidden
+  position: relative
+  .twitter-share-button
+    position: absolute
+    &,
+    &:visited
+      color: transparent
+
+%share-button
+  color: transparent
+  display: inline-block
+  font-size: 14px
+  line-height: 20px
+  margin: 0 10px
+  position: absolute
+  text-shadow: none
+  top: 0
+  vertical-align: top
+  a
+    &,
+    &:visited
+      color: transparent
+
+.share-button--twitter
+  @extend %share-button
+  right: 50%
+
+.share-button--facebook
+  @extend %share-button
+  left: 50%
+
+.fb_iframe_widget
+  display: inline-block
+  vertical-align: top
+  span
+    display: inline-block
+    vertical-align: top !important
 
 .toc-head
   height: 40px
@@ -125,19 +296,18 @@
   a
     border: 1px solid transparent
     border-radius: 3px
-    color: $light
     display: block
     padding: 5px 10px 7px
     strong
-      color: $text
       font-weight: 400
+    &:visited
+      color: $visited
+      strong
+        color: $visited
     &:hover
       background: linear-gradient(white, $background)
       border-color: $border-dark
       box-shadow: 0 1px 2px rgba(black, .07)
-      color: $text
-      strong
-        color: $strong
     &:active,
     &:focus
       background: $background

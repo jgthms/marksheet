@@ -41,14 +41,15 @@ jQuery(document).ready(function ($) {
     script.id = 'twitter-wjs';
     script.src = 'https://platform.twitter.com/widgets.js';
     document.body.appendChild(script);
+    var callback;
+    callback = function() {
+      return $('#hello').fadeTo(1000, 1);
+    };
+    return setTimeout(callback, 500);
   };
 
-  // $(window).load(function() {
-  //   var callback;
-  //   callback = function() {
-  //     return loadSocialScripts();
-  //   };
-  //   return setTimeout(callback, 2000);
-  // });
+  $(window).load(function() {
+    loadSocialScripts();
+  });
 
 });

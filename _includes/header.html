@@ -4,17 +4,17 @@
       MarkSheet
     </a>
 
-    <!-- <div class="share-buttons">
-      <div class="share-button--tweet">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://marksheet.io" data-text="MarkSheet: a free HTML and CSS tutorial" data-via="jgthms">Tweet</a>
-      </div>
-      <div class="share-button--like">
-        <div class="fb-like" data-href="https://www.facebook.com/marksheet.io" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false">Like</div>
-      </div>
-    </div> -->
+    <p class="page-header-icons">
+      <a href="https://twitter.com/jgthms" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="https://github.com/jgthms" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+    </p>
 
-    <!-- <a id="toggle" class="toggle">
-      <span>Toggle menu</span>
-    </a> -->
+    {% unless page.route == 'index' %}
+      {% include share.html %}
+    {% endunless %}
   </div>
 </header>

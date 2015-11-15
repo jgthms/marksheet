@@ -8,6 +8,20 @@
       {% include header.html %}
       {{ content }}
     </div>
+    {% unless page.route == 'index' %}
+      {% include footer.html %}
+    {% endunless %}
+    {% if page.route == 'post' %}
+      <div id="overlay" class="page-overlay"></div>
+      <div class="page-menu">
+        {% include table-of-contents.html %}
+      </div>
+      <div id="close" class="page-close">
+        <a class="page-close-button">
+          Close
+        </a>
+      </div>
+    {% endif %}
     {% include scripts.html %}
   </body>
 </html>

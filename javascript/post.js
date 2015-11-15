@@ -4,6 +4,8 @@ jQuery(document).ready(function ($) {
   var $toc = $('#menu');
   var $list = $toc.children('ul');
   var $headings = $('.content h3');
+  var $open = $('#open');
+  var $close = $('#close, #overlay');
 
   if ($headings.length) {
     $headings.each(function() {
@@ -35,5 +37,13 @@ jQuery(document).ready(function ($) {
       top: $breadcrumb.offset().top
     }
   })
+
+  $open.click( function() {
+    $('html').addClass('has-menu-open');
+  });
+
+  $close.click( function() {
+    $('html').removeClass('has-menu-open');
+  });
 
 });

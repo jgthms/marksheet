@@ -1,44 +1,30 @@
-<footer class="footer">
-  <!-- <form class="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-    ">
-    <span>
-      MarkSheet is free and always will be.
-      <br>
-      If this website has been valuable to you, please consider making a donation.
-    </span>
-    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-  </form> -->
+<footer class="page-footer">
+  <footer class="container">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+      ">
+      <p>
+        <strong>MarkSheet</strong> is <strong>free</strong> and <strong>always</strong> will be.
+        <em>If this website has been valuable to you, please consider making a donation.</em>
+      </p>
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
 
-  <div class="share">
-    <div class="tweet">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://marksheet.io" data-text="MarkSheet: a free HTML and CSS tutorial" data-via="jgthms">Tweet</a>
-    </div>
-    <!-- <div class="follow">
-      <a href="https://twitter.com/jgthms" class="twitter-follow-button" data-show-count="false">Follow @jgthms</a>
-    </div> -->
-    <div class="like">
-      <div class="fb-like" data-href="https://www.facebook.com/marksheet.io" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false">Like</div>
-    </div>
-    <!-- <a class="license" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-    </a> -->
-  </div>
+    {% include share.html %}
 
-  <p>
-    <strong xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">MarkSheet</strong> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com/" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-  </p>
-  <p>
-    The underlying source code used to format and display this website is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
-  </p>
-  <p>
-    Powered by
-    <a href="http://jekyllrb.com/">Jekyll</a>.
-    Hosted on
-    <a href="https://github.com/jgthms/marksheet">GitHub</a>.
-  </p>
+    <p>
+      <strong xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">MarkSheet</strong> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com/" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+    </p>
+    <p>
+      The underlying source code used to format and display this website is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
+    </p>
+    <p>
+      Powered by
+      <a href="http://jekyllrb.com/">Jekyll</a>.
+      Hosted on
+      <a href="https://github.com/jgthms/marksheet">GitHub</a>.
+    </p>
+  </footer>
 </footer>
-
-<div id="overlay" class="overlay"></div>
