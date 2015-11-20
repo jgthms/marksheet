@@ -59,7 +59,7 @@ Remember:
 
 ### Attributes
 
-Attributes act like **extra** information tied to an HTML element. There are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
+Attributes act like **extra** information tied to an HTML element. They are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
 
 For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag): 
 
