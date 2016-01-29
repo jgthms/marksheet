@@ -85,7 +85,7 @@ Considering that the purpose of the `<img>` element is to display an image, it m
 
 If you write something in your code without disrupting how the browser will display your page, you can write **comments**. They will be _ignored_ by the browser, and are only useful for us humans who write the code.
 
-A comment starts wih `<!--` and ends with `-->`.
+A comment starts with `<!--` and ends with `-->`.
 
 {% highlight html %}
 <!-- This sentence will be ignored by the browser -->
