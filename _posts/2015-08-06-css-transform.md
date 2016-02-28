@@ -43,13 +43,13 @@ Let's redo our [circuit animation](/css-animations.html#result-2) using translat
 
 {% highlight css %}
 @keyframes translating {
-  0%  { transform: translate(0, 0);}
-  25% { transform: translate(240px, 0);}
-  50% { transform: translate(240px, 140px);}
-  75% { transform: translate(0, 140px);}
-  100%{ transform: translate(0, 0);}
+  0%  { transform: translate(0, 0); }
+  25% { transform: translate(240px, 0); }
+  50% { transform: translate(240px, 140px); }
+  75% { transform: translate(0, 140px); }
+  100% { transform: translate(0, 0); }
 }
-p{ animation: translating 4s linear infinite;}
+p { animation: translating 4s linear infinite; }
 {% endhighlight %}
 
 <div class="result" id="translate-animation">
@@ -57,15 +57,15 @@ p{ animation: translating 4s linear infinite;}
 </div>
 
 <style type="text/css">
-#translate-animation{ height: 200px; padding: 0; width: 300px;}
-#translate-animation p{ animation: translating 4s linear 0s infinite; background: turquoise; color: white; height: 60px; line-height: 60px; margin: 0; position: absolute; text-align: center; width: 60px;}
+#translate-animation { height: 200px; padding: 0; width: 300px; }
+#translate-animation p { animation: translating 4s linear 0s infinite; background: turquoise; color: white; height: 60px; line-height: 60px; margin: 0; position: absolute; text-align: center; width: 60px; }
 
 @keyframes translating {
-  0%  { transform: translate(0, 0);}
-  25% { transform: translate(240px, 0);}
-  50% { transform: translate(240px, 140px);}
-  75% { transform: translate(0, 140px);}
-  100%{ transform: translate(0, 0);}
+  0%  { transform: translate(0, 0); }
+  25% { transform: translate(240px, 0); }
+  50% { transform: translate(240px, 140px); }
+  75% { transform: translate(0, 140px); }
+  100% { transform: translate(0, 0); }
 }
 </style>
 
@@ -82,10 +82,10 @@ The `rotate()` function allows to make an element **revolve around a fixed point
 
 {% highlight css %}
 @keyframes rotating {
-  0%  { transform: rotate(0deg);}
-  100%{ transform: rotate(360deg);}
+  0%  { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-p{ animation: rotating 4s linear infinite;}
+p { animation: rotating 4s linear infinite; }
 {% endhighlight %}
 
 <div class="result" id="rotate-animation">
@@ -93,12 +93,12 @@ p{ animation: rotating 4s linear infinite;}
 </div>
 
 <style type="text/css">
-#rotate-animation{ padding: 2rem;}
-#rotate-animation p{ animation: rotating 4s linear 0s infinite; background: slateblue; border-radius: 60px; color: white; height: 120px; line-height: 120px; margin: 0; text-align: center; width: 120px;}
+#rotate-animation { padding: 2rem; }
+#rotate-animation p { animation: rotating 4s linear 0s infinite; background: slateblue; border-radius: 60px; color: white; height: 120px; line-height: 120px; margin: 0; text-align: center; width: 120px; }
 
 @keyframes rotating {
-  0%  { transform: rotate(0deg);}
-  100%{ transform: rotate(360deg);}
+  0%  { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>
 
@@ -119,14 +119,14 @@ The **range** of possible value is:
 
 {% highlight css %}
 @keyframes scaling {
-  0%  { transform: scale(1);}
-  20%{ transform: scale(2);}
-  40%{ transform: scale(0.5);}
-  60%{ transform: scale(0);}
-  80%{ transform: scale(-1);}
-  100%{ transform: scale(1);}
+  0%  { transform: scale(1); }
+  20% { transform: scale(2); }
+  40% { transform: scale(0.5); }
+  60% { transform: scale(0); }
+  80% { transform: scale(-1); }
+  100% { transform: scale(1); }
 }
-p{ animation: scaling 10s steps(1) 0s infinite;}
+p { animation: scaling 10s steps(1) 0s infinite; }
 {% endhighlight %}
 
 <div class="result" id="scale-animation">
@@ -139,34 +139,34 @@ p{ animation: scaling 10s steps(1) 0s infinite;}
 </div>
 
 <style type="text/css">
-#scale-animation{ padding: 2rem;}
-#scale-animation p{ animation: scaling-toggle 10s steps(1) 0s infinite forwards; background: white; color: grey; left: 2rem; margin: 0; opacity: 0; padding: 0 0.5em; position: absolute; top: 2rem; z-index: 1;}
-#scale-animation p:first-child{ left: 0; position: relative; top: 0;}
-#scale-animation p:nth-child(2){ animation-delay: 2s;}
-#scale-animation p:nth-child(3){ animation-delay: 4s;}
-#scale-animation p:nth-child(4){ animation-delay: 6s;}
-#scale-animation p:nth-child(5){ animation-delay: 8s;}
-#scale-animation p strong{ content: ""; display: inline-block;}
-#scale-animation div{ animation: scaling 10s linear 0s infinite; background: goldenrod; border-radius: 60px; color: white; height: 120px; line-height: 120px; margin-top: 2rem;; text-align: center; transition: all 100ms linear; width: 120px;}
+#scale-animation { padding: 2rem; }
+#scale-animation p { animation: scaling-toggle 10s steps(1) 0s infinite forwards; background: white; color: grey; left: 2rem; margin: 0; opacity: 0; padding: 0 0.5em; position: absolute; top: 2rem; z-index: 1; }
+#scale-animation p:first-child { left: 0; position: relative; top: 0; }
+#scale-animation p:nth-child(2) { animation-delay: 2s; }
+#scale-animation p:nth-child(3) { animation-delay: 4s; }
+#scale-animation p:nth-child(4) { animation-delay: 6s; }
+#scale-animation p:nth-child(5) { animation-delay: 8s; }
+#scale-animation p strong { content: ""; display: inline-block; }
+#scale-animation div { animation: scaling 10s linear 0s infinite; background: goldenrod; border-radius: 60px; color: white; height: 120px; line-height: 120px; margin-top: 2rem;; text-align: center; transition: all 100ms linear; width: 120px; }
 
 @keyframes scaling {
-  0%  { transform: scale(1);}
-  19% { transform: scale(1);}
-  20% { transform: scale(2);}
-  39% { transform: scale(2);}
-  40% { transform: scale(0.5);}
-  59% { transform: scale(0.5);}
-  60% { transform: scale(0);}
-  79% { transform: scale(0);}
-  80% { transform: scale(-1);}
-  99% { transform: scale(-1);}
-  100%{ transform: scale(1);}
+  0%  { transform: scale(1); }
+  19% { transform: scale(1); }
+  20% { transform: scale(2); }
+  39% { transform: scale(2); }
+  40% { transform: scale(0.5); }
+  59% { transform: scale(0.5); }
+  60% { transform: scale(0); }
+  79% { transform: scale(0); }
+  80% { transform: scale(-1); }
+  99% { transform: scale(-1); }
+  100% { transform: scale(1); }
 }
 
 @keyframes scaling-toggle {
-  0%  { opacity: 1;}
-  20% { opacity: 0;}
-  100%{ opacity: 0;}
+  0%  { opacity: 1; }
+  20% { opacity: 0; }
+  100% { opacity: 0; }
 }
 </style>
 
@@ -187,14 +187,14 @@ And like `rotate()`, `skew()` only accepts **angle** values like degrees `deg`.
 
 {% highlight css %}
 @keyframes skewing {
-  0%  { transform: skew(0deg);}
-  20% { transform: skew(10deg);}
-  40% { transform: skew(45deg);}
-  60% { transform: skew(90deg);}
-  80% { transform: skew(120deg);}
-  100%{ transform: skew(0deg);}
+  0%  { transform: skew(0deg); }
+  20% { transform: skew(10deg); }
+  40% { transform: skew(45deg); }
+  60% { transform: skew(90deg); }
+  80% { transform: skew(120deg); }
+  100% { transform: skew(0deg); }
 }
-p{ animation: skewing 10s steps(1) 0s infinite;}
+p { animation: skewing 10s steps(1) 0s infinite; }
 {% endhighlight %}
 
 <div class="result" id="skew-animation">
@@ -207,33 +207,33 @@ p{ animation: skewing 10s steps(1) 0s infinite;}
 </div>
 
 <style type="text/css">
-#skew-animation{ padding: 2rem;}
-#skew-animation p{ animation: scaling-toggle 10s steps(1) 0s infinite forwards; background: white; color: grey; left: 2rem; margin: 0; opacity: 0; padding: 0 0.5em; position: absolute; top: 2rem; z-index: 1;}
-#skew-animation p:first-child{ left: 0; position: relative; top: 0;}
-#skew-animation p:nth-child(2){ animation-delay: 2s;}
-#skew-animation p:nth-child(3){ animation-delay: 4s;}
-#skew-animation p:nth-child(4){ animation-delay: 6s;}
-#skew-animation p:nth-child(5){ animation-delay: 8s;}
-#skew-animation div{ animation: skewing 10s linear infinite; background: tomato; color: white; height: 60px; line-height: 60px; margin-top: 2rem;; text-align: center; transition: all 100ms linear; width: 120px;}
+#skew-animation { padding: 2rem; }
+#skew-animation p { animation: scaling-toggle 10s steps(1) 0s infinite forwards; background: white; color: grey; left: 2rem; margin: 0; opacity: 0; padding: 0 0.5em; position: absolute; top: 2rem; z-index: 1; }
+#skew-animation p:first-child { left: 0; position: relative; top: 0; }
+#skew-animation p:nth-child(2) { animation-delay: 2s; }
+#skew-animation p:nth-child(3) { animation-delay: 4s; }
+#skew-animation p:nth-child(4) { animation-delay: 6s; }
+#skew-animation p:nth-child(5) { animation-delay: 8s; }
+#skew-animation div { animation: skewing 10s linear infinite; background: tomato; color: white; height: 60px; line-height: 60px; margin-top: 2rem;; text-align: center; transition: all 100ms linear; width: 120px; }
 
 @keyframes skewing {
-  0%  { transform: skew(0deg);}
-  19% { transform: skew(0deg);}
-  20% { transform: skew(10deg);}
-  39% { transform: skew(10deg);}
-  40% { transform: skew(45deg);}
-  59% { transform: skew(45deg);}
-  60% { transform: skew(90deg);}
-  79% { transform: skew(90deg);}
-  80% { transform: skew(120deg);}
-  99% { transform: skew(120deg);}
-  100%{ transform: skew(180deg);}
+  0%  { transform: skew(0deg); }
+  19% { transform: skew(0deg); }
+  20% { transform: skew(10deg); }
+  39% { transform: skew(10deg); }
+  40% { transform: skew(45deg); }
+  59% { transform: skew(45deg); }
+  60% { transform: skew(90deg); }
+  79% { transform: skew(90deg); }
+  80% { transform: skew(120deg); }
+  99% { transform: skew(120deg); }
+  100% { transform: skew(180deg); }
 }
 
 @keyframes skewing-toggle {
-  0%  { opacity: 1;}
-  20% { opacity: 0;}
-  100%{ opacity: 0;}
+  0%  { opacity: 1; }
+  20% { opacity: 0; }
+  100% { opacity: 0; }
 }
 </style>
 
@@ -257,10 +257,10 @@ The **z** parameter basically make the element move closer and further, whether 
 
 {% highlight css %}
 @keyframes zooming {
-  0%  { transform: translate3d(0, 0, 0);}
-  100%{ transform: translate3d(0, 0, 200px);}
+  0%  { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 0, 200px); }
 }
-p{ animation: zooming 5s alternate;}
+p { animation: zooming 5s alternate; }
 {% endhighlight %}
 
 <div class="result" id="zoom-animation">
@@ -269,14 +269,14 @@ p{ animation: zooming 5s alternate;}
 </div>
 
 <style type="text/css">
-#zoom-animation{ padding: 2rem; perspective: 500;}
+#zoom-animation { padding: 2rem; perspective: 500; }
 #zoom-animation div,
-#zoom-animation p{ background: midnightblue; color: white; height: 200px; line-height: 200px; margin: 0; position: relative; text-align: center; width: 200px;}
-#zoom-animation p{ animation: zooming 5s alternate infinite both; background: limegreen; left: 2rem; opacity: 0.7; position: absolute; top: 2rem;}
+#zoom-animation p { background: midnightblue; color: white; height: 200px; line-height: 200px; margin: 0; position: relative; text-align: center; width: 200px; }
+#zoom-animation p { animation: zooming 5s alternate infinite both; background: limegreen; left: 2rem; opacity: 0.7; position: absolute; top: 2rem; }
 
 @keyframes zooming {
-  0%  { transform: translate3d(0, 0, 0);}
-  100%{ transform: translate3d(0, 0, 200px);}
+  0%  { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 0, 200px); }
 }
 </style>
 

@@ -14,10 +14,10 @@ CSS selectors define _which_ elements we want our styling to be applied to.
 Targeting generic HTML tags is easy: just use the tag name.
 
 {% highlight css %}
-a{ /* Links */ }
-p{ /* Paragraphs */ }
-ul{ /* Unordered lists */ }
-li{ /* List items */ }
+a { /* Links */ }
+p { /* Paragraphs */ }
+ul { /* Unordered lists */ }
+li { /* List items */ }
 {% endhighlight %}
 
 There's a direct connection between the _name_ of the HTML tag and the CSS _selector_ used.
@@ -62,7 +62,7 @@ Bear in mind that the tag name is **irrelevant**. Only the `class` HTML attribut
 You can also use the `id` attribute in your HTML, and target it with a hash `#` in your CSS:
 
 {% highlight css %}
-#tagline{ color: orange;}
+#tagline { color: orange; }
 {% endhighlight %}
 
 {% highlight html %}

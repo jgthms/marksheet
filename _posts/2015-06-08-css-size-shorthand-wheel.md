@@ -12,15 +12,15 @@ When all 4 sides (top, bottom, left and right) are involved in a CSS property, t
 For example, the `padding` property can be used on its own to apply the _same_ value to all 4 sides, but also comes in 4 variations (`padding-top`, `padding-bottm`, `padding-left` and `padding-right`) to target a specific side.
 
 {% highlight css %}
-blockquote{ padding: 20px;}
+blockquote { padding: 20px; }
 /* Is equivalent to */
-blockquote{ padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;}
+blockquote { padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; }
 {% endhighlight %}
 
 But where the `padding` property becomes interesting, is that it can get up to **4** values. You can thus set a _different_ value for _all_ sides at once:
 
 {% highlight css %}
-blockquote{ padding: 20px 0 10px 50px;}
+blockquote { padding: 20px 0 10px 50px; }
 {% endhighlight %}
 
 The order is `top`, `right`, `bottom` and `left`.
@@ -30,7 +30,7 @@ The order is `top`, `right`, `bottom` and `left`.
 By putting 2 values, the first one will be applied for `top` and `bottom`, the second one for `right` and `left`:
 
 {% highlight css %}
-blockquote{ padding: 20px 0;}
+blockquote { padding: 20px 0; }
 /*
        top
        20px
@@ -69,12 +69,12 @@ Indeed. `border` is (in that order) a shorthand for:
 However, you can **not** mix the two:
 
 {% highlight css %}
-blockquote{ border: 1px 0 solid green;}
+blockquote { border: 1px 0 solid green; }
 /* Won't work */
 {% endhighlight %}
 
 But you can omit the width in `border` and set it separately:
 
 {% highlight css %}
-blockquote{ border: solid yellow; border-width: 1px 0;}
+blockquote { border: solid yellow; border-width: 1px 0; }
 {% endhighlight %}

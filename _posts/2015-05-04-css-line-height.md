@@ -29,7 +29,7 @@ Because using `%` or `em` values can have unexpected values, the recommended met
 * for headings, a line height of 1.2 is recommended
 
 {% highlight css %}
-body{ font-size: 16px; line-height: 1.5;}
+body { font-size: 16px; line-height: 1.5; }
 {% endhighlight %}
 
 The computed line height will thus be 16 * 1.5 = `24px`.
@@ -39,8 +39,8 @@ The computed line height will thus be 16 * 1.5 = `24px`.
 Because the `line-height` property is inherited by the child elements, it will remain consistent no matter what `font-size` is subsequently applied.
 
 {% highlight css %}
-body{ font-size: 16px; line-height: 1.5;}
-blockquote{ font-size: 18px;}
+body { font-size: 16px; line-height: 1.5; }
+blockquote { font-size: 18px; }
 {% endhighlight %}
 
 The `blockquote` element will have a line height of `27px`.

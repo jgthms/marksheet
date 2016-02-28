@@ -41,7 +41,7 @@ The problem when inserting an image within a text is that **an image must fit on
 What we want is to wrap the text _around_ the image:
 
 {% highlight css %}
-img{ float: left;}
+img { float: left; }
 {% endhighlight %}
 
 <div class="result">
@@ -91,8 +91,8 @@ The `clear` property allows to **push elements _after_ the float**. It can only 
 {% endhighlight %}
 
 {% highlight css %}
-img{ float: left;}
-span{ clear: left; display: block;}
+img { float: left; }
+span { clear: left; display: block; }
 {% endhighlight %}
 
 <div class="result">

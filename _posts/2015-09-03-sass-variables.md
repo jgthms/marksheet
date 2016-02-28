@@ -24,13 +24,13 @@ This line doesn't do anything apart from **defining** a variable, in our case a 
 We can then use it throughout our CSS, whenever a [color unit](/css-color-units.html) is required:
 
 {% highlight scss %}
-.quote{ border-left: 5px solid $yellow;}
+.quote { border-left: 5px solid $yellow; }
 {% endhighlight %}
 
 This `.scss` file will be **compiled** into a `.css` file, where all variables will be _replaced_ with their actual _value_:
 
 {% highlight css %}
-.quote{ border-left: 5px solid #fce473;}
+.quote { border-left: 5px solid #fce473; }
 {% endhighlight %}
 
 _Why is it called a variable?_{:.question}
@@ -45,19 +45,19 @@ To illustrate the purpose of using variables, you need to use it more than once,
 
 {% highlight scss %}
 $pink: #ff1493;
-.quote{ border-left: 5px solid $pink;}
-.button{ background: $pink;}
-.sidebar a:hover{ border-bottom-color: $pink;}
-.footer a{ color: $pink;}
+.quote { border-left: 5px solid $pink; }
+.button { background: $pink; }
+.sidebar a:hover { border-bottom-color: $pink; }
+.footer a { color: $pink; }
 {% endhighlight %}
 
 This will be compiled into:
 
 {% highlight css %}
-.quote{ border-left: 5px solid #ff1493;}
-.button{ background: #ff1493;}
-.sidebar a:hover{ border-bottom-color: #ff1493;}
-.footer a{ color: #ff1493;}
+.quote { border-left: 5px solid #ff1493; }
+.button { background: #ff1493; }
+.sidebar a:hover { border-bottom-color: #ff1493; }
+.footer a { color: #ff1493; }
 {% endhighlight %}
 
 If you decided to go for a _different_ shade of pink:
@@ -74,10 +74,10 @@ $pink: #c71585;
 And the resulting CSS would be **automatically** updated:
 
 {% highlight css %}
-.quote{ border-left: 5px solid #c71585;}
-.button{ background: #c71585;}
-.sidebar a:hover{ border-bottom-color: #c71585;}
-.footer a{ color: #c71585;}
+.quote { border-left: 5px solid #c71585; }
+.button { background: #c71585; }
+.sidebar a:hover { border-bottom-color: #c71585; }
+.footer a { color: #c71585; }
 {% endhighlight %}
 
 ### Even more abstraction
@@ -100,10 +100,10 @@ $blue: #1d90ff;
 // Defining color types
 $primary-color: $green;
 
-.quote{ border-left: 5px solid $primary-color;}
-.button{ background: $primary-color;}
-.sidebar a:hover{ border-bottom-color: $primary-color;}
-.footer a{ color: $primary-color;}
+.quote { border-left: 5px solid $primary-color; }
+.button { background: $primary-color; }
+.sidebar a:hover { border-bottom-color: $primary-color; }
+.footer a { color: $primary-color; }
 {% endhighlight %}
 
 Instead of _directly_ referencing the variable `$green`, you define a **primary color** variable that is _set_ to `$green`.

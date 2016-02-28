@@ -23,13 +23,13 @@ It also has 4 possible sides:
 * `border-right`
 
 {% highlight css %}
-blockquote{ border-color: yellow; border-style: solid; border-width: 1px;}
+blockquote { border-color: yellow; border-style: solid; border-width: 1px; }
 {% endhighlight %}
 
 The shorthand property `border` allows to define all 3 properties at once:
 
 {% highlight css %}
-blockquote{ border: 1px solid yellow;}
+blockquote { border: 1px solid yellow; }
 {% endhighlight %}
 
 ### Single border
@@ -37,13 +37,13 @@ blockquote{ border: 1px solid yellow;}
 If you want to set a border on only one of the four sides, you need to include the border's **position** in the CSS property. For example, for a bottom border, you can write:
 
 {% highlight css %}
-blockquote{ border-bottom-color: yellow; border-bottom-style: solid; border-bottom-width: 1px;}
+blockquote { border-bottom-color: yellow; border-bottom-style: solid; border-bottom-width: 1px; }
 {% endhighlight %}
 
 As for the `border` property, _each_ side has its shorthand version:
 
 {% highlight css %}
-blockquote{ border-bottom: 1px solid yellow;}
+blockquote { border-bottom: 1px solid yellow; }
 {% endhighlight %}
 
 #### What if I want 3 borders? Do I have to set them individually?
@@ -51,7 +51,7 @@ blockquote{ border-bottom: 1px solid yellow;}
 As you would have guessed, the quickest way to have 3 borders is to set all 4 of them and then remove the one you don't want:
 
 {% highlight css %}
-blockquote{ border: 1px solid yellow; border-left: none;}
+blockquote { border: 1px solid yellow; border-left: none; }
 {% endhighlight %}
 
 ### Shorthand combinations

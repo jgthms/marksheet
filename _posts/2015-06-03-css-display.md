@@ -10,7 +10,7 @@ We've seen how there are mainly [2 types of HTML elements](/html-block-inline.ht
 The `display` property allows to change the _type_ of HTML element. By default, a paragraph `<p>` (a **block-level** element) will have a default `display` value of `block`, but can be rendered as an **inline** one:
 
 {% highlight css %}
-p{ display: inline;}
+p { display: inline; }
 {% endhighlight %}
 
 ### Why not use an HTML inline element, like `<span>` then?
@@ -34,7 +34,7 @@ This will turn any element into a **block** element.
 This technique is often used on **links** in order to increase their clickable zone, which can be easily evaluated by setting a background color.
 
 {% highlight css %}
-.menu a{ background: red; color: white;}
+.menu a { background: red; color: white; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -74,7 +74,7 @@ This technique is often used on **links** in order to increase their clickable z
 If we turn these links into **blocks**, we increase their target area:
 
 {% highlight css %}
-.menu a{ background: red; color: white; display: block;}
+.menu a { background: red; color: white; display: block; }
 {% endhighlight %}
 
 <div class="result">
@@ -136,7 +136,7 @@ It's often used to create **horizontal navigations**, where **list items** are s
 </div>
 
 {% highlight css %}
-.menu li{ display: inline;}
+.menu li { display: inline; }
 {% endhighlight %}
 
 <div class="result">
@@ -169,7 +169,7 @@ Because the rendering of these bullet points and numbers varies across browsers,
 Applying `display: none;` to an HTML element removes it from your webpage, as if it never existed in your code.
 
 {% highlight css %}
-.gone-baby-gone{ display: none;}
+.gone-baby-gone { display: none; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -191,7 +191,7 @@ There are 3 paragraphs in the code, but only 2 appear, as if the 2nd one never e
 The CSS property `visibility` is slightly similar to `display`. Applying `visibility: hidden;` _hides_ an element from your page, but only turns it **invisible**: it still takes up the space it was supposed to.
 
 {% highlight css %}
-.hollow-man{ visibility: hidden;}
+.hollow-man { visibility: hidden; }
 {% endhighlight %}
 
 {% highlight html %}

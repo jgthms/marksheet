@@ -34,7 +34,7 @@ When the `position` is set to **relative**, an element can move according to its
 {% endhighlight %}
 
 {% highlight css %}
-p{ border: 1px solid blue;}
+p { border: 1px solid blue; }
 {% endhighlight %}
 
 <div class="result">
@@ -52,7 +52,7 @@ Let's move the **second** paragraph:
 {% endhighlight %}
 
 {% highlight css %}
-.second{ position: relative; border-color: red; left: 20px; top: 10px;}
+.second { position: relative; border-color: red; left: 20px; top: 10px; }
 {% endhighlight %}
 
 <div class="result">

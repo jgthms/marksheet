@@ -16,19 +16,19 @@ An HTML element can be targeted by **multiple CSS rules**. Let's use a simple pa
 We can alter this paragraph just by using its **tag name**:
 
 {% highlight css %}
-p{ color: blue;}
+p { color: blue; }
 {% endhighlight %}
 
 Or we can use its **class name**:
 
 {% highlight css %}
-.message{ color: green;}
+.message { color: green; }
 {% endhighlight %}
 
 Or we can use its **id**:
 
 {% highlight css %}
-#introduction{ color: red;}
+#introduction { color: red; }
 {% endhighlight %}
 
 Because the browser can only pick **one color** to apply on this paragraph, it will have to decide which CSS rule takes **priority** over other ones. This is what CSS priority (or CSS _specificity_ is about).
@@ -40,8 +40,8 @@ In our example, the paragraph will be **red** because an `#id` selector is more 
 If similar selectors are in your CSS, the last one defined will take priority.
 
 {% highlight css %}
-p{ color: green;}
-p{ color: red;}
+p { color: green; }
+p { color: red; }
 /* Paragraphs will be red */
 {% endhighlight %}
 
@@ -56,9 +56,9 @@ One quick way to figure out how "powerful" a CSS rule is, is by measuring the sp
 The selector with the highest "score" will prevail, _no matter the order in which the CSS rules appear_.
 
 {% highlight css %}
-#introduction{ color: red;}
-.message{ color: green;}
-p{ color: blue;}
+#introduction { color: red; }
+.message { color: green; }
+p { color: blue; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -73,9 +73,9 @@ p{ color: blue;}
   </p>
 </div>
 
-The `#introduction{ color: red;}` rule is more _specific_ than the others because ids must be **unique** throughout a webpage, and can thus only target **one** element.
+The `#introduction { color: red; }` rule is more _specific_ than the others because ids must be **unique** throughout a webpage, and can thus only target **one** element.
 
-`.message{ color: green;}` can target _any_ HTML element with a `class="message"` attribute, and is consequently less specific. Same goes for `p{ color: blue;}` which can target _any_ HTML paragraph.
+`.message { color: green; }` can target _any_ HTML element with a `class="message"` attribute, and is consequently less specific. Same goes for `p { color: blue; }` which can target _any_ HTML paragraph.
 
 ### How to avoid conflicts
 

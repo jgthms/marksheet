@@ -26,7 +26,7 @@ If padding adds space _inside_ an element (between its border and its content), 
 </div>
 
 {% highlight css %}
-p{ margin: 40px;}
+p { margin: 40px; }
 {% endhighlight %}
 
 <div class="result">
@@ -43,8 +43,8 @@ p{ margin: 40px;}
 Let's have a title and a subtitle.
 
 {% highlight css %}
-.title{ margin-bottom: 30px;}
-.subtitle{ margin-top: 15px;}
+.title { margin-bottom: 30px; }
+.subtitle { margin-top: 15px; }
 {% endhighlight %}
 
 {% highlight html %}

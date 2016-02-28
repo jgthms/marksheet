@@ -51,11 +51,11 @@ The media query syntax is reminiscent of the [animation keyframes syntax](/css-a
 
 {% highlight css %}
 /* This part is read by every device/viewport */
-body{ font-size: 14px;}
+body { font-size: 14px; }
 
 @media (min-width: 1200px) {
   /* This part is only read by viewports wider than 1200 pixels */
-  body{ font-size: 16px;}
+  body { font-size: 16px; }
 }
 {% endhighlight %}
 
@@ -70,10 +70,10 @@ On mobile, considering browsers are running in fullscreen, the two widths are in
 You can require **2 conditions** for a media query to be activated.
 
 {% highlight css %}
-body{ font-size: 18px;}
+body { font-size: 18px; }
 
 @media (min-width: 1000px) and (orientation: landscape) {
-  body{ font-size: 20px;}
+  body { font-size: 20px; }
 }
 {% endhighlight %}
 
@@ -87,15 +87,15 @@ You can also use `not` and `only`. These are called [logical operators](https://
 You can include as many **CSS rules** as you want in the media query.
 
 {% highlight css %}
-body{ font-size: 14px;}
-.button{ display: block;}
-.title{ text-align: center;}
+body { font-size: 14px; }
+.button { display: block; }
+.title { text-align: center; }
 
 @media (min-width: 1200px) {
-  body{ font-size: 16px;}
-  .container{ margin: 0 auto; width: 960px;}
-  .button{ display: inline-block;}
-  .title{ text-align: left;}
+  body { font-size: 16px; }
+  .container { margin: 0 auto; width: 960px; }
+  .button { display: inline-block; }
+  .title { text-align: left; }
 }
 {% endhighlight %}
 
@@ -190,11 +190,11 @@ A use case would be to provide a default background image for every device, and 
 
 {% highlight css %}
 /* 40x40 logo */
-.logo{ background-image: url(marksheet-logo.png); background-size: 40px 40px;}
+.logo { background-image: url(marksheet-logo.png); background-size: 40px 40px; }
 
 @media (min-resolution: 300dpi) {
   /* 80x80 logo resized to 40x40 */
-  .logo{ background-image: url(marksheet-logo@2x.png);}
+  .logo { background-image: url(marksheet-logo@2x.png); }
 }
 {% endhighlight %}
 
@@ -215,9 +215,9 @@ A mobile-first CSS would use `min-width` media queries in order to apply specifi
 
 {% highlight css %}
 /* General CSS rules for every viewport, including smartphones */
-body{ }
-.title{ }
-.button{ }
+body { }
+.title { }
+.button { }
 
 @media (min-width: 768px) {
   /* Rules for tablets and bigger viewports */
@@ -236,9 +236,9 @@ A desktop-first approach starts with styles for large screens and  `min-width` m
 
 {% highlight css %}
 /* General CSS rules for every viewport, including large desktop screens */
-body{ }
-.title{ }
-.button{ }
+body { }
+.title { }
+.button { }
 
 @media (max-width: 1199px) {
   /* Rules for laptops, small desktop screens, and smaller viewports */
