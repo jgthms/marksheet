@@ -1,7 +1,6 @@
 name: MarkSheet
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: pygments
 permalink: :title.html
