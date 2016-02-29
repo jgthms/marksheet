@@ -88,7 +88,7 @@ I consider `hsl` to be **human-readable**, whereas `rgb` is more **computer-read
 `hsla` is the same as `hsl`, with the added value of being able to define an **alpha** value:
 
 {% highlight css %}
-body{ color: hsl(4, 68%, 56%, 0.5);}
+body{ color: hsla(4, 68%, 56%, 0.5);}
 {% endhighlight %}
 
 A transparent red color.
