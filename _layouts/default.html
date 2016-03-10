@@ -8,9 +8,7 @@
       {% include header.html %}
       {{ content }}
     </div>
-    {% unless page.route == 'index' %}
-      {% include footer.html %}
-    {% endunless %}
+    {% include footer.html %}
     {% if page.route == 'post' %}
       <div id="overlay" class="page-overlay"></div>
       <div class="page-menu">
