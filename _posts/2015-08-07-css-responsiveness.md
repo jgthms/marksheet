@@ -207,7 +207,7 @@ The `@2x` suffix is just Apple's notation for Retina images, and has been adopte
 
 Usually, you want to focus on the full width **desktop** version first, as it features a more complex design that includes columns, hover states, absolute positioning, floats etc.
 
-But designing the **mobile** version first is actually _easier_ considering a **["HTML is almost 100% responsive out of the box"](http://fluidity.sexy/)**. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is **natural** on mobile devices.
+But designing the **mobile** version first is actually _easier_ considering **["HTML is almost 100% responsive out of the box"](http://fluidity.sexy/)**. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is **natural** on mobile devices.
 
 Using [the Flow](/css-the-flow.html) is straightforward to design a mobile site: just order your HTML elements in the way you want them to be displayed. Simply by writing your HTML code, you're _already designing your mobile website_. Header first, menu afterwards, then your content, and a footer at the end. _Voilà_!
 
@@ -232,7 +232,7 @@ body{ }
 }
 {% endhighlight %}
 
-A desktop-first approach starts with styles for large screens and  `min-width` media queries in order to apply specific rules for larger viewports:
+A desktop-first approach starts with styles for large screens and  `max-width` media queries in order to apply specific rules for larger viewports:
 
 {% highlight css %}
 /* General CSS rules for every viewport, including large desktop screens */
