@@ -1,6 +1,18 @@
-<script type="text/javascript">
+<script type="text/javascript" src="/javascript/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/javascript/codemirror.js"></script>
+<script type="text/javascript" src="/javascript/mode/xml/xml.js"></script>
+<script type="text/javascript" src="/javascript/mode/htmlmixed/htmlmixed.js"></script>
+
+<script type="text/javascript" src="/javascript/marksheet.js"></script>
+
+{% if page.layout == 'post' %}
+  <script type="text/javascript" src="/javascript/affix.js"></script>
+  <script type="text/javascript" src="/javascript/post.js"></script>
+{% endif %}
+
+<script async type="text/javascript">
   WebFontConfig = {
-    google: { families: [ 'Source+Sans+Pro:400,300,700,400italic,700italic:latin', 'Source+Code+Pro::latin' ] ] }
+    google: { families: [ 'Source+Sans+Pro:400,300,700,400italic,700italic:latin', 'Source+Code+Pro::latin' ] }
   };
   (function() {
     var wf = document.createElement('script');
@@ -12,15 +24,3 @@
     s.parentNode.insertBefore(wf, s);
   })();
 </script>
-
-<script type="text/javascript" src="/javascript/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/javascript/codemirror.js"></script>
-<script type="text/javascript" src="/javascript/mode/xml/xml.js"></script>
-<script type="text/javascript" src="/javascript/mode/htmlmixed/htmlmixed.js"></script>
-
-<script type="text/javascript" src="/javascript/marksheet.js"></script>
-
-{% if page.route == 'post' %}
-  <script type="text/javascript" src="/javascript/affix.js"></script>
-  <script type="text/javascript" src="/javascript/post.js"></script>
-{% endif %}

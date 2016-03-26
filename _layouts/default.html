@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="route-{{ page.route }}{% if page.section %} section-{{ page.section }}{% endif %}">
+<html class="route-{{ page.route }} route-{{ page.layout }}{% if page.section %} section-{{ page.section }}{% endif %}">
   {% include head.html %}
   <body>
     {% include facebook.html %}
@@ -9,7 +9,7 @@
       {{ content }}
     </div>
     {% include footer.html %}
-    {% if page.route == 'post' %}
+    {% if page.layout == 'post' %}
       <div id="overlay" class="page-overlay"></div>
       <div class="page-menu">
         {% include table-of-contents.html %}

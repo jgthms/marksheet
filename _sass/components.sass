@@ -3,16 +3,17 @@
   background-color: $hero-3
   background-image: linear-gradient(142deg, $hero-1, $hero-2 31%, $hero-3 65%, $hero-4)
   position: fixed
-  &:after
-    +overlay
-    background: rgba(black, .1)
-    content: ""
-    display: block
-    mix-blend-mode: multiply
+
+.page-hero-pattern
+  +overlay
+  background: rgba(black, .1)
+  content: ""
+  display: block
+  mix-blend-mode: multiply
+  opacity: 0
   +from(700px)
-    &:after
-      background: url("/images/pattern.png") repeat
-      mix-blend-mode: multiply
+    background: url("/images/pattern.png") repeat
+    mix-blend-mode: multiply
 
 .page-body
   position: relative
