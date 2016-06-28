@@ -9,7 +9,7 @@
       {{ content }}
     </div>
     {% include footer.html %}
-    {% if page.layout == 'post' %}
+    {% if page.route == 'post' %}
       <div id="overlay" class="page-overlay"></div>
       <div class="page-menu">
         {% include table-of-contents.html %}
