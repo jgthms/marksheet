@@ -103,5 +103,5 @@ h1{ text-shadow: 0 2px 5px rgba(0,0,0,0.5);}
 
 Only the `x` and `y` values are required. The `blur` defaults to `0` (zero), while the `color` defaults to the color of the text.
 
-This property is tricky, so use it with parcimony and don't go crazy!
+This property is tricky, so use it carefully and don't go crazy!
 {: .info}
