@@ -10,7 +10,7 @@ section: css
 We've already covered **[CSS size units](/css-size-units.html)**, which are used to set the font size among other things.
 
 {% highlight css %}
-p{ font-size: 16px;}
+p { font-size: 16px; }
 {% endhighlight %}
 
 Bear in mind that setting a font size of `16px` won't make each letter `16px` high. The _actual_ size of each letter depends on the font-family used.
@@ -20,7 +20,7 @@ Bear in mind that setting a font size of `16px` won't make each letter `16px` hi
 This property can make your text _italic_:
 
 {% highlight css %}
-h2{ font-style: italic;}
+h2 { font-style: italic; }
 {% endhighlight %}
 
 Default value: `font-style: normal;`.
@@ -32,7 +32,7 @@ Another possible value is `oblique` but is never used.
 This property can make your text **bold**:
 
 {% highlight css %}
-h2{ font-weight: bold;}
+h2 { font-weight: bold; }
 {% endhighlight %}
 
 Default value: `font-weight: normal;`.
@@ -60,7 +60,7 @@ You'll mostly find 400 (normal) and 700 (bold), and sometimes 300 (light) and 50
 This property turn your text into small caps:
 
 {% highlight css %}
-h2{ font-variant: small-caps;}
+h2 { font-variant: small-caps; }
 {% endhighlight %}
 
 Default value: `font-variant: normal;`.

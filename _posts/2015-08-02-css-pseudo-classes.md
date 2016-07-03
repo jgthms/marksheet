@@ -23,7 +23,7 @@ A pseudo-class **can't exist on its own**. It must be **attached to a selector**
 The syntax looks like this:
 
 {% highlight css %}
-.selector:pseudo-class{ }
+.selector:pseudo-class { }
 {% endhighlight %}
 
 There is **no space** between the selector and the pseudo-class, to signify that they are **linked together**.
@@ -33,8 +33,8 @@ There is **no space** between the selector and the pseudo-class, to signify that
 For example, a common pseudo-class used is `:hover`, which will apply a CSS style when the targeted element is **hovered**. Let's test it on **links**.
 
 {% highlight css %}
-a{ color: blue;}
-a:hover{ color: red;}
+a { color: blue; }
+a:hover { color: red; }
 {% endhighlight %}
 
 <div class="result" id="result-821">
@@ -51,8 +51,8 @@ The second line targets the **same HTML elements** but _only_ when something spe
 This pseudo-class targets **links that have been visited**. By default, links are **blue** and turn **purple** when you've visited them. Google results work like that.
 
 {% highlight css %}
-a{ color: dodgerblue;}
-a:visited{ color: rebeccapurple;}
+a { color: dodgerblue; }
+a:visited { color: rebeccapurple; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -78,8 +78,8 @@ Applying a different for visited links is often overlooked but comes in handy fo
 This pseudo-class happens when an HTML element is **in focus**. This is particularly useful for HTML **inputs**.
 
 {% highlight css %}
-.form-input{ border: 2px solid grey; padding: 5px;}
-.form-input:focus{ background: lightyellow; border-color: blue; outline: none;}
+.form-input { border: 2px solid grey; padding: 5px; }
+.form-input:focus { background: lightyellow; border-color: blue; outline: none; }
 {% endhighlight %}
 
 <div class="result" id="result-822">
@@ -103,8 +103,8 @@ These pseudo-classes are related to the **[HTML hierarchy](/html-hierarchy.html)
 {% endhighlight %}
 
 {% highlight css %}
-li:first-child{ background: greenyellow;}
-li:last-child{ background: lightsalmon;}
+li:first-child { background: greenyellow; }
+li:last-child { background: lightsalmon; }
 {% endhighlight %}
 
 <div class="result" id="result-823">
@@ -137,7 +137,7 @@ This pseudo-class is a more **global** version of `:first-child` and `:last-chil
 For example, if you want to target the **second** child, you would use `:nth-child(2)`:
 
 {% highlight css %}
-li:nth-child(2){ background: violet;}
+li:nth-child(2) { background: violet; }
 {% endhighlight %}
 
 <div class="result" id="result-825">
@@ -157,7 +157,7 @@ While using a number is straightforward, the `:nth-child` comes with 2 keywords:
 * `:nth-child(even)` will target every even element
 
 {% highlight css %}
-li:nth-child(odd){ background: gold;}
+li:nth-child(odd) { background: gold; }
 {% endhighlight %}
 
 <div class="result" id="result-826">
@@ -178,7 +178,7 @@ The `n` value increments from **zero** `0` to the **number** of child elements p
 What if you want to target every **third** element?
 
 {% highlight css %}
-li:nth-child(3n){ background: hotpink;}
+li:nth-child(3n) { background: hotpink; }
 {% endhighlight %}
 
 <div class="result" id="result-827">
@@ -209,7 +209,7 @@ You can read `:nth-child(3n)` as _"Target each element whose position is dividab
 What if you want to target the 1st item and _every third item after that_?
 
 {% highlight css %}
-li:nth-child(3n+1){ background: limegreen;}
+li:nth-child(3n+1) { background: limegreen; }
 {% endhighlight %}
 
 <div class="result" id="result-828">
@@ -242,20 +242,20 @@ The `n` iterator is very versatile. It's hard to find the right calculation, so 
 There are [dozens of pseudo-classes available](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes), some of them for very specific states. The most used ones are the ones we've covered.
 
 <style type="text/css">
-#result-821 a{ color: blue;}
-#result-821 a:hover{ color: red;}
-#result-8211 a{ color: dodgerblue;}
-#result-8211 a:visited{ color: rebeccapurple;}
-#result-822{ padding: 1rem;}
-#result-822 input{ border: 2px solid lightgrey; padding: 5px;}
-#result-822 input:focus{ background: lightyellow; border-color: blue; outline: none;}
-#result-823 li:first-child{ background: greenyellow;}
-#result-823 li:last-child{ background: lightsalmon;}
-#result-824 li:first-child{ background: greenyellow;}
-#result-824 li:last-child{ background: lightsalmon;}
-#result-825 li:nth-child(2){ background: violet;}
-#result-826 li:nth-child(odd){ background: gold;}
-#result-827 li:nth-child(3n){ background: hotpink;}
-#result-828 li:nth-child(3n+1){ background: limegreen;}
+#result-821 a { color: blue; }
+#result-821 a:hover { color: red; }
+#result-8211 a { color: dodgerblue; }
+#result-8211 a:visited { color: rebeccapurple; }
+#result-822 { padding: 1rem; }
+#result-822 input { border: 2px solid lightgrey; padding: 5px; }
+#result-822 input:focus { background: lightyellow; border-color: blue; outline: none; }
+#result-823 li:first-child { background: greenyellow; }
+#result-823 li:last-child { background: lightsalmon; }
+#result-824 li:first-child { background: greenyellow; }
+#result-824 li:last-child { background: lightsalmon; }
+#result-825 li:nth-child(2) { background: violet; }
+#result-826 li:nth-child(odd) { background: gold; }
+#result-827 li:nth-child(3n) { background: hotpink; }
+#result-828 li:nth-child(3n+1) { background: limegreen; }
 </style>
 

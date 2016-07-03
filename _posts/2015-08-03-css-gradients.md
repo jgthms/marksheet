@@ -25,7 +25,7 @@ The syntax for linear gradients is [quite complex](https://developer.mozilla.org
 Let's start with a simple 2 color gradient:
 
 {% highlight css %}
-div{ background-image: linear-gradient(red, blue);}
+div { background-image: linear-gradient(red, blue); }
 {% endhighlight %}
 
 {% highlight html %}
@@ -52,7 +52,7 @@ If the top to bottom direction doesn't suit you, you can alter it by either:
 This direction must be set _before_ the colors:
 
 {% highlight css %}
-div{ background-image: linear-gradient(to bottom right, yellow, purple); width: 200px;}
+div { background-image: linear-gradient(to bottom right, yellow, purple); width: 200px; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -71,7 +71,7 @@ If you want a more **specific angle**, you can use a value in **degrees**:
 * `180deg` is from bottom to top
 
 {% highlight css %}
-div{ background-image: linear-gradient(20deg, green, blue); width: 150px;}
+div { background-image: linear-gradient(20deg, green, blue); width: 150px; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -91,7 +91,7 @@ You can insert as many colors as you want. They will be **equally distributed** 
 * **4 colors**: 0%, 33%, 67% and 100%
 
 {% highlight css %}
-div{ background-image: linear-gradient(orange, grey, yellow); width: 150px;}
+div { background-image: linear-gradient(orange, grey, yellow); width: 150px; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -107,7 +107,7 @@ div{ background-image: linear-gradient(orange, grey, yellow); width: 150px;}
 If you don't want colors to equally distributed, you can set specific **color stop positions**, using either percentages `%` or pixels `px`:
 
 {% highlight css %}
-div{ background-image: linear-gradient(orange, grey 10%, yellow 50%); width: 150px;}
+div { background-image: linear-gradient(orange, grey 10%, yellow 50%); width: 150px; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -133,7 +133,7 @@ While linear gradients follow a single-line axis, **radial gradients** spread ou
 * an **end point**: where the edge of the circle/ellipse will be
 
 {% highlight css %}
-div{ background-image: radial-gradient(red, yellow); padding: 1rem; width: 300px;}
+div { background-image: radial-gradient(red, yellow); padding: 1rem; width: 300px; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -155,7 +155,7 @@ By default:
 The **start position** works like **[background positions](/css-background.html#background-position)**. You set it with the `at` keyword.
 
 {% highlight css %}
-div{ background-image: radial-gradient(at top right, black, lightgrey); padding: 1rem; width: 300px;}
+div { background-image: radial-gradient(at top right, black, lightgrey); padding: 1rem; width: 300px; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -178,8 +178,8 @@ By default, the shape will end at the **farthest corner**. You can either choose
 The difference is both hard to grasp and to visualize, so I won't go into details. Mozilla has a [good description of the different values](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient#Values).
 
 {% highlight css %}
-div{ background-image: radial-gradient(closest-corner at 20px 20px, green, blue); padding: 1rem; width: 300px;}
-div:hover{ background-image: radial-gradient(farthest-side at 20px 20px, green, blue)}
+div { background-image: radial-gradient(closest-corner at 20px 20px, green, blue); padding: 1rem; width: 300px; }
+div:hover { background-image: radial-gradient(farthest-side at 20px 20px, green, blue)}
 {% endhighlight %}
 
 {% highlight html %}
@@ -195,7 +195,7 @@ div:hover{ background-image: radial-gradient(farthest-side at 20px 20px, green, 
 Instead of setting both start _and_ end positions, you can just set **specific dimensions**:
 
 {% highlight css %}
-div{ background-image: radial-gradient(20px 10px at 75% 50%, darkviolet, pink); padding: 1rem; width: 300px;}
+div { background-image: radial-gradient(20px 10px at 75% 50%, darkviolet, pink); padding: 1rem; width: 300px; }
 {% endhighlight %}
 
 {% highlight html %}
@@ -213,13 +213,13 @@ The examples of this page are voluntarily "ugly", with pronounced color differen
 But it's quite easy to write more **subtle** gradients, especially for buttons:
 
 {% highlight css %}
-.button-grey  { background-image: linear-gradient(#f2f2f2, #f2f2f2);}
-.button-yellow{ background-image: linear-gradient(#fce374, #fcdf5b);}
-.button-orange{ background-image: linear-gradient(#f58a38, #f57c20);}
-.button-red   { background-image: linear-gradient(#ed6d64, #ed574c);}
-.button-purple{ background-image: linear-gradient(#847bba, #7568ba);}
-.button-blue  { background-image: linear-gradient(#42b0e3, #2ba9e3);}
-.button-green { background-image: linear-gradient(#97cc76, #8bcc62);}
+.button-grey   { background-image: linear-gradient(#f2f2f2, #f2f2f2); }
+.button-yellow { background-image: linear-gradient(#fce374, #fcdf5b); }
+.button-orange { background-image: linear-gradient(#f58a38, #f57c20); }
+.button-red    { background-image: linear-gradient(#ed6d64, #ed574c); }
+.button-purple { background-image: linear-gradient(#847bba, #7568ba); }
+.button-blue   { background-image: linear-gradient(#42b0e3, #2ba9e3); }
+.button-green  { background-image: linear-gradient(#97cc76, #8bcc62); }
 {% endhighlight %}
 
 <div class="result" id="result-832">
@@ -233,11 +233,11 @@ But it's quite easy to write more **subtle** gradients, especially for buttons:
 </div>
 
 <style type="text/css">
-#result-831{ padding: 1rem;}
-#result-831 div{ background-image: radial-gradient(closest-corner at 20px 20px, green, blue); padding: 1rem; width: 300px;}
-#result-831 div:hover{ background-image: radial-gradient(farthest-side at 20px 20px, green, blue)}
-#result-832{ padding: 1rem;}
-#result-832 a{ background-image: linear-gradient(lightblue, skyblue); border: 1px solid #eee; border-radius: 3px; color: grey; display: inline-block; line-height: 32px; padding: 0 15px; text-decoration: none; transition: none; vertical-align: top;}
+#result-831 { padding: 1rem; }
+#result-831 div { background-image: radial-gradient(closest-corner at 20px 20px, green, blue); padding: 1rem; width: 300px; }
+#result-831 div:hover { background-image: radial-gradient(farthest-side at 20px 20px, green, blue)}
+#result-832 { padding: 1rem; }
+#result-832 a { background-image: linear-gradient(lightblue, skyblue); border: 1px solid #eee; border-radius: 3px; color: grey; display: inline-block; line-height: 32px; padding: 0 15px; text-decoration: none; transition: none; vertical-align: top; }
 #result-832 .button-grey {
   background-color: #f2f2f2;
   background-image: linear-gradient(to bottom, #f2f2f2, #f2f2f2);

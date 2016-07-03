@@ -26,7 +26,7 @@ Remember how we wrote `@keyframes` when creating **[CSS animations](/css-animati
 The **name** of this mixin is `overlay`. You can reference this mixin in any CSS rule by using `@include`:
 
 {% highlight scss %}
-.modal-background{
+.modal-background {
   @include overlay();
   background: black;
   opacity: 0.9;
@@ -36,7 +36,7 @@ The **name** of this mixin is `overlay`. You can reference this mixin in any CSS
 As usual, this `.scss` will be compiled into `.css`:
 
 {% highlight css %}
-.modal-background{
+.modal-background {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -56,21 +56,21 @@ Like Sass variables (where you define your **values** on a single location), Sas
 The previous mixin can be reused in other rules:
 
 {% highlight scss %}
-.modal-background{
+.modal-background {
   @include overlay();
 }
 
-.product-link{
+.product-link {
   @include overlay();
 }
 
-.image-pattern{
+.image-pattern {
   @include overlay();
 }
 {% endhighlight %}
 
 {% highlight css %}
-.modal-background{
+.modal-background {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -78,7 +78,7 @@ The previous mixin can be reused in other rules:
   top: 0;
 }
 
-.product-link{
+.product-link {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -86,7 +86,7 @@ The previous mixin can be reused in other rules:
   top: 0;
 }
 
-.image-pattern{
+.image-pattern {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -109,13 +109,13 @@ For example, this [border-radius mixin](http://sass-lang.com/guide#topic-6-SCSS)
           border-radius: $radius;
 }
 
-.box{
+.box {
   @include border-radius(3px);
 }
 {% endhighlight %}
 
 {% highlight css %}
-.box{
+.box {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
       -ms-border-radius: 3px;
@@ -132,7 +132,7 @@ If you want a parameter to have a **default** value while providing the possibil
 {% highlight scss %}
 @mixin label($text: "Code", $background: $yellow, $color: rgba(black, 0.5)) {
   position: relative;
-  &:before{
+  &:before {
     background: $background;
     color: $color;
     content: $text;
@@ -156,12 +156,12 @@ This mixin is the one used by this website to add **labels** in the top left cor
 This mixin is used several times throughout the code:
 
 {% highlight scss %}
-div.highlighter-rouge{
+div.highlighter-rouge {
   @include label();
-  &.css{
+  &.css {
     @include label("CSS", $blue, white);
   }
-  &.scss{
+  &.scss {
     @include label("SCSS", #c69, white);
   }
 }

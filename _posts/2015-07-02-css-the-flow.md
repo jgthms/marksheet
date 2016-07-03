@@ -38,13 +38,13 @@ a block's height varies automatically to match its content's size
 </div>
 
 <style type="text/css">
-#result-fluidity{ height: 450px; max-width: 800px;}
-#result-fluidity div{ background: coral; padding: 20px;}
-#result-fluidity div:first-child{ background: mediumaquamarine; animation: expand 3s alternate infinite both;}
+#result-fluidity { height: 450px; max-width: 800px; }
+#result-fluidity div { background: coral; padding: 20px; }
+#result-fluidity div:first-child { background: mediumaquamarine; animation: expand 3s alternate infinite both; }
 
-@keyframes expand{
-  0%  { width: 100%;}
-  100%{ min-width: 100px; width: 50%;}
+@keyframes expand {
+  0%  { width: 100%; }
+  100% { min-width: 100px; width: 50%; }
 }
 </style>
 

@@ -26,7 +26,7 @@ How would that look like in your CSS? You could:
 #### Common CSS Class
 
 {% highlight css %}
-.small-uppercase{
+.small-uppercase {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -45,7 +45,7 @@ Because a CSS rule can accept any number of _selectors_, you could combine the s
 .button,
 .navigation a,
 .sidebar h3,
-.tabs a{
+.tabs a {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -69,7 +69,7 @@ A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector*
 
 {% highlight scss %}
 // scss
-.small-uppercase{
+.small-uppercase {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -77,15 +77,15 @@ A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector*
   text-transform: uppercase;
 }
 
-.modal-background{
+.modal-background {
   @extend .small-uppercase;
 }
 
-.product-link{
+.product-link {
   @extend .small-uppercase;
 }
 
-.image-pattern{
+.image-pattern {
   @extend .small-uppercase;
 }
 
@@ -93,7 +93,7 @@ A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector*
 .small-uppercase,
 .modal-background,
 .product-link,
-.image-pattern{
+.image-pattern {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -129,21 +129,21 @@ Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.ov
   text-transform: uppercase;
 }
 
-.modal-background{
+.modal-background {
   @include small-uppercase();
 }
 
-.product-link{
+.product-link {
   @include small-uppercase();
 }
 
-.image-pattern{
+.image-pattern {
   @include small-uppercase();
 }
 
 // generated css
 
-.modal-background{
+.modal-background {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -151,7 +151,7 @@ Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.ov
   text-transform: uppercase;
 }
 
-.product-link{
+.product-link {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -159,7 +159,7 @@ Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.ov
   text-transform: uppercase;
 }
 
-.image-pattern{
+.image-pattern {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -182,7 +182,7 @@ If you don't want or need the `.small-uppercase` selector, transform it into a *
 
 {% highlight scss %}
 // scss
-%small-uppercase{
+%small-uppercase {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -190,22 +190,22 @@ If you don't want or need the `.small-uppercase` selector, transform it into a *
   text-transform: uppercase;
 }
 
-.modal-background{
+.modal-background {
   @extend %small-uppercase;
 }
 
-.product-link{
+.product-link {
   @extend %small-uppercase;
 }
 
-.image-pattern{
+.image-pattern {
   @extend %small-uppercase;
 }
 
 // generated css
 .modal-background,
 .product-link,
-.image-pattern{
+.image-pattern {
   color: lightslategrey;
   font-size: 10px;
   letter-spacing: 0.1em;

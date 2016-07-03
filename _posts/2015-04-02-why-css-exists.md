@@ -67,7 +67,7 @@ CSS brings an HTML document to **life**, by choosing fonts, applying colors, def
 How CSS works is by **selecting** an HTML element (like a paragraph), choosing a **property** to alter (like the color), and applying a certain **value** (like red):
 
 {% highlight css %}
-p{ color: red;}
+p { color: red; }
 {% endhighlight %}
 
 The word _"Style"_ can be deceiving. You might think CSS is only used to change the text's color, size, and font. But CSS is able to define an HTML document's **layout**, by defining heights, widths, inner and outer margins, positions, columns...
@@ -92,7 +92,7 @@ You can use a `<style>` tag in the `<head>` of your HTML document:
   <head>
     <title>Hello World</title>
     <style type="text/css">
-      p{ color: red;}
+      p { color: red; }
     </style>
   </head>
   <body>
@@ -106,7 +106,7 @@ You can use a `<style>` tag in the `<head>` of your HTML document:
 You can write your CSS in a separate file with a `.css` extension, and then link it to your HTML by using the `<link>` HTML tag.
 
 {% highlight css %}
-p{ color: red;}
+p { color: red; }
 {% endhighlight %}
 
 {% highlight html %}

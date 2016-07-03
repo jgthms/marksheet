@@ -17,7 +17,7 @@ h2,
 h3,
 h4,
 h5,
-h6{ color: grey;}
+h6 { color: grey; }
 {% endhighlight %}
 
 ### Value propagation
@@ -25,7 +25,7 @@ h6{ color: grey;}
 The `color` value can be inherited from an **ancestor**. Considering we want to alter the _whole_ webpage, we will choose the ancestor of all HTML elements, the `body` tag:
 
 {% highlight css %}
-body{ color: grey;}
+body { color: grey; }
 {% endhighlight %}
 
 All child and descendant elements will **inherit** the value `grey` from their common ancestor `body`, which naturally encompasses _all_ elements.

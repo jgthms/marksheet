@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CSS <strong>Syntax</strong>"
-subtitle: "who{ what: how;}"
+subtitle: "who { what: how; }"
 section: css
 ---
 
@@ -9,13 +9,13 @@ The purpose of CSS is to define the layout _and_ styling of your HTML elements. 
 
 {% highlight css %}
 /* A CSS rule */
-selector{ property: value;}
+selector { property: value; }
 {% endhighlight %}
 
 You can read that as:
 
 {% highlight css %}
-who{ what: how;}
+who { what: how; }
 {% endhighlight %}
 
 CSS is a 3-part process:
@@ -39,13 +39,13 @@ Focus on the **tag name** (and forget about the angle brackets <> and the text).
 Let's use that in our CSS as a **selector**, and let's apply some styling:
 
 {% highlight css %}
-blockquote{ background: lightgreen;}
+blockquote { background: lightgreen; }
 {% endhighlight %}
 
 Interesting. But now, the text color doesn't really match the background color. Let's improve that:
 
 {% highlight css %}
-blockquote{
+blockquote {
   background: lightgreen;
   color: darkgreen;
 }
@@ -60,7 +60,7 @@ The `<blockquote>` HTML tag is a **block** element. It has an **inline** counter
 
 {% highlight css %}
 q,
-blockquote{
+blockquote {
   background: lightgreen;
   color: darkgreen;
 }
@@ -78,7 +78,7 @@ As in HTML, it can be handy to write CSS comments:
 {% highlight css %}
 /* This is a CSS comment */
 q,
-blockquote{
+blockquote {
   background: lightgreen;
   color: darkgreen;
 }

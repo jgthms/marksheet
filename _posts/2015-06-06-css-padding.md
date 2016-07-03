@@ -10,19 +10,19 @@ The **padding** is the space between an element's _border_ and its _content_.
 The amount of space can be defined using any of the [size units](css-size-units.html).
 
 {% highlight css %}
-blockquote{ padding: 20px;}
+blockquote { padding: 20px; }
 {% endhighlight %}
 
 As for borders, the padding can be set _individually_ for any of the 4 sides.
 
 {% highlight css %}
-blockquote{ padding-bottom: 20px;}
+blockquote { padding-bottom: 20px; }
 {% endhighlight %}
 
 Because the padding lies **between** the _border_ and the _content_, it's easier to visualize the inner space with a border applied:
 
 {% highlight css %}
-blockquote{ background: yellow; border: 1px solid blue;}
+blockquote { background: yellow; border: 1px solid blue; }
 {% endhighlight %}
 
 <div class="result">
@@ -34,7 +34,7 @@ blockquote{ background: yellow; border: 1px solid blue;}
 Adding a padding will provide space between the textual content and the borders:
 
 {% highlight css %}
-blockquote{ background: yellow; border: 1px solid blue; padding: 20px;}
+blockquote { background: yellow; border: 1px solid blue; padding: 20px; }
 {% endhighlight %}
 
 <div class="result">

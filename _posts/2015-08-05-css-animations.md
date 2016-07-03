@@ -42,12 +42,12 @@ Like the `transition` property, `animation` is a **shorthand** property for seve
 To animate a loading button, you could write a **bouncing** animation:
 
 {% highlight css %}
-@keyframes bouncing{
-  0%  { bottom: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5);}
-  100%{ bottom: 50px; box-shadow: 0 50px 50px rgba(0,0,0,0.1);}
+@keyframes bouncing {
+  0% { bottom: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+  100% { bottom: 50px; box-shadow: 0 50px 50px rgba(0,0,0,0.1); }
 }
 
-.loading-button{ animation: bouncing 0.5s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both;}
+.loading-button { animation: bouncing 0.5s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both; }
 {% endhighlight %}
 
 <div class="result" id="result-1">
@@ -85,13 +85,13 @@ To define an animation, just write the keyword `@keyframes` followed by its **na
 
 {% highlight css %}
 @keyframes around {
-  0%  { left: 0; top: 0;}
-  25% { left: 240px; top: 0;}
-  50% { left: 240px; top: 140px;}
-  75% { left: 0; top: 140px;}
-  100%{ left: 0; top: 0;}
+  0%  { left: 0; top: 0; }
+  25% { left: 240px; top: 0; }
+  50% { left: 240px; top: 140px; }
+  75% { left: 0; top: 140px; }
+  100% { left: 0; top: 0; }
 }
-p{ animation: around 4s linear infinite;}
+p { animation: around 4s linear infinite; }
 {% endhighlight %}
 
 <div class="result" id="result-2">
@@ -108,11 +108,11 @@ The animation's **name** is used at least **twice**:
 * when **using** the animation using the `animation-name` property (or withing the `animation` shorthand)
 
 {% highlight css %}
-@keyframes whatever{
+@keyframes whatever {
   /* ... */
 }
 
-.selector{ animation-name: whatever;}
+.selector { animation-name: whatever; }
 {% endhighlight %}
 
 Like CSS class names, animation names can only include:
@@ -129,7 +129,7 @@ It can not start with a number or two dashes.
 Just like [transition durations](/css-transitions.html#transition-duration), animation durations can be set in **seconds** `1s` or **milliseconds** `200ms`.
 
 {% highlight css %}
-.selector{ animation-duration: 0.5s;}
+.selector { animation-duration: 0.5s; }
 {% endhighlight %}
 
 It defaults to `0s`, which means no animation at all.
@@ -139,7 +139,7 @@ It defaults to `0s`, which means no animation at all.
 Just like [transition timing functions](/css-transitions.html#transition-timing-function), animation timing functions can use **keywords** like `linear`, `ease-out`, or be defined using custom **cubic bezier** functions.
 
 {% highlight css %}
-.selector{ animation-timing-function: ease-in-out;}
+.selector { animation-timing-function: ease-in-out; }
 {% endhighlight %}
 
 It defaults to `ease`.
@@ -156,9 +156,9 @@ It defaults to `0s`, which means no delay at all.
 It's useful when triggering multiple animations **in sequence**.
 
 {% highlight css %}
-.a,.b,.c{ animation: bouncing 1s;}
-.b{ animation-delay: 0.25s;}
-.c{ animation-delay: 0.5s;}
+.a,.b,.c { animation: bouncing 1s; }
+.b { animation-delay: 0.25s; }
+.c { animation-delay: 0.5s; }
 {% endhighlight %}
 
 ### animation-iteration-count
@@ -170,7 +170,7 @@ By default, animations are only played **once** (value of `1`). You can set 3 ty
 * the **keyword** `infinite` which will repeat the animation indefinitely
 
 {% highlight css %}
-.selector{ animation-duration: infinite;}
+.selector { animation-duration: infinite; }
 {% endhighlight %}
 
 ### animation-direction
@@ -287,119 +287,119 @@ Let's imagine a **button** that is:
 </div>
 
 <style type="text/css">
-#result-1{ padding: 1rem;}
-#result-1 a{ animation: bouncing 0.5s cubic-bezier(.1,.25,.1,1) 0s infinite alternate both; background: lightslategrey; border-radius: 2px; display: inline-block; color: white; cursor: pointer; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; padding: 1em 2em 1.1em; position: relative; text-decoration: none; text-transform: uppercase; vertical-align: top;}
+#result-1 { padding: 1rem; }
+#result-1 a { animation: bouncing 0.5s cubic-bezier(.1,.25,.1,1) 0s infinite alternate both; background: lightslategrey; border-radius: 2px; display: inline-block; color: white; cursor: pointer; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; padding: 1em 2em 1.1em; position: relative; text-decoration: none; text-transform: uppercase; vertical-align: top; }
 
-@keyframes bouncing{
-  0%  { bottom: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5);}
-  100%{ bottom: 50px; box-shadow: 0 50px 50px rgba(0,0,0,0.1);}
+@keyframes bouncing {
+  0%  { bottom: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+  100% { bottom: 50px; box-shadow: 0 50px 50px rgba(0,0,0,0.1); }
 }
 
-#result-2{ height: 300px; padding: 0; width: 300px;}
-#result-2 p{ animation: around 4s linear 0s infinite; background: turquoise; color: white; height: 60px; line-height: 60px; margin: 0; position: absolute; text-align: center; width: 60px;}
+#result-2 { height: 300px; padding: 0; width: 300px; }
+#result-2 p { animation: around 4s linear 0s infinite; background: turquoise; color: white; height: 60px; line-height: 60px; margin: 0; position: absolute; text-align: center; width: 60px; }
 
 @keyframes around {
-  0%  { left: 0; top: 0;}
-  25% { left: 240px; top: 0;}
-  50% { left: 240px; top: 240px;}
-  75% { left: 0; top: 240px;}
-  100%{ left: 0; top: 0;}
+  0%  { left: 0; top: 0; }
+  25% { left: 240px; top: 0; }
+  50% { left: 240px; top: 240px; }
+  75% { left: 0; top: 240px; }
+  100% { left: 0; top: 0; }
 }
 
-#result-3{ padding-bottom: 1rem;}
-#result-3 p{ color: grey;}
-#result-3 p strong{ font-weight: bold;}
-#result-3 div{ background: hsl(217,4%,96%); height: 20px; width: 220px;}
-#result-3 div div{ animation: swipe 2s linear infinite; background: crimson; height: 20px; left: 0; margin-top: -1rem; position: relative; transition: 1s; width: 20px;}
-#result-3 .normal div{ animation-direction: normal;}
-#result-3 .reverse div{ animation-direction: reverse;}
-#result-3 .alternate div{ animation-direction: alternate;}
-#result-3 .alternate-reverse div{ animation-direction: alternate-reverse;}
-#result-3 p:nth-child(1) strong{ color: crimson;}
-#result-3 div:nth-child(2) div{ background: crimson;}
-#result-3 p:nth-child(3) strong{ color: midnightblue;}
-#result-3 div:nth-child(4) div{ background: midnightblue;}
-#result-3 p:nth-child(5) strong{ color: mediumseagreen;}
-#result-3 div:nth-child(6) div{ background: mediumseagreen;}
-#result-3 p:nth-child(7) strong{ color: goldenrod;}
-#result-3 div:nth-child(8) div{ background: goldenrod;}
+#result-3 { padding-bottom: 1rem; }
+#result-3 p { color: grey; }
+#result-3 p strong { font-weight: bold; }
+#result-3 div { background: hsl(217,4%,96%); height: 20px; width: 220px; }
+#result-3 div div { animation: swipe 2s linear infinite; background: crimson; height: 20px; left: 0; margin-top: -1rem; position: relative; transition: 1s; width: 20px; }
+#result-3 .normal div { animation-direction: normal; }
+#result-3 .reverse div { animation-direction: reverse; }
+#result-3 .alternate div { animation-direction: alternate; }
+#result-3 .alternate-reverse div { animation-direction: alternate-reverse; }
+#result-3 p:nth-child(1) strong { color: crimson; }
+#result-3 div:nth-child(2) div { background: crimson; }
+#result-3 p:nth-child(3) strong { color: midnightblue; }
+#result-3 div:nth-child(4) div { background: midnightblue; }
+#result-3 p:nth-child(5) strong { color: mediumseagreen; }
+#result-3 div:nth-child(6) div { background: mediumseagreen; }
+#result-3 p:nth-child(7) strong { color: goldenrod; }
+#result-3 div:nth-child(8) div { background: goldenrod; }
 
 @keyframes swipe {
-  0%  { left: 0;}
-  100%{ left: 200px;}
+  0%  { left: 0; }
+  100% { left: 200px; }
 }
 
-#result-4{ padding: 1rem 1rem 0;}
-#result-4 p{ color: grey; margin: 0; position: relative;}
-#result-4 p:first-child{ margin-bottom: 1rem;}
-#result-4 p span{ animation: toggle 6s infinite both; left: 0; position: absolute;}
-#result-4 p:first-child span{ animation-name: tabs; margin-right: 1rem; position: static;}
-#result-4 p span:nth-child(1){ animation-delay: 0; position: static;}
-#result-4 p span:nth-child(2){ animation-delay: 2s;}
-#result-4 p span:nth-child(3){ animation-delay: 4s;}
-#result-4 div{ background: hsl(217,4%,96%); height: 20px; margin-bottom: 1rem; width: 220px;}
-#result-4 div div{ animation: race-none 6s linear infinite; background: crimson; height: 20px; margin-bottom: 0; position: relative; width: 20px;}
-#result-4 div:nth-child(7) div{ animation-name: race-forwards;}
-#result-4 div:nth-child(10) div{ animation-name: race-backwards;}
-#result-4 div:nth-child(13) div{ animation-name: race-both;}
+#result-4 { padding: 1rem 1rem 0; }
+#result-4 p { color: grey; margin: 0; position: relative; }
+#result-4 p:first-child { margin-bottom: 1rem; }
+#result-4 p span { animation: toggle 6s infinite both; left: 0; position: absolute; }
+#result-4 p:first-child span { animation-name: tabs; margin-right: 1rem; position: static; }
+#result-4 p span:nth-child(1) { animation-delay: 0; position: static; }
+#result-4 p span:nth-child(2) { animation-delay: 2s; }
+#result-4 p span:nth-child(3) { animation-delay: 4s; }
+#result-4 div { background: hsl(217,4%,96%); height: 20px; margin-bottom: 1rem; width: 220px; }
+#result-4 div div { animation: race-none 6s linear infinite; background: crimson; height: 20px; margin-bottom: 0; position: relative; width: 20px; }
+#result-4 div:nth-child(7) div { animation-name: race-forwards; }
+#result-4 div:nth-child(10) div { animation-name: race-backwards; }
+#result-4 div:nth-child(13) div { animation-name: race-both; }
 
 a.fill-mode,
-a.fill-mode:hover{ background: crimson; border-radius: 2px; display: inline-block; color: white !important; cursor: pointer; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; padding: 1em 2em 1.1em; position: relative; text-decoration: none !important; text-transform: uppercase; vertical-align: top;}
+a.fill-mode:hover { background: crimson; border-radius: 2px; display: inline-block; color: white !important; cursor: pointer; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; padding: 1em 2em 1.1em; position: relative; text-decoration: none !important; text-transform: uppercase; vertical-align: top; }
 a.fill-mode-blue,
-a.fill-mode-blue:hover{ background: midnightblue;}
+a.fill-mode-blue:hover { background: midnightblue; }
 a.fill-mode-green,
-a.fill-mode-green:hover{ background: mediumseagreen;}
+a.fill-mode-green:hover { background: mediumseagreen; }
 
 @keyframes tabs {
-  0%  { opacity: 0.2;}
-  1%  { opacity: 1;}
-  33% { opacity: 1;}
-  34% { opacity: 0.2;}
-  100%{ opacity: 0.2;}
+  0%  { opacity: 0.2; }
+  1%  { opacity: 1; }
+  33% { opacity: 1; }
+  34% { opacity: 0.2; }
+  100% { opacity: 0.2; }
 }
 
 @keyframes toggle {
-  0%  { opacity: 0;}
-  1%  { opacity: 1;}
-  33% { opacity: 1;}
-  34% { opacity: 0;}
-  100%{ opacity: 0;}
+  0%  { opacity: 0; }
+  1%  { opacity: 1; }
+  33% { opacity: 1; }
+  34% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes race-none {
-  0%  { background: crimson; left: 0;}
-  33%  { background: crimson; left: 0;}
-  34%  { background: midnightblue; left: 100px;}
+  0%  { background: crimson; left: 0; }
+  33%  { background: crimson; left: 0; }
+  34%  { background: midnightblue; left: 100px; }
   66%  { background: mediumseagreen; left: 200px}
-  67%  { background: crimson; left: 0;}
-  100%{ background: crimson; left: 0;}
+  67%  { background: crimson; left: 0; }
+  100% { background: crimson; left: 0; }
 }
 
 @keyframes race-forwards {
-  0%  { background: crimson; left: 0;}
-  33%  { background: crimson; left: 0;}
-  34%  { background: midnightblue; left: 100px;}
+  0%  { background: crimson; left: 0; }
+  33%  { background: crimson; left: 0; }
+  34%  { background: midnightblue; left: 100px; }
   66%  { background: mediumseagreen; left: 200px}
-  67%  { background: mediumseagreen; left: 200px;}
-  100%{ background: mediumseagreen; left: 200px;}
+  67%  { background: mediumseagreen; left: 200px; }
+  100% { background: mediumseagreen; left: 200px; }
 }
 
 @keyframes race-backwards {
-  0%  { background: midnightblue; left: 100px;}
-  33%  { background: midnightblue; left: 100px;}
-  34%  { background: midnightblue; left: 100px;}
+  0%  { background: midnightblue; left: 100px; }
+  33%  { background: midnightblue; left: 100px; }
+  34%  { background: midnightblue; left: 100px; }
   66%  { background: mediumseagreen; left: 200px}
-  67%  { background: crimson; left: 0;}
-  100%{ background: crimson; left: 0;}
+  67%  { background: crimson; left: 0; }
+  100% { background: crimson; left: 0; }
 }
 
 @keyframes race-both {
-  0%  { background: midnightblue; left: 100px;}
-  33%  { background: midnightblue; left: 100px;}
-  34%  { background: midnightblue; left: 100px;}
+  0%  { background: midnightblue; left: 100px; }
+  33%  { background: midnightblue; left: 100px; }
+  34%  { background: midnightblue; left: 100px; }
   66%  { background: mediumseagreen; left: 200px}
-  67%  { background: mediumseagreen; left: 200px;}
-  100%{ background: mediumseagreen; left: 200px;}
+  67%  { background: mediumseagreen; left: 200px; }
+  100% { background: mediumseagreen; left: 200px; }
 }
 </style>
 

@@ -17,7 +17,7 @@ Inherited by children elements: no.
 As we've already covered the different ways to define a [color in CSS](/css-color-units.html), applying a background color is straightforward:
 
 {% highlight css %}
-body{ background: #f2eee9;}
+body { background: #f2eee9; }
 {% endhighlight %}
 
 The whole element will be filled with a **plain** background color. Bear in mind to always to choose an appropriate text color to keep your content easy to read.
@@ -29,7 +29,7 @@ Because plain colors are usually not sufficient, CSS allows to apply **images** 
 Applying a background image only requires to specify its URL:
 
 {% highlight css %}
-body{ background-image: url(images/diagonal-pattern.png);}
+body { background-image: url(images/diagonal-pattern.png); }
 {% endhighlight %}
 
 The behavior of the image (how it repeats itself, where it is positioned, how it is sized) is defined by other background properties. The `background-image` only defines _which_ image to use.
@@ -56,7 +56,7 @@ CSS also allows to define **color gradients** as background images, in 2 differe
 We cover that in a chapter 8.3: [CSS gradients](/css-gradients.html). The only thing to know for now is that background gradients are considered as **background images**:
 
 {% highlight css %}
-body{ background-image: linear-gradient(white, grey);}
+body { background-image: linear-gradient(white, grey); }
 {% endhighlight %}
 
 ### background-position
@@ -70,13 +70,13 @@ For each coordinate, you either use:
 * keywords like `center`, `left`, `bottom`...
 
 {% highlight css %}
-body{ background-position: right bottom;}
+body { background-position: right bottom; }
 {% endhighlight %}
 
 You can mix different coordinate units:
 
 {% highlight css %}
-body{ background-position: center 20px;}
+body { background-position: center 20px; }
 {% endhighlight %}
 
 ### background-repeat
@@ -84,7 +84,7 @@ body{ background-position: center 20px;}
 By default, a background image will repeat itself indefinitely. You can choose to make it repeat only horizontally, only vertically, or not at all.
 
 {% highlight css %}
-body{ background-repeat: repeat-x;} /* Only horizontally */
-body{ background-repeat: repeat-y;} /* Only vertically */
-body{ background-repeat: no-repeat;} /* The background image will only appear once */
+body { background-repeat: repeat-x; } /* Only horizontally */
+body { background-repeat: repeat-y; } /* Only vertically */
+body { background-repeat: no-repeat; } /* The background image will only appear once */
 {% endhighlight %}

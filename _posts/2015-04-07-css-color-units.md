@@ -14,8 +14,8 @@ The `color` property defines the color of the **text**. It is pretty straightfor
 CSS provides [145 colors names](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), from the most basic (black, white, orange, yellow, blue...) to the more specific (lawngreen, orchid, crimson...).
 
 {% highlight css %}
-body{ color: black;}
-a{ color: orange;}
+body { color: black; }
+a { color: orange; }
 {% endhighlight %}
 
 Because the color names are hard to remember, and because you probably want very specific colors, color names are not often used.
@@ -31,19 +31,19 @@ Because the RGB model is directly related to how colors are _physically_ rendere
 For example, the red color of this website is 219 amounts of Red, 78 of Green, and 68 of Blue:
 
 {% highlight css %}
-a{ color: rgb(219, 78, 68);}
+a { color: rgb(219, 78, 68); }
 {% endhighlight %}
 
 The black color is no amount of either Red, Green or Blue:
 
 {% highlight css %}
-body{ color: rgb(0, 0, 0);}
+body { color: rgb(0, 0, 0); }
 {% endhighlight %}
 
 On the other side of the spectrum, white is the full amount of each Red, Green and Blue:
 
 {% highlight css %}
-body{ color: rgb(255, 255, 255);}
+body { color: rgb(255, 255, 255); }
 {% endhighlight %}
 
 ### rgba
@@ -51,7 +51,7 @@ body{ color: rgb(255, 255, 255);}
 The `rgba` color unit is `rgb` to which we add an **alpha** value (ranging from 0 to 1, in decimal values), which defines how transparent the color is:
 
 {% highlight css %}
-body{ color: rgba(0, 0, 0, 0.8);}
+body { color: rgba(0, 0, 0, 0.8); }
 {% endhighlight %}
 
 A slightly transparent black color.
@@ -74,7 +74,7 @@ Instead of a color being a combination of Red, Green and Blue, you define:
 Again, the red color of this website is define this way in HSL:
 
 {% highlight css %}
-a{ color: hsl(4, 68%, 56%);}
+a { color: hsl(4, 68%, 56%); }
 {% endhighlight %}
 
 `4` indicates it's red
@@ -88,7 +88,7 @@ I consider `hsl` to be **human-readable**, whereas `rgb` is more **computer-read
 `hsla` is the same as `hsl`, with the added value of being able to define an **alpha** value:
 
 {% highlight css %}
-body{ color: hsl(4, 68%, 56%, 0.5);}
+body { color: hsl(4, 68%, 56%, 0.5); }
 {% endhighlight %}
 
 A transparent red color.

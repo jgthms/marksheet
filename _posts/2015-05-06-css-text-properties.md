@@ -12,7 +12,7 @@ Alongside the several `font-*` properties, CSS provides many `text-*` properties
 The `text-align` property must be applied on a block-level element and defines how its text and children inline elements are horizontally aligned.
 
 {% highlight css %}
-body{ text-align: left;}
+body { text-align: left; }
 {% endhighlight %}
 
 The most used values are:
@@ -43,7 +43,7 @@ The `text-decoration` property is used to add a line on your text.
 Default value: `none`
 
 {% highlight css %}
-.deleted{ text-decoration: line-through;}
+.deleted { text-decoration: line-through; }
 {% endhighlight %}
 
 <div class="result">
@@ -59,7 +59,7 @@ Possible values:
 By default, HTML links (`<a>`) have a `text-decoration: underline;` applied to them. One of the first things coders usually do is to remove this default styling:
 
 {% highlight css %}
-a{ text-decoration: none;}
+a { text-decoration: none; }
 {% endhighlight %}
 
 ### text-indent
@@ -69,7 +69,7 @@ The `text-indent` property allows to add space before the first letter of the fi
 Default value: `0` (zero)
 
 {% highlight css %}
-blockquote{ text-indent: 30px;}
+blockquote { text-indent: 30px; }
 {% endhighlight %}
 
 <div class="result" style="max-width: 400px;">
@@ -94,7 +94,7 @@ You define:
 * the `color`
 
 {% highlight css %}
-h1{ text-shadow: 0 2px 5px rgba(0,0,0,0.5);}
+h1 { text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
 {% endhighlight %}
 
 <div class="result">
