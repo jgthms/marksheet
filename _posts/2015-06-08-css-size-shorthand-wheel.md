@@ -9,7 +9,7 @@ section: css
 
 When all 4 sides (top, bottom, left and right) are involved in a CSS property, that CSS property also acts as a **shorthand** property.
 
-For example, the `padding` property can be used on its own to apply the _same_ value to all 4 sides, but also comes in 4 variations (`padding-top`, `padding-bottm`, `padding-left` and `padding-right`) to target a specific side.
+For example, the `padding` property can be used on its own to apply the _same_ value to all 4 sides, but also comes in 4 variations (`padding-top`, `padding-bottom`, `padding-left` and `padding-right`) to target a specific side.
 
 {% highlight css %}
 blockquote{ padding: 20px;}
