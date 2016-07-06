@@ -47,7 +47,7 @@ There's an easy way to remember which value will be applied.
 
 Instead of focusing on the values you've entered, think about the values you **havent'**.
 
-* if you enter 2 values (top/right), you omit setting `bottom` and `right`. Because `bottom` is the vertical counterpart of `top`, it will use `top`'s value. And because `left` is the horizontal counterpart of `right`, it will use `right`'s value.
+* if you enter 2 values (top/right), you omit setting `bottom` and `left`. Because `bottom` is the vertical counterpart of `top`, it will use `top`'s value. And because `left` is the horizontal counterpart of `right`, it will use `right`'s value.
 * if you enter 3 values (top/right/bottom), you omit setting `left`. As `right`'s counterpart, it will use its value.
 
 ### Other properties that can act as "wheel" shorthands
