@@ -106,8 +106,8 @@ The family tree analogy still applies when **traversing** several layers of HTML
 * a **descendant** of element X is any element _contained_ within X
 * a **child** is just a _direct_ descendant
 * an **ancestor** of element Y is any element 
-* a **descendant** of element X is any element _contained_ within X
 * the **parent** is just the first _direct_ ancestor
+* a **sibling** of element X is any element which has the _same_ parent
 
 ### Block and inline nesting
 
