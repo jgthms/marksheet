@@ -124,7 +124,7 @@ This URL can be segmented in 3 parts:
 * **domain** `ireallylovecats.com`
 * **file path** `gallery.html`
 
-This **absolute URL** is **self-sufficient**: no matter where you use the link form, it contains _all_ the information required to find the correct file, on the correct domain, with the correct protocol.
+This **absolute URL** is **self-sufficient**: no matter where you use the link from, it contains _all_ the information required to find the correct file, on the correct domain, with the correct protocol.
 
 You usually use absolute URLs defining a link from _your_ website to _another_ website.
 
