@@ -63,7 +63,7 @@ The purpose of a color being transparent is to blend with the background, and co
 
 **HSL** is another way to define a color. Think of it as a **color wheel**.
 
-![Image](#)
+![HSL Colorwheel](/images/hsl-colors.png)
 
 Instead of a color being a combination of Red, Green and Blue, you define:
 
