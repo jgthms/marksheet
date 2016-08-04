@@ -19,7 +19,7 @@ Building a table in HTML requires a **specific structure**:
 
 This **hierarchy** is required, and all 3 elements are necessary to build a table.
 
-When writing the code, you need to define your table cells from left to right, and _then_ from to bottom.
+When writing the code, you need to define your table cells from left to right, and _then_ from top to bottom.
 
 {% highlight html %}
 <table>
