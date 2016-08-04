@@ -181,7 +181,7 @@ header a {
 }
 {% endhighlight %}
 
-This can be read from right to left as: _"Select all `a` elements that are within a `header` element"_. This will prevent all other links (that aren't in the header) to remain unaffected.
+This can be read from right to left as: _"Select all `a` elements that are within a `header` element"_. This will prevent all other links (that aren't in the header) from being affected.
 
 ### Pseudo-class selectors
 
