@@ -178,8 +178,8 @@ Humans use the **decimal** system. We have 10 symbols to form numbers.
 
 In **hexadecimal**, we have 16 symbols to form numbers. Because 0-9 are not enough symbols, we also use A-F. And it starts at zero. So:
 
-* the number `4` in hexadecimal is `3`
-* the number `12` in hexadecimal is `B`
+* the number `4` in hexadecimal is `4`
+* the number `12` in hexadecimal is `C`
 * the number `16` in hexadecimal is `10` because after you've run out of symbols (the last one being `F`), you add a second symbol to the left and increment (`0` becomes `1`) and the right one starts over (from `F` to `0`)
 
 #### Do I have to remember this?
