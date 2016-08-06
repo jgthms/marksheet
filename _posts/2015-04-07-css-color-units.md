@@ -22,7 +22,7 @@ Because the color names are hard to remember, and because you probably want very
 
 ### rgb
 
-Computer monitors, TVs, mobile phones, all use the RGB color model to display colors. Basically, each color is defined by a combination of Red, Green, and Blue. The are 256 possible values for Red, Green or Blue. Because computers start counting at 0 (zero), the maximum value is 255.
+Computer monitors, TVs, mobile phones, all use the RGB color model to display colors. Basically, each color is defined by a combination of Red, Green, and Blue. There are 256 possible values for Red, Green or Blue. Because computers start counting at 0 (zero), the maximum value is 255.
 
 Considering a color is the result of a _combination_ of Red, Green and Blue, and because each of these 3 colors have 256 possible values, there are `256 * 256 * 256 = 16,777,216` possible colors available.
 
