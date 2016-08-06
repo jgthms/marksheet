@@ -82,7 +82,7 @@ As the two files are **in the same folder**, you can simply write in `home.html`
 
 On an actual website, the process is similar.
 
-Let's say you have a website called `http://ireallylovecats.com` on which you have 2 webpages: `one.html` and `two.html`:
+Let's say you have a website called `http://ireallylovecats.com` on which you have 2 webpages: `index.html` and `gallery.html`:
 
 <ul class="files">
   <li>
