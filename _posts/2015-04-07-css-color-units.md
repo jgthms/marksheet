@@ -69,7 +69,7 @@ Instead of a color being a combination of Red, Green and Blue, you define:
 
 * the **Hue** a value ranging from 0 to 360, defines _which color_ you want.
 * the **Saturation** percentage, ranging from 0% to 100%, defines _how much_ of that color you want.
-* the **Lightness** percentag, ranging from 0% to 100%, defines _how bright_ you want that color to be.
+* the **Lightness** percentage, ranging from 0% to 100%, defines _how bright_ you want that color to be.
 
 Again, the red color of this website is define this way in HSL:
 
