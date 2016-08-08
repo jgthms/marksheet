@@ -31,7 +31,7 @@ body{ font: bold 16px/1.5 Arial, sans-serif;}
 Because `font-style` and `font-variant` have not been defined, they'll use their default value `normal`.
 {: .info}
 
-Beware! If you've previously define one of the font properties and use the `font` shorthand afterwards, it will **override** the previously defined values.
+Beware! If you've previously defined one of the font properties and use the `font` shorthand afterwards, it will **override** the previously defined values.
 
 {% highlight css %}
 body{ font-size: 16px; line-height: 1.5;}
