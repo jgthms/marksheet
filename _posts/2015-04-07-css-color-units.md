@@ -22,7 +22,7 @@ Because the color names are hard to remember, and because you probably want very
 
 ### rgb
 
-Computer monitors, TVs, mobile phones, all use the RGB color model to display colors. Basically, each color is defined by a combination of Red, Green, and Blue. The are 256 possible values for Red, Green or Blue. Because computers start counting at 0 (zero), the maximum value is 255.
+Computer monitors, TVs, mobile phones, all use the RGB color model to display colors. Basically, each color is defined by a combination of Red, Green, and Blue. There are 256 possible values for Red, Green or Blue. Because computers start counting at 0 (zero), the maximum value is 255.
 
 Considering a color is the result of a _combination_ of Red, Green and Blue, and because each of these 3 colors have 256 possible values, there are `256 * 256 * 256 = 16,777,216` possible colors available.
 
@@ -69,7 +69,7 @@ Instead of a color being a combination of Red, Green and Blue, you define:
 
 * the **Hue** a value ranging from 0 to 360, defines _which color_ you want.
 * the **Saturation** percentage, ranging from 0% to 100%, defines _how much_ of that color you want.
-* the **Lightness** percentag, ranging from 0% to 100%, defines _how bright_ you want that color to be.
+* the **Lightness** percentage, ranging from 0% to 100%, defines _how bright_ you want that color to be.
 
 Again, the red color of this website is define this way in HSL:
 
@@ -178,8 +178,8 @@ Humans use the **decimal** system. We have 10 symbols to form numbers.
 
 In **hexadecimal**, we have 16 symbols to form numbers. Because 0-9 are not enough symbols, we also use A-F. And it starts at zero. So:
 
-* the number `4` in hexadecimal is `3`
-* the number `12` in hexadecimal is `B`
+* the number `4` in hexadecimal is `4`
+* the number `12` in hexadecimal is `C`
 * the number `16` in hexadecimal is `10` because after you've run out of symbols (the last one being `F`), you add a second symbol to the left and increment (`0` becomes `1`) and the right one starts over (from `F` to `0`)
 
 #### Do I have to remember this?
