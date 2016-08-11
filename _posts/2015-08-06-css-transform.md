@@ -19,7 +19,7 @@ CSS **transforms** are a collection of _functions_ that allow to **shape element
 There are 3 CSS transform properties available:
 
 * `transform` defines which transform _function_ to use (translate, rotate, scale...)
-* `transform-origin` allows to modify the origin point of a transformation (works like [background positions](/css-background.html#background-position))
+* `transform-origin` allows you to modify the origin point of a transformation (works like [background positions](/css-background.html#background-position))
 * `transform-style` is for 3d settings
 
 Note that unlike `background` and `border`, `transform` is **not a shorthand property**.
@@ -32,7 +32,7 @@ To prevent unexpected behavior, transformed elements **do not affect the Flow**.
 
 ### translate
 
-The `translate()` function allows to move an element **across the plane** (on the x and y axis). It accepts either:
+The `translate()` function allows you to move an element **across the plane** (on the x and y axis). It accepts either:
 
 * **1 parameter**: moves the element along the `x` axis
 * **2 parameters**: first value is for the `x` axis, second for the `y` one
@@ -76,7 +76,7 @@ You can use `translateX()` and `translateY()` to only move your element along th
 
 ### rotate
 
-The `rotate()` function allows to make an element **revolve around a fixed point**. By default, it revolves around the element's center. Think of it as vinyl being played on a turntable.
+The `rotate()` function allows you to make an element **revolve around a fixed point**. By default, it revolves around the element's center. Think of it as vinyl being played on a turntable.
 
 `rotate()` accepts only **1** parameter, which is an **angle** value defined in degrees `deg`, gradians `grad`, radians `rad` or turns `turn` (with 1 turn being equivalent to a full circle).
 
@@ -104,7 +104,7 @@ p{ animation: rotating 4s linear infinite;}
 
 ### scale
 
-The `scale()` function allows to **resize an element**. It can either expand or shrink it. The function accepts either:
+The `scale()` function allows you to **resize an element**. It can either expand or shrink it. The function accepts either:
 
 * **1 parameter**: the element is resized uniformily in height and width
 * **2 parameters**: the first value resizes the element _horizontally_, the second one _vertically_
@@ -174,7 +174,7 @@ Like `translate()`, the `scale()` function has x and y versions: `scaleX()` and 
 
 ### skew
 
-The `skew()` function allows to **distort an element**, by dragging its sides along a line basically.
+The `skew()` function allows you to **distort an element**, by dragging its sides along a line basically.
 
 This transform function is rarely used, as its effects are quite unpredictable, and its results not necessarily appealing. Nevertheless, let's see how it works.
 
