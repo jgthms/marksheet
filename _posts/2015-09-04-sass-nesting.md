@@ -7,7 +7,7 @@ section: sass
 
 ### Syntax
 
-In Sass, **nesting CSS rules** allows to define **hierarchy selectors**:
+In Sass, **nesting CSS rules** allow you to define **hierarchy selectors**:
 
 {% highlight scss %}
 .title{
@@ -28,7 +28,7 @@ Because `strong` and `em` appear _within_ the `.title` rule (between the 2 curly
 
 ### Nesting purpose
 
-Because [CSS priority](/css-priority.html) can be tricky, it's common to use be **specific** when writing selectors, by combining multiple classes/tags to prevent CSS rules to cancel each other out.
+Because [CSS priority](/css-priority.html) can be tricky, it's common to be **specific** when writing selectors, by combining multiple classes/tags to prevent CSS rules to cancel each other out.
 
 {% highlight css %}
 .description{}
