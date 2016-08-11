@@ -65,7 +65,7 @@ Sass helps solving these problems.
 
 ### Sass @extend syntax
 
-A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector**:
+A Sass `@extend` allows you to **inherit** CSS properties from _another_ **selector**:
 
 {% highlight scss %}
 // scss
