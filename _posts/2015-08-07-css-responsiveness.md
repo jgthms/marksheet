@@ -30,7 +30,7 @@ viewport
 
 ### Responsive web design
 
-The idea behind **responsive web design** is to make your website **adapt to fit to any device**. It does so by **targetting** devices with your CSS and applying certain styles on these devices _only_.
+The idea behind **responsive web design** is to make your website **adapt to fit to any device**. It does so by **targeting** devices with your CSS and applying certain styles on these devices _only_.
 
 Responsiveness relies upon the properties of either the **device** or the **viewport**. For example:
 
