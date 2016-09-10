@@ -4,6 +4,6 @@
 
 # Лицензия
 
-Содержимое этого проекта находится под лицензией [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+Содержимое данного проекта находится под лицензией [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Исходный код, используемый для форматирования и отображения содержимого находится под лицензией [MIT license](http://opensource.org/licenses/mit-license.php).
