@@ -17,41 +17,43 @@ route: post
 
   <div class="page-content">
     <div class="container">
-      <header id="breadcrumb" class="breadcrumb" data-spy="affix">
-        <a id="open" class="breadcrumb-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-
-        <span class="breadcrumb-section">
-          {% case page.section %}
-          {% when "web" %}
-            <i class="fa fa-globe"></i>
-          {% when "html" %}
-            <i class="fa fa-html5"></i>
-          {% when "css" %}
-            <i class="fa fa-css3"></i>
-          {% when "sass" %}
-            <i class="fa fa-rocket"></i>
-          {% endcase %}
-          {{ page.section }}
-        </span>
-
-        {% if page.next %}
-          <a class="breadcrumb-next" href="{{ page.next.url }}">
-            <i class="fa fa-angle-right"></i>
-            <span>Next article</span>
+      <div class="breadcrumb-holder">
+        <header id="breadcrumb" class="breadcrumb" data-spy="affix">
+          <a id="open" class="breadcrumb-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
           </a>
-        {% endif %}
 
-        {% if page.previous %}
-          <a class="breadcrumb-previous" href="{{ page.previous.url }}">
-            <i class="fa fa-angle-left"></i>
-            <span>Previous article</span>
-          </a>
-        {% endif %}
-      </header>
+          <span class="breadcrumb-section">
+            {% case page.section %}
+            {% when "web" %}
+              <i class="fa fa-globe"></i>
+            {% when "html" %}
+              <i class="fa fa-html5"></i>
+            {% when "css" %}
+              <i class="fa fa-css3"></i>
+            {% when "sass" %}
+              <i class="fa fa-rocket"></i>
+            {% endcase %}
+            {{ page.section }}
+          </span>
+
+          {% if page.next %}
+            <a class="breadcrumb-next" href="{{ page.next.url }}">
+              <i class="fa fa-angle-right"></i>
+              <span>Next article</span>
+            </a>
+          {% endif %}
+
+          {% if page.previous %}
+            <a class="breadcrumb-previous" href="{{ page.previous.url }}">
+              <i class="fa fa-angle-left"></i>
+              <span>Previous article</span>
+            </a>
+          {% endif %}
+        </header>
+      </div>
 
       <nav id="menu" class="menu">
         <ul></ul>

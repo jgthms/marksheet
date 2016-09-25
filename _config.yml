@@ -3,4 +3,5 @@ description: A free tutorial to learn HTML and CSS
 markdown: kramdown
 kramdown:
   input: GFM
+exclude: ['images/original']
 permalink: :title.html
