@@ -8,6 +8,47 @@
   +from(1200px)
     max-width: 1140px
 
+.banner
+  background-color: $red
+  background-image: linear-gradient(142deg, adjust-hue($red, -20deg), adjust-hue($red, -10deg) 31%, $red 65%, adjust-hue($red, 10deg))
+  display: block
+  color: $yellow
+  padding: 15px
+  position: relative
+  text-align: center
+  &:before
+    +overlay
+    background: black
+    content: ""
+    display: block
+    opacity: 0
+    transition: opacity 86ms ease-out
+  .fa,
+  strong,
+  em
+    color: $yellow
+    display: inline-block
+    line-height: 20px
+    margin: 0 5px
+    position: relative
+    transition: color 86ms ease-out
+    vertical-align: top
+  .fa
+    font-size: 14px
+    position: relative
+    top: 1px
+  strong
+    color: white
+  em
+    font-style: normal
+  &:hover
+    &:before
+      opacity: 0.1
+    .fa,
+    strong,
+    em
+      color: white
+
 .hello
   +replace(url("/images/marksheet-hello.png"), 210px, 192px)
   margin: 0 auto
@@ -247,6 +288,16 @@
       margin-left: -12px
     span
       display: none
+
+.notification
+  border-radius: $radius
+  color: white
+  margin-top: 10px
+  padding: 10px 15px
+  &.is-danger
+    background: $dark
+  &.is-success
+    background: $green
 
 .content
   padding: 30px

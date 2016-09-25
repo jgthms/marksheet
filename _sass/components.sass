@@ -71,6 +71,90 @@
       border-radius: 3px 3px 0 0
       box-shadow: 0 30px 60px rgba(black, .3)
 
+.page-newsletter
+  background-color: $red
+  background-image: linear-gradient(142deg, adjust-hue($red, -20deg), adjust-hue($red, -10deg) 31%, $red 65%, adjust-hue($red, 10deg))
+  color: $yellow
+  padding: 30px
+  position: relative
+  strong
+    color: inherit
+  +desktop
+    padding: 120px 40px
+
+.page-newsletter-heading
+  padding-left: 80px
+  position: relative
+  .icons
+    display: block
+    height: 60px
+    left: 0
+    position: absolute
+    top: 0
+    width: 60px
+    .fa
+      +fa(21px, 60px)
+      +overlay
+    .fa-television
+      font-size: 42px
+    .fa-play-circle
+      color: white
+      left: -1px
+      top: -2px
+  h3
+    color: white
+    font-size: 32px
+    line-height: 1
+    position: relative
+  p
+    font-size: 18px
+  +desktop
+    float: left
+    width: 60%
+
+.page-newsletter-form
+  +mobile
+    margin-top: 30px
+  +desktop
+    float: right
+    padding-top: 15px
+    position: relative
+    width: 40%
+    .notification
+      left: 0
+      position: absolute
+      right: 0
+      top: 100%
+
+.page-newsletter-group
+  position: relative
+  .fa
+    color: $light
+    font-size: 14px
+    pointer-events: none
+    position: absolute
+    left: 10px
+    top: 10px
+  +desktop
+    padding-right: 100px
+
+.page-newsletter-input
+  border: none
+  border-radius: $radius
+  display: block
+  outline: none
+  padding: 6px 12px 8px 32px
+  width: 100%
+  +mobile
+    margin-bottom: 10px
+
+.page-newsletter-button
+  @extend %button--dark
+  +desktop
+    position: absolute
+    right: 0
+    top: 0
+
 .page-footer
   background: $dark
   position: relative
