@@ -280,16 +280,17 @@
   padding: 20px
   text-align: center
   +desktop
-    bottom: 15px
+    bottom: 0
     position: fixed
-    right: 15px
+    right: 0
     .fa
       left: 50%
       margin-left: -12px
     span
       display: none
 
-.notification
+.notification,
+.mm-message
   border-radius: $radius
   color: white
   margin-top: 10px
@@ -298,6 +299,13 @@
     background: $dark
   &.is-success
     background: $green
+
+.mm-message
+  background: $green
+  &:before
+    content: "Thank you!"
+    display: block
+    font-weight: bold
 
 .content
   padding: 30px
