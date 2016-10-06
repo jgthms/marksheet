@@ -93,7 +93,7 @@ As it can be hard to keep track of the order in which HTML elements have been op
   <p>
     This code is written on
     <strong>multiple</strong>
-    lines but will be nevertheless
+    lines but will nevertheless
     be displayed on a
     <em>single</em>
     one.
@@ -106,7 +106,7 @@ As it can be hard to keep track of the order in which HTML elements have been op
     <p>
       This code is written on
       <strong>multiple</strong>
-      lines but will be nevertheless
+      lines but will nevertheless
       be displayed on a
       <em>single</em>
       one.
