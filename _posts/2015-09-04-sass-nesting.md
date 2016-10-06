@@ -49,7 +49,7 @@ Because [CSS priority](/css-priority.html) can be tricky, it's common to use be 
 To prevent rewriting `.description`, let's use the ampersand `&`:
 
 {% highlight scss %}
-.description{}
+.description{
   p{}
   p a{}
   p a:hover{}
@@ -68,7 +68,7 @@ To prevent rewriting `.description`, let's use the ampersand `&`:
 You can go even further by replacing `& p` and `& table` with `&` to create **nested** selectors:
 
 {% highlight scss %}
-.description{}
+.description{
   p{
     a{
       &:hover{}
