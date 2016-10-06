@@ -117,7 +117,7 @@ There are 2 differences:
 * The `@extend` rule **doesn't** have parameters. Mixins do.
 * The `@extend` rule **does** combine selectors. Mixins don't.
 
-Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.overlay` rule:
+Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.small-uppercase` rule:
 
 {% highlight scss %}
 // scss
@@ -168,7 +168,7 @@ Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.ov
 }
 {% endhighlight %}
 
-The list of properties is simply **repeated** as many times as the `@include overlay()` is called.
+The list of properties is simply **repeated** as many times as the `@include small-uppercase()` is called.
 
 A Sass `@extend` is more **efficient**, as it only writes the common properties **once**.
 
