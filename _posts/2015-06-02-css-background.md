@@ -61,7 +61,7 @@ body{ background-image: linear-gradient(white, grey);}
 
 ### background-position
 
-By default, a background image will repeat itself indefinitely. You can specify where its **original position**, by choosing a horizontal `x` value, and a vertical `y` one.
+By default, a background image will repeat itself indefinitely. You can specify its **original position**, by choosing a horizontal `x` value, and a vertical `y` one.
 
 For each coordinate, you either use:
 
