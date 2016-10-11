@@ -71,7 +71,7 @@ Instead of a color being a combination of Red, Green and Blue, you define:
 * the **Saturation** percentage, ranging from 0% to 100%, defines _how much_ of that color you want.
 * the **Lightness** percentage, ranging from 0% to 100%, defines _how bright_ you want that color to be.
 
-Again, the red color of this website is define this way in HSL:
+Again, the red color of this website is defined this way in HSL:
 
 {% highlight css %}
 a{ color: hsl(4, 68%, 56%);}
