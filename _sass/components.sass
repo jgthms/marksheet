@@ -80,28 +80,27 @@
   strong
     color: inherit
   +desktop
-    padding: 120px 40px
+    padding: 60px 40px 80px
 
 .page-newsletter-heading
-  padding-left: 80px
   position: relative
+  text-align: center
   text-shadow: 0 1px 2px rgba(black, .2)
   .icons
     display: block
-    height: 60px
-    left: 0
-    position: absolute
-    top: 0
-    width: 60px
+    height: 120px
+    margin: 0 auto
+    position: relative
+    width: 120px
     .fa
-      +fa(21px, 60px)
+      +fa(42px, 120px)
       +overlay
     .fa-television
-      font-size: 42px
+      font-size: 84px
     .fa-play-circle
       color: white
-      left: -1px
-      top: -3px
+      left: -3px
+      top: -6px
   h3
     color: white
     font-size: 32px
@@ -110,23 +109,15 @@
   p
     font-size: 18px
   +desktop
-    float: left
-    width: 60%
+    h3
+      font-size: 40px
+    p
+      font-size: 20px
+      margin-top: 5px
 
 .page-newsletter-form
-  +mobile
-    margin-top: 30px
-  +desktop
-    float: right
-    position: relative
-    width: 40%
-    & > form
-      left: 0
-      position: absolute
-      right: 0
-      top: 10px
-    .mm-message
-      margin-top: -10px
+  margin: 30px auto 0
+  max-width: 480px
 
 .page-newsletter-group
   position: relative
