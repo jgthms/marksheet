@@ -37,7 +37,7 @@ There are **3** types of target you can define.
 
 **Anchor** target to navigate _within_ the **same** page. By prepending your href with `#`, you can target an HTML element with a specific `id` attribute.
 
-For example, `<a href="#footer">` will navigate to the `<div id="footer">` within the same HTML document. This type of href is often used to navigate back to the top of the page.
+For example, `<a href="#top">` will navigate to the `<div id="top">` within the same HTML document. This type of href is often used to navigate back to the top of the page.
 
 ### Relative URLs
 
@@ -124,7 +124,7 @@ This URL can be segmented in 3 parts:
 * **domain** `ireallylovecats.com`
 * **file path** `gallery.html`
 
-This **absolute URL** is **self-sufficient**: no matter where you use the link form, it contains _all_ the information required to find the correct file, on the correct domain, with the correct protocol.
+This **absolute URL** is **self-sufficient**: no matter where you use the link from, it contains _all_ the information required to find the correct file, on the correct domain, with the correct protocol.
 
 You usually use absolute URLs defining a link from _your_ website to _another_ website.
 

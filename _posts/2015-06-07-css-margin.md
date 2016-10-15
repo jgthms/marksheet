@@ -69,6 +69,6 @@ It's like the element saying: "Ok, I want the next element to be _at least_ 30px
 
 Tricky question. This question comes up when no border nor background is applied. Indeed: if a border or a background is set on _either_ element, the visual rendering will be different. But if none is present, and considering margins and paddings are _transparent_, the result will look the same.
 
-Ask yourself _why_ you're spacing things. Is it to allow the inner content to breath more? Or is to allow the whole element to breath more? It's padding in the first case, margin in the second.
+Ask yourself _why_ you're spacing things. Is it to allow the inner content to breathe more? Or is it to allow the whole element to breathe more? It's padding in the first case, margin in the second.
 
 Also, considering how margins can **merge**.

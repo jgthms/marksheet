@@ -63,7 +63,7 @@ The purpose of a color being transparent is to blend with the background, and co
 
 **HSL** is another way to define a color. Think of it as a **color wheel**.
 
-![Image](#)
+![HSL Colorwheel](/images/hsl-colors.png)
 
 Instead of a color being a combination of Red, Green and Blue, you define:
 
@@ -186,7 +186,7 @@ In **hexadecimal**, we have 16 symbols to form numbers. Because 0-9 are not enou
 
 Not at all! It is here to provide an explanation of how hexadecimal values work. The most important thing to remember is that there are 16 hexadecimal symbols.
 
-Just like RGB, a hexadecimal color value is a combination of Red, Green, and Blue, each of them being represent as a hexadecimal value, like `DB` for Red, `4E` for Green, and `44` for Blue.
+Just like RGB, a hexadecimal color value is a combination of Red, Green, and Blue, each of them being represented as a hexadecimal value, like `DB` for Red, `4E` for Green, and `44` for Blue.
 
 Because Red, Green or Blue can only have 2 symbols, their possible values are `16 * 16 = 256`, which mirrors the RGB color unit!
 
