@@ -246,7 +246,6 @@ Let's imagine a **button** that is:
       <td><a class="fill-mode fill-mode-green">End</a></td>
       <td><a class="fill-mode fill-mode-green">End</a></td>
     </tr>
-    </tr>
   </table>
 </div>
 

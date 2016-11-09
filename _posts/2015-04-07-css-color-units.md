@@ -173,7 +173,6 @@ To understand what hexadecimal values are, let's look at how binary and decimal 
       <td>E</td>
       <td>F</td>
     </tr>
-    </tr>
   </table>
 </div>
 
