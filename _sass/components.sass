@@ -65,6 +65,7 @@
   padding-top: $height-header
 
 .page-content
+  line-height: 1.6
   .container
     background: white
     +desktop
@@ -165,6 +166,8 @@
   text-shadow: 0 1px 2px rgba(black, .2)
   .container
     padding: 30px
+  .share-buttons
+    margin: 30px 0
   a
     color: $link
     &:hover
@@ -191,18 +194,14 @@
       text-align: center
     p
       margin-top: 1em
-    .share-buttons
-      margin: 30px 0
   +desktop
     .container
       padding: 60px 0
-    .share-buttons
-      position: absolute
-      right: 0
-      top: 60px
     %share-button
-      position: static
-      margin: 0 0 0 18px
+      left: auto
+      margin: 0 20px 0 0
+      position: relative
+      right: auto
 
 .page-overlay
   +overlay
@@ -227,10 +226,10 @@
     right: auto
     position: fixed
     width: 960px
-  +from(1100px)
+  +from(1200px)
     margin-left: -540px
     width: 1080px
-  +from(1200px)
+  +from(1400px)
     margin-left: -570px
     width: 1140px
 

@@ -3,9 +3,9 @@
   margin: 0 auto
   max-width: 960px
   position: relative
-  +from(1100px)
-    max-width: 1080px
   +from(1200px)
+    max-width: 1080px
+  +from(1400px)
     max-width: 1140px
 
 .banner
@@ -121,9 +121,9 @@
     width: 100%
     +desktop
       width: 960px
-    +from(1100px)
-      width: 1080px
     +from(1200px)
+      width: 1080px
+    +from(1400px)
       width: 1140px
   +desktop
     border-radius: 3px 3px 0 0
@@ -281,8 +281,8 @@
   text-align: center
   +desktop
     bottom: 0
+    left: 0
     position: fixed
-    right: 0
     .fa
       left: 50%
       margin-left: -12px
@@ -319,7 +319,7 @@
     border-radius: 3px
     color: #66d9ef
     font-size: $small
-    padding: 3px 5px 3px
+    padding: 1px 5px 3px
     position: relative
     top: -1px
   & > dl
@@ -378,11 +378,13 @@
         a
           top: -5px
   h4
-    color: $text
+    border-bottom: 1px solid $border
+    color: $strong
     font-size: 20px
     font-weight: 700
     line-height: 1
-    margin: 30px 0 15px
+    margin: 30px 0
+    padding-bottom: 15px
   p
     margin: 1em 0
     &:first-child
@@ -451,10 +453,9 @@
     background: rgba($blue, 0.1)
     border-left: 0.25em solid $blue
     color: rgba(black, 0.5)
-    font-size: $small
-    padding: 15px
+    padding: 15px 20px
     +desktop
-      padding: 30px
+      padding: 25px 30px
   .answer
     background: rgba($green, 0.1)
     border-left-color: $green
@@ -526,14 +527,8 @@ $carbon-space: 15px
   background: white
   border-radius: 5px
   box-shadow: 0 10px 20px rgba(black, .2)
-  margin-left: auto
-  margin-right: auto
-  max-width: 340px
-  min-height: 100px + ($carbon-space * 2)
-  min-width: 300px
+  font-size: 14px
   padding: $carbon-space
-  +from(400px)
-    width: 340px
 
 #carbonads
   text-align: left
@@ -543,7 +538,7 @@ $carbon-space: 15px
   span
     display: block
   .carbon-img
-    float: left
+    display: block
     height: 100px
     width: 130px
     img
@@ -552,7 +547,30 @@ $carbon-space: 15px
     display: block
     color: $strong
     margin-bottom: 5px
-    margin-left: 130px + $carbon-space
   .carbon-poweredby
     font-size: $small
-    margin-left: $carbon-space
+
++until(1099px)
+  #carbon
+    margin-left: auto
+    margin-right: auto
+    max-width: 340px
+    min-height: 100px + ($carbon-space * 2)
+    min-width: 300px
+  #carbonads
+    .carbon-img
+      float: left
+    .carbon-text
+      margin-left: 130px + $carbon-space
+    .carbon-poweredby
+      margin-left: $carbon-space
+
++from(1100px)
+  #carbon
+    bottom: 15px
+    position: fixed
+    right: 15px
+    width: 160px
+  #carbonads
+    .carbon-img
+      margin-bottom: 10px
