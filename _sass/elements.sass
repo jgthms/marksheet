@@ -113,10 +113,13 @@
   height: 40px
   text-shadow: 0 1px 0 white
   will-change: scroll-position
-
   &.affix
+    position: fixed !important
+  &.affix-bottom
+    position: absolute !important
+  &.affix,
+  &.affix-bottom
     box-shadow: 0 3px 5px rgba(black, .1), 0 1px 0 rgba(black, .1)
-    position: fixed
     top: 0
     width: 100%
     +desktop
@@ -127,7 +130,8 @@
       width: 1140px
   +desktop
     border-radius: 3px 3px 0 0
-    &.affix
+    &.affix,
+    &.affix-bottom
       border-radius: 0
 
 

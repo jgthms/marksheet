@@ -34,7 +34,12 @@ jQuery(document).ready(function ($) {
 
   $breadcrumb.affix({
     offset: {
-      top: $breadcrumb.offset().top
+      top: $breadcrumb.offset().top,
+      bottom: function () {
+        var newsletterHeight = $('#newsletter').outerHeight(true);
+        var footerHeight = $('#footer').outerHeight(true);
+        return (this.bottom = newsletterHeight + footerHeight);
+      }
     }
   })
 
