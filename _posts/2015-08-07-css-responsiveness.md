@@ -109,7 +109,7 @@ By writing `@media (min-width: 1200px)`, we tell the browser to read this block 
 
 The **width** parameter is the most used one in responsive web design. This comes from the fact that **webpages are read vertically**: we scroll to read the hidden content. As a result, the width is fixed and constrained, while the height of the website is variable.
 
-Because we don't (usually) scroll horizontally, we need to fit our design within the **available viewport width**. Media queries allow to perform **checks** on this width, and apply certain styles if the viewport is _wider than_ (`min-width`) or _narrower than_ (`max-width`) a specific amount of pixels.
+Because we don't (usually) scroll horizontally, we need to fit our design within the **available viewport width**. Media queries allow you to perform **checks** on this width, and apply certain styles if the viewport is _wider than_ (`min-width`) or _narrower than_ (`max-width`) a specific amount of pixels.
 
 You can use either:
 
@@ -147,7 +147,7 @@ The **orientation** parameter can detect if the viewport is in either of the fol
 
 Although it's mostly used for tablets and smartphones, be aware that even on a widescreen monitor, the viewport can be in portrait if its width is smaller than its height.
 
-On mobile, even if you're holding your device in portrait mode, if the keyboard shows up, the viewport can be considered as landscape, considering how its height becomes smaller than its width.
+On mobile, even if you're holding your device in portrait mode, if the virtual keyboard appears, the viewport can be considered as landscape, if its height becomes smaller than its width.
 {: .info}
 
 #### resolution
@@ -177,7 +177,7 @@ Desktop screens usually have a pixel density around **100** dpi. Smartphones on 
 
 What role does CSS play here? Well, higher resolution screens will render text very clearly: individual pixels become hardly noticable, and letters look absolutely smooth.
 
-The problem is with **images** on Retina displays for example. It's a long topic, so read this ["CSS Techniques for Retina Displays" article on sitepoint](http://www.sitepoint.com/css-techniques-for-retina-displays/).
+The problem is with **images** on very high resolution displays (like Retina displays) for example. It's a long topic, so read this ["CSS Techniques for Retina Displays" article on sitepoint](http://www.sitepoint.com/css-techniques-for-retina-displays/).
 
 <figure markdown="1">
 ![Image density in CSS](/images/image-density-in-css.png)
@@ -207,7 +207,7 @@ The `@2x` suffix is just Apple's notation for Retina images, and has been adopte
 
 Usually, you want to focus on the full width **desktop** version first, as it features a more complex design that includes columns, hover states, absolute positioning, floats etc.
 
-But designing the **mobile** version first is actually _easier_ considering a **["HTML is almost 100% responsive out of the box"](http://fluidity.sexy/)**. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is **natural** on mobile devices.
+But designing the **mobile** version first is actually _easier_ considering that **["HTML is almost 100% responsive out of the box"](http://fluidity.sexy/)**. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is **natural** on mobile devices.
 
 Using [the Flow](/css-the-flow.html) is straightforward to design a mobile site: just order your HTML elements in the way you want them to be displayed. Simply by writing your HTML code, you're _already designing your mobile website_. Header first, menu afterwards, then your content, and a footer at the end. _Voilà_!
 

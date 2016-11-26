@@ -45,7 +45,7 @@ These controls use different HTML **tags**, but most of them use the `<input>` t
 
 ### The Form element
 
-The `<form>` is a block-level element thats defines an **interactive** part of a webpage. As a result, all form controls (like `<input>`, `<textarea>` or `<button>`) must appear _within_ a `<form>` element.
+The `<form>` is a block-level element that defines an **interactive** part of a webpage. As a result, all form controls (like `<input>`, `<textarea>` or `<button>`) must appear _within_ a `<form>` element.
 
 Two HTML attributes are **required**:
 

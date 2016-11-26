@@ -104,8 +104,9 @@ Notice how the start `0%` and the end `100%` have the **same CSS rules**. This e
 
 The animation's **name** is used at least **twice**:
 
-* when **writing** the animation using `@keyframes`
-* when **using** the animation using the `animation-name` property (or withing the `animation` shorthand)
+* when **writing** the animation, by using `@keyframes`
+* when **using** the animation, by using the `animation-name` property (or by using the `animation` shorthand)
+
 
 {% highlight css %}
 @keyframes whatever{

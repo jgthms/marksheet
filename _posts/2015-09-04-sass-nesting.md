@@ -7,7 +7,7 @@ section: sass
 
 ### Syntax
 
-In Sass, **nesting CSS rules** allows to define **hierarchy selectors**:
+In Sass, **nesting CSS rules** allow you to define **hierarchy selectors**:
 
 {% highlight scss %}
 .title{
@@ -28,7 +28,7 @@ Because `strong` and `em` appear _within_ the `.title` rule (between the 2 curly
 
 ### Nesting purpose
 
-Because [CSS priority](/css-priority.html) can be tricky, it's common to use be **specific** when writing selectors, by combining multiple classes/tags to prevent CSS rules to cancel each other out.
+Because [CSS priority](/css-priority.html) can be tricky, it's common to be **specific** when writing selectors, by combining multiple classes/tags to prevent CSS rules to cancel each other out.
 
 {% highlight css %}
 .description{}
@@ -146,43 +146,6 @@ The `.parent.other-class` will target HTML elements that have `class="parent oth
 
 ### Full example
 
-{% highlight css %}
-.post-content{}
-.post-content a{}
-.post-content a:hover{}
-.post-content aside{}
-.post-content blockquote{}
-.post-content code{}
-.post-content h3{}
-.post-content h3 a{}
-.post-content h4{}
-.post-content h4:before{}
-.post-content h4:after{}
-.post-content p{}
-.post-content p:first-child{}
-.post-content p:last-child{}
-.post-content ul{}
-.post-content ul ul{}
-.post-content ul ul ul{}
-.post-content dl{}
-.post-content dl:before{}
-.post-content dl dt{}
-.post-content dl dd{}
-.post-content pre{}
-.post-content pre code{}
-.post-content table{}
-.post-content table tr{}
-.post-content table tr:nth-child(2n){}
-.post-content table th,
-.post-content table td{}
-.post-content table th{}
-.post-content table td.empty,
-.post-content table th.empty{}
-.post-content table code{}
-.post-content table pre{}
-.post-content table pre:before{}
-{% endhighlight %}
-
 {% highlight scss %}
 .post-content{
   a{
@@ -232,3 +195,41 @@ The `.parent.other-class` will target HTML elements that have `class="parent oth
 }
 {% endhighlight %}
 
+The resulting CSS is:
+
+{% highlight css %}
+.post-content{}
+.post-content a{}
+.post-content a:hover{}
+.post-content aside{}
+.post-content blockquote{}
+.post-content code{}
+.post-content h3{}
+.post-content h3 a{}
+.post-content h4{}
+.post-content h4:before{}
+.post-content h4:after{}
+.post-content p{}
+.post-content p:first-child{}
+.post-content p:last-child{}
+.post-content ul{}
+.post-content ul ul{}
+.post-content ul ul ul{}
+.post-content dl{}
+.post-content dl:before{}
+.post-content dl dt{}
+.post-content dl dd{}
+.post-content pre{}
+.post-content pre code{}
+.post-content table{}
+.post-content table tr{}
+.post-content table tr:nth-child(2n){}
+.post-content table th,
+.post-content table td{}
+.post-content table th{}
+.post-content table td.empty,
+.post-content table th.empty{}
+.post-content table code{}
+.post-content table pre{}
+.post-content table pre:before{}
+{% endhighlight %}
