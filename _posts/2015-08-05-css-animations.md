@@ -206,8 +206,8 @@ The fill mode allows to tell the browser if the _animation's styles_ should **al
 Let's imagine a **button** that is:
 
 * **red** by default
-* turns **green** at the start of the animation
-* ends up **blue** when the animation is over
+* turns **blue** at the start of the animation
+* ends up **green** when the animation is over
 
 <div class="table">
   <table>
