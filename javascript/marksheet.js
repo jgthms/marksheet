@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
   var $overlay = $('#overlay');
   var $top = $('#top');
   var $banner = $('#banner');
-  var $newsletter = $('#newsletter');
+  var $newsletter = $('#css-ebook');
 
   $toggle.click( function() {
     $('html').addClass('open-menu');

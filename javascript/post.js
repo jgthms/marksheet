@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
     offset: {
       top: $breadcrumb.offset().top,
       bottom: function () {
-        var newsletterHeight = $('#newsletter').outerHeight(true);
+        var newsletterHeight = $('#css-ebook').outerHeight(true);
         var footerHeight = $('#footer').outerHeight(true);
         return (this.bottom = newsletterHeight + footerHeight);
       }
