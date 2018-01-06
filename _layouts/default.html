@@ -4,12 +4,10 @@
   <body>
     {% include facebook.html %}
     <div class="page-hero"></div>
-    {% include banner.html %}
     <div class="page-body">
       {% include header.html %}
       {{ content }}
     </div>
-    {% include newsletter.html %}
     {% include footer.html %}
     {% if page.layout == 'post' %}
       <div id="overlay" class="page-overlay"></div>
