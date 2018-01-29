@@ -15,13 +15,13 @@ The `href` attribute (hypertext reference) is used to define the **target** of t
 
 {% highlight html %}
 <p>
-  To search for something, visit <a href="http://www.google.com">Google</a>.
+  To search for something, visit <a href="https://www.google.com">Google</a>.
 </p>
 {% endhighlight %}
 
 <div class="result">
   <p>
-    To search for something, visit <a href="http://www.google.com">Google</a>.
+    To search for something, visit <a href="https://www.google.com">Google</a>.
   </p>
 </div>
 
@@ -82,7 +82,7 @@ As the two files are **in the same folder**, you can simply write in `home.html`
 
 On an actual website, the process is similar.
 
-Let's say you have a website called `http://ireallylovecats.com` on which you have 2 webpages: `index.html` and `gallery.html`:
+Let's say you have a website called `https://ireallylovecats.com` on which you have 2 webpages: `index.html` and `gallery.html`:
 
 <ul class="files">
   <li>
@@ -116,11 +116,11 @@ Remember: websites are hosted on **computers** just like the one you're currentl
 
 If you wanted to share your cats gallery with a friend, you wouldn't be able to just send `gallery.html`, as this **relative** URL only works for HTML documents that are on the same **computer** or same **domain**.
 
-You need the _complete_ URL to your HTML document: `http://ireallylovecats.com/gallery.html`.
+You need the _complete_ URL to your HTML document: `https://ireallylovecats.com/gallery.html`.
 
 This URL can be segmented in 3 parts:
 
-* **protocol** `http://`
+* **protocol** `https://`
 * **domain** `ireallylovecats.com`
 * **file path** `gallery.html`
 
@@ -128,7 +128,7 @@ This **absolute URL** is **self-sufficient**: no matter where you use the link f
 
 You usually use absolute URLs defining a link from _your_ website to _another_ website.
 
-In your `http://ireallylovecats.com/gallery.html` file, you could write:
+In your `https://ireallylovecats.com/gallery.html` file, you could write:
 
 {% highlight html %}
 <p>
@@ -138,6 +138,6 @@ In your `http://ireallylovecats.com/gallery.html` file, you could write:
 
 ### Relative or absolute links?
 
-Let's say you want to link from the first to the second. The most direct approach is to use the absolute URL. So you add `<a href="http://ireallylovecats.com/gallery.html">Go the second page</a>` in your `index.html` file.
+Let's say you want to link from the first to the second. The most direct approach is to use the absolute URL. So you add `<a href="https://ireallylovecats.com/gallery.html">Go the second page</a>` in your `index.html` file.
 
 Because the two files are in the same directory, you could use the **relative** URL by using `<a href="first-blog-post.html">`. This is useful if you decide to move your directory: your links won't be broken because the link targets are relative to each other, as long as you move both files simultaneously and keep them in the same directory. This relative approach is particularly useful when switching domains.

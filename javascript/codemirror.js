@@ -1,11 +1,11 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: http://codemirror.net/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
-// This is CodeMirror (http://codemirror.net), a code editor
+// This is CodeMirror (https://codemirror.net), a code editor
 // implemented in JavaScript on top of the browser's DOM.
 //
 // You can find some technical background for some of the code below
-// at http://marijnhaverbeke.nl/blog/#cm-internals .
+// at https://marijnhaverbeke.nl/blog/#cm-internals .
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
@@ -7037,7 +7037,7 @@
   // It also indexes by height, and is used to convert between height
   // and line object, and to find the total height of the document.
   //
-  // See also http://marijnhaverbeke.nl/blog/codemirror-line-tree.html
+  // See also https://marijnhaverbeke.nl/blog/codemirror-line-tree.html
 
   function LeafChunk(lines) {
     this.lines = lines;
@@ -8510,7 +8510,7 @@
   }
 
   // Bidirectional ordering algorithm
-  // See http://unicode.org/reports/tr9/tr9-13.html for the algorithm
+  // See https://unicode.org/reports/tr9/tr9-13.html for the algorithm
   // that this (partially) implements.
 
   // One-char codes used for character types:

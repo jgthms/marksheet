@@ -1,6 +1,6 @@
 //************************************************************************//
 // Helper function for str-to-num fn.
-// Source: http://sassmeister.com/gist/9647408
+// Source: https://sassmeister.com/gist/9647408
 //************************************************************************//
 @function _convert-units($number, $unit) {
   $strings: "px", "cm", "mm", "%", "ch", "pica", "in", "em", "rem", "pt", "pc", "ex", "vw", "vh", "vmin", "vmax", "deg", "rad", "grad", "turn";

@@ -30,7 +30,7 @@ In HTML, you'll mainly come across 2 types of HTML elements:
 
 
 {% highlight html %}
-<p>Have you seen this <a href="http://www.youtube.com">amazing video</a> on YouTube?</p>
+<p>Have you seen this <a href="https://www.youtube.com">amazing video</a> on YouTube?</p>
 {% endhighlight %}
 
 ### Opening and closing tags

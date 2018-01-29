@@ -90,4 +90,4 @@ If you view this example in your browser, you'll see that:
 * _"MarkSheet"_ is written on the browser tab
 * _"Hello World!"_ is the only text displayed in the window, because it's the only content _within_ the `<body>`
 
-<p>The <abbr title="World Wide Web Consortium">W3C</abbr> provides a <a href="http://validator.w3.org/#validate_by_input">Markup Validation Service</a> to check any HTML document for errors and warnings.</p>
+<p>The <abbr title="World Wide Web Consortium">W3C</abbr> provides a <a href="https://validator.w3.org/#validate_by_input">Markup Validation Service</a> to check any HTML document for errors and warnings.</p>

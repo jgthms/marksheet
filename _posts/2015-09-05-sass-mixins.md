@@ -99,7 +99,7 @@ The previous mixin can be reused in other rules:
 
 Because mixins are **functions** and because you might want to **alter** the _output_, mixins can accept **parameters**.
 
-For example, this [border-radius mixin](http://sass-lang.com/guide#topic-6-SCSS) prevents rewriting **vendor prefixes** and takes the actual _radius_ value as a parameter:
+For example, this [border-radius mixin](https://sass-lang.com/guide#topic-6-SCSS) prevents rewriting **vendor prefixes** and takes the actual _radius_ value as a parameter:
 
 {% highlight scss %}
 @mixin border-radius($radius) {
@@ -179,6 +179,6 @@ The `.css` and `.scss` versions, because their parameters are _set_, will use di
 
 If you don't want to spend time writing your own Sass mixins, you can use any of the following **mixin libraries**:
 
-* **Bourbon**: [bourbon.io](http://bourbon.io/)
-* **Compass**: [compass-style.org](http://compass-style.org/)
-* **Susy**: [susy.oddbird.net](http://susy.oddbird.net/)
+* **Bourbon**: [bourbon.io](https://bourbon.io/)
+* **Compass**: [compass-style.org](https://compass-style.org/)
+* **Susy**: [susy.oddbird.net](https://susy.oddbird.net/)

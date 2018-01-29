@@ -41,7 +41,7 @@ a:hover{ color: red;}
   <p>Hover <a>this link</a> and see how it turns red.</p>
 </div>
 
-The first line defines how all `<a>` HTML elements should look like (blue).  
+The first line defines how all `<a>` HTML elements should look like (blue).
 The second line defines how `<a>` should look like **when hovered** (red).
 
 The second line targets the **same HTML elements** but _only_ when something specific happens (in this case, being hovered).
@@ -60,7 +60,7 @@ a:visited{ color: rebeccapurple;}
 <a href="https://twitter.com">Twitter</a>
 <a href="https://www.facebook.com">Facebook</a>
 <a href="https://www.mozilla.org">Mozilla</a>
-<a href="http://marksheet.io/visited.html">MarkSheet</a>
+<a href="https://marksheet.io/visited.html">MarkSheet</a>
 {% endhighlight %}
 
 <div class="result" id="result-8211">

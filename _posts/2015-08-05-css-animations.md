@@ -60,7 +60,7 @@ I used the **shorthand** `animation` property, and included all options:
 
 * **name**: bouncing _(matches the keyframes name)_
 * **duration**: 0.5s _(half a second)_
-* **timing-function**: [cubic-bezier(0.1,0.25,0.1,1)](http://cubic-bezier.com/#.1,.25,.1,1)
+* **timing-function**: [cubic-bezier(0.1,0.25,0.1,1)](https://cubic-bezier.com/#.1,.25,.1,1)
 * **delay**: 0s _(no delay)_
 * **iteration-count**: infinite _(plays indefinitely)_
 * **direction**: alternate _(goes back and forth)_
@@ -144,7 +144,7 @@ Just like [transition timing functions](/css-transitions.html#transition-timing-
 
 It defaults to `ease`.
 
-Because CSS animations use keyframes, you can set a **linear** timing function and **simulate** an specific cubic bezier curve by defining a _lot_ of _very specific_ keyframes. Check out [Bounce.js](http://bouncejs.com/) to generate advanced animations.
+Because CSS animations use keyframes, you can set a **linear** timing function and **simulate** an specific cubic bezier curve by defining a _lot_ of _very specific_ keyframes. Check out [Bounce.js](https://bouncejs.com/) to generate advanced animations.
 {: .info}
 
 ### animation-delay

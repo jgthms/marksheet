@@ -3,9 +3,9 @@
 	----------------------------------------------------------
 	We have learned much from/been inspired by/taken code where offered from:
 
-	Eric Meyer					:: http://meyerweb.com
-	HTML5 Doctor				:: http://html5doctor.com
-	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	Eric Meyer					:: https://meyerweb.com
+	HTML5 Doctor				:: https://html5doctor.com
+	and the HTML5 Boilerplate	:: https://html5boilerplate.com
 
 -------------------------------------------------------------------------------*/
 
@@ -25,7 +25,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 article, aside, figure, footer, header, nav, section, details, summary {display: block;}
 
 /* Handle box-sizing while better addressing child elements:
-   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+   https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html {
 	box-sizing: border-box;
 }
@@ -105,7 +105,7 @@ strong {font-weight: bold;}
 
 td, td img {vertical-align: top;}
 
-/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+/* Make sure sup and sub don't mess with your line-heights https://gist.github.com/413930 */
 sub, sup {font-size: 75%; line-height: 0; position: relative;}
 sup {top: -0.5em;}
 sub {bottom: -0.25em;}

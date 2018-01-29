@@ -24,7 +24,7 @@ browser
 : the software running: Firefox, Google Chrome, Safari, Internet Explorer
 
 viewport
-: the region within the browser that actually displays the webpage 
+: the region within the browser that actually displays the webpage
 
 ![Difference between a device, a browser, and a viewport](/images/device-browser-viewport.png)
 
@@ -167,7 +167,7 @@ The pixel density basically tells how **crisp** your display is (the higher the 
 }
 {% endhighlight %}
 
-Desktop screens usually have a pixel density around **100** dpi. Smartphones on the other hand have an [incredible range of dpi](http://dpi.lv/). For example:
+Desktop screens usually have a pixel density around **100** dpi. Smartphones on the other hand have an [incredible range of dpi](https://dpi.lv/). For example:
 
 * **Nokia Lumia 640**: 332dpi
 * **Apple iPhone 6+**: 401dpi
@@ -177,12 +177,12 @@ Desktop screens usually have a pixel density around **100** dpi. Smartphones on 
 
 What role does CSS play here? Well, higher resolution screens will render text very clearly: individual pixels become hardly noticable, and letters look absolutely smooth.
 
-The problem is with **images** on Retina displays for example. It's a long topic, so read this ["CSS Techniques for Retina Displays" article on sitepoint](http://www.sitepoint.com/css-techniques-for-retina-displays/).
+The problem is with **images** on Retina displays for example. It's a long topic, so read this ["CSS Techniques for Retina Displays" article on sitepoint](https://www.sitepoint.com/css-techniques-for-retina-displays/).
 
 <figure markdown="1">
 ![Image density in CSS](/images/image-density-in-css.png)
 <figcaption markdown="1">
-Source: [sitepoint.com](http://www.sitepoint.com/css-techniques-for-retina-displays/)
+Source: [sitepoint.com](https://www.sitepoint.com/css-techniques-for-retina-displays/)
 </figcaption>
 </figure>
 
@@ -207,7 +207,7 @@ The `@2x` suffix is just Apple's notation for Retina images, and has been adopte
 
 Usually, you want to focus on the full width **desktop** version first, as it features a more complex design that includes columns, hover states, absolute positioning, floats etc.
 
-But designing the **mobile** version first is actually _easier_ considering a **["HTML is almost 100% responsive out of the box"](http://fluidity.sexy/)**. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is **natural** on mobile devices.
+But designing the **mobile** version first is actually _easier_ considering a **["HTML is almost 100% responsive out of the box"](https://fluidity.sexy/)**. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is **natural** on mobile devices.
 
 Using [the Flow](/css-the-flow.html) is straightforward to design a mobile site: just order your HTML elements in the way you want them to be displayed. Simply by writing your HTML code, you're _already designing your mobile website_. Header first, menu afterwards, then your content, and a footer at the end. _Voilà_!
 

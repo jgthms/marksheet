@@ -127,13 +127,13 @@ main:hover div{ left: 200px;}
 
 Keep in mind that all transitions take the **same amount of time** (1 second).
 
-If you want to visualize how other timing functions work, check out this [Easing Functions Cheat Sheet](http://easings.net/).
+If you want to visualize how other timing functions work, check out this [Easing Functions Cheat Sheet](https://easings.net/).
 
 #### cubic-bezier
 
 If all these **pre-defined** timing functions don't suit you, you can write your own using **cubic bezier** functions.
 
-The website [cubic-bezier.com](http://cubic-bezier.com/) is a simple tool to visually write your own curves.
+The website [cubic-bezier.com](https://cubic-bezier.com/) is a simple tool to visually write your own curves.
 
 ### transition-delay
 

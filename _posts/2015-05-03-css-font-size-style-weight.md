@@ -51,7 +51,7 @@ font-weight: 800; /* Extra Bold */
 font-weight: 900; /* Ultra Bold */
 {% endhighlight %}
 
-Very few fonts provide all 9 weights. The [Exo font](http://www.google.com/fonts/specimen/Exo) is one of them.
+Very few fonts provide all 9 weights. The [Exo font](https://www.google.com/fonts/specimen/Exo) is one of them.
 
 You'll mostly find 400 (normal) and 700 (bold), and sometimes 300 (light) and 500 (medium).
 

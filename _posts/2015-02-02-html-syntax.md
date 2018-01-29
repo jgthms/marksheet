@@ -61,13 +61,13 @@ Remember:
 
 Attributes act like **extra** information tied to an HTML element. They are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
 
-For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag): 
+For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag):
 
 {% highlight html %}
-<a href="http://www.mozilla.com/firefox">Download Firefox</a>
+<a href="https://www.mozilla.com/firefox">Download Firefox</a>
 {% endhighlight %}
 
-<div class="result"><a href="http://www.mozilla.com/firefox">Download Firefox</a></div>
+<div class="result"><a href="https://www.mozilla.com/firefox">Download Firefox</a></div>
 
 There are [16 HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that can be used on _any_ HTML element. All of them are **optional**.
 
@@ -100,7 +100,7 @@ Some HTML elements only have an opening tag:
 
 {% highlight html %}
 <br> <!-- line-break -->
-<img src="http://placehold.it/50x50" alt="Description"> <!-- image -->
+<img src="https://placehold.it/50x50" alt="Description"> <!-- image -->
 <input type="text"> <!-- text input -->
 {% endhighlight %}
 

@@ -196,7 +196,7 @@ Because Red, Green or Blue can only have 2 symbols, their possible values are `1
 
 #### Why not use RGB then?
 
-Usually, when choosing colors, you **don't write** them directly. You either use a color picker, or copy/paste it from Photoshop, or choose a [colour palette](http://www.colourlovers.com/palettes) somewhere.
+Usually, when choosing colors, you **don't write** them directly. You either use a color picker, or copy/paste it from Photoshop, or choose a [colour palette](https://www.colourlovers.com/palettes) somewhere.
 
 Hexadecimal values are easier to **copy and paste**, as they only comprise 6 characters.
 

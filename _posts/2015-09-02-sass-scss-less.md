@@ -7,8 +7,8 @@ section: sass
 
 There are 2 CSS preprocessors to choose from:
 
-* **Less** [http://lesscss.org/](http://lesscss.org)
-* **Sass** [http://sass-lang.com/](http://sass-lang.com)
+* **Less** [https://lesscss.org/](https://lesscss.org)
+* **Sass** [https://sass-lang.com/](https://sass-lang.com)
 
 They both have been around for several years. We're going to use **Sass**.
 
@@ -19,13 +19,13 @@ Sass has 2 **syntaxes** available:
 * **Sass** itself (Syntactically Awesome StyleSheets) in `.sass` files
 * **SCSS** (Sassy CSS) in `.scss` files, which is something halfway between regular CSS and Sass
 
-The difference between Sass and SCSS is [quite subtle](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#syntax).
+The difference between Sass and SCSS is [quite subtle](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#syntax).
 
 Remember that:
 
 * Sass is the name of the preprocessor
 * SCSS is easier to learn
-* all resources on the internet (like [The Sass Way](http://thesassway.com/)) mention Sass, not SCSS
+* all resources on the internet (like [The Sass Way](https://thesassway.com/)) mention Sass, not SCSS
 * all features are available for both syntaxes
 * everything in SCSS is available in Sass
 
@@ -61,7 +61,7 @@ Everything about Sass is to provide tools to **prevent repeating yourself** in y
 
 ### Installing Sass
 
-Head towards [http://sass-lang.com/install](http://sass-lang.com/install) to install Sass on your computer.
+Head towards [https://sass-lang.com/install](https://sass-lang.com/install) to install Sass on your computer.
 
 [^1]: and any CSS preprocessor for that matter, but I'll refer to Sass only from now on.
 

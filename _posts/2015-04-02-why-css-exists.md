@@ -129,6 +129,6 @@ This **3rd method** of using a separate CSS file is **preferred**.
 
 Because we want to separate the **content** (HTML) from its **presentation** (CSS).
 
-If you want to visualize the purpose of this distinction, head towards the wonderful [CSS Zen Garden](http://www.csszengarden.com/): each design uses the _exact_ same HTML but a _different_ CSS each time.
+If you want to visualize the purpose of this distinction, head towards the wonderful [CSS Zen Garden](https://www.csszengarden.com/): each design uses the _exact_ same HTML but a _different_ CSS each time.
 
 It makes **maintenance** easier as well: the same CSS file can be used for a whole website. It provides **flexiblity**: focus on the content on one side, the styling on the other. SEO purposes, different concerns.
