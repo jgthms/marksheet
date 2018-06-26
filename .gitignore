@@ -2,3 +2,6 @@
 _config.yml
 .sass-cache
 _site
+
+# Editor settings
+.vscode
