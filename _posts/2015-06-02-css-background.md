@@ -20,7 +20,7 @@ As we've already covered the different ways to define a [color in CSS](/css-colo
 body{ background: #f2eee9;}
 {% endhighlight %}
 
-The whole element will be filled with a **plain** background color. Bear in mind to always to choose an appropriate text color to keep your content easy to read.
+The whole element will be filled with a **plain** background color. Bear in mind to always choose an appropriate text color to keep your content easy to read.
 
 ### background-image
 
