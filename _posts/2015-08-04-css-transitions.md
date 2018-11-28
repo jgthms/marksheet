@@ -83,7 +83,7 @@ The timing function determines how each property's **value** is calculated **dur
 
 By default, the transition is **eased**: it accelerates at the start and slows down at the end.
 
-You can meaning that the transition will happen at a **constant speed**. Timing functions can make the transition **accelerate** and/or **slow down**.
+You can ensure that the transition will happen at a **constant speed**. Timing functions can make the transition **accelerate** and/or **slow down**.
 
 The easiest way to visualize timing functions is by altering **position properties**, like `left`.
 
