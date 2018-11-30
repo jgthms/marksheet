@@ -187,7 +187,7 @@ a.with-delay{ transition-delay: 1s;}
 #result-844 .linear{ transition-timing-function: linear;} /* Constant speed */
 #result-844 .ease-in{ transition-timing-function: ease-in;}
 #result-844 .ease-out{ transition-timing-function: ease-out;}
-#result-844 .ease-in-out{ transition-timing-function: ease-out;}
+#result-844 .ease-in-out{ transition-timing-function: ease-in-out;}
 #result-844 p:nth-child(1) strong{ color: crimson;}
 #result-844 div:nth-child(2){ background: crimson;}
 #result-844 p:nth-child(3) strong{ color: midnightblue;}
