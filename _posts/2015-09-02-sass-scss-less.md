@@ -7,7 +7,7 @@ section: sass
 
 There are 2 CSS preprocessors to choose from:
 
-* **Less** [https://lesscss.org/](https://lesscss.org)
+* **Less** [http://lesscss.org/](http://lesscss.org)
 * **Sass** [https://sass-lang.com/](https://sass-lang.com)
 
 They both have been around for several years. We're going to use **Sass**.
