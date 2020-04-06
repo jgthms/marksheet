@@ -7,7 +7,7 @@ section: css
 
 We've just seen how CSS **transitions** are just a way to **animate** CSS properties between a _starting_ state, and an _end_ state.
 
-SO CSS transitions are _specific_ kind of animations, where:
+So CSS transitions are _specific_ kind of animations, where:
 
 * there's only 2 states: start and end
 * the animation doesn't loop
@@ -54,7 +54,7 @@ To animate a loading button, you could write a **bouncing** animation:
   <a>Loading</a>
 </div>
 
-You first need to write the actual bouncing animation using **keyframes** and naming it `bouncing`. _Then_ you can use that animation by applying it to `.loading-button`.
+You first need to write the actual bouncing animation using **keyframes** and name it `bouncing`. _Then_ you can use that animation by applying it to `.loading-button`.
 
 I used the **shorthand** `animation` property, and included all options:
 
@@ -105,7 +105,7 @@ Notice how the start `0%` and the end `100%` have the **same CSS rules**. This e
 The animation's **name** is used at least **twice**:
 
 * when **writing** the animation using `@keyframes`
-* when **using** the animation using the `animation-name` property (or withing the `animation` shorthand)
+* when **using** the animation using the `animation-name` property (or with the `animation` shorthand)
 
 {% highlight css %}
 @keyframes whatever{
@@ -144,7 +144,7 @@ Just like [transition timing functions](/css-transitions.html#transition-timing-
 
 It defaults to `ease`.
 
-Because CSS animations use keyframes, you can set a **linear** timing function and **simulate** an specific cubic bezier curve by defining a _lot_ of _very specific_ keyframes. Check out [Bounce.js](https://bouncejs.com/) to generate advanced animations.
+Because CSS animations use keyframes, you can set a **linear** timing function and **simulate** a specific cubic bezier curve by defining a _lot_ of _very specific_ keyframes. Check out [Bounce.js](https://bouncejs.com/) to generate advanced animations.
 {: .info}
 
 ### animation-delay
@@ -170,7 +170,7 @@ By default, animations are only played **once** (value of `1`). You can set 3 ty
 * the **keyword** `infinite` which will repeat the animation indefinitely
 
 {% highlight css %}
-.selector{ animation-duration: infinite;}
+.selector{ animation-iteration-count: infinite;}
 {% endhighlight %}
 
 ### animation-direction
@@ -199,7 +199,7 @@ It's easier to visualise if the animation's iteration count is set to `infinite`
 
 An animation's **fill mode** defines what happens _before_ the animation starts and _after_ it ends.
 
-When you define **keyframes** you define **CSS rules** to be applied at different step of the animation. Now, these CSS rules can _clash_ with the ones _already applied_ on the elements being animated.
+When you define **keyframes** you define **CSS rules** to be applied at different steps of the animation. Now, these CSS rules can _clash_ with the ones _already applied_ on the elements being animated.
 
 The fill mode allows to tell the browser if the _animation's styles_ should **also** be applied **outside of the animation**.
 
