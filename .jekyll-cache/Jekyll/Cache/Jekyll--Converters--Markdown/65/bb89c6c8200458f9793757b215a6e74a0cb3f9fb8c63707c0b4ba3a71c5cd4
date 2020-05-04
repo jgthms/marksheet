@@ -1,6 +1,0 @@
-I"<p>If you’ve found yourself having to repeat code throughout your CSS, replace several instances of the same value, or lose yourself in a mess of selectors, <strong>CSS preprocessors</strong> are for you.</p>
-
-<p>You can choose between <strong>Sass</strong> and <strong>Less</strong>. Both include variables, functions, reusable components and other syntax enhancers that will save you a <em>lot</em> of time.</p>
-
-<p>Preprocessors are, as their name suggest, tools that have their own language and will generate regular CSS files.</p>
-:ET
