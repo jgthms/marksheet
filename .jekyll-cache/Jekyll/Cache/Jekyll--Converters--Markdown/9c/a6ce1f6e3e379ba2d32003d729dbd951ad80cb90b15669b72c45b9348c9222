@@ -1,0 +1,89 @@
+I"<p>When writing HTML content like paragraphs, lists or links, you provide <strong>meaning</strong> to your <em>text</em>. But you might want to <strong>group</strong> some of these elements <em>together</em>.</p>
+
+<p>For example, a blog’s webpage can be divided in  <strong>4</strong> parts:</p>
+
+<ul>
+  <li>a <strong>header</strong> that is similar on every page, and is the main navigation of the website</li>
+  <li>a <strong>main</strong> content, that changes for every page: a list of articles, a single article with comments, an about page…</li>
+  <li>a <strong>sidebar</strong> that links to monthly archives and categories</li>
+  <li>a <strong>footer</strong> for additional links to less important pages</li>
+</ul>
+
+<p>There are some <strong>structural HTML elements</strong> you can use as <strong>containers</strong> for other elements.</p>
+
+<h3 id="header">Header</h3>
+
+<p>The <code class="highlighter-rouge">header</code> is usually the <strong>first</strong> HTML element in the code. It acts as an <strong>introduction</strong> to the webpage, with the logo, a tagline, and navigation links.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;header&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;a&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"my-logo.jpg"</span> <span class="na">alt=</span><span class="s">"Tibitaco logo"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;em&gt;</span>A cool website<span class="nt">&lt;/em&gt;</span>
+  <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"home.html"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"about.html"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"contact.html"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/header&gt;</span></code></pre></figure>
+
+<h3 id="footer">Footer</h3>
+
+<p>As opposed to the <code class="highlighter-rouge">header</code>, the <code class="highlighter-rouge">footer</code> is usually the <strong>last</strong> element of a page, where the main navigation links are repeated and secondary ones added.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;footer&gt;</span>
+  <span class="nt">&lt;p&gt;</span>MarkSheet.io | Copyright 2015<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"home.html"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"about.html"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"contact.html"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"privacy-policy.html"</span><span class="nt">&gt;</span>Privacy Policy<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"terms-of-use.html"</span><span class="nt">&gt;</span>Terms of use<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/footer&gt;</span></code></pre></figure>
+
+<h3 id="main">Main</h3>
+
+<p>The <code class="highlighter-rouge">main</code> element contains, as its name suggests, the <strong>most important content of the page</strong>, the one that defines the purpose of the page.</p>
+
+<p>While all webpages of a website contain <em>common</em> elements (like the header, the navigation, the footer…), the <code class="highlighter-rouge">main</code> element focuses on <strong>unique</strong> content.</p>
+
+<p>For example, the article you are currently reading lies within the <code class="highlighter-rouge">main</code> element of this webpage, because its content is unique throughout the whole MarkSheet website.</p>
+
+<h3 id="aside">Aside</h3>
+
+<p>The <code class="highlighter-rouge">aside</code> element usually lives alongside the <code class="highlighter-rouge">main</code> and contains <em>additional</em> information <em>related to</em> the main content.</p>
+
+<h3 id="section">Section</h3>
+
+<p>The <code class="highlighter-rouge">section</code> element allows to <strong>group</strong></p>
+
+<p>Sections <em>themselves</em> don’t carry a specific meaning. It’s more about the <em>relation between its child elements</em> rather than its own meaning within the overall page.</p>
+
+<p>The <a href="http://marksheet.io">MarkSheet homepage</a> displays 3 sections:</p>
+
+<ul>
+  <li>the <strong>heading</strong> (logo, title, subtitle)</li>
+  <li>the <strong>introduction</strong> (<em>“Short”</em>, <em>“Simple”</em>, <em>“Free”</em>)</li>
+  <li>the <strong>chapters</strong> (<em>“Web”</em>, <em>“HTML”</em>, <em>“CSS”</em>)</li>
+</ul>
+
+<p>They all reside within the homepage <code class="highlighter-rouge">main</code> element, but are divided logically to group similar content and provide more meaning to the page’s structure.</p>
+
+:ET

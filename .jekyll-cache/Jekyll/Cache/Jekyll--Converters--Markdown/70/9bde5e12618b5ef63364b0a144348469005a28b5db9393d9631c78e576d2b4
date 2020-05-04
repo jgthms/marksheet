@@ -1,0 +1,8 @@
+I"<p>Seguramente ya estás familiarizado con los editores de documentos, como <strong>Microsoft <strong>Word</strong></strong>, con el que puedes darle <strong>estructura</strong> a tus documentos con títulos, párrafos, listas, tablas, imágenes, <strong>negritas</strong> y texto en <em>itálicas</em>.</p>
+
+<p><strong>HTML</strong> provides roughly the same elements of formatting. The key difference is that formatting text in Microsoft Word is <em>visual</em>, whereas HTML code is purely <strong>semantic</strong>: you provide <em>meaning</em> to your text.</p>
+
+<p><strong>HTML</strong> provee a <em>grosso modo</em> el mismo número de elementos para dar formato. La diferencia principal es que dar formato en Word se hace de manera <em>visual</em>, mientras que el código  HTML es puramente  <strong>semántico</strong>: you provide <em>meaning</em> to your text.</p>
+
+<p>The same way you use ♫ <strong>notes</strong> ♬ to write <strong>music</strong>, you use <strong>HTML</strong> to write <strong>webpages</strong>.</p>
+:ET

@@ -1,0 +1,208 @@
+I"�B<h3 id="syntax">Syntax</h3>
+
+<p>In Sass, <strong>nesting CSS rules</strong> allows to define <strong>hierarchy selectors</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.title</span><span class="p">{</span>
+  <span class="nt">strong</span><span class="p">{}</span>
+  <span class="nt">em</span><span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This will be compiled into:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.title</span><span class="p">{}</span>
+<span class="nc">.title</span> <span class="nt">strong</span><span class="p">{}</span>
+<span class="nc">.title</span> <span class="nt">em</span><span class="p">{}</span></code></pre></figure>
+
+<p>Because <code class="highlighter-rouge">strong</code> and <code class="highlighter-rouge">em</code> appear <em>within</em> the <code class="highlighter-rouge">.title</code> rule (between the 2 curly braces <code class="highlighter-rouge">{</code> <code class="highlighter-rouge">}</code>), both will be <strong>prepended</strong> with the parent selector <code class="highlighter-rouge">.title</code>.</p>
+
+<h3 id="nesting-purpose">Nesting purpose</h3>
+
+<p>Because <a href="/css-priority.html">CSS priority</a> can be tricky, it’s common to use be <strong>specific</strong> when writing selectors, by combining multiple classes/tags to prevent CSS rules to cancel each other out.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.description</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span> <span class="nt">a</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span> <span class="nt">strong</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">tr</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">)</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">th</span><span class="o">,</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">td</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">td</span><span class="nc">.empty</span><span class="o">,</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">th</span><span class="nc">.empty</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">th</span><span class="p">{}</span></code></pre></figure>
+
+<p>To prevent rewriting <code class="highlighter-rouge">.description</code>, let’s use the ampersand <code class="highlighter-rouge">&amp;</code>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.description</span><span class="p">{}</span>
+  <span class="nt">p</span><span class="p">{}</span>
+  <span class="nt">p</span> <span class="nt">a</span><span class="p">{}</span>
+  <span class="nt">p</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{}</span>
+  <span class="nt">p</span> <span class="nt">strong</span><span class="p">{}</span>
+  <span class="nt">table</span><span class="p">{}</span>
+  <span class="nt">table</span> <span class="nt">tr</span><span class="p">{}</span>
+  <span class="nt">table</span> <span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">)</span><span class="p">{}</span>
+  <span class="nt">table</span> <span class="nt">th</span><span class="o">,</span>
+  <span class="nt">table</span> <span class="nt">td</span><span class="p">{}</span>
+  <span class="nt">table</span> <span class="nt">th</span><span class="p">{}</span>
+  <span class="nt">table</span> <span class="nt">td</span><span class="nc">.empty</span><span class="o">,</span>
+  <span class="nt">table</span> <span class="nt">th</span><span class="nc">.empty</span><span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>You can go even further by replacing <code class="highlighter-rouge">&amp; p</code> and <code class="highlighter-rouge">&amp; table</code> with <code class="highlighter-rouge">&amp;</code> to create <strong>nested</strong> selectors:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.description</span><span class="p">{}</span>
+  <span class="nt">p</span><span class="p">{</span>
+    <span class="nt">a</span><span class="p">{</span>
+      <span class="k">&amp;</span><span class="nd">:hover</span><span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="nt">strong</span><span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="nt">table</span><span class="p">{</span>
+    <span class="nt">tr</span><span class="p">{</span>
+      <span class="k">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">)</span><span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="nt">th</span><span class="o">,</span>
+    <span class="nt">td</span><span class="p">{</span>
+      <span class="k">&amp;</span><span class="nc">.empty</span><span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="nt">th</span><span class="p">{}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Remember <strong><a href="/html-hierarchy.html">HTML nesting</a></strong>? The indentation in Sass allows to <em>replicate</em> how HTML elements are nested.</p>
+
+<p>Notice how we only wrote <code class="highlighter-rouge">table</code> and <code class="highlighter-rouge">.empty</code> <strong>once</strong> for example.</p>
+
+<p>It will generate exactly the CSS we started with:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.description</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span> <span class="nt">a</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">p</span> <span class="nt">strong</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">tr</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">)</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">th</span><span class="o">,</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">td</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">td</span><span class="nc">.empty</span><span class="o">,</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">th</span><span class="nc">.empty</span><span class="p">{}</span>
+<span class="nc">.description</span> <span class="nt">table</span> <span class="nt">th</span><span class="p">{}</span></code></pre></figure>
+
+<h3 id="the-ampersand-parent-selector">The ampersand parent selector</h3>
+
+<p>When you nest selectors in Sass, it basically adds a <strong>space</strong> between the <em>parent</em> selector and the <em>child</em> one. So:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">//scss</span>
+<span class="nc">.parent</span><span class="p">{</span>
+  <span class="nc">.child</span><span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="c1">// becomes in css</span>
+<span class="nc">.parent</span> <span class="nc">.child</span><span class="p">{}</span></code></pre></figure>
+
+<p>The <strong>space</strong> between <code class="highlighter-rouge">.parent</code> and <code class="highlighter-rouge">.child</code> defines a <strong>hierarchy</strong>: this selector targets HTML elements with <code class="highlighter-rouge">class="child"</code> nested <em>within</em> <code class="highlighter-rouge">class="parent"</code>.</p>
+
+<p>Now, what if you want to use <strong>pseudo-selectors</strong> like <code class="highlighter-rouge">:hover</code>? Or you want to have a selector with <strong>joined classes</strong>? You can use the <strong>ampersand</strong> which is shortcut for the parent selector:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">//scss</span>
+<span class="nc">.parent</span><span class="p">{</span>
+  <span class="k">&amp;</span><span class="nd">:hover</span><span class="p">{}</span>
+  <span class="k">&amp;</span><span class="nc">.other-class</span><span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="c1">// becomes in css</span>
+<span class="nc">.parent</span><span class="nd">:hover</span><span class="p">{}</span>
+<span class="nc">.parent.other-class</span><span class="p">{}</span></code></pre></figure>
+
+<p>Notice how there is <strong>no space</strong> between <code class="highlighter-rouge">.parent</code> and either <code class="highlighter-rouge">:hover</code> or <code class="highlighter-rouge">.other-class</code>.</p>
+
+<p>The <code class="highlighter-rouge">.parent.other-class</code> will target HTML elements that have <code class="highlighter-rouge">class="parent other-class"</code>.</p>
+
+<h3 id="full-example">Full example</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.post-content</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">a</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">aside</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">blockquote</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">code</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">h3</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">h3</span> <span class="nt">a</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">h4</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">h4</span><span class="nd">:before</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">h4</span><span class="nd">:after</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">p</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">p</span><span class="nd">:first-child</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">p</span><span class="nd">:last-child</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">ul</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">ul</span> <span class="nt">ul</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">ul</span> <span class="nt">ul</span> <span class="nt">ul</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">dl</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">dl</span><span class="nd">:before</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">dl</span> <span class="nt">dt</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">dl</span> <span class="nt">dd</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">pre</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">pre</span> <span class="nt">code</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">tr</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">)</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">th</span><span class="o">,</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">td</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">th</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">td</span><span class="nc">.empty</span><span class="o">,</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">th</span><span class="nc">.empty</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">code</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">pre</span><span class="p">{}</span>
+<span class="nc">.post-content</span> <span class="nt">table</span> <span class="nt">pre</span><span class="nd">:before</span><span class="p">{}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.post-content</span><span class="p">{</span>
+  <span class="nt">a</span><span class="p">{</span>
+    <span class="k">&amp;</span><span class="nd">:hover</span><span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="nt">aside</span><span class="p">{}</span>
+  <span class="nt">blockquote</span><span class="p">{}</span>
+  <span class="nt">code</span><span class="p">{}</span>
+  <span class="nt">h3</span><span class="p">{</span>
+    <span class="nt">a</span><span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="nt">h4</span><span class="p">{</span>
+    <span class="k">&amp;</span><span class="nd">:before</span><span class="p">{}</span>
+    <span class="k">&amp;</span><span class="nd">:after</span><span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="nt">p</span><span class="p">{</span>
+    <span class="k">&amp;</span><span class="nd">:first-child</span><span class="p">{}</span>
+    <span class="k">&amp;</span><span class="nd">:last-child</span><span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="nt">ul</span><span class="p">{</span>
+    <span class="nt">ul</span><span class="p">{</span>
+      <span class="nt">ul</span><span class="p">{}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nt">dl</span><span class="p">{</span>
+    <span class="k">&amp;</span><span class="nd">:before</span><span class="p">{}</span>
+    <span class="nt">dt</span><span class="p">{}</span>
+    <span class="nt">dd</span><span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="nt">pre</span><span class="p">{</span>
+    <span class="nt">code</span><span class="p">{}</span>
+  <span class="p">}</span>
+  <span class="nt">table</span><span class="p">{</span>
+    <span class="nt">tr</span><span class="p">{</span>
+      <span class="k">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">)</span><span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="nt">th</span><span class="o">,</span>
+    <span class="nt">td</span><span class="p">{</span>
+      <span class="k">&amp;</span><span class="nc">.empty</span><span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="nt">th</span><span class="p">{}</span>
+    <span class="nt">code</span><span class="p">{}</span>
+    <span class="nt">pre</span><span class="p">{</span>
+      <span class="k">&amp;</span><span class="nd">:before</span><span class="p">{}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+:ET

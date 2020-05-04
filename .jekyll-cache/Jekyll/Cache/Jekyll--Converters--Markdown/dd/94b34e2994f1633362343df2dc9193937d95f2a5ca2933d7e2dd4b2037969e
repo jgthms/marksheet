@@ -1,0 +1,77 @@
+I"�<p>The background of an HTML element is what appears <em>behind</em> the text. Although CSS allows to apply a background on any type of HTML element, it’s mostly used on block-level elements.</p>
+
+<p>Backgrounds are only applied on the targeted element. But considering most HTML elements have a transparent background, applying a background on the <code class="highlighter-rouge">body</code> will <em>look</em> like it’s applied on all elements.</p>
+
+<h3 id="background-color">background-color</h3>
+
+<p>Default value: <code class="highlighter-rouge">transparent</code>
+Inherited by children elements: no.</p>
+
+<p>As we’ve already covered the different ways to define a <a href="/css-color-units.html">color in CSS</a>, applying a background color is straightforward:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="m">#f2eee9</span><span class="p">;}</span></code></pre></figure>
+
+<p>The whole element will be filled with a <strong>plain</strong> background color. Bear in mind to always to choose an appropriate text color to keep your content easy to read.</p>
+
+<h3 id="background-image">background-image</h3>
+
+<p>Because plain colors are usually not sufficient, CSS allows to apply <strong>images</strong> as backgrounds for elements.</p>
+
+<p>Applying a background image only requires to specify its URL:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(images/diagonal-pattern.png)</span><span class="p">;}</span></code></pre></figure>
+
+<p>The behavior of the image (how it repeats itself, where it is positioned, how it is sized) is defined by other background properties. The <code class="highlighter-rouge">background-image</code> only defines <em>which</em> image to use.</p>
+
+<p>Bear in mind that the HTML element doesn’t take into consideration the dimensions of its background image. Even if the image is bigger than the element it’s applied to, the element <strong>won’t resize</strong> to fit the image, as the image is purely decorative and is here to support the element.</p>
+
+<h3 id="the-difference-between-html-images-img-and-css-background-images">The difference between HTML images <code class="highlighter-rouge">&lt;img&gt;</code> and CSS background images</h3>
+
+<p>The HTML <code class="highlighter-rouge">&lt;img&gt;</code> element is for images that are part of the <strong>content</strong>, while CSS background images are purely <strong>decorative</strong>.</p>
+
+<p>The logo of a company, the thumbnail of a gallery, the picture of a product… These are all considered <strong>content</strong> and should use the HTML <code class="highlighter-rouge">&lt;img&gt;</code> element.</p>
+
+<p>A diagonal pattern, a beautiful landscape, a cart icon… These can be considered as <strong>decorative</strong>, as they <em>support</em> the content but are not <em>part</em> of it. If they were to disappear, the webpage would still make sense.</p>
+
+<p>As for many dual choices, the frontier between content and styling is blurry. Some visual techniques are easier to achieve with CSS backgrounds. Just ask yourself if the image you’re using is essential to the page. If so, use <code class="highlighter-rouge">&lt;img&gt;</code> element.</p>
+
+<h4 id="gradients">Gradients</h4>
+
+<p>CSS also allows to define <strong>color gradients</strong> as background images, in 2 different shapes:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">linear-gradient</code> for gradients in a single direction, in a rectangular shape</li>
+  <li><code class="highlighter-rouge">radial-gradient</code> for gradients in all directions, in a circular shape</li>
+</ul>
+
+<p>We cover that in a chapter 8.3: <a href="/css-gradients.html">CSS gradients</a>. The only thing to know for now is that background gradients are considered as <strong>background images</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">background-image</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="no">white</span><span class="p">,</span> <span class="n">grey</span><span class="p">);}</span></code></pre></figure>
+
+<h3 id="background-position">background-position</h3>
+
+<p>By default, a background image will repeat itself indefinitely. You can specify where its <strong>original position</strong>, by choosing a horizontal <code class="highlighter-rouge">x</code> value, and a vertical <code class="highlighter-rouge">y</code> one.</p>
+
+<p>For each coordinate, you either use:</p>
+
+<ul>
+  <li>pixel values <code class="highlighter-rouge">px</code></li>
+  <li>percentages, relative to the HTML element’s dimensions</li>
+  <li>keywords like <code class="highlighter-rouge">center</code>, <code class="highlighter-rouge">left</code>, <code class="highlighter-rouge">bottom</code>…</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">background-position</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">bottom</span><span class="p">;}</span></code></pre></figure>
+
+<p>You can mix different coordinate units:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span> <span class="m">20px</span><span class="p">;}</span></code></pre></figure>
+
+<h3 id="background-repeat">background-repeat</h3>
+
+<p>By default, a background image will repeat itself indefinitely. You can choose to make it repeat only horizontally, only vertically, or not at all.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">repeat-x</span><span class="p">;}</span> <span class="c">/* Only horizontally */</span>
+<span class="nt">body</span><span class="p">{</span> <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">repeat-y</span><span class="p">;}</span> <span class="c">/* Only vertically */</span>
+<span class="nt">body</span><span class="p">{</span> <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;}</span> <span class="c">/* The background image will only appear once */</span></code></pre></figure>
+
+:ET

@@ -1,0 +1,95 @@
+I"�<p><strong>HTML</strong> significa <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage:</p>
+
+<ul>
+  <li><strong>HyperText</strong> means that it uses the HTTP part of the Internet</li>
+  <li><strong>Markup</strong> means the code you write is annotated with keywords</li>
+  <li><strong>Language</strong> means it can be read by both a human and a computer</li>
+</ul>
+
+<p>Like any language, HTML comes with a set of <strong>rules</strong>. These rules are relatively simple. It comes down to defining <strong>boundaries</strong>, to know where something <em>starts</em> and where something <em>ends</em>.</p>
+
+<p>Here is a sample paragraph in HTML:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result"><p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p></div>
+
+<p>What you see in <strong>angle brackets</strong> <code class="language-html highlighter-rouge"><span class="nt">&lt;</span></code> and <code class="language-html highlighter-rouge">&gt;</code> are HTML <strong>tags</strong>. They define where something <em>starts</em> and where it <em>ends</em>.</p>
+
+<p>Each of them carry a specific <strong>meaning</strong>. In this case, <code class="language-html highlighter-rouge">p</code> stands for <strong>paragraph</strong>.</p>
+
+<p>They usually go in pairs:</p>
+
+<ul>
+  <li>the <em>opening</em> tag <code class="language-html highlighter-rouge"><span class="nt">&lt;p&gt;</span></code> defines the <strong>start</strong> of the paragraph</li>
+  <li>the <em>closing</em> tag <code class="language-html highlighter-rouge"><span class="nt">&lt;/p&gt;</span></code> defines its <strong>end</strong></li>
+</ul>
+
+<p>The only difference between an opening and closing tag is the <strong>slash</strong> <code class="language-html highlighter-rouge">/</code> that precedes the name of the tag.</p>
+
+<p>When you combine an opening tag, a closing tag, and everything in between, you obtain an <strong>HTML element</strong>. The whole line is an HTML element that uses the HTML tags <code class="language-html highlighter-rouge"><span class="nt">&lt;p&gt;</span></code> and <code class="language-html highlighter-rouge"><span class="nt">&lt;/p&gt;</span></code>.</p>
+
+<p>If you <a href="/html/sample-paragraph.html">view this sample in your browser</a>, you’ll notice that <strong>HTML tags are not displayed</strong> by the browser. They are only <em>read</em> by the browser to know what <em>type</em> of <strong>content</strong> you’ve written.</p>
+
+<h3 id="where-to-write-html">Where to write HTML</h3>
+
+<p>You’ve probably come across simple text files, those that have a <code class="highlighter-rouge">.txt</code> extension.</p>
+
+<p>For such a text file to become an <strong>HTML document</strong> (instead of a text document), you need to use an <code class="highlighter-rouge">.html</code> extension.</p>
+
+<p>Open your <strong>text editor</strong>, and copy paste the following:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>This is my firstwebpage!<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<p>Save this file as <code class="highlighter-rouge">my-first-webpage.html</code> and just open it with your browser, and you’ll see:</p>
+
+<div class="result"><p>This is my firstwebpage!</p></div>
+
+<p>Remember:</p>
+
+<ul>
+  <li>use a text editor like Notepad++ to <strong>create</strong> HTML documents</li>
+  <li>use a browser like Firefox to <strong>open</strong> HTML documents</li>
+</ul>
+
+<h3 id="attributes">Attributes</h3>
+
+<p>Attributes act like <strong>extra</strong> information tied to an HTML element. They are written <em>within</em> an HTML <em>tag</em>. As such, they are not displayed by the browser either.</p>
+
+<p>For example, the <code class="highlighter-rouge">href</code> attribute is used to define the target of a <strong>link</strong> (which uses an <strong>a</strong>nchor tag):</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.mozilla.com/firefox"</span><span class="nt">&gt;</span>Download Firefox<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<div class="result"><a href="http://www.mozilla.com/firefox">Download Firefox</a></div>
+
+<p>There are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">16 HTML attributes</a> that can be used on <em>any</em> HTML element. All of them are <strong>optional</strong>.</p>
+
+<p>You’ll mostly use <code class="highlighter-rouge">class</code> (which is used for CSS), and <code class="highlighter-rouge">title</code> (which is the tooltip that appears when hovering an item like this one).</p>
+
+<p>Some HTML elements have <strong>obligatory</strong> attributes. For example, when inserting an image, you have to provide the location of the image, using the <code class="highlighter-rouge">src</code> (source) attribute:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"#"</span> <span class="na">alt=</span><span class="s">"Description of the image"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>Considering that the purpose of the <code class="highlighter-rouge">&lt;img&gt;</code> element is to display an image, it makes sense for the path to the image to be <strong>required</strong>.</p>
+
+<h3 id="comments">Comments</h3>
+
+<p>If you write something in your code without disrupting how the browser will display your page, you can write <strong>comments</strong>. They will be <em>ignored</em> by the browser, and are only useful for us humans who write the code.</p>
+
+<p>A comment starts with <code class="highlighter-rouge">&lt;!--</code> and ends with <code class="highlighter-rouge">--&gt;</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- This sentence will be ignored by the browser --&gt;</span>
+<span class="nt">&lt;p&gt;</span>Hello World!<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result"><p>Hello World!</p></div>
+
+<h3 id="self-enclosing-elements">Self-enclosing elements</h3>
+
+<p>Some HTML elements only have an opening tag:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;br&gt;</span> <span class="c">&lt;!-- line-break --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/50x50"</span> <span class="na">alt=</span><span class="s">"Description"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- image --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- text input --&gt;</span></code></pre></figure>
+
+<p>Because they don’t have a closing tag and consequently can’t contain anything <em>inside</em> them, self-enclosing elements usually carry a few attributes, to provide them with additional information.</p>
+:ET

@@ -1,0 +1,249 @@
+I"9J<p>The Web is meant to provide a platform to share information easily across the Internet, no matter which <strong>device</strong> the information is viewed on. While the only disparaties between computers accessing the Web consisted mostly upon different screen resolutions, the rapid growth of <strong>mobile devices</strong> has changed the requirements: a website needs to be accessible on mobile in order to be relevant.</p>
+
+<p>What options are available to handle mobile devices?</p>
+
+<ol>
+  <li><strong>Not doing anything</strong> and let mobile users zoom in to read your website</li>
+  <li>Create a <strong>second</strong> website, like <a href="https://m.facebook.com/">m.facebook.com</a>, and redirect mobile devices to that website</li>
+  <li>Use <strong>responsive web design</strong></li>
+</ol>
+
+<h3 id="device-browser-viewport">Device, browser, viewport</h3>
+
+<p>Before going further, we need to define some terms:</p>
+
+<dl>
+  <dt>device</dt>
+  <dd>the hardware used: smartphone, tablet, pc or laptop</dd>
+  <dt>browser</dt>
+  <dd>the software running: Firefox, Google Chrome, Safari, Internet Explorer</dd>
+  <dt>viewport</dt>
+  <dd>the region within the browser that actually displays the webpage</dd>
+</dl>
+
+<p><img src="/images/device-browser-viewport.png" alt="Difference between a device, a browser, and a viewport" /></p>
+
+<h3 id="responsive-web-design">Responsive web design</h3>
+
+<p>The idea behind <strong>responsive web design</strong> is to make your website <strong>adapt to fit to any device</strong>. It does so by <strong>targetting</strong> devices with your CSS and applying certain styles on these devices <em>only</em>.</p>
+
+<p>Responsiveness relies upon the properties of either the <strong>device</strong> or the <strong>viewport</strong>. For example:</p>
+
+<ul>
+  <li>how <strong>wide</strong> is the viewport?</li>
+  <li>how <strong>high</strong> is the viewport?</li>
+  <li>how is the viewport <strong>oriented</strong>?</li>
+  <li>what is the device’s <strong>resolution</strong>?</li>
+</ul>
+
+<p>Depending on the answer to these questions, a responsive CSS will apply different or additional CSS rules.</p>
+
+<p>Up until now, every part of our CSS was used by <em>every</em> device that accessed our webpage. Responsive web design allows us to apply <em>certain</em> styles in <em>certain</em> cases.</p>
+
+<h3 id="media-queries">media queries</h3>
+
+<p>We need to write <strong>blocks</strong> in our CSS that will only be used by devices that match that block’s criterias. These blocks are called <strong>media queries</strong>.</p>
+
+<p>The media query syntax is reminiscent of the <a href="/css-animations.html#keyframes">animation keyframes syntax</a>, as it defines <strong>a block within the CSS</strong>, in which you write additional CSS rules <em>that are only applied in certain cases</em>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* This part is read by every device/viewport */</span>
+<span class="nt">body</span><span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* This part is only read by viewports wider than 1200 pixels */</span>
+  <span class="nt">body</span><span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here, the default text size is <code class="highlighter-rouge">14px</code>. But to accomodate for larger viewports, the text size is set to <code class="highlighter-rouge">16px</code> if the viewport is <em>wider</em> than <strong>1200 pixels</strong>.</p>
+
+<p>Keep in mind that we’re talking about the <strong>viewport</strong>, not the device’s.</p>
+
+<p>On mobile, considering browsers are running in fullscreen, the two widths are interchangeable. If you’re on desktop, resize your browser window to see media queries being activated/desactivated.</p>
+
+<h4 id="several-parameters">Several parameters</h4>
+
+<p>You can require <strong>2 conditions</strong> for a media query to be activated.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">1000px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">orientation</span><span class="p">:</span> <span class="nb">landscape</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">body</span><span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">20px</span><span class="p">;}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The font size will only be set to <code class="highlighter-rouge">20px</code> if the viewport is at least <em>1000px wide</em> <strong>and</strong> in <em>landscape</em> mode (as opposed to portrait mode).</p>
+
+<p class="info">You can also use <code class="highlighter-rouge">not</code> and <code class="highlighter-rouge">only</code>. These are called <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#Logical_operators">logical operators</a>.</p>
+
+<h4 id="several-css-rules">Several CSS rules</h4>
+
+<p>You can include as many <strong>CSS rules</strong> as you want in the media query.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;}</span>
+<span class="nc">.button</span><span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;}</span>
+<span class="nc">.title</span><span class="p">{</span> <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">body</span><span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;}</span>
+  <span class="nc">.container</span><span class="p">{</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">960px</span><span class="p">;}</span>
+  <span class="nc">.button</span><span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;}</span>
+  <span class="nc">.title</span><span class="p">{</span> <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>Media queries require <strong>parameters</strong> which act like <strong>conditions</strong> that need to be filled in order for the media query to be <strong>activated</strong>.</p>
+
+<p>By writing <code class="highlighter-rouge">@media (min-width: 1200px)</code>, we tell the browser to read this block <em>only if</em> the viewport is wider than 1200px.</p>
+
+<h4 id="width">width</h4>
+
+<p>The <strong>width</strong> parameter is the most used one in responsive web design. This comes from the fact that <strong>webpages are read vertically</strong>: we scroll to read the hidden content. As a result, the width is fixed and constrained, while the height of the website is variable.</p>
+
+<p>Because we don’t (usually) scroll horizontally, we need to fit our design within the <strong>available viewport width</strong>. Media queries allow to perform <strong>checks</strong> on this width, and apply certain styles if the viewport is <em>wider than</em> (<code class="highlighter-rouge">min-width</code>) or <em>narrower than</em> (<code class="highlighter-rouge">max-width</code>) a specific amount of pixels.</p>
+
+<p>You can use either:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">min-width(960px)</code>: styles will be applied only if the viewport is <em>wider</em> than 960px</li>
+  <li><code class="highlighter-rouge">max-width(768px)</code>: styles will be applied only if the viewport is <em>narrower</em> than 768px</li>
+</ul>
+
+<p>These parameters accept <strong>pixels</strong>, <strong>ems</strong> and <strong>rems</strong>.</p>
+
+<p>Every time you resize your viewport, the browser checks the CSS for media queries that include width parameters, and applies its styles accordingly.</p>
+
+<h4 id="height">height</h4>
+
+<p>The <strong>height</strong> parameter works like the width one, expect it performs its checks on the viewport’s height.</p>
+
+<p>You can use <code class="highlighter-rouge">min-height</code> and <code class="highlighter-rouge">max-height</code>.</p>
+
+<p>It’s rarely used, as websites are mainly scrollable <strong>vertically</strong>, and rarely need to adapt their design for shorter viewports.</p>
+
+<h4 id="orientation">orientation</h4>
+
+<p>The <strong>orientation</strong> parameter can detect if the viewport is in either of the following modes:</p>
+
+<ul>
+  <li><strong>landscape</strong>: the viewport is <strong>wider</strong> than it is tall</li>
+  <li><strong>portrait</strong>: the viewport is <strong>taller</strong> than it is wide</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="p">(</span><span class="n">orientation</span><span class="p">:</span> <span class="nb">portrait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* For vertical viewports */</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">orientation</span><span class="p">:</span> <span class="nb">landscape</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* For horizontal viewports */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Although it’s mostly used for tablets and smartphones, be aware that even on a widescreen monitor, the viewport can be in portrait if its width is smaller than its height.</p>
+
+<p class="info">On mobile, even if you’re holding your device in portrait mode, if the keyboard shows up, the viewport can be considered as landscape, considering how its height becomes smaller than its width.</p>
+
+<h4 id="resolution">resolution</h4>
+
+<p>The <strong>resolution</strong> parameter is relevant to the <strong>device’s pixel density</strong>, and can be expressed in either dots per inch <code class="highlighter-rouge">dpi</code> or dots per centimeter <code class="highlighter-rouge">dpcm</code>.</p>
+
+<p>It depends on:</p>
+
+<ul>
+  <li>what your <strong>resolution</strong> is (like 1440x900, 1280x800, 1024x768 etc.)</li>
+  <li>what your screen’s <strong>diagonal</strong> is (like 11,6’’, 14’’, 21’’ etc.)</li>
+</ul>
+
+<p>The pixel density basically tells how <strong>crisp</strong> your display is (the higher the dpi, the crisper the display).</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">300dpi</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Desktop screens usually have a pixel density around <strong>100</strong> dpi. Smartphones on the other hand have an <a href="http://dpi.lv/">incredible range of dpi</a>. For example:</p>
+
+<ul>
+  <li><strong>Nokia Lumia 640</strong>: 332dpi</li>
+  <li><strong>Apple iPhone 6+</strong>: 401dpi</li>
+  <li><strong>Google Nexus 5</strong>: 445dpi</li>
+  <li><strong>HTC One</strong>: 469dpi</li>
+  <li><strong>Samsung Galaxy S6</strong>: 577dpi</li>
+</ul>
+
+<p>What role does CSS play here? Well, higher resolution screens will render text very clearly: individual pixels become hardly noticable, and letters look absolutely smooth.</p>
+
+<p>The problem is with <strong>images</strong> on Retina displays for example. It’s a long topic, so read this <a href="http://www.sitepoint.com/css-techniques-for-retina-displays/">“CSS Techniques for Retina Displays” article on sitepoint</a>.</p>
+
+<figure>
+  <p><img src="/images/image-density-in-css.png" alt="Image density in CSS" /></p>
+  <figcaption>
+    <p>Source: <a href="http://www.sitepoint.com/css-techniques-for-retina-displays/">sitepoint.com</a></p>
+  </figcaption>
+</figure>
+
+<p>A use case would be to provide a default background image for every device, and apply <strong>high resolution background images</strong> on Retina displays.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* 40x40 logo */</span>
+<span class="nc">.logo</span><span class="p">{</span> <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(marksheet-logo.png)</span><span class="p">;</span> <span class="nl">background-size</span><span class="p">:</span> <span class="m">40px</span> <span class="m">40px</span><span class="p">;}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">300dpi</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* 80x80 logo resized to 40x40 */</span>
+  <span class="nc">.logo</span><span class="p">{</span> <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(marksheet-logo@2x.png)</span><span class="p">;}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Keep in mind that the <strong>background size must be set</strong>. Otherwise, the <code class="highlighter-rouge">@2x</code> Retina image would take twice the space.</p>
+
+<p class="info">The <code class="highlighter-rouge">@2x</code> suffix is just Apple’s notation for Retina images, and has been adopted as the <em>de facto</em> default notation in CSS.</p>
+
+<h3 id="mobile-first-or-desktop-first">Mobile-first or desktop-first</h3>
+
+<p>Usually, you want to focus on the full width <strong>desktop</strong> version first, as it features a more complex design that includes columns, hover states, absolute positioning, floats etc.</p>
+
+<p>But designing the <strong>mobile</strong> version first is actually <em>easier</em> considering a <strong><a href="http://fluidity.sexy/">“HTML is almost 100% responsive out of the box”</a></strong>. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is <strong>natural</strong> on mobile devices.</p>
+
+<p>Using <a href="/css-the-flow.html">the Flow</a> is straightforward to design a mobile site: just order your HTML elements in the way you want them to be displayed. Simply by writing your HTML code, you’re <em>already designing your mobile website</em>. Header first, menu afterwards, then your content, and a footer at the end. <em>Voilà</em>!</p>
+
+<p>A mobile-first CSS would use <code class="highlighter-rouge">min-width</code> media queries in order to apply specific rules for larger viewports:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* General CSS rules for every viewport, including smartphones */</span>
+<span class="nt">body</span><span class="p">{</span> <span class="p">}</span>
+<span class="nc">.title</span><span class="p">{</span> <span class="p">}</span>
+<span class="nc">.button</span><span class="p">{</span> <span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* Rules for tablets and bigger viewports */</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">992px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* Rules for laptops, small desktop screens and bigger viewports */</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* Rules for larger desktop screens only */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>A desktop-first approach starts with styles for large screens and  <code class="highlighter-rouge">min-width</code> media queries in order to apply specific rules for larger viewports:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* General CSS rules for every viewport, including large desktop screens */</span>
+<span class="nt">body</span><span class="p">{</span> <span class="p">}</span>
+<span class="nc">.title</span><span class="p">{</span> <span class="p">}</span>
+<span class="nc">.button</span><span class="p">{</span> <span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">1199px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* Rules for laptops, small desktop screens, and smaller viewports */</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">991px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* Rules for tablets and smaller viewports */</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">767px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* Rules for smartphones only */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Notice how the desktop-first <code class="highlighter-rouge">max-width</code> values are <em>1 fewer than</em> the mobile-first <code class="highlighter-rouge">min-width</code>. For example:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">@media (min-width: 768px)</code> targets tablets</li>
+  <li><code class="highlighter-rouge">@media (max-width: 767px)</code> doesn’t target tablets</li>
+</ul>
+
+:ET

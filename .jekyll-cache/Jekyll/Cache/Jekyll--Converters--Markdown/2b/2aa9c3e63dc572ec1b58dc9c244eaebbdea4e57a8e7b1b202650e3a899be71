@@ -1,0 +1,92 @@
+I"�<p>Because an HTML element is rendered as a rectangle, it can have up to <strong>4 borders</strong>: top, bottom, left and right. You can set a border on all sides at once, or on each side individually.</p>
+
+<h3 id="border-types-and-location">Border types and location</h3>
+
+<p>A CSS border has 3 properties:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">border-color</code> defined by using a <a href="css-color-units.html">color unit</a></li>
+  <li><code class="highlighter-rouge">border-style</code> can be solid, dashed, dotted…</li>
+  <li><code class="highlighter-rouge">border-width</code> defined by using a <a href="css-size-units.html">size unit</a></li>
+</ul>
+
+<p>It also has 4 possible sides:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">border-top</code></li>
+  <li><code class="highlighter-rouge">border-bottom</code></li>
+  <li><code class="highlighter-rouge">border-left</code></li>
+  <li><code class="highlighter-rouge">border-right</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">blockquote</span><span class="p">{</span> <span class="nl">border-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span> <span class="nl">border-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span> <span class="nl">border-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;}</span></code></pre></figure>
+
+<p>The shorthand property <code class="highlighter-rouge">border</code> allows to define all 3 properties at once:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">blockquote</span><span class="p">{</span> <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">yellow</span><span class="p">;}</span></code></pre></figure>
+
+<h3 id="single-border">Single border</h3>
+
+<p>If you want to set a border on only one of the four sides, you need to include the border’s <strong>position</strong> in the CSS property. For example, for a bottom border, you can write:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">blockquote</span><span class="p">{</span> <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span> <span class="nl">border-bottom-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span> <span class="nl">border-bottom-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;}</span></code></pre></figure>
+
+<p>As for the <code class="highlighter-rouge">border</code> property, <em>each</em> side has its shorthand version:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">blockquote</span><span class="p">{</span> <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">yellow</span><span class="p">;}</span></code></pre></figure>
+
+<h4 id="what-if-i-want-3-borders-do-i-have-to-set-them-individually">What if I want 3 borders? Do I have to set them individually?</h4>
+
+<p>As you would have guessed, the quickest way to have 3 borders is to set all 4 of them and then remove the one you don’t want:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">blockquote</span><span class="p">{</span> <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">yellow</span><span class="p">;</span> <span class="nl">border-left</span><span class="p">:</span> <span class="nb">none</span><span class="p">;}</span></code></pre></figure>
+
+<h3 id="shorthand-combinations">Shorthand combinations</h3>
+
+<p>Because there exist 3 border <em>properties</em> and 4 border <em>locations</em>, there are <strong>12</strong> combinations possible:</p>
+
+<div class="table">
+  <table>
+    <tr>
+      <th>border</th>
+      <th>border-color</th>
+      <th>border-style</th>
+      <th>border-width</th>
+    </tr>
+    <tr>
+      <th>border-top</th>
+      <td>border-top-color</td>
+      <td>border-top-style</td>
+      <td>border-top-width</td>
+    </tr>
+    <tr>
+      <th>border-bottom</th>
+      <td>border-bottom-color</td>
+      <td>border-bottom-style</td>
+      <td>border-bottom-width</td>
+    </tr>
+    <tr>
+      <th>border-left</th>
+      <td>border-left-color</td>
+      <td>border-left-style</td>
+      <td>border-left-width</td>
+    </tr>
+    <tr>
+      <th>border-right</th>
+      <td>border-right-color</td>
+      <td>border-right-style</td>
+      <td>border-right-width</td>
+    </tr>
+  </table>
+</div>
+
+<p>That’s a lot of CSS properties available. You’ll usually end up using the <strong>5 shorthand versions</strong> only:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">border</code></li>
+  <li><code class="highlighter-rouge">border-top</code></li>
+  <li><code class="highlighter-rouge">border-bottom</code></li>
+  <li><code class="highlighter-rouge">border-left</code></li>
+  <li><code class="highlighter-rouge">border-right</code></li>
+</ul>
+:ET

@@ -1,0 +1,248 @@
+I"�<<h3 id="the-common-properties-case">The common properties case</h3>
+
+<p>Sometimes you find yourself writing the <strong>same set of properties</strong> across different CSS rules.</p>
+
+<p>For example, let’s say your design makes use of <strong>small spaced uppercase letters</strong> throughout the page: buttons, navigation bar, sidebar headings, tabs…</p>
+
+<p>Something like this:</p>
+
+<div class="result">
+  <p style="color: lightslategrey; font-size: 10px; letter-spacing: 0.1em; line-height: 12px; text-transform: uppercase;">Small spaced uppercase letters</p>
+</div>
+
+<p>How would that look like in your CSS? You could:</p>
+
+<ul>
+  <li>use a common CSS <strong>class</strong> like <code class="highlighter-rouge">.small-uppercase</code></li>
+  <li><strong>combine</strong> the selectors</li>
+  <li>use a Sass <strong>extend</strong></li>
+</ul>
+
+<h4 id="common-css-class">Common CSS Class</h4>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.small-uppercase</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Having a <code class="highlighter-rouge">.small-uppercase</code> CSS rule is <strong>semantically incorrect</strong> because you’d end up writing your HTML as <code class="highlighter-rouge">&lt;p class="small-uppercase"&gt;</code> which reverts to basically writing styles <em>within</em> your HTML.</p>
+
+<h4 id="combine-the-selectors">Combine the selectors</h4>
+
+<p>Because a CSS rule can accept any number of <em>selectors</em>, you could combine the shared properties under a <strong>list</strong> of selectors:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.button</span><span class="o">,</span>
+<span class="nc">.navigation</span> <span class="nt">a</span><span class="o">,</span>
+<span class="nc">.sidebar</span> <span class="nt">h3</span><span class="o">,</span>
+<span class="nc">.tabs</span> <span class="nt">a</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This approach remains <strong>semantically valid</strong> because each selector describes the HTML element they’re attached to.</p>
+
+<p>However, there are 2 problems:</p>
+
+<ul>
+  <li>this CSS rule can become unmanagable as soon as the list of selectors becomes longer</li>
+  <li>because each selector has <em>specific</em> rules of their own, you’re separating your set of properties in <strong>two</strong> (the <code class="highlighter-rouge">.button</code> can have additional rules further down the CSS)</li>
+</ul>
+
+<p>Sass helps solving these problems.</p>
+
+<h3 id="sass-extend-syntax">Sass @extend syntax</h3>
+
+<p>A Sass <code class="highlighter-rouge">@extend</code> allows to <strong>inherit</strong> CSS properties from <em>another</em> <strong>selector</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// scss</span>
+<span class="nc">.small-uppercase</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.modal-background</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.small-uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.product-link</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.small-uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.image-pattern</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.small-uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// generated css</span>
+<span class="nc">.small-uppercase</span><span class="o">,</span>
+<span class="nc">.modal-background</span><span class="o">,</span>
+<span class="nc">.product-link</span><span class="o">,</span>
+<span class="nc">.image-pattern</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The <code class="highlighter-rouge">@extend</code> will <strong>regroup</strong> common properties under a <strong>list</strong> of selectors.</p>
+
+<p>The list is easily <strong>maintainable</strong> because you only add selectors one by one, and directly in the related selector.</p>
+
+<p>Your HTML remains <strong>semantic</strong> because each element keeps its descriptive class name.</p>
+
+<h3 id="difference-with-mixins">Difference with mixins</h3>
+
+<p>Well, you might be thinking <em>“Wait, isn’t it just like mixins then?”</em>?</p>
+
+<p>There are 2 differences:</p>
+
+<ul>
+  <li>The <code class="highlighter-rouge">@extend</code> rule <strong>doesn’t</strong> have parameters. Mixins do.</li>
+  <li>The <code class="highlighter-rouge">@extend</code> rule <strong>does</strong> combine selectors. Mixins don’t.</li>
+</ul>
+
+<p>Let’s reuse our <a href="/sass-mixins.html#syntax">overlay mixin</a>, and also write a <code class="highlighter-rouge">.overlay</code> rule:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// scss</span>
+<span class="k">@mixin</span> <span class="nf">small-uppercase</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.modal-background</span><span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">small-uppercase</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nc">.product-link</span><span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">small-uppercase</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nc">.image-pattern</span><span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">small-uppercase</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// generated css</span>
+
+<span class="nc">.modal-background</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.product-link</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.image-pattern</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The list of properties is simply <strong>repeated</strong> as many times as the <code class="highlighter-rouge">@include overlay()</code> is called.</p>
+
+<p>A Sass <code class="highlighter-rouge">@extend</code> is more <strong>efficient</strong>, as it only writes the common properties <strong>once</strong>.</p>
+
+<h3 id="placeholders">Placeholders</h3>
+
+<p>Well, you might be thinking <em>“The <code class="highlighter-rouge">.small-uppercase</code> isn’t semantic! I could use it in my HTML!”</em>?</p>
+
+<p>You’re right, and that’s why <strong>placeholders</strong> exist in Sass.</p>
+
+<p>If you don’t want or need the <code class="highlighter-rouge">.small-uppercase</code> selector, transform it into a <strong>Sass placeholder</strong> by replacing the dot with a <strong>percentage sign</strong> <code class="highlighter-rouge">%</code>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// scss</span>
+<span class="nv">%small-uppercase</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.modal-background</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="nv">%small-uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.product-link</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="nv">%small-uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.image-pattern</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="nv">%small-uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// generated css</span>
+<span class="nc">.modal-background</span><span class="o">,</span>
+<span class="nc">.product-link</span><span class="o">,</span>
+<span class="nc">.image-pattern</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lightslategrey</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1em</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Note that the generated CSS <strong>doesn’t include the <code class="highlighter-rouge">.small-uppercase</code> selector anymore</strong>. That’s because the <code class="highlighter-rouge">%small-uppercase</code> rule is only here to provide a <strong>location</strong> for common properties.</p>
+
+<h3 id="difference-between-extend-placeholders-and-mixins">Difference between extend, placeholders and mixins</h3>
+
+<div class="table">
+  <table>
+    <tr>
+      <th class="empty"></th>
+      <th>Definition</th>
+      <th>Referencing</th>
+      <th>Combines selectors?</th>
+      <th>Allows parameters?</th>
+      <th>Can be used on its own?</th>
+    </tr>
+    <tr>
+      <th>Mixins</th>
+      <td><code>@mixin name()</code></td>
+      <td><code>@include name()</code></td>
+      <td class="no">No</td>
+      <td class="yes"><span>Yes</span></td>
+      <td class="no">No</td>
+    </tr>
+    <tr>
+      <th>Extensions</th>
+      <td>Any class</td>
+      <td><code>@extend .class</code></td>
+      <td class="yes"><span>Yes</span></td>
+      <td class="no">No</td>
+      <td class="yes"><span>Yes</span></td>
+    </tr>
+    <tr>
+      <th>Placeholders</th>
+      <td><code>%placeholder</code></td>
+      <td><code>@extend %placeholder</code></td>
+      <td class="yes"><span>Yes</span></td>
+      <td class="no">No</td>
+      <td class="no">No</td>
+    </tr>
+  </table>
+</div>
+
+<p>When in doubt, use <strong>mixins</strong>. They generate more CSS lines and are less elegant than extend/placeholders, but they are straightforward.</p>
+:ET

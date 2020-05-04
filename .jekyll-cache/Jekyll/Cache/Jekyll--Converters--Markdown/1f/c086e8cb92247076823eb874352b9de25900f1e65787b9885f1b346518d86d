@@ -1,0 +1,122 @@
+I"�<p>There is a difference between what is <strong>written</strong> in your HTML code, and what is <strong>displayed</strong> in the browser.</p>
+
+<p>As we’ve already seen, HTML <strong>tags</strong> like <code class="highlighter-rouge">&lt;p&gt;</code> are only <em>read</em> by the browser (to know what <em>kind</em> of content is written), but are <strong>not displayed</strong> by the browser.</p>
+
+<p>We’ve also seen how it’s possible to write HTML <strong>comments</strong> in your code, to help the human reading the code, without having these comments being displayed by the browser.</p>
+
+<p>Another kind of written code <em>ignored</em> by the browser is <strong>whitespace</strong>, which includes:</p>
+
+<ul>
+  <li>line-breaks</li>
+  <li>empty lines</li>
+  <li>tabulations (or indentation)</li>
+</ul>
+
+<h3 id="line-breaks">Line-breaks</h3>
+
+<p>Line-breaks and empty lines (which are a succession of line-breaks) in HTML code are <strong>ignored</strong> by the browser. They only account for a <strong>single</strong> space.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;blockquote&gt;</span>
+The original idea of the web was that it should be a collaborative
+
+
+space
+
+
+where you can communicate through sharing information.
+<span class="nt">&lt;/blockquote&gt;</span></code></pre></figure>
+
+<div class="result">
+  <blockquote>
+  The original idea of the web was that it should be a collaborative space where you can communicate through sharing information.
+  </blockquote>
+</div>
+
+<p>In order to actually <strong>force</strong> a line-break, you need to use the <code class="highlighter-rouge">&lt;br&gt;</code> HTML element:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>At its best, life is completely<span class="nt">&lt;br&gt;</span>unpredictable.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p>At its best, life is completely<br />unpredictable.</p>
+</div>
+
+<h3 id="tabulations">Tabulations</h3>
+
+<p>A <strong>tabulation</strong> is a special character obtained by pressing the <em>“Tab”</em> key. It usually moves the cursor to the next tab stop, but sometimes is converted to 2 spaces.</p>
+
+<p>Anyway, like a regular space, a tabulation is <strong>invisible</strong>. It’s also ignored by the browser:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  Let's push      this text
+  with tabulations.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p>
+    Let's push      this text
+    with tabulations.
+  </p>
+</div>
+
+<p>If you want to add space <em>before</em> a word, you’ll have to use CSS, which we’ll cover in the next chapter.</p>
+
+<p class="info">If you want to <strong>close</strong> an HTML element, you first have to close all its <em>children</em> elements.</p>
+
+<h3 id="tree-format">Tree format</h3>
+
+<p>As HTML elements can be nested within each other, you have to keep track of the <strong>order</strong> in which they have been opened, as it will affect the order in which they are closed.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;article&gt;&lt;p&gt;</span>This code is written on a <span class="nt">&lt;strong&gt;</span>single<span class="nt">&lt;/strong&gt;</span> line.<span class="nt">&lt;/p&gt;&lt;/article&gt;</span></code></pre></figure>
+
+<div class="result">
+  <article><p>This code is written on a <strong>single</strong> line.</p></article>
+</div>
+
+<p>As it can be hard to keep track of the order in which HTML elements have been opened, it is recommended to write HTML in a <strong>tree format</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    This code is written on
+    <span class="nt">&lt;strong&gt;</span>multiple<span class="nt">&lt;/strong&gt;</span>
+    lines but will be nevertheless
+    be displayed on a
+    <span class="nt">&lt;em&gt;</span>single<span class="nt">&lt;/em&gt;</span>
+    one.
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/article&gt;</span></code></pre></figure>
+
+<div class="result">
+  <article>
+    <p>
+      This code is written on
+      <strong>multiple</strong>
+      lines but will be nevertheless
+      be displayed on a
+      <em>single</em>
+      one.
+    </p>
+  </article>
+</div>
+
+<p>The tree format allows to <em>visually</em> replicate the <strong>nesting levels</strong> of your HTML code. It’s thus easy to see that:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;article&gt;</code> is the <strong>ancestor</strong></li>
+  <li><code class="highlighter-rouge">&lt;p&gt;</code> is the <strong>parent</strong> of <code class="highlighter-rouge">&lt;strong&gt;</code> and <code class="highlighter-rouge">&lt;em&gt;</code></li>
+  <li><code class="highlighter-rouge">&lt;strong&gt;</code> and <code class="highlighter-rouge">&lt;em&gt;</code> are <strong>siblings</strong></li>
+</ul>
+
+<h3 id="write-html-for-you-to-read">Write HTML for you to read</h3>
+
+<p>Tabulations, empty lines, successive spaces, and line-breaks, are dismissed by the computer, and are all converted into a <strong>single space</strong>.</p>
+
+<p>An HTML document is both written and read by a human, but only <em>read</em> by a computer. Considering tabulations, spaces and line-breaks don’t affect the way a browser will read and subsequently <em>display</em> your webpage, you may as well format your document in the most readable way for <strong>you</strong>.</p>
+
+<p>There aren’t specific rules concerning HTML formatting, but there are implicit <strong>conventions</strong>, specifically:</p>
+
+<ul>
+  <li>use <strong>tabulations</strong> to help visualize how HTML elements are <strong>nested</strong></li>
+  <li>put opening and closing tags of block-level elements on their <strong>own line</strong></li>
+  <li>write inline elements on one line (including opening and closing tags)</li>
+</ul>
+:ET

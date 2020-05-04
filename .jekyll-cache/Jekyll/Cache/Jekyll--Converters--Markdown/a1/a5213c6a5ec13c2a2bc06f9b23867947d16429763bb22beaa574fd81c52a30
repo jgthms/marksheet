@@ -1,0 +1,243 @@
+I"58<p>We’ve seen how there are mainly <a href="/css-selectors.html">3 types of CSS selectors</a>:</p>
+
+<ul>
+  <li><strong>generic</strong> where <code class="highlighter-rouge">p</code> in CSS targets <code class="highlighter-rouge">&lt;p&gt;</code> HTML elements</li>
+  <li><strong>classes</strong> where <code class="highlighter-rouge">.intro</code> in CSS targets HTML elements with a <code class="highlighter-rouge">class="intro"</code> attribute</li>
+  <li><strong>ids</strong> where <code class="highlighter-rouge">#logo</code> in CSS targets HTML elements with a <code class="highlighter-rouge">id="logo"</code> attribute</li>
+</ul>
+
+<p>All of these selectors can have <strong>pseudo-classes</strong> attached to them. A pseudo-class:</p>
+
+<ul>
+  <li>defines a particular <strong>state</strong> of the element</li>
+  <li>is a keyword that starts with a <strong>colon</strong> <code class="highlighter-rouge">:</code></li>
+</ul>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>A pseudo-class <strong>can’t exist on its own</strong>. It must be <strong>attached to a selector</strong>. The pseudo-class will only define a particular <em>state</em> of <em>that</em> selector.</p>
+
+<p>The syntax looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.selector</span><span class="nd">:pseudo-class</span><span class="p">{</span> <span class="p">}</span></code></pre></figure>
+
+<p>There is <strong>no space</strong> between the selector and the pseudo-class, to signify that they are <strong>linked together</strong>.</p>
+
+<h3 id="hover">:hover</h3>
+
+<p>For example, a common pseudo-class used is <code class="highlighter-rouge">:hover</code>, which will apply a CSS style when the targeted element is <strong>hovered</strong>. Let’s test it on <strong>links</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">a</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;}</span>
+<span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-821">
+  <p>Hover <a>this link</a> and see how it turns red.</p>
+</div>
+
+<p>The first line defines how all <code class="highlighter-rouge">&lt;a&gt;</code> HTML elements should look like (blue).<br />
+The second line defines how <code class="highlighter-rouge">&lt;a&gt;</code> should look like <strong>when hovered</strong> (red).</p>
+
+<p>The second line targets the <strong>same HTML elements</strong> but <em>only</em> when something specific happens (in this case, being hovered).</p>
+
+<h3 id="visited">:visited</h3>
+
+<p>This pseudo-class targets <strong>links that have been visited</strong>. By default, links are <strong>blue</strong> and turn <strong>purple</strong> when you’ve visited them. Google results work like that.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">a</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">dodgerblue</span><span class="p">;}</span>
+<span class="nt">a</span><span class="nd">:visited</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="n">rebeccapurple</span><span class="p">;}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.google.com"</span><span class="nt">&gt;</span>Google<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://twitter.com"</span><span class="nt">&gt;</span>Twitter<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.facebook.com"</span><span class="nt">&gt;</span>Facebook<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.mozilla.org"</span><span class="nt">&gt;</span>Mozilla<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://marksheet.io/visited.html"</span><span class="nt">&gt;</span>MarkSheet<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<div class="result" id="result-8211">
+  <a href="https://www.google.com">Google</a>
+  <a href="https://twitter.com">Twitter</a>
+  <a href="https://www.facebook.com">Facebook</a>
+  <a href="https://www.mozilla.org">Mozilla</a>
+  <a href="/html/visited.html">MarkSheet</a>
+</div>
+
+<p>Applying a different for visited links is often overlooked but comes in handy for users browsing a list of results. It easily helps them visualize where they have already been.</p>
+
+<h3 id="focus">:focus</h3>
+
+<p>This pseudo-class happens when an HTML element is <strong>in focus</strong>. This is particularly useful for HTML <strong>inputs</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.form-input</span><span class="p">{</span> <span class="nl">border</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="n">grey</span><span class="p">;</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;}</span>
+<span class="nc">.form-input</span><span class="nd">:focus</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="no">lightyellow</span><span class="p">;</span> <span class="nl">border-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span> <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-822">
+  <input class="form-input" placeholder="First name" />
+</div>
+
+<p class="info">The <code class="highlighter-rouge">outline: none;</code> rule removes the glow from the input.</p>
+
+<h3 id="first-child-and-last-child">:first-child and :last-child</h3>
+
+<p>These pseudo-classes are related to the <strong><a href="/html-hierarchy.html">HTML hierarchy</a></strong>. They target HTML elements depending on the <strong>order</strong> in which they appear in the code.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>One<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Two<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Three<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Four<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">li</span><span class="nd">:first-child</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="no">greenyellow</span><span class="p">;}</span>
+<span class="nt">li</span><span class="nd">:last-child</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="no">lightsalmon</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-823">
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+  </ul>
+</div>
+
+<p>As you can see, <strong>no CSS class</strong> is applied to the first and last <code class="highlighter-rouge">&lt;li&gt;</code>. Their <strong>position in the hierachy</strong> defines whether the CSS rule is applied.</p>
+
+<p>If we were to add a 5th list item, and using <em>the same CSS</em>, the styling would automatically change:</p>
+
+<div class="result" id="result-824">
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+  </ul>
+</div>
+
+<h3 id="nth-child">:nth-child</h3>
+
+<p>This pseudo-class is a more <strong>global</strong> version of <code class="highlighter-rouge">:first-child</code> and <code class="highlighter-rouge">:last-child</code>. With <code class="highlighter-rouge">:nth-child</code>, you can <strong>calculate</strong> which child element you want to target.</p>
+
+<p>For example, if you want to target the <strong>second</strong> child, you would use <code class="highlighter-rouge">:nth-child(2)</code>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="no">violet</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-825">
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+  </ul>
+</div>
+
+<h4 id="odd-and-even">odd and even</h4>
+
+<p>While using a number is straightforward, the <code class="highlighter-rouge">:nth-child</code> comes with 2 keywords:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">:nth-child(odd)</code> will target every odd element</li>
+  <li><code class="highlighter-rouge">:nth-child(even)</code> will target every even element</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="no">gold</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-826">
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+  </ul>
+</div>
+
+<h4 id="the-n-iterator">The n iterator</h4>
+
+<p>The most powerful aspect of <code class="highlighter-rouge">:nth-child</code> is how it can target elements based upon <strong>calculations</strong> by using the <code class="highlighter-rouge">n</code> keyword.</p>
+
+<p>The <code class="highlighter-rouge">n</code> value increments from <strong>zero</strong> <code class="highlighter-rouge">0</code> to the <strong>number</strong> of child elements present.</p>
+
+<p>What if you want to target every <strong>third</strong> element?</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3n</span><span class="o">)</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="no">hotpink</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-827">
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+    <li>Six</li>
+    <li>Seven</li>
+  </ul>
+</div>
+
+<p>In our case, <code class="highlighter-rouge">n</code> starts at <strong>zero</strong> and ends at <strong>six</strong>.</p>
+
+<p class="info">Computers start counting at <strong>zero</strong>. And because there are seven elements in our list, we will go up until six, because 0-1-2-3-4-5-6 represents <strong>seven</strong> items.</p>
+
+<p>You can read <code class="highlighter-rouge">:nth-child(3n)</code> as <em>“Target each element whose position is dividable by 3”</em>. In our case, it targeted both the 3rd and 6th list items:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">3 times 0</code> is zero</li>
+  <li><code class="highlighter-rouge">3 times 1</code> is the 3rd element</li>
+  <li><code class="highlighter-rouge">3 times 2</code> is the 6th element</li>
+</ul>
+
+<h4 id="n--1">n + 1</h4>
+
+<p>What if you want to target the 1st item and <em>every third item after that</em>?</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3n</span><span class="o">+</span><span class="nt">1</span><span class="o">)</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="no">limegreen</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-828">
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+    <li>Six</li>
+    <li>Seven</li>
+  </ul>
+</div>
+
+<p>The <code class="highlighter-rouge">3n+1</code> has two parts:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">3n</code> selects every <strong>3rd</strong> item</li>
+  <li><code class="highlighter-rouge">+1</code> <strong>offsets</strong> the start by 1</li>
+</ul>
+
+<p>This is how the calculations were processed:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">3 times 0 plus 1</code> is <strong>1</strong></li>
+  <li><code class="highlighter-rouge">3 times 1 plus 1</code> is <strong>4</strong></li>
+  <li><code class="highlighter-rouge">3 times 2 plus 1</code> is <strong>7</strong></li>
+</ul>
+
+<p>The <code class="highlighter-rouge">n</code> iterator is very versatile. It’s hard to find the right calculation, so just test it out to find the right selection.</p>
+
+<h3 id="other-pseudo-classes">Other pseudo-classes</h3>
+
+<p>There are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">dozens of pseudo-classes available</a>, some of them for very specific states. The most used ones are the ones we’ve covered.</p>
+
+<style type="text/css">
+#result-821 a{ color: blue;}
+#result-821 a:hover{ color: red;}
+#result-8211 a{ color: dodgerblue;}
+#result-8211 a:visited{ color: rebeccapurple;}
+#result-822{ padding: 1rem;}
+#result-822 input{ border: 2px solid lightgrey; padding: 5px;}
+#result-822 input:focus{ background: lightyellow; border-color: blue; outline: none;}
+#result-823 li:first-child{ background: greenyellow;}
+#result-823 li:last-child{ background: lightsalmon;}
+#result-824 li:first-child{ background: greenyellow;}
+#result-824 li:last-child{ background: lightsalmon;}
+#result-825 li:nth-child(2){ background: violet;}
+#result-826 li:nth-child(odd){ background: gold;}
+#result-827 li:nth-child(3n){ background: hotpink;}
+#result-828 li:nth-child(3n+1){ background: limegreen;}
+</style>
+
+:ET

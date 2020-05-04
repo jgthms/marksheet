@@ -1,0 +1,116 @@
+I"N,<p>One of the first reasons people turn to Sass is the existence of <strong>CSS variables</strong>.</p>
+
+<p>Have you ever had to search and replace many occurrences of the same CSS <em>value</em>? If so, variables will help you out.</p>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>You need to prepend a variable with a <code class="highlighter-rouge">$</code> dollar sign:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$yellow</span><span class="p">:</span> <span class="mh">#fce473</span><span class="p">;</span></code></pre></figure>
+
+<p>This line doesn’t do anything apart from <strong>defining</strong> a variable, in our case a shade of yellow:</p>
+
+<div style="background: #fce473; display: inline-block; padding: 10px; vertical-align: top;">#fce473</div>
+
+<p>We can then use it throughout our CSS, whenever a <a href="/css-color-units.html">color unit</a> is required:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.quote</span><span class="p">{</span> <span class="nl">border-left</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="nv">$yellow</span><span class="p">;}</span></code></pre></figure>
+
+<p>This <code class="highlighter-rouge">.scss</code> file will be <strong>compiled</strong> into a <code class="highlighter-rouge">.css</code> file, where all variables will be <em>replaced</em> with their actual <em>value</em>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.quote</span><span class="p">{</span> <span class="nl">border-left</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="m">#fce473</span><span class="p">;}</span></code></pre></figure>
+
+<p class="answer"><em class="question">Why is it called a variable?</em>
+Well here, the <strong>value</strong> <code class="highlighter-rouge">#fce473</code> is variable. Meaning the name <code class="highlighter-rouge">$yellow</code> remains <em>fixed</em> but the value can <em>change</em>.</p>
+
+<h3 id="set-your-variable-only-once">Set your variable only once</h3>
+
+<p>To illustrate the purpose of using variables, you need to use it more than once, like this <strong>pink</strong> shade:</p>
+
+<div style="background: #ff1493; color: white; display: inline-block; padding: 10px; vertical-align: top;">#ff1493</div>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$pink</span><span class="p">:</span> <span class="mh">#ff1493</span><span class="p">;</span>
+<span class="nc">.quote</span><span class="p">{</span> <span class="nl">border-left</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="nv">$pink</span><span class="p">;}</span>
+<span class="nc">.button</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="nv">$pink</span><span class="p">;}</span>
+<span class="nc">.sidebar</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span> <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="nv">$pink</span><span class="p">;}</span>
+<span class="nc">.footer</span> <span class="nt">a</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="nv">$pink</span><span class="p">;}</span></code></pre></figure>
+
+<p>This will be compiled into:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.quote</span><span class="p">{</span> <span class="nl">border-left</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="m">#ff1493</span><span class="p">;}</span>
+<span class="nc">.button</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="m">#ff1493</span><span class="p">;}</span>
+<span class="nc">.sidebar</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span> <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="m">#ff1493</span><span class="p">;}</span>
+<span class="nc">.footer</span> <span class="nt">a</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#ff1493</span><span class="p">;}</span></code></pre></figure>
+
+<p>If you decided to go for a <em>different</em> shade of pink:</p>
+
+<div style="background: #ff1493; color: white; display: inline-block; padding: 10px; vertical-align: top;">Old pink</div>
+<div style="background: #c71585; color: white; display: inline-block; padding: 10px; vertical-align: top;">New pink</div>
+
+<p>You’d only have to change the color value <strong>once</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$pink</span><span class="p">:</span> <span class="mh">#c71585</span><span class="p">;</span></code></pre></figure>
+
+<p>And the resulting CSS would be <strong>automatically</strong> updated:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.quote</span><span class="p">{</span> <span class="nl">border-left</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="m">#c71585</span><span class="p">;}</span>
+<span class="nc">.button</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="m">#c71585</span><span class="p">;}</span>
+<span class="nc">.sidebar</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span> <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="m">#c71585</span><span class="p">;}</span>
+<span class="nc">.footer</span> <span class="nt">a</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#c71585</span><span class="p">;}</span></code></pre></figure>
+
+<h3 id="even-more-abstraction">Even more abstraction</h3>
+
+<p>Now let’s say you actually don’t want to use pink as your <strong>primary</strong> color, but <strong>green</strong>!</p>
+
+<div style="background: #32cd32; color: white; display: inline-block; padding: 10px; vertical-align: top;">#32cd32</div>
+
+<p>You’d have to define a <code class="highlighter-rouge">$green: #32cd32;</code> variable <strong>and</strong> replace all the instances of <code class="highlighter-rouge">$pink</code> with <code class="highlighter-rouge">$green</code> in your SCSS.</p>
+
+<p>There is a better way:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Defining color values</span>
+<span class="nv">$yellow</span><span class="p">:</span> <span class="mh">#fce473</span><span class="p">;</span>
+<span class="nv">$pink</span><span class="p">:</span> <span class="mh">#c71585</span><span class="p">;</span>
+<span class="nv">$green</span><span class="p">:</span> <span class="mh">#32cd32</span><span class="p">;</span>
+<span class="nv">$blue</span><span class="p">:</span> <span class="mh">#1d90ff</span><span class="p">;</span>
+
+<span class="c1">// Defining color types</span>
+<span class="nv">$primary-color</span><span class="p">:</span> <span class="nv">$green</span><span class="p">;</span>
+
+<span class="nc">.quote</span><span class="p">{</span> <span class="nl">border-left</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="nv">$primary-color</span><span class="p">;}</span>
+<span class="nc">.button</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;}</span>
+<span class="nc">.sidebar</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span> <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;}</span>
+<span class="nc">.footer</span> <span class="nt">a</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;}</span></code></pre></figure>
+
+<p>Instead of <em>directly</em> referencing the variable <code class="highlighter-rouge">$green</code>, you define a <strong>primary color</strong> variable that is <em>set</em> to <code class="highlighter-rouge">$green</code>.</p>
+
+<p>When you think about it, you don’t <em>really</em> want to use <code class="highlighter-rouge">$green</code> throughout your CSS. What you <em>actually</em> want is use your <strong>primary color</strong>, which happens to be green.</p>
+
+<p>If you decided to use <code class="highlighter-rouge">$blue</code> as your primary color, you’d only have to modify a <strong>single line</strong>.</p>
+
+<h3 id="for-any-type-of-value">For any type of value</h3>
+
+<p>We’ve used variables to define colors, but you can set <strong>any type of content</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Colors</span>
+<span class="nv">$yellow</span><span class="p">:</span>              <span class="mh">#fce473</span><span class="p">;</span>
+<span class="nv">$pink</span><span class="p">:</span>                <span class="mh">#c71585</span><span class="p">;</span>
+<span class="nv">$green</span><span class="p">:</span>               <span class="mh">#32cd32</span><span class="p">;</span>
+<span class="nv">$blue</span><span class="p">:</span>                <span class="mh">#1d90ff</span><span class="p">;</span>
+
+<span class="nv">$primary-color</span><span class="p">:</span>       <span class="nv">$blue</span><span class="p">;</span>
+<span class="nv">$secondary-color</span><span class="p">:</span>     <span class="nv">$yellow</span><span class="p">;</span>
+
+<span class="c1">// Fonts</span>
+<span class="nv">$serif</span><span class="p">:</span>               <span class="s2">"Lora"</span><span class="o">,</span> <span class="s2">"Playfair Display"</span><span class="o">,</span> <span class="n">Georgia</span><span class="o">,</span> <span class="nb">serif</span><span class="p">;</span>
+<span class="nv">$sans-serif</span><span class="p">:</span>          <span class="s2">"Roboto"</span><span class="o">,</span> <span class="s2">"Source Sans Pro"</span><span class="o">,</span> <span class="s2">"Open Sans"</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nv">$monospace</span><span class="p">:</span>           <span class="s2">"Inconsolata"</span><span class="o">,</span> <span class="nb">monospace</span><span class="p">;</span>
+
+<span class="nv">$primary-font</span><span class="p">:</span>        <span class="nv">$sans-serif</span><span class="p">;</span>
+<span class="nv">$secondary-font</span><span class="p">:</span>      <span class="nv">$serif</span><span class="p">;</span>
+
+<span class="c1">// Spacing</span>
+<span class="nv">$mobile-space</span><span class="p">:</span>        <span class="m">10px</span><span class="p">;</span>
+<span class="nv">$desktop-space</span><span class="p">:</span>       <span class="m">35px</span><span class="p">;</span></code></pre></figure>
+
+:ET

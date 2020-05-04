@@ -1,0 +1,95 @@
+I"O<p>Alongside the several <code class="highlighter-rouge">font-*</code> properties, CSS provides many <code class="highlighter-rouge">text-*</code> properties.</p>
+
+<h3 id="text-align">text-align</h3>
+
+<p>The <code class="highlighter-rouge">text-align</code> property must be applied on a block-level element and defines how its text and children inline elements are horizontally aligned.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span><span class="p">{</span> <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;}</span></code></pre></figure>
+
+<p>The most used values are:</p>
+
+<ul>
+  <li><strong>left</strong></li>
+  <li><strong>right</strong></li>
+  <li><strong>center</strong></li>
+  <li><strong>justify</strong></li>
+</ul>
+
+<p>These values correspond to the same alignment buttons you find in Microsoft Word or Photohop:</p>
+
+<p><i class="fa fa-align-left"></i> <i class="fa fa-align-right"></i> <i class="fa fa-align-center"></i> <i class="fa fa-align-justify"></i></p>
+
+<p class="info">The <code class="highlighter-rouge">justify</code> value is <strong>not</strong> recommended. Although it might look visually appealing because it forms a rectangle of text, it is very hard to read.</p>
+
+<p>The <code class="highlighter-rouge">text-align</code> default value is <code class="highlighter-rouge">start</code>. Basically, <code class="highlighter-rouge">start</code> can either be <code class="highlighter-rouge">left</code> or <code class="highlighter-rouge">right</code>, depending on the <strong>direction</strong> set on the HTML document.</p>
+
+<p><code class="highlighter-rouge">direction</code> is a CSS property that can either be <code class="highlighter-rouge">ltr</code> (left to right) or <code class="highlighter-rouge">rtl</code> (right to left):</p>
+
+<ul>
+  <li>if <code class="highlighter-rouge">ltr</code> is chosen, <code class="highlighter-rouge">start</code> equals to <code class="highlighter-rouge">left</code></li>
+  <li>if <code class="highlighter-rouge">rtl</code> is chosen, <code class="highlighter-rouge">start</code> equals to <code class="highlighter-rouge">right</code></li>
+</ul>
+
+<h3 id="text-decoration">text-decoration</h3>
+
+<p>The <code class="highlighter-rouge">text-decoration</code> property is used to add a line on your text.</p>
+
+<p>Default value: <code class="highlighter-rouge">none</code></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.deleted</span><span class="p">{</span> <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">line-through</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result">
+  <p style="text-decoration: line-through;">Deleted</p>
+</div>
+
+<p>Possible values:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">overline</code></li>
+  <li><code class="highlighter-rouge">underline</code></li>
+  <li><code class="highlighter-rouge">line-through</code></li>
+</ul>
+
+<p>By default, HTML links (<code class="highlighter-rouge">&lt;a&gt;</code>) have a <code class="highlighter-rouge">text-decoration: underline;</code> applied to them. One of the first things coders usually do is to remove this default styling:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">a</span><span class="p">{</span> <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;}</span></code></pre></figure>
+
+<h3 id="text-indent">text-indent</h3>
+
+<p>The <code class="highlighter-rouge">text-indent</code> property allows to add space before the first letter of the first line of a block-level element.</p>
+
+<p>Default value: <code class="highlighter-rouge">0</code> (zero)</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">blockquote</span><span class="p">{</span> <span class="nl">text-indent</span><span class="p">:</span> <span class="m">30px</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" style="max-width: 400px;">
+  <blockquote style="text-indent: 30px;">People always make the mistake of thinking art is created for them. But really, art is a private language for sophisticates to congratulate themselves on their superiority to the rest of the world. As my artist’s statement explains, my work is utterly incomprehensible and is therefore full of deep significance.</blockquote>
+</div>
+
+<p>Notice how only the <strong>first line</strong> is indented. If you want to offset the whole block of text, use <a href="/css-padding.html">paddings</a>.</p>
+
+<p class="info">As for the <code class="highlighter-rouge">font-size</code> property, you can use <code class="highlighter-rouge">px</code>, <code class="highlighter-rouge">em</code>, or even <code class="highlighter-rouge">%</code> values.</p>
+
+<h3 id="text-shadow">text-shadow</h3>
+
+<p>If you’ve ever used Photoshop, you’ve probably used the drop shadow tool. In CSS, you can add shadow to a text, to make it either fancier or more readable.</p>
+
+<p>You define:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">x</code> the horizontal offset</li>
+  <li><code class="highlighter-rouge">y</code> the vertical offset</li>
+  <li>the <code class="highlighter-rouge">blur</code></li>
+  <li>the <code class="highlighter-rouge">color</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">h1</span><span class="p">{</span> <span class="nl">text-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">5px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.5</span><span class="p">);}</span></code></pre></figure>
+
+<div class="result">
+  <h1 style="text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Hello World</h1>
+</div>
+
+<p>Only the <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> values are required. The <code class="highlighter-rouge">blur</code> defaults to <code class="highlighter-rouge">0</code> (zero), while the <code class="highlighter-rouge">color</code> defaults to the color of the text.</p>
+
+<p class="info">This property is tricky, so use it with parsimony and don’t go crazy!</p>
+:ET

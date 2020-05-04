@@ -1,0 +1,132 @@
+I"n<p><strong>Links</strong> are essential in HTML, as the Web was initially designed to be an information network of documents <strong>linked</strong> between each other.</p>
+
+<p>The <em>“HyperText”</em> part of HTML defines what kind of links we use: <em>hypertext</em> links, a.k.a <strong>hyperlinks</strong>.</p>
+
+<p>In HTML, links are <strong>inline elements</strong> written with the <code class="highlighter-rouge">&lt;a&gt;</code> tag.</p>
+
+<p>The <code class="highlighter-rouge">href</code> attribute (hypertext reference) is used to define the <strong>target</strong> of the link (where you navigate to when you click).</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  To search for something, visit <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.google.com"</span><span class="nt">&gt;</span>Google<span class="nt">&lt;/a&gt;</span>.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p>
+    To search for something, visit <a href="http://www.google.com">Google</a>.
+  </p>
+</div>
+
+<p>Links are the <strong>primary</strong> interaction of a webpage: you navigate from one document to another by clicking on links.</p>
+
+<p>There are <strong>3</strong> types of target you can define.</p>
+
+<ul>
+  <li><strong>anchor</strong> targets, to navigate within the <em>same page</em></li>
+  <li><strong>relative</strong> URLs, usually to navigate within the <em>same website</em></li>
+  <li><strong>absolute</strong> URLs, usually to navigate to <em>another</em> website</li>
+</ul>
+
+<h3 id="anchor-targets">Anchor targets</h3>
+
+<p><strong>Anchor</strong> target to navigate <em>within</em> the <strong>same</strong> page. By prepending your href with <code class="highlighter-rouge">#</code>, you can target an HTML element with a specific <code class="highlighter-rouge">id</code> attribute.</p>
+
+<p>For example, <code class="highlighter-rouge">&lt;a href="#footer"&gt;</code> will navigate to the <code class="highlighter-rouge">&lt;div id="footer"&gt;</code> within the same HTML document. This type of href is often used to navigate back to the top of the page.</p>
+
+<h3 id="relative-urls">Relative URLs</h3>
+
+<p>If you want to define a link to another page of the <em>same</em> website, you can use <strong>relative</strong> URLs.</p>
+
+<p>But relative to what? Well, relative to the <strong>current page</strong>.</p>
+
+<p>Let’s use a simple example where the folder <code class="highlighter-rouge">my-first-website</code> contains 2 HTML files:</p>
+
+<ul class="files">
+  <li>
+    <i class="fa fa-folder-o"></i>
+    my-first-website
+    <ul>
+      <li>
+        <i class="fa fa-file-code-o"></i>
+        home.html
+      </li>
+      <li>
+        <i class="fa fa-file-code-o"></i>
+        contact.html
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>In <code class="highlighter-rouge">home.html</code>, you want to define a link to <code class="highlighter-rouge">contact.html</code>.</p>
+
+<p>As the two files are <strong>in the same folder</strong>, you can simply write in <code class="highlighter-rouge">home.html</code>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  Go to the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"contact.html"</span><span class="nt">&gt;</span>contact page<span class="nt">&lt;/a&gt;</span>.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p>
+    Go to the <a href="contact.html">contact page</a>.
+  </p>
+</div>
+
+<p>On an actual website, the process is similar.</p>
+
+<p>Let’s say you have a website called <code class="highlighter-rouge">http://ireallylovecats.com</code> on which you have 2 webpages: <code class="highlighter-rouge">one.html</code> and <code class="highlighter-rouge">two.html</code>:</p>
+
+<ul class="files">
+  <li>
+    <i class="fa fa-folder-o"></i>
+    ireallylovecats.com
+    <ul>
+      <li>
+        <i class="fa fa-file-code-o"></i>
+        index.html
+      </li>
+      <li>
+        <i class="fa fa-file-code-o"></i>
+        gallery.html
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>In <code class="highlighter-rouge">index.html</code> you could write the following link:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  Visit the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"gallery.html"</span><span class="nt">&gt;</span>Gallery<span class="nt">&lt;/a&gt;</span>!
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<p class="info">Remember: websites are hosted on <strong>computers</strong> just like the one you’re currently using. They are simply called <strong>“servers”</strong> because their sole purpose is to host websites. But they still have <strong>files</strong> and <strong>folders</strong> like “regular” computers.</p>
+
+<h3 id="absolute-urls">Absolute URLs</h3>
+
+<p>If you wanted to share your cats gallery with a friend, you wouldn’t be able to just send <code class="highlighter-rouge">gallery.html</code>, as this <strong>relative</strong> URL only works for HTML documents that are on the same <strong>computer</strong> or same <strong>domain</strong>.</p>
+
+<p>You need the <em>complete</em> URL to your HTML document: <code class="highlighter-rouge">http://ireallylovecats.com/gallery.html</code>.</p>
+
+<p>This URL can be segmented in 3 parts:</p>
+
+<ul>
+  <li><strong>protocol</strong> <code class="highlighter-rouge">http://</code></li>
+  <li><strong>domain</strong> <code class="highlighter-rouge">ireallylovecats.com</code></li>
+  <li><strong>file path</strong> <code class="highlighter-rouge">gallery.html</code></li>
+</ul>
+
+<p>This <strong>absolute URL</strong> is <strong>self-sufficient</strong>: no matter where you use the link form, it contains <em>all</em> the information required to find the correct file, on the correct domain, with the correct protocol.</p>
+
+<p>You usually use absolute URLs defining a link from <em>your</em> website to <em>another</em> website.</p>
+
+<p>In your <code class="highlighter-rouge">http://ireallylovecats.com/gallery.html</code> file, you could write:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  Find more images of my cats on my <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://twitter.com/ireallylovecats"</span><span class="nt">&gt;</span>Twitter account<span class="nt">&lt;/a&gt;</span>!
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<h3 id="relative-or-absolute-links">Relative or absolute links?</h3>
+
+<p>Let’s say you want to link from the first to the second. The most direct approach is to use the absolute URL. So you add <code class="highlighter-rouge">&lt;a href="http://ireallylovecats.com/gallery.html"&gt;Go the second page&lt;/a&gt;</code> in your <code class="highlighter-rouge">index.html</code> file.</p>
+
+<p>Because the two files are in the same directory, you could use the <strong>relative</strong> URL by using <code class="highlighter-rouge">&lt;a href="first-blog-post.html"&gt;</code>. This is useful if you decide to move your directory: your links won’t be broken because the link targets are relative to each other, as long as you move both files simultaneously and keep them in the same directory. This relative approach is particularly useful when switching domains.</p>
+:ET

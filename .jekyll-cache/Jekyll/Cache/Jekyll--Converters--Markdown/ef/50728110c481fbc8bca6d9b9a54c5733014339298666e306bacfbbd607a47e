@@ -1,0 +1,72 @@
+I"�<p>An HTML element can be targeted by <strong>multiple CSS rules</strong>. Let’s use a simple paragraph for example:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"message"</span> <span class="na">id=</span><span class="s">"introduction"</span><span class="nt">&gt;</span>
+  MarkSheet is a free HTML and CSS tutorial.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<p>We can alter this paragraph just by using its <strong>tag name</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;}</span></code></pre></figure>
+
+<p>Or we can use its <strong>class name</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.message</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;}</span></code></pre></figure>
+
+<p>Or we can use its <strong>id</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#introduction</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;}</span></code></pre></figure>
+
+<p>Because the browser can only pick <strong>one color</strong> to apply on this paragraph, it will have to decide which CSS rule takes <strong>priority</strong> over other ones. This is what CSS priority (or CSS <em>specificity</em> is about).</p>
+
+<p>In our example, the paragraph will be <strong>red</strong> because an <code class="highlighter-rouge">#id</code> selector is more <em>specific</em> and thus more <strong>important</strong> than other selectors.</p>
+
+<h3 id="order-of-css-rules">Order of CSS rules</h3>
+
+<p>If similar selectors are in your CSS, the last one defined will take priority.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;}</span>
+<span class="nt">p</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;}</span>
+<span class="c">/* Paragraphs will be red */</span></code></pre></figure>
+
+<h3 id="the-100-measure">The 100 measure</h3>
+
+<p>One quick way to figure out how “powerful” a CSS rule is, is by measuring the specificty of the <strong>selectors</strong>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">#id</code> selectors are worth 100</li>
+  <li><code class="highlighter-rouge">.class</code> selectors are worth 10</li>
+  <li><code class="highlighter-rouge">tag</code> selectors are worth 1</li>
+</ul>
+
+<p>The selector with the highest “score” will prevail, <em>no matter the order in which the CSS rules appear</em>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#introduction</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;}</span>
+<span class="nc">.message</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;}</span>
+<span class="nt">p</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"message"</span> <span class="na">id=</span><span class="s">"introduction"</span><span class="nt">&gt;</span>
+  MarkSheet is a free HTML and CSS tutorial.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p style="color: red;">
+    MarkSheet is a free HTML and CSS tutorial.
+  </p>
+</div>
+
+<p>The <code class="highlighter-rouge">#introduction{ color: red;}</code> rule is more <em>specific</em> than the others because ids must be <strong>unique</strong> throughout a webpage, and can thus only target <strong>one</strong> element.</p>
+
+<p><code class="highlighter-rouge">.message{ color: green;}</code> can target <em>any</em> HTML element with a <code class="highlighter-rouge">class="message"</code> attribute, and is consequently less specific. Same goes for <code class="highlighter-rouge">p{ color: blue;}</code> which can target <em>any</em> HTML paragraph.</p>
+
+<h3 id="how-to-avoid-conflicts">How to avoid conflicts</h3>
+
+<p>While writing your CSS, it’s easy to write <strong>conflicting rules</strong>, where the same <em>property</em> is applied several times.</p>
+
+<p>To avoid that:</p>
+
+<ul>
+  <li>only use <strong>classes</strong>: use <code class="highlighter-rouge">.introduction</code> instead of <code class="highlighter-rouge">#introduction</code>, even if that element only appears once in your webpage</li>
+  <li>avoid applying <strong>multiple classes</strong> on a single HTML element: don’t write <code class="highlighter-rouge">&lt;p class="big red important"&gt;</code> but rather <code class="highlighter-rouge">&lt;p class="title"&gt;</code> which is more semantically descriptive</li>
+  <li>don’t use <strong>inline styles</strong> like <code class="highlighter-rouge">&lt;div style="background: blue;"&gt;</code></li>
+</ul>
+:ET

@@ -1,0 +1,60 @@
+I"1<p>If padding adds space <em>inside</em> an element (between its border and its content), margins adds space <em>outside</em> between an element and <em>other elements</em>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>Hey, you know what sucks?<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>vaccuums<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Hey, you know what sucks in a metaphorical sense?<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>black holes<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Hey, you know what just isn't cool?<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>lava?<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p>Hey, you know what sucks?</p>
+  <p>vaccuums</p>
+  <p>Hey, you know what sucks in a metaphorical sense?</p>
+  <p>black holes</p>
+  <p>Hey, you know what just isn't cool?</p>
+  <p>lava?</p>
+</div>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">{</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">40px</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result">
+  <p style="margin: 40px;">Hey, you know what sucks?</p>
+  <p style="margin: 40px;">vaccuums</p>
+  <p style="margin: 40px;">Hey, you know what sucks in a metaphorical sense?</p>
+  <p style="margin: 40px;">black holes</p>
+  <p style="margin: 40px;">Hey, you know what just isn't cool?</p>
+  <p style="margin: 40px;">lava?</p>
+</div>
+
+<h3 id="merging-vertical-margins">Merging vertical margins</h3>
+
+<p>Let’s have a title and a subtitle.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.title</span><span class="p">{</span> <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">30px</span><span class="p">;}</span>
+<span class="nc">.subtitle</span><span class="p">{</span> <span class="nl">margin-top</span><span class="p">:</span> <span class="m">15px</span><span class="p">;}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>MarkSheet<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"subtitle"</span><span class="nt">&gt;</span>A simple HTML/CSS tutorial<span class="nt">&lt;/h2&gt;</span></code></pre></figure>
+
+<div class="result">
+  <h1 style="margin: 0 0 30px;">MarkSheet</h1>
+  <h2 style="margin: 15px 0 0;">A simple HTML/CSS tutorial</h2>
+</div>
+
+<p>As the title of this section may have hinted at the answer, the margin between the two elements will be <code class="highlighter-rouge">30px</code>, and <strong>not</strong> <code class="highlighter-rouge">45px</code>. That is because margins that “touch” each other will <strong>merge</strong> with each other.</p>
+
+<h4 id="thats-weird">“That’s weird!”</h4>
+
+<p>You can consider an element’s margin as the <strong>minimum space</strong> it want to stay <em>away</em> from other elements.</p>
+
+<p>It’s like the element saying: “Ok, I want the next element to be <em>at least</em> 30px away from me. If it’s more, why not. But at least 30px please!”</p>
+
+<h3 id="choosing-between-margin-and-padding">Choosing between margin and padding</h3>
+
+<p>Tricky question. This question comes up when no border nor background is applied. Indeed: if a border or a background is set on <em>either</em> element, the visual rendering will be different. But if none is present, and considering margins and paddings are <em>transparent</em>, the result will look the same.</p>
+
+<p>Ask yourself <em>why</em> you’re spacing things. Is it to allow the inner content to breath more? Or is to allow the whole element to breath more? It’s padding in the first case, margin in the second.</p>
+
+<p>Also, considering how margins can <strong>merge</strong>.</p>
+:ET

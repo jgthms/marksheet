@@ -1,0 +1,116 @@
+I"F<p>When your write HTML code, you write <strong>text</strong>. But what is usually displayed in the browser is also <strong>text</strong>.</p>
+
+<p>Although images, videos, and music have grown in popularity, websites still mostly comprise text content, such as this particular paragraph you are currently reading.</p>
+
+<h3 id="paragraphs">Paragraphs</h3>
+
+<p><strong>Paragraphs</strong> <code class="highlighter-rouge">&lt;p&gt;</code> are the most used HTML element, as they act as the <strong>default</strong> block-level element and are quick to write.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  Rank grass, waist high, grows upon the plain of Phutra—the gorgeous flowering grass of the inner world, each particular blade of which is tipped with a tiny, five-pointed blossom—brilliant little stars of varying colors that twinkle in the green foliage to add still another charm to the weird, yet lovely, landscape.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<h3 id="lists">Lists</h3>
+
+<p><strong>Lists</strong> come in 3 variations:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;ul&gt;</code> are unordered lists</li>
+  <li><code class="highlighter-rouge">&lt;ol&gt;</code> are ordered lists (whose items are automatically numbered)</li>
+  <li><code class="highlighter-rouge">&lt;dl&gt;</code> are definition lists</li>
+</ul>
+
+<p>HTML lists require a specific structure:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;ul&gt;</code> and <code class="highlighter-rouge">&lt;ol&gt;</code> must include and be direct <strong>parents</strong> of <code class="highlighter-rouge">&lt;li&gt;</code> which stands for <strong>list items</strong>.</li>
+  <li>consequently, <code class="highlighter-rouge">&lt;li&gt;</code> elements can not be used on their own, and must be direct <strong>children</strong> of either a <code class="highlighter-rouge">&lt;ul&gt;</code> or a <code class="highlighter-rouge">&lt;ol&gt;</code>.</li>
+</ul>
+
+<h4 id="unordered-lists">Unordered lists</h4>
+
+<p>They are the most commonly used types of lists. They are meant to group together a list of indiviudal <strong>items</strong>, in no particular order.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>My shopping list:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Bread<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Chocolate<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>More chocolate<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p>List items are displayed with <strong>bullet points</strong>.</p>
+
+<div class="result">
+  <p>My shopping list:</p>
+  <ul>
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Chocolate</li>
+    <li>More chocolate</li>
+  </ul>
+</div>
+
+<h4 id="ordered-lists">Ordered lists</h4>
+
+<p>Ordered lists are used when the <strong>order</strong> of its items is <strong>relevant</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ol&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Step one<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Step two<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>????<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>PROFIT!!!<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span></code></pre></figure>
+
+<p>Ordered lists are <strong>automatically</strong> numbered by the browser. You don’t need to include the numbers in your HTML.</p>
+
+<h4 id="definition-lists">Definition lists</h4>
+
+<p>Definition lists are for items that come in <strong>pairs</strong>. They must include pairs of <code class="highlighter-rouge">&lt;dt&gt;</code> definition terms and <code class="highlighter-rouge">&lt;dd&gt;</code> definition descriptions as direct children.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;dl&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>Web<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>The part of the Internet that contains websites and webpages<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>HTML<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>A markup language for creating webpages<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>CSS<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>A technology to make HTML look better<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span></code></pre></figure>
+
+<div class="result">
+  <dl>
+    <dt>Web</dt>
+    <dd>The part of the Internet that contains websites and webpages</dd>
+    <dt>HTML</dt>
+    <dd>A markup language for creating webpages</dd>
+    <dt>CSS</dt>
+    <dd>A technology to make HTML look better</dd>
+  </dl>
+</div>
+
+<p>Definition lists are rarely used because their use cases are very specific, and only happen when the key changes every time. Tables with 2 columns are the more popular alternative.</p>
+
+<h3 id="blockquotes">Blockquotes</h3>
+
+<p>Blockquotes are used to identify a <strong>citation</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>Sir Tim Berners-Lee said:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;blockquote&gt;</span>
+  “The original idea of the web was that it should be a collaborative space where you can communicate through sharing information.”
+<span class="nt">&lt;/blockquote&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p>Sir Tim Berners-Lee said:</p>
+  <blockquote>
+    “The original idea of the web was that it should be a collaborative space where you can communicate through sharing information.”
+  </blockquote>
+</div>
+
+<h3 id="headings">Headings</h3>
+
+<p>There are 6 levels of headings available, ranging from <code class="highlighter-rouge">&lt;h1&gt;</code> to <code class="highlighter-rouge">&lt;h6&gt;</code>, 1 being the most important one.</p>
+
+<p>Headings are meant to be used along with paragraphs and lists, to draw a natural structure to your document. As headings carry more semantic weight, be careful to keep the balance between important and “normal” content.</p>
+
+<p>Only using headings in a HTML document wouldn’t make sense: if everything feels important, nothing really is. You need to provide depth in your structure.</p>
+:ET

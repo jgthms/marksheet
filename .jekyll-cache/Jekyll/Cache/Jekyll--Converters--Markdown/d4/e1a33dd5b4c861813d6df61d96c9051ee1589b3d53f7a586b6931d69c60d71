@@ -1,0 +1,115 @@
+I"q<p>An HTML document is a <strong>living</strong> document</p>
+
+<p>Even without any CSS applied, an HTML document already has its own rules:</p>
+
+<ul>
+  <li><strong>fluidity</strong>: how the content adapts to browser dimensions</li>
+  <li><strong>ordering</strong>: in which order elements appear</li>
+  <li><strong>stacking</strong>: how elements appear on top of each other</li>
+</ul>
+
+<p>This natural behavior is <strong>logical</strong>.</p>
+
+<h3 id="fluidity">Fluidity</h3>
+
+<p>In HTML, the <strong>content</strong> is King.</p>
+
+<p>All <code class="highlighter-rouge">block</code> elements are <strong>fluid</strong>. They will naturally adapt their layout to accommodate their inner content:</p>
+
+<ul>
+  <li><strong>width: 100%</strong><br />
+a block will take up the whole width available</li>
+  <li><strong>word wrap</strong><br />
+if a block’s inline content doesn’t fit on a single line, it will continue on a new line</li>
+  <li><strong>height: auto</strong><br />
+a block’s height varies automatically to match its content’s size</li>
+</ul>
+
+<div class="result" id="result-fluidity">
+  <div>
+    A block element will fill up the whole <strong>width</strong> available, while its <strong>height</strong> will vary automatically according to the size of its content.
+  </div>
+  <div>
+    This element will be pushed downwards depending on the height of its predecessors.
+  </div>
+</div>
+
+<style type="text/css">
+#result-fluidity{ height: 450px; max-width: 800px;}
+#result-fluidity div{ background: coral; padding: 20px;}
+#result-fluidity div:first-child{ background: mediumaquamarine; animation: expand 3s alternate infinite both;}
+
+@keyframes expand{
+  0%  { width: 100%;}
+  100%{ min-width: 100px; width: 50%;}
+}
+</style>
+
+<ul>
+  <li>A <code class="highlighter-rouge">block</code> is by default in <strong>full width</strong></li>
+  <li>Its <strong>height</strong> is the height of its content</li>
+</ul>
+
+<h3 id="ordering">Ordering</h3>
+
+<p>HTML elements are displayed in the <strong>order</strong> in which they are written <strong>in the code</strong>.
+First in the code -&gt; first in the browser.</p>
+
+<p>Each <code>block</code> appears in the order in which they appear in the HTML code, from <strong>top</strong> to <strong>bottom</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>First<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Second<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Third<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Fourth<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Fifth<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p>First</p>
+  <p>Second</p>
+  <p>Third</p>
+  <p>Fourth</p>
+  <p>Fifth</p>
+</div>
+
+<h3 id="stacking">Stacking</h3>
+
+<p>A browser has <strong>3 dimensions</strong>.</p>
+
+<p>Each HTML element belongs to an imaginary <strong>layer</strong>.</p>
+
+<p>The <strong>stack order</strong> depends on how elements are <strong>nested</strong>: child elements appear <strong>on top</strong> of their respective parents.</p>
+
+<ul>
+  <li>Each <strong>nested</strong> element appears <em>on top</em> of its parent.</li>
+  <li>The <strong>deeper</strong> in the hierarchy, the <em>higher</em> in the stack.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div&gt;</span>
+  This parent is behind
+  <span class="nt">&lt;p&gt;</span>
+    This nested child appears <span class="nt">&lt;strong&gt;</span>on top<span class="nt">&lt;/strong&gt;</span> of its parent
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<div class="result">
+  <div style="background: midnightblue; color: white; padding: 20px;">
+    This parent is behind
+    <p style="background: mediumseagreen; padding: 20px;">
+      This nested child appears <span style="background: crimson; color: white; padding: 2px 5px;">on top</span> of its parent
+    </p>
+  </div>
+</div>
+
+<h3 id="breaking-the-flow">Breaking the flow</h3>
+
+<p>While the browser’s default behavior is <em>efficient</em>, it may not be <em>sufficient</em> for your design needs.</p>
+
+<p>Several CSS properties allow to <strong>disrupt</strong> the Flow:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">height</code> and <code class="highlighter-rouge">width</code> can alter an element’s <strong>fluidity</strong></li>
+  <li><code class="highlighter-rouge">float</code> <strong>disrupts</strong> an element’s behavior as well as its surroundings</li>
+  <li><code class="highlighter-rouge">position</code> <code class="highlighter-rouge">absolute</code> and <code class="highlighter-rouge">fixed</code> <strong>remove</strong> an element from the Flow</li>
+  <li><code class="highlighter-rouge">z-index</code> can alter the order in which elements are <strong>stacked</strong></li>
+</ul>
+:ET

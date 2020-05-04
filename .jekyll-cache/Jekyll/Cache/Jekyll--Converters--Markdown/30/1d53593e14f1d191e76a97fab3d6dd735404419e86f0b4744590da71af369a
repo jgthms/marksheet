@@ -1,0 +1,403 @@
+I"q]<p>We’ve just seen how CSS <strong>transitions</strong> are just a way to <strong>animate</strong> CSS properties between a <em>starting</em> state, and an <em>end</em> state.</p>
+
+<p>SO CSS transitions are <em>specific</em> kind of animations, where:</p>
+
+<ul>
+  <li>there’s only 2 states: start and end</li>
+  <li>the animation doesn’t loop</li>
+  <li>the intermediate states are only controlled by the timing function</li>
+</ul>
+
+<p>Well what if you want:</p>
+
+<ul>
+  <li>to have control over the <strong>intermediate</strong> states?</li>
+  <li>to make an animation <strong>loop</strong>?</li>
+  <li>different animations on the <em>same</em> element?</li>
+  <li>to animate a specific property only <strong>halfway</strong> through the animation?</li>
+  <li>to simulate <strong>different timing functions</strong> for different properties?</li>
+</ul>
+
+<p>CSS animations allow all of this, and more.</p>
+
+<p><strong>CSS animations are like mini movies where you are the director giving out instructions (CSS rules) to your actors (HTML elements) for different scenes (keyframes).</strong></p>
+
+<h3 id="animation-properties">Animation properties</h3>
+
+<p>Like the <code class="highlighter-rouge">transition</code> property, <code class="highlighter-rouge">animation</code> is a <strong>shorthand</strong> property for several others:</p>
+
+<ul>
+  <li><strong>name</strong>: the animation’s name</li>
+  <li><strong>duration</strong>: how long the transition lasts</li>
+  <li><strong>timing-function</strong>: how the intermediate states are calculated</li>
+  <li><strong>delay</strong>: to start the animation after a certain amount of time</li>
+  <li><strong>iteration-count</strong>: how many times the animation should be performed</li>
+  <li><strong>direction</strong>: if the animation should be reversed or not</li>
+  <li><strong>fill-mode</strong>: what styles are applied before the animation starts and after it ends</li>
+</ul>
+
+<h3 id="quick-example">Quick example</h3>
+
+<p>To animate a loading button, you could write a <strong>bouncing</strong> animation:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@keyframes</span> <span class="n">bouncing</span><span class="p">{</span>
+  <span class="nt">0</span><span class="o">%</span>  <span class="p">{</span> <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.5</span><span class="p">);}</span>
+  <span class="nt">100</span><span class="o">%</span><span class="p">{</span> <span class="nl">bottom</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span> <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">50px</span> <span class="m">50px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);}</span>
+<span class="p">}</span>
+
+<span class="nc">.loading-button</span><span class="p">{</span> <span class="nl">animation</span><span class="p">:</span> <span class="n">bouncing</span> <span class="m">0.5s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span><span class="m">0.25</span><span class="p">,</span><span class="m">0.1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="m">0s</span> <span class="n">infinite</span> <span class="n">alternate</span> <span class="nb">both</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-1">
+  <a>Loading</a>
+</div>
+
+<p>You first need to write the actual bouncing animation using <strong>keyframes</strong> and naming it <code class="highlighter-rouge">bouncing</code>. <em>Then</em> you can use that animation by applying it to <code class="highlighter-rouge">.loading-button</code>.</p>
+
+<p>I used the <strong>shorthand</strong> <code class="highlighter-rouge">animation</code> property, and included all options:</p>
+
+<ul>
+  <li><strong>name</strong>: bouncing <em>(matches the keyframes name)</em></li>
+  <li><strong>duration</strong>: 0.5s <em>(half a second)</em></li>
+  <li><strong>timing-function</strong>: <a href="http://cubic-bezier.com/#.1,.25,.1,1">cubic-bezier(0.1,0.25,0.1,1)</a></li>
+  <li><strong>delay</strong>: 0s <em>(no delay)</em></li>
+  <li><strong>iteration-count</strong>: infinite <em>(plays indefinitely)</em></li>
+  <li><strong>direction</strong>: alternate <em>(goes back and forth)</em></li>
+  <li><strong>fill-mode</strong>: both</li>
+</ul>
+
+<h3 id="keyframes">@keyframes</h3>
+
+<p>Before applying animations to HTML elements, you need to <strong>write animations using keyframes</strong>. Basically, keyframes are each <strong>intermediate step</strong> in an animation. They are defined using <strong>percentages</strong>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">0%</code> is the first step of the animation</li>
+  <li><code class="highlighter-rouge">50%</code> is the step halfway through the animation</li>
+  <li><code class="highlighter-rouge">100%</code> is the last step</li>
+</ul>
+
+<p class="info">You can also use the keywords <code class="highlighter-rouge">from</code> and <code class="highlighter-rouge">to</code> instead of <code class="highlighter-rouge">0%</code> and <code class="highlighter-rouge">100%</code> respectively.</p>
+
+<p>You can define <em>as many keyframes as you want</em>, like <code class="highlighter-rouge">33%</code>, <code class="highlighter-rouge">4%</code> or even <code class="highlighter-rouge">29.86%</code>. In practice, you’ll only write a few.</p>
+
+<p>Each keyframe is <strong>CSS rule</strong>, meaning that you can write CSS properties just like usual.</p>
+
+<p>To define an animation, just write the keyword <code class="highlighter-rouge">@keyframes</code> followed by its <strong>name</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@keyframes</span> <span class="n">around</span> <span class="p">{</span>
+  <span class="nt">0</span><span class="o">%</span>  <span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;}</span>
+  <span class="nt">25</span><span class="o">%</span> <span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">240px</span><span class="p">;</span> <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;}</span>
+  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">240px</span><span class="p">;</span> <span class="nl">top</span><span class="p">:</span> <span class="m">140px</span><span class="p">;}</span>
+  <span class="nt">75</span><span class="o">%</span> <span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="nl">top</span><span class="p">:</span> <span class="m">140px</span><span class="p">;}</span>
+  <span class="nt">100</span><span class="o">%</span><span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;}</span>
+<span class="p">}</span>
+<span class="nt">p</span><span class="p">{</span> <span class="nl">animation</span><span class="p">:</span> <span class="n">around</span> <span class="m">4s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;}</span></code></pre></figure>
+
+<div class="result" id="result-2">
+  <p>Hello</p>
+</div>
+
+<p>Notice how the start <code class="highlighter-rouge">0%</code> and the end <code class="highlighter-rouge">100%</code> have the <strong>same CSS rules</strong>. This ensures that the animation loops perfectly. Because the iteration count is set to <code class="highlighter-rouge">infinite</code>, the animation will go from <code class="highlighter-rouge">0%</code> to <code class="highlighter-rouge">100%</code>, and then <em>back to</em> <code class="highlighter-rouge">0%</code> instantly and indefinitely.</p>
+
+<h3 id="animation-name">animation-name</h3>
+
+<p>The animation’s <strong>name</strong> is used at least <strong>twice</strong>:</p>
+
+<ul>
+  <li>when <strong>writing</strong> the animation using <code class="highlighter-rouge">@keframes</code></li>
+  <li>when <strong>using</strong> the animation using the <code class="highlighter-rouge">animation-name</code> property (or withing the <code class="highlighter-rouge">animation</code> shorthand)</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@keyframes</span> <span class="n">whatever</span><span class="p">{</span>
+  <span class="c">/* ... */</span>
+<span class="p">}</span>
+
+<span class="nc">.selector</span><span class="p">{</span> <span class="nl">animation-name</span><span class="p">:</span> <span class="n">whatever</span><span class="p">;}</span></code></pre></figure>
+
+<p>Like CSS class names, animation names can only include:</p>
+
+<ul>
+  <li>letters (a-z)</li>
+  <li>numbers (0-9)</li>
+  <li>underscores (_)</li>
+  <li>dashes (-)</li>
+</ul>
+
+<p>It can not start with a number or two dashes.</p>
+
+<h3 id="animation-duration">animation-duration</h3>
+
+<p>Just like <a href="/css-transitions.html#transition-duration">transition durations</a>, animation durations can be set in <strong>seconds</strong> <code class="highlighter-rouge">1s</code> or <strong>milliseconds</strong> <code class="highlighter-rouge">200ms</code>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.selector</span><span class="p">{</span> <span class="nl">animation-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;}</span></code></pre></figure>
+
+<p>It defaults to <code class="highlighter-rouge">0s</code>, which means no animation at all.</p>
+
+<h3 id="animation-timing-function">animation-timing-function</h3>
+
+<p>Just like <a href="/css-transitions.html#transition-timing-function">transition timing functions</a>, animation timing functions can use <strong>keywords</strong> like <code class="highlighter-rouge">linear</code>, <code class="highlighter-rouge">ease-out</code>, or be defined using custom <strong>cubic bezier</strong> functions.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.selector</span><span class="p">{</span> <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">ease-in-out</span><span class="p">;}</span></code></pre></figure>
+
+<p>It defaults to <code class="highlighter-rouge">ease</code>.</p>
+
+<p class="info">Because CSS animations use keyframes, you can set a <strong>linear</strong> timing function and <strong>simulate</strong> an specific cubic bezier curve by defining a <em>lot</em> of <em>very specific</em> keyframes. Check out <a href="http://bouncejs.com/">Bounce.js</a> to generate advanced animations.</p>
+
+<h3 id="animation-delay">animation-delay</h3>
+
+<p>Just like <a href="/css-transitions.html#transition-delay">transition delays</a>, animation delays can be set in <strong>seconds</strong> <code class="highlighter-rouge">1s</code> or <strong>milliseconds</strong> <code class="highlighter-rouge">200ms</code>.</p>
+
+<p>It defaults to <code class="highlighter-rouge">0s</code>, which means no delay at all.</p>
+
+<p>It’s useful when triggering multiple animations <strong>in sequence</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.a</span><span class="o">,</span><span class="nc">.b</span><span class="o">,</span><span class="nc">.c</span><span class="p">{</span> <span class="nl">animation</span><span class="p">:</span> <span class="n">bouncing</span> <span class="m">1s</span><span class="p">;}</span>
+<span class="nc">.b</span><span class="p">{</span> <span class="nl">animation-delay</span><span class="p">:</span> <span class="m">0.25s</span><span class="p">;}</span>
+<span class="nc">.c</span><span class="p">{</span> <span class="nl">animation-delay</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;}</span></code></pre></figure>
+
+<h3 id="animation-iteration-count">animation-iteration-count</h3>
+
+<p>By default, animations are only played <strong>once</strong> (value of <code class="highlighter-rouge">1</code>). You can set 3 types of values:</p>
+
+<ul>
+  <li><strong>integers</strong> like <code class="highlighter-rouge">2</code> or <code class="highlighter-rouge">3</code></li>
+  <li><strong>non-integers</strong> like <code class="highlighter-rouge">0.5</code> which will play only half the animation</li>
+  <li>the <strong>keyword</strong> <code class="highlighter-rouge">infinite</code> which will repeat the animation indefinitely</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.selector</span><span class="p">{</span> <span class="nl">animation-duration</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;}</span></code></pre></figure>
+
+<h3 id="animation-direction">animation-direction</h3>
+
+<p>The animation’s <strong>direction</strong> defines <em>in which order</em> the keyframes are read.</p>
+
+<ul>
+  <li><strong>normal</strong>: starts at <code class="highlighter-rouge">0%</code>, ends at <code class="highlighter-rouge">100%</code>, starts at <code class="highlighter-rouge">0%</code> again</li>
+  <li><strong>reverse</strong>: starts at <code class="highlighter-rouge">100%</code>, ends at <code class="highlighter-rouge">0%</code>, starts at <code class="highlighter-rouge">100%</code> again</li>
+  <li><strong>alternate</strong>: starts at <code class="highlighter-rouge">0%</code>, goes to <code class="highlighter-rouge">100%</code>, goes to <code class="highlighter-rouge">0%</code></li>
+  <li><strong>alternate-reverse</strong>: starts at <code class="highlighter-rouge">100%</code>, goes to <code class="highlighter-rouge">0%</code>, goes to <code class="highlighter-rouge">100%</code></li>
+</ul>
+
+<p>It’s easier to visualise if the animation’s iteration count is set to <code class="highlighter-rouge">infinite</code>.</p>
+
+<div class="result" id="result-3">
+  <p><strong>Normal</strong>: 0% --&gt; 100%</p>
+  <div class="normal"><div></div></div>
+  <p><strong>Reverse</strong>: 100% --&gt; 0%</p>
+  <div class="reverse"><div></div></div>
+  <p><strong>Alternate</strong>: 0% &lt;--&gt; 100%</p>
+  <div class="alternate"><div></div></div>
+  <p><strong>Alternate reverse</strong>: 100% &lt;--&gt; 0%</p>
+  <div class="alternate-reverse"><div></div></div>
+</div>
+
+<h3 id="animation-fill-mode">animation-fill-mode</h3>
+
+<p>An animation’s <strong>fill mode</strong> defines what happens <em>before</em> the animation starts and <em>after</em> it ends.</p>
+
+<p>When you define <strong>keyframes</strong> you define <strong>CSS rules</strong> to be applied at different step of the animation. Now, these CSS rules can <em>clash</em> with the ones <em>already applied</em> on the elements being animated.</p>
+
+<p>The fill mode allows to tell the browser if the <em>animation’s styles</em> should <strong>also</strong> be applied <strong>outside of the animation</strong>.</p>
+
+<p>Let’s imagine a <strong>button</strong> that is:</p>
+
+<ul>
+  <li><strong>red</strong> by default</li>
+  <li>turns <strong>green</strong> at the start of the animation</li>
+  <li>ends up <strong>blue</strong> when the animation is over</li>
+</ul>
+
+<div class="table">
+  <table>
+    <tr>
+      <th><code>animation-fill-mode</code></th>
+      <th>Before the animation</th>
+      <th>Start of the animation</th>
+      <th>End of the animation</th>
+      <th>After the animation</th>
+    </tr>
+    <tr>
+      <td><code>none</code></td>
+      <td><a class="fill-mode fill-mode-red">Default</a></td>
+      <td><a class="fill-mode fill-mode-blue">Start</a></td>
+      <td><a class="fill-mode fill-mode-green">End</a></td>
+      <td><a class="fill-mode fill-mode-red">Default</a></td>
+    </tr>
+    <tr>
+      <td><code>forwards</code></td>
+      <td><a class="fill-mode fill-mode-red">Default</a></td>
+      <td><a class="fill-mode fill-mode-blue">Start</a></td>
+      <td><a class="fill-mode fill-mode-green">End</a></td>
+      <td><a class="fill-mode fill-mode-green">End</a></td>
+    </tr>
+    <tr>
+      <td><code>backwards</code></td>
+      <td><a class="fill-mode fill-mode-blue">Start</a></td>
+      <td><a class="fill-mode fill-mode-blue">Start</a></td>
+      <td><a class="fill-mode fill-mode-green">End</a></td>
+      <td><a class="fill-mode fill-mode-red">Default</a></td>
+    </tr>
+    <tr>
+      <td><code>both</code></td>
+      <td><a class="fill-mode fill-mode-blue">Start</a></td>
+      <td><a class="fill-mode fill-mode-blue">Start</a></td>
+      <td><a class="fill-mode fill-mode-green">End</a></td>
+      <td><a class="fill-mode fill-mode-green">End</a></td>
+    </tr>
+    &lt;/tr&gt;
+  </table>
+</div>
+
+<div class="result" id="result-4">
+  <p>
+    <span><strong>1.</strong> Before the animation</span>
+    <span><strong>2.</strong> During the animation</span>
+    <span><strong>3.</strong> After the animation</span>
+  </p>
+  <p><strong>None</strong>: the animation styles do not affect the default style</p>
+  <p>
+    <span>Default red</span>
+    <span>From blue to green</span>
+    <span>Back to red again</span>
+  </p>
+  <div class="none"><div></div></div>
+  <p><strong>Forwards</strong>: the last styles applied at the end of the animation are retained afterwards</p>
+  <p>
+    <span>Default red</span>
+    <span>From blue to green</span>
+    <span>Remains green</span>
+  </p>
+  <div class="forwards"><div></div></div>
+  <p><strong>Backwards</strong>: the animation's styles will already be applied before the animation actually starts</p>
+  <p>
+    <span>Already blue</span>
+    <span>From blue to green</span>
+    <span>Back to red again</span>
+  </p>
+  <div class="backwards"><div></div></div>
+  <p><strong>Both</strong>: the styles are applied before and after the animation plays</p>
+  <p>
+    <span>Already blue</span>
+    <span>From blue to green</span>
+    <span>Remains green</span>
+  </p>
+  <div class="both"><div></div></div>
+</div>
+
+<style type="text/css">
+#result-1{ padding: 1rem;}
+#result-1 a{ animation: bouncing 0.5s cubic-bezier(.1,.25,.1,1) 0s infinite alternate both; background: lightslategrey; border-radius: 2px; display: inline-block; color: white; cursor: pointer; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; padding: 1em 2em 1.1em; position: relative; text-decoration: none; text-transform: uppercase; vertical-align: top;}
+
+@keyframes bouncing{
+  0%  { bottom: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5);}
+  100%{ bottom: 50px; box-shadow: 0 50px 50px rgba(0,0,0,0.1);}
+}
+
+#result-2{ height: 300px; padding: 0; width: 300px;}
+#result-2 p{ animation: around 4s linear 0s infinite; background: turquoise; color: white; height: 60px; line-height: 60px; margin: 0; position: absolute; text-align: center; width: 60px;}
+
+@keyframes around {
+  0%  { left: 0; top: 0;}
+  25% { left: 240px; top: 0;}
+  50% { left: 240px; top: 240px;}
+  75% { left: 0; top: 240px;}
+  100%{ left: 0; top: 0;}
+}
+
+#result-3{ padding-bottom: 1rem;}
+#result-3 p{ color: grey;}
+#result-3 p strong{ font-weight: bold;}
+#result-3 div{ background: hsl(217,4%,96%); height: 20px; width: 220px;}
+#result-3 div div{ animation: swipe 2s linear infinite; background: crimson; height: 20px; left: 0; margin-top: -1rem; position: relative; transition: 1s; width: 20px;}
+#result-3 .normal div{ animation-direction: normal;}
+#result-3 .reverse div{ animation-direction: reverse;}
+#result-3 .alternate div{ animation-direction: alternate;}
+#result-3 .alternate-reverse div{ animation-direction: alternate-reverse;}
+#result-3 p:nth-child(1) strong{ color: crimson;}
+#result-3 div:nth-child(2) div{ background: crimson;}
+#result-3 p:nth-child(3) strong{ color: midnightblue;}
+#result-3 div:nth-child(4) div{ background: midnightblue;}
+#result-3 p:nth-child(5) strong{ color: mediumseagreen;}
+#result-3 div:nth-child(6) div{ background: mediumseagreen;}
+#result-3 p:nth-child(7) strong{ color: goldenrod;}
+#result-3 div:nth-child(8) div{ background: goldenrod;}
+
+@keyframes swipe {
+  0%  { left: 0;}
+  100%{ left: 200px;}
+}
+
+#result-4{ padding: 1rem 1rem 0;}
+#result-4 p{ color: grey; margin: 0; position: relative;}
+#result-4 p:first-child{ margin-bottom: 1rem;}
+#result-4 p span{ animation: toggle 6s infinite both; left: 0; position: absolute;}
+#result-4 p:first-child span{ animation-name: tabs; margin-right: 1rem; position: static;}
+#result-4 p span:nth-child(1){ animation-delay: 0; position: static;}
+#result-4 p span:nth-child(2){ animation-delay: 2s;}
+#result-4 p span:nth-child(3){ animation-delay: 4s;}
+#result-4 div{ background: hsl(217,4%,96%); height: 20px; margin-bottom: 1rem; width: 220px;}
+#result-4 div div{ animation: race-none 6s linear infinite; background: crimson; height: 20px; margin-bottom: 0; position: relative; width: 20px;}
+#result-4 div:nth-child(7) div{ animation-name: race-forwards;}
+#result-4 div:nth-child(10) div{ animation-name: race-backwards;}
+#result-4 div:nth-child(13) div{ animation-name: race-both;}
+
+a.fill-mode,
+a.fill-mode:hover{ background: crimson; border-radius: 2px; display: inline-block; color: white !important; cursor: pointer; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; padding: 1em 2em 1.1em; position: relative; text-decoration: none !important; text-transform: uppercase; vertical-align: top;}
+a.fill-mode-blue,
+a.fill-mode-blue:hover{ background: midnightblue;}
+a.fill-mode-green,
+a.fill-mode-green:hover{ background: mediumseagreen;}
+
+@keyframes tabs {
+  0%  { opacity: 0.2;}
+  1%  { opacity: 1;}
+  33% { opacity: 1;}
+  34% { opacity: 0.2;}
+  100%{ opacity: 0.2;}
+}
+
+@keyframes toggle {
+  0%  { opacity: 0;}
+  1%  { opacity: 1;}
+  33% { opacity: 1;}
+  34% { opacity: 0;}
+  100%{ opacity: 0;}
+}
+
+@keyframes race-none {
+  0%  { background: crimson; left: 0;}
+  33%  { background: crimson; left: 0;}
+  34%  { background: midnightblue; left: 100px;}
+  66%  { background: mediumseagreen; left: 200px}
+  67%  { background: crimson; left: 0;}
+  100%{ background: crimson; left: 0;}
+}
+
+@keyframes race-forwards {
+  0%  { background: crimson; left: 0;}
+  33%  { background: crimson; left: 0;}
+  34%  { background: midnightblue; left: 100px;}
+  66%  { background: mediumseagreen; left: 200px}
+  67%  { background: mediumseagreen; left: 200px;}
+  100%{ background: mediumseagreen; left: 200px;}
+}
+
+@keyframes race-backwards {
+  0%  { background: midnightblue; left: 100px;}
+  33%  { background: midnightblue; left: 100px;}
+  34%  { background: midnightblue; left: 100px;}
+  66%  { background: mediumseagreen; left: 200px}
+  67%  { background: crimson; left: 0;}
+  100%{ background: crimson; left: 0;}
+}
+
+@keyframes race-both {
+  0%  { background: midnightblue; left: 100px;}
+  33%  { background: midnightblue; left: 100px;}
+  34%  { background: midnightblue; left: 100px;}
+  66%  { background: mediumseagreen; left: 200px}
+  67%  { background: mediumseagreen; left: 200px;}
+  100%{ background: mediumseagreen; left: 200px;}
+}
+</style>
+
+:ET

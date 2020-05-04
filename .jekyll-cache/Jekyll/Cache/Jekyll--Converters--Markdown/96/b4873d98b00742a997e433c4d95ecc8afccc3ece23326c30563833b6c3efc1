@@ -1,0 +1,176 @@
+I"%<p>Because we don’t want to style all our HTML elements at once, we need to be able to <strong>target</strong> a subset of these HTML elements.</p>
+
+<p>CSS selectors define <em>which</em> elements we want our styling to be applied to.</p>
+
+<h3 id="generic-tag-selectors">Generic tag selectors</h3>
+
+<p>Targeting generic HTML tags is easy: just use the tag name.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">a</span><span class="p">{</span> <span class="c">/* Links */</span> <span class="p">}</span>
+<span class="nt">p</span><span class="p">{</span> <span class="c">/* Paragraphs */</span> <span class="p">}</span>
+<span class="nt">ul</span><span class="p">{</span> <span class="c">/* Unordered lists */</span> <span class="p">}</span>
+<span class="nt">li</span><span class="p">{</span> <span class="c">/* List items */</span> <span class="p">}</span></code></pre></figure>
+
+<p>There’s a direct connection between the <em>name</em> of the HTML tag and the CSS <em>selector</em> used.</p>
+
+<h3 id="classes">Classes</h3>
+
+<p>Considering we probably don’t want to style all paragraphs or all titles identically, we need to <em>differentiate</em> them.</p>
+
+<p>Of all HTML attributes, the <code class="highlighter-rouge">class</code> attribute is the most important for CSS. It allows us to define a <strong>group</strong> of HTML elements that we can <em>target specifically</em>. Just put a dot <code class="highlighter-rouge">.</code> in front of the class name you want to use:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.date</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>On one side, there is the HTML <code class="highlighter-rouge">class</code> attribute with the value <code class="highlighter-rouge">date</code>. It must match the name of the CSS class.</p>
+
+<p class="info">You can use any name for your CSS class, as long as it doesn’t start with a number.</p>
+
+<p>The <code class="highlighter-rouge">.date</code> class selector will target all HTML elements that have the <code class="highlighter-rouge">class="date"</code> attribute. So, the following HTML elements will <strong>all</strong> be styled:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+  Saturday Feb 21
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  The event will be on <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>Saturday<span class="nt">&lt;/em&gt;</span>.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p style="color:red;">Saturday Feb 21</p>
+  <p>The event will be on <em style="color:red;">Saturday</em>.</p>
+</div>
+
+<p>Bear in mind that the tag name is <strong>irrelevant</strong>. Only the <code class="highlighter-rouge">class</code> HTML attribute is.</p>
+
+<h3 id="ids">IDs</h3>
+
+<p>You can also use the <code class="highlighter-rouge">id</code> attribute in your HTML, and target it with a hash <code class="highlighter-rouge">#</code> in your CSS:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#tagline</span><span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">orange</span><span class="p">;}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"tagline"</span><span class="nt">&gt;</span>This heading will be orange.<span class="nt">&lt;/h1&gt;</span></code></pre></figure>
+
+<p>ID are similar to Classes, as they rely upon an HTML attribute.</p>
+
+<h3 id="example">Example</h3>
+
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>HTML</th>
+        <th>Possible CSS selectors</th>
+        <th>What it means</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><pre><code>&lt;p&gt;&lt;/p&gt;</code></pre></td>
+        <td><code>p</code></td>
+        <td><code>Every &lt;p&gt;</code></td>
+      </tr>
+      <tr>
+        <td><pre><code>&lt;div class="global"&gt;&lt;/div&gt;</code></pre></td>
+        <td>
+          <code>div</code><br />
+          <code>.global</code><br />
+          <code>div.global</code></td>
+          <td>Every <code>&lt;div&gt;</code><br />
+          Every elements with <code>class=”global”</code><br />
+          Every <code>&lt;div&gt;</code> with <code>class=”global”</code>
+        </td>
+      </tr>
+      <tr>
+        <td><pre><code>&lt;ul id="menu"&gt;</code></pre></td>
+        <td>
+          <code>#menu</code><br />
+          <code>ul#menu</code>
+        </td>
+        <td>
+          The only element with <code>id=”menu”</code><br />
+          The only <code>&lt;ul&gt;</code> with <code>id=”menu”</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre><code>&lt;ol class="dico"&gt;
+  &lt;li&gt;Un cobaye&lt;/li&gt;
+  &lt;li&gt;Des cobaux&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </td>
+        <td>
+          <code>li</code><br />
+          <code>ol li</code><br />
+          <code>.dico li</code>
+        </td>
+        <td>
+          Every <code>&lt;li&gt;</code><br />
+          Every <code>&lt;li&gt;</code> with an <code>&lt;ol&gt;</code> as ancestor <br />
+          Every <code>&lt;li&gt;</code> with a <code>class="dico"</code> element as ancestor
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 id="combining-selectors">Combining selectors</h3>
+
+<p>Let’s reuse our previous example where we want our dates to be red:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.date</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+  Saturday Feb 21
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  The event will be on <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>Saturday<span class="nt">&lt;/em&gt;</span>.
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<div class="result">
+  <p style="color:red;">Saturday Feb 21</p>
+  <p>The event will be on <em style="color:red;">Saturday</em>.</p>
+</div>
+
+<p>What if we want our dates that are in <code class="highlighter-rouge">em</code> elements to blue instead? We can <strong>add</strong> the following CSS rule:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">em</span><span class="nc">.date</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The <code class="highlighter-rouge">em.date</code> combines:</p>
+
+<ul>
+  <li>a tag selector <code class="highlighter-rouge">em</code></li>
+  <li>a class selector <code class="highlighter-rouge">.date</code></li>
+</ul>
+
+<p>It will only apply to <code class="highlighter-rouge">&lt;em class="date"&gt;&lt;/em&gt;</code> HTML elements. It <strong>won’t</strong> affect other <code class="highlighter-rouge">.date</code> or <code class="highlighter-rouge">em</code>.</p>
+
+<h3 id="hierarchy-selectors">Hierarchy selectors</h3>
+
+<p>A <strong>space</strong> in a selector defines a ancestor/descendant relationship. Let’s say we want the links in our header to be in red:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">header</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This can be read from right to left as: <em>“Select all <code class="highlighter-rouge">a</code> elements that are within a <code class="highlighter-rouge">header</code> element”</em>. This will prevent all other links (that aren’t in the header) to remain unaffected.</p>
+
+<h3 id="pseudo-class-selectors">Pseudo-class selectors</h3>
+
+<p>HTML elements can have different <strong>states</strong>. The most common case is when you hover over a link. It’s possible in CSS to apply a different style when such an event occurs.</p>
+
+<p>Pseudo-class selectors are attached to usual selectors and start with a <strong>colon</strong> <code class="highlighter-rouge">:</code>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">a</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+:ET

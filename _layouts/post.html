@@ -41,14 +41,14 @@ route: post
         {% if page.next %}
           <a class="breadcrumb-next" href="{{ page.next.url }}">
             <i class="fa fa-angle-right"></i>
-            <span>Next article</span>
+            <span>Artículo sigiuente</span>
           </a>
         {% endif %}
 
         {% if page.previous %}
           <a class="breadcrumb-previous" href="{{ page.previous.url }}">
             <i class="fa fa-angle-left"></i>
-            <span>Previous article</span>
+            <span>Artículo anterior</span>
           </a>
         {% endif %}
       </header>
@@ -64,14 +64,14 @@ route: post
       <nav class="pagination">
         {% if page.previous %}
           <a class="pagination-previous" href="{{ page.previous.url }}">
-            <em>&larr; Previous</em>
+            <em>&larr; Anterior</em>
             <strong>{{ page.previous.title }}</strong>
           </a>
         {% endif %}
 
         {% if page.next %}
           <a class="pagination-next" href="{{ page.next.url }}">
-            <em>Next &rarr;</em>
+            <em>Siguiente &rarr;</em>
             <strong>{{ page.next.title }}</strong>
           </a>
         {% endif %}
@@ -82,5 +82,5 @@ route: post
 
 <a id="top" class="elevator">
   <i class="fa fa-angle-up"></i>
-  <span>Back to top</span>
+  <span>Regresar al inicio</span>
 </a>

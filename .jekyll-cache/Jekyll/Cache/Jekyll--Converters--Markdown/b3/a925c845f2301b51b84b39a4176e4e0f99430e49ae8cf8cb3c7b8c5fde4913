@@ -1,0 +1,95 @@
+I"F<p>In HTML, you’ll mainly come across 2 types of HTML elements:</p>
+
+<ul>
+  <li>
+    <p><strong>block</strong> elements like:</p>
+
+    <ul>
+      <li>paragraphs <code class="highlighter-rouge">&lt;p&gt;</code></li>
+      <li>lists: unordered (with bullet points) <code class="highlighter-rouge">&lt;ul&gt;</code> or ordered lists (with numbers) <code class="highlighter-rouge">&lt;ol&gt;</code></li>
+      <li>headings: from 1st level <code class="highlighter-rouge">&lt;h1&gt;</code> to 6th level headings <code class="highlighter-rouge">&lt;h6&gt;</code></li>
+      <li>articles <code class="highlighter-rouge">&lt;article&gt;</code></li>
+      <li>sections <code class="highlighter-rouge">&lt;section&gt;</code></li>
+      <li>long quotes <code class="highlighter-rouge">&lt;blockquote&gt;</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>inline</strong> elements like:</p>
+
+    <ul>
+      <li>links <code class="highlighter-rouge">&lt;a&gt;</code></li>
+      <li>emphasised words <code class="highlighter-rouge">&lt;em&gt;</code></li>
+      <li>important words <code class="highlighter-rouge">&lt;strong&gt;</code></li>
+      <li>short quotes <code class="highlighter-rouge">&lt;q&gt;</code></li>
+      <li>abbreviations <code class="highlighter-rouge">&lt;abbr&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Block</strong> elements are meant to <strong>structure</strong> the main parts of your page, by dividing your content in <em>coherent</em> blocks.</p>
+
+<p><strong>Inline</strong> elements are meant to differentiate <em>part</em> of a text, to give it a particular function or meaning. Inline elements usually comprise a single or few words.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>Have you seen this <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.youtube.com"</span><span class="nt">&gt;</span>amazing video<span class="nt">&lt;/a&gt;</span> on YouTube?<span class="nt">&lt;/p&gt;</span></code></pre></figure>
+
+<h3 id="opening-and-closing-tags">Opening and closing tags</h3>
+
+<p><strong>All</strong> block-level elements have an opening and closing tags.</p>
+
+<p>As a result, self-enclosing elements are <strong>inline</strong> elements, simply because their syntax don’t allow them to contain any other HTML element.</p>
+
+<div class="table">
+  <table>
+    <tr>
+      <th class="empty"></th>
+      <th>Have opening and closing tags</th>
+      <th>Self-enclosing</th>
+    </tr>
+    <tr>
+      <th>Block elements</th>
+      <td>
+        <code>&lt;p&gt;</code>
+        <code>&lt;/p&gt;</code>
+        <br />
+        <code>&lt;ul&gt;</code>
+        <code>&lt;/ul&gt;</code>
+        <br />
+        <code>&lt;ol&gt;</code>
+        <code>&lt;/ol&gt;</code>
+      </td>
+      <td>
+        <strong>Impossible</strong>
+      </td>
+    </tr>
+    <tr>
+      <th>Inline elements</th>
+      <td>
+        <code>&lt;a&gt;</code>
+        <code>&lt;/a&gt;</code>
+        <br />
+        <code>&lt;strong&gt;</code>
+        <code>&lt;/strong&gt;</code>
+        <br />
+        <code>&lt;em&gt;</code>
+        <code>&lt;/em&gt;</code>
+      </td>
+      <td>
+        <code>&lt;input&gt;</code>
+        <br />
+        <code>&lt;br&gt;</code>
+        <br />
+        <code>&lt;img&gt;</code>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<h3 id="other-types-of-html-elements">Other types of HTML elements</h3>
+
+<p>There are several exceptions to the block/inline elements, but the ones you will most often encounter are:</p>
+
+<ul>
+  <li><strong>list items</strong> for the <code class="highlighter-rouge">&lt;li&gt;</code></li>
+  <li><strong>table</strong>, <strong>table rows</strong>, <strong>table cells</strong> for <code class="highlighter-rouge">&lt;table&gt;</code>, <code class="highlighter-rouge">&lt;tr&gt;</code> and <code class="highlighter-rouge">&lt;td&gt;</code> respectively</li>
+</ul>
+:ET

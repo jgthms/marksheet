@@ -1,27 +1,28 @@
 ---
 layout: post
-title: "HTML <strong>Syntax</strong>"
-subtitle: "As any language, HTML has <strong>rules</strong>"
+title: "HTML: La <strong>Sintaxis</strong>"
+subtitle: "Como cualquier lenguaje, HTML tiene <strong>reglas</strong>"
 section: html
 ---
 
-**HTML** stands for **H**yper**T**ext **M**arkup **L**anguage:
+**HTML** significa (en Inglés) **H**yper**T**ext **M**arkup **L**anguage:
 
-* **HyperText** means that it uses the HTTP part of the Internet
-* **Markup** means the code you write is annotated with keywords
-* **Language** means it can be read by both a human and a computer
+* **HyperText** significa que usa la parte HTTP de Internet
+* **Markup** significa que el código que escribes tiene palabras clave
+* **Language** significa que puede ser leído por ambos: computadoras y seres humanos
 
-Like any language, HTML comes with a set of **rules**. These rules are relatively simple. It comes down to defining **boundaries**, to know where something _starts_ and where something _ends_.
+Como cualquier lenguaje, HTML viene con un conjunto de **reglas**. Estas reglas son relativamente simples. Todo se resume en definir **límites**, para saber dónde algo _comienza_ y donde _termina_.
 
-Here is a sample paragraph in HTML:
+Aquí hay un párrafo de muestra en HTML:
 
 {% highlight html %}
-<p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p>
+<p>Si Tetris me ha enseñado algo, es que los errores se acumulan y los logros desaparecen.
+</p>
 {% endhighlight %}
 
-<div class="result"><p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p></div>
+<div class="result"><p>Si Tetris me ha enseñado algo, es que los errores se acumulan y los logros desaparecen..</p></div>
 
-What you see in **angle brackets** `<`{:.language-html} and `>`{:.language-html} are HTML **tags**. They define where something _starts_ and where it _ends_.
+Lo que ves entre signos de  **mayor qué** y **menor qué** `<`{:.language-html} y `>`{:.language-html} son **etiquetas** de HTML. Éstas definen donde algo _comienza_ y donde _termina_.
 
 Each of them carry a specific **meaning**. In this case, `p`{:.language-html} stands for **paragraph**.
 
@@ -61,7 +62,7 @@ Remember:
 
 Attributes act like **extra** information tied to an HTML element. They are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
 
-For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag): 
+For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag):
 
 {% highlight html %}
 <a href="http://www.mozilla.com/firefox">Download Firefox</a>
