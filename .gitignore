@@ -2,6 +2,7 @@
 _config.yml
 .sass-cache
 _site
+.jekyll-cache
 
 # Editor settings
 .vscode
