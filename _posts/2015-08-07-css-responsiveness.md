@@ -232,7 +232,7 @@ body{ }
 }
 {% endhighlight %}
 
-A desktop-first approach starts with styles for large screens and  `min-width` media queries in order to apply specific rules for larger viewports:
+A desktop-first approach starts with styles for large screens and  `max-width` media queries in order to apply specific rules for larger viewports:
 
 {% highlight css %}
 /* General CSS rules for every viewport, including large desktop screens */
