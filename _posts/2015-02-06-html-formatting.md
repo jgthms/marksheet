@@ -1,102 +1,102 @@
 ---
 layout: post
-title: "HTML <strong>Formatting</strong>"
-subtitle: "When <strong>whitespace</strong> doesn't matter"
+title: "<strong>Formateo</strong> HTML"
+subtitle: "Cuando el <strong>espacio en blanco</strong> no importa"
 section: html
 ---
 
-There is a difference between what is **written** in your HTML code, and what is **displayed** in the browser.
+Existe una diferencia entre lo **escrito** en su código HTML y lo **mostrado** en el navegador.
 
-As we've already seen, HTML **tags** like `<p>` are only _read_ by the browser (to know what _kind_ of content is written), but are **not displayed** by the browser.
+Como ya hemos visto, las etiquetas **HTML** como `<p>` solo son _leídas_ por el navegador (para saber qué _ tipo_ de contenido está escrito), pero **no las muestra** el navegador.
 
-We've also seen how it's possible to write HTML **comments** in your code, to help the human reading the code, without having these comments being displayed by the browser.
+También hemos visto cómo es posible escribir **comentarios** HTML en su código, para ayudar al ser humano a leer el código, sin que el navegador muestre estos comentarios.
 
-Another kind of written code _ignored_ by the browser is **whitespace**, which includes:
+Otro tipo de código escrito _ ignorado_ por el navegador es **espacio en blanco**, que incluye:
 
-* line-breaks
-* empty lines
-* tabulations (or indentation)
+* saltos de linea
+* lineas vacías
+* tabulaciones (o indentación)
 
-### Line-breaks
+### Saltos de línea
 
-Line-breaks and empty lines (which are a succession of line-breaks) in HTML code are **ignored** by the browser. They only account for a **single** space.
+Los saltos de línea y las líneas vacías (que son una sucesión de saltos de línea) en el código HTML son **ignorados** por el navegador. Solo representan un espacio **único**.
 
 {% highlight html %}
 <blockquote>
-The original idea of the web was that it should be a collaborative
+La idea original de la web era que debería ser una colaboración
 
 
-space
+espacio
 
 
-where you can communicate through sharing information.
+donde puede comunicarse compartiendo información.
 </blockquote>
 {% endhighlight %}
 
 <div class="result">
   <blockquote>
-  The original idea of the web was that it should be a collaborative space where you can communicate through sharing information.
+  La idea original de la web era que debería ser un espacio colaborativo donde poder comunicarse compartiendo información.
   </blockquote>
 </div>
 
-In order to actually **force** a line-break, you need to use the `<br>` HTML element:
+Para realmente **forzar** un salto de línea, necesita usar el elemento HTML `<br>`:
 
 {% highlight html %}
-<p>At its best, life is completely<br>unpredictable.</p>
+<p>En el mejor de los casos, la vida es completamente <br> impredecible.</p>
 {% endhighlight %}
 
 <div class="result">
-  <p>At its best, life is completely<br>unpredictable.</p>
+  <p>En el mejor de los casos, la vida es completamente <br> impredecible.</p>
 </div>
 
-### Tabulations
+### Tabulaciones
 
-A **tabulation** is a special character obtained by pressing the _"Tab"_ key. It usually moves the cursor to the next tab stop, but sometimes is converted to 2 spaces.
+Una ** tabulación ** es un carácter especial que se obtiene presionando la tecla _ "Tab" _. Por lo general, mueve el cursor a la siguiente tabulación, pero a veces se convierte en 2 espacios.
 
-Anyway, like a regular space, a tabulation is **invisible**. It's also ignored by the browser:
+De todos modos, como un espacio normal, una tabulación es ** invisible **. También es ignorado por el navegador:
 
 {% highlight html %}
 <p>
-  Let's push      this text
-  with tabulations.
+  Empujemos      este texto
+  con tabulaciones.
 </p>
 {% endhighlight %}
 
 <div class="result">
   <p>
-    Let's push      this text
-    with tabulations.
+    Empujemos      este texto
+    con tabulaciones.
   </p>
 </div>
 
-If you want to add space _before_ a word, you'll have to use CSS, which we'll cover in the next chapter.
+Si desea agregar espacio _antes_ de una palabra, tendrá que usar CSS, que cubriremos en el próximo capítulo.
 
-If you want to **close** an HTML element, you first have to close all its _children_ elements.
+Si desea ** cerrar ** un elemento HTML, primero debe cerrar todos sus elementos _children_.
 {: .info}
 
-### Tree format
+### Format de árbol
 
-As HTML elements can be nested within each other, you have to keep track of the **order** in which they have been opened, as it will affect the order in which they are closed.
+Como los elementos HTML se pueden anidar entre sí, debes realizar un seguimiento del ** orden ** en el que se han abierto, ya que afectará el orden en el que se cierran.
 
 {% highlight html %}
-<article><p>This code is written on a <strong>single</strong> line.</p></article>
+<article><p>Este código está escrito en una <strong> única </strong> línea.</p></article>
 {% endhighlight %}
 
 <div class="result">
-  <article><p>This code is written on a <strong>single</strong> line.</p></article>
+  <article><pEste código está escrito en una <strong> única </strong> línea.</p></article>
 </div>
 
-As it can be hard to keep track of the order in which HTML elements have been opened, it is recommended to write HTML in a **tree format**:
+Como puede ser difícil realizar un seguimiento del orden en que se han abierto los elementos HTML, se recomienda escribir HTML en un **formato de árbol**:
 
 {% highlight html %}
 <article>
   <p>
-    This code is written on
-    <strong>multiple</strong>
-    lines but will nevertheless
-    be displayed on a
-    <em>single</em>
-    one.
+    Este código está escrito en
+    <strong>multiples</strong>
+    líneas pero sin embargo
+    será mostrado en una
+    <em>única</em>
+    linea.
   </p>
 </article>
 {% endhighlight %}
@@ -104,30 +104,30 @@ As it can be hard to keep track of the order in which HTML elements have been op
 <div class="result">
   <article>
     <p>
-      This code is written on
-      <strong>multiple</strong>
-      lines but will nevertheless
-      be displayed on a
-      <em>single</em>
-      one.
+    Este código está escrito en
+    <strong>multiples</strong>
+    líneas pero sin embargo
+    será mostrado en una
+    <em>única</em>
+    linea.
     </p>
   </article>
 </div>
 
-The tree format allows to _visually_ replicate the **nesting levels** of your HTML code. It's thus easy to see that:
+El formato de árbol permite _visualmente_ replicar los ** niveles de anidamiento ** de su código HTML. Por tanto, es fácil ver que:
 
-* `<article>` is the **ancestor**
-* `<p>` is the **parent** of `<strong>` and `<em>`
-* `<strong>` and `<em>` are **siblings**
+* `<article>` es el antepasado
+* `<p>` es el **padre** de `<strong>` y `<em>`
+* `<strong>` y `<em>` son **hermanos**
 
-### Write HTML for you to read
+### Escribe HTML para que lo leas
 
-Tabulations, empty lines, successive spaces, and line-breaks, are dismissed by the computer, and are all converted into a **single space**.
+Las tabulaciones, las líneas vacías, los espacios sucesivos y los saltos de línea son descartados por la computadora y todos se convierten en un **espacio único**.
 
-An HTML document is both written and read by a human, but only _read_ by a computer. Considering tabulations, spaces and line-breaks don't affect the way a browser will read and subsequently _display_ your webpage, you may as well format your document in the most readable way for **you**.
+Un documento HTML es escrito y leído por un humano, pero solo _leído_ por una computadora. Teniendo en cuenta que las tabulaciones, los espacios y los saltos de línea no afectan la forma en que un navegador leerá y posteriormente _mostrará_ su página web, también puede formatear su documento de la manera más legible para **usted**.
 
-There aren't specific rules concerning HTML formatting, but there are implicit **conventions**, specifically:
+No hay reglas específicas sobre el formato HTML, pero hay **convenciones** implícitas, específicamente:
 
-* use **tabulations** to help visualize how HTML elements are **nested**
-* put opening and closing tags of block-level elements on their **own line**
-* write inline elements on one line (including opening and closing tags)
+* usar **tabulaciones** para ayudar a visualizar cómo los elementos HTML están **anidados**.
+* poner etiquetas de apertura y cierre de elementos a nivel de bloque en su **propia línea**.
+* escribir elementos en línea en una línea (incluidas las etiquetas de apertura y cierre).
