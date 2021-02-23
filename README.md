@@ -2,7 +2,7 @@
 
 [![Marksheet screenshot](https://raw.github.com/jgthms/marksheet/master/images/marksheet-free-html-css-tutorial.png)](https://marksheet.io)
 
-# License
+# Licencia
 
 The content of this project itself is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
