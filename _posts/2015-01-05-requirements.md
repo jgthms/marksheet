@@ -1,29 +1,29 @@
 ---
-layout: post
-title: "Requirements"
-subtitle: "Before reading this tutorial"
-section: web
-published: false
+diseño: poste
+title: "Requisitos"
+subtítulo: "Antes de leer este tutorial"
+sección: web
+publicado: falso
 ---
 
-### Show file extensions
+### Mostrar extensiones de archivo
 
-Let's say you have a solar eclipse picture on your computer, it will show up as:
+Digamos que tiene una imagen de un eclipse solar en su computadora, se mostrará como:
 
-![Solar Eclipse](/images/solar-eclipse.jpg)
+! [Eclipse solar] (/ images / solar-eclipse.jpg)
 
-* the **name** of the file is `solar-eclipse`
-* the **extension** of the file is `.jpg`
+* el ** nombre ** del archivo es `solar-eclipse`
+* la ** extensión ** del archivo es `.jpg`
 
-A file's extension defines the _type_ of file it is (in this case, an image). For HTML files, the extension is `.html`.
+La extensión de un archivo define el _tipo_ de archivo que es (en este caso, una imagen). Para archivos HTML, la extensión es `.html`.
 
-By default, **file extensions** are hidden. In this tutorial, we'll need to be able to edit these extensions. So follow these instructions to display file extensions:
+De forma predeterminada, las ** extensiones de archivo ** están ocultas. En este tutorial, necesitaremos poder editar estas extensiones. Así que siga estas instrucciones para mostrar las extensiones de archivo:
 
-* **Windows**: [Show or hide file name extensions](https://windows.microsoft.com/en-us/windows/show-hide-file-name-extensions)
-* **Mac**: [Show and hide filename extensions](https://support.apple.com/kb/PH10845?locale=en_US)
+* ** Windows **: [Mostrar u ocultar extensiones de nombre de archivo] (https://windows.microsoft.com/en-us/windows/show-hide-file-name-extensions)
+* ** Mac **: [Mostrar y ocultar extensiones de nombre de archivo] (https://support.apple.com/kb/PH10845?locale=en_US)
 
-### Download a good Web browser
+### Descarga un buen navegador web
 
 
 
-[^1]: ["March 20th Eclipse - Ireland cropped" by Jacob Thomas](https://commons.wikimedia.org/wiki/File:March_20th_Eclipse_-_Ireland_cropped.jpg#/media/File:March_20th_Eclipse_-_Ireland_cropped.jpg)
+[^ 1]: ["Eclipse del 20 de marzo - Irlanda recortada" por Jacob Thomas] (https://commons.wikimedia.org/wiki/File:March_20th_Eclipse_-_Ireland_cropped.jpg#/media/File:March_20th_Eclipse_-_Ireland_cropped.jpg)
