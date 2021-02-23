@@ -1,37 +1,37 @@
 ---
-layout: post
-title: "CSS <strong>display</strong>"
-subtitle: "Changing the <strong>type</strong> of an HTML element"
-section: css
+Diseño: post
+Título: "CSS <strong>mostrar</strong>"
+Subtítulo: "Cambiando el <strong>tipo</strong> de un elemento HTML"
+sección: css
 ---
 
-We've seen how there are mainly [2 types of HTML elements](/html-block-inline.html): **block-level** elements and **inline** ones. We've also mentioned a few alternatives, like **list-item** or **table-cell**.
+Hemos visto que hay principalmente [2 tipos de elementos HTML] (/ html-block-inline.html): elementos **a nivel de bloque** y **en línea**. También hemos mencionado algunas alternativas, como **elemento de lista** o **celda de tabla**.
 
-The `display` property allows to change the _type_ of HTML element. By default, a paragraph `<p>` (a **block-level** element) will have a default `display` value of `block`, but can be rendered as an **inline** one:
+La propiedad `display` permite cambiar el _tipo_ del elemento HTML. Por defecto, un párrafo `<p>` (un elemento de **nivel de bloque**) tendrá un valor de `display` predeterminado de` block`, pero se puede representar como un **en línea** uno:
 
-{% highlight css %}
+{% Destacar css %}
 p{ display: inline;}
-{% endhighlight %}
+{% resaltar %}
 
-### Why not use an HTML inline element, like `<span>` then?
+### ¿Por qué no utilizar un elemento HTML en línea, como `<span>` entonces?
 
-Because you choose an HTML element for its **meaning**, not its rendering. If we've decided that a paragraph is what suited our content best, we must not change the tag _only for styling purposes_. CSS is here to take care of the styling.
+Porque elige un elemento HTML por su **significado**, no por su representación. Si hemos decidido que un párrafo es lo que mejor se adapta a nuestro contenido, no debemos cambiar la etiqueta _sólo con fines de estilo_. CSS está aquí para encargarse del estilo.
 
-In short, `display` allows to alter the **type** of an element _without_ changing its **meaning**.
+En resumen, `display` permite alterar el **tipo** de un elemento _sin_ cambiar su **significado**.
 
-Each `display` options have specific rendering behaviors:
+Cada opción de `display` tiene comportamientos de representación específicos:
 
-* `block` will take up the whole width available
-* `inline` will act as plain text
-* `inline-block` is, as its name suggests, a compound of block and inline behavior, a _"best of both worlds"_ option
-* `list-item` is similar to `block` as it takes up the whole width available, but shows an additional bullet point
-* `table`, `table-row` and `table-cell` all have very specific, albeit unexpected, behavior that allow more interesting layouts
+* `block` ocupará todo el ancho disponible
+* `inline` actuará como texto sin formato
+* `inline-block` es, como su nombre indica, un compuesto de comportamiento en bloque y en línea, una opción _ "lo mejor de ambos mundos" _
+* `list-item` es similar a `block` ya que ocupa todo el ancho disponible, pero muestra un punto adicional
+* `table`, `table-row` y `table-cell` tienen un comportamiento muy específico, aunque inesperado, que permite diseños más interesantes
 
 ### display: block
 
-This will turn any element into a **block** element.
+Esto convertirá cualquier elemento en un elemento **bloque**.
 
-This technique is often used on **links** in order to increase their clickable zone, which can be easily evaluated by setting a background color.
+Esta técnica se usa a menudo en **enlaces** para aumentar su zona en la que se puede hacer clic, que se puede evaluar fácilmente estableciendo un color de fondo.
 
 {% highlight css %}
 .menu a{ background: red; color: white;}
@@ -57,21 +57,21 @@ This technique is often used on **links** in order to increase their clickable z
 <div class="result">
   <ul>
     <li>
-      <a style="background: red; color: white;">Home</a>
+      <a style="background: red; color: white;">Inicio</a>
     </li>
     <li>
-      <a style="background: red; color: white;">Features</a>
+      <a style="background: red; color: white;">Características</a>
     </li>
     <li>
-      <a style="background: red; color: white;">Pricing</a>
+      <a style="background: red; color: white;">Precio</a>
     </li>
     <li>
-      <a style="background: red; color: white;">About</a>
+      <a style="background: red; color: white;">Sobre nosotros</a>
     </li>
   </ul>
 </div>
 
-If we turn these links into **blocks**, we increase their target area:
+Si convertimos estos enlaces en **bloques**, aumentamos su área objetivo:
 
 {% highlight css %}
 .menu a{ background: red; color: white; display: block;}
@@ -97,40 +97,40 @@ If we turn these links into **blocks**, we increase their target area:
 
 ### display: inline
 
-This turns any element into **inline** elements, as if they were just simple **text**.
+Esto convierte cualquier elemento en elementos **en línea**, como si fueran simplemente **texto**.
 
-It's often used to create **horizontal navigations**, where **list items** are semantically but not visually useful.
+A menudo se usa para crear **navegaciones horizontales**, donde **elementos de lista** son semánticamente pero no visualmente útiles.
 
 {% highlight html %}
 <ul class="menu">
   <li>
-    <a>Home</a>
+    <a>Inicio</a>
   </li>
   <li>
-    <a>Features</a>
+    <a>Caracterísiticas</a>
   </li>
   <li>
-    <a>Pricing</a>
+    <a>Precio</a>
   </li>
   <li>
-    <a>About</a>
+    <a>Sobre nosotros</a>
   </li>
 </ul>
 {% endhighlight %}
 
-<div class="result">
+<div class="resultado">
   <ul>
     <li>
-      <a>Home</a>
+      <a>Inicio</a>
     </li>
     <li>
-      <a>Features</a>
+      <a>Caracterísiticas</a>
     </li>
     <li>
-      <a>Pricing</a>
+      <a>Precio</a>
     </li>
     <li>
-      <a>About</a>
+      <a>Sobre nosotros</a>
     </li>
   </ul>
 </div>
@@ -139,75 +139,75 @@ It's often used to create **horizontal navigations**, where **list items** are s
 .menu li{ display: inline;}
 {% endhighlight %}
 
-<div class="result">
+<div class="resultado">
   <ul>
     <li style="display: inline;">
-      <a>Home</a>
+      <a>Inicio</a>
     </li>
     <li style="display: inline;">
-      <a>Features</a>
+      <a>Características</a>
     </li>
     <li style="display: inline;">
-      <a>Pricing</a>
+      <a>Precio</a>
     </li>
     <li style="display: inline;">
-      <a>About</a>
+      <a>Sobre nosotros</a>
     </li>
   </ul>
 </div>
 
 ### display: list-item
 
-The only HTML elements displayed as `list-item` are the (unsurprisingly) **list items** `<li>` but also the **definition descriptions** `<dd>`.
+Los únicos elementos HTML que se muestran como `elemento de lista` son (como era de esperar) **elementos de lista**` <li> `pero también **descripciones de definición**` <dd> `.
 
-A list item is rendered with a bullet point (if in an unordered list `<ul>`) or with a incremental number (if within an ordered list `<ol>`).
+Un elemento de lista se representa con una viñeta (si está en una lista desordenada `<ul>`) o con un número incremental (si está dentro de una lista ordenada `<ol>`).
 
-Because the rendering of these bullet points and numbers varies across browsers, and is also hard to style in CSS, the `display: list-item` rule is never used. Actually, it is common for `<li>`s to be rendered as `display: block` or `display: inline`, as they are more flexible to style.
+Debido a que la representación de estas viñetas y números varía de un navegador a otro, y también es difícil de diseñar en CSS, la regla `display: list-item` nunca se usa. En realidad, es común que los `<li>` s se representen como `display: block` o` display: inline`, ya que son más flexibles de estilo.
 
 ### display: none
 
-Applying `display: none;` to an HTML element removes it from your webpage, as if it never existed in your code.
+La aplicación de `display: none;` a un elemento HTML lo elimina de su página web, como si nunca hubiera existido en su código.
 
 {% highlight css %}
 .gone-baby-gone{ display: none;}
 {% endhighlight %}
 
 {% highlight html %}
-<p>Did I hear someone speaking??</p>
+<p>¿Escuché a alguien hablar?</p>
 <p class="gone-baby-gone">Hahahahahah</p>
-<p>I must be dreaming...</p>
+<p>Debo estar soñando...</p>
 {% endhighlight %}
 
-<div class="result">
-  <p>Did I hear someone speaking??</p>
+<div class="resultado">
+  <p>¿Escuché a alguien hablar?</p>
   <p style="display: none;">Hahahahahah</p>
-  <p>I must be dreaming...</p>
+  <p>Debo estar soñando...</p>
 </div>
 
-There are 3 paragraphs in the code, but only 2 appear, as if the 2nd one never existed.
+Hay 3 párrafos en el código, pero solo aparecen 2, como si el segundo nunca hubiera existido.
 
 ### visibility: hidden
 
-The CSS property `visibility` is slightly similar to `display`. Applying `visibility: hidden;` _hides_ an element from your page, but only turns it **invisible**: it still takes up the space it was supposed to.
+La propiedad CSS  `visibility` es ligeramente similar a "display". La aplicación de `visibility: hidden;` oculta_ un elemento de su página, pero solo lo vuelve **invisible**: aún ocupa el espacio que se suponía que debía.
 
 {% highlight css %}
 .hollow-man{ visibility: hidden;}
 {% endhighlight %}
 
 {% highlight html %}
-<p>So far away from me </p>
-<p class="hollow-man">So far i just can't see</p>
-<p class="hollow-man">So far away from me</p>
-<p class="hollow-man">You're so far away from me</p>
-<p>You're so far away...</p>
+<p>Tan lejos de mi </p>
+<p class="hollow-man">Hasta ahora no puedo ver</p>
+<p class="hollow-man">Tan lejos de mi</p>
+<p class="hollow-man">Estás tan lejos de mí</p>
+<p>Estás tan lejos...</p>
 {% endhighlight %}
 
-<div class="result">
-  <p>So far away from me </p>
-  <p style="visibility: hidden;">So far i just can't see</p>
-  <p style="visibility: hidden;">So far away from me</p>
-  <p style="visibility: hidden;">You're so far away from me</p>
-  <p>You're so far away...</p>
+<div class="resultado">
+  <p>Tan lejos de mi </p>
+  <p style="visibility: hidden;">Hasta ahora no puedo ver</p>
+  <p style="visibility: hidden;">Tan lejos de mi</p>
+  <p style="visibility: hidden;">Estás tan lejos de mí</p>
+  <p>Estás tan lejos...</p>
 </div>
 
-There are 5 paragraphs in the code, only 2 appear, but the space that the hidden paragraphs were _supposed_ to take is still _there_, but you can't see them.
+Hay 5 párrafos en el código, solo aparecen 2, pero el espacio que se suponía que ocuparían los párrafos ocultos sigue estando _ ahí_, pero no puede verlos.
