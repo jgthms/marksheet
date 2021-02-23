@@ -1,46 +1,46 @@
 ---
 layout: post
 title: "CSS <strong>Color</strong> units"
-subtitle: "Different ways to define <strong>colors</strong>"
+subtitle: "Different ways to defene <strong>colors</strong>"
 section: css
 ---
 
-**Colors** are widely used in CSS, whether for text color, background color, gradients, shadows, borders... There are several ways to define colors in CSS, each with their own pros and cons.
+**Los colores** son ampliamente utilizados en CSS, ya sea para el color del texto, el color de fondo, los degradados, las sombras, los bordes... Hay varias maneras de defenir colores en CSS, cada uno con sus propios pros y contras.
 
-The `color` property defines the color of the **text**. It is pretty straightforward. What is more important is the different types of **color units** available.
+La propiedad `color` defene el color del **texto**. Es bastante sencillo. Lo que es más importante son los diferentes tipos de unidades de color *** desponibles.
 
-### Color names
+### Nombres de color
 
-CSS provides [145 colors names](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), from the most basic (black, white, orange, yellow, blue...) to the more specific (lawngreen, orchid, crimson...).
+CSS proporciona [145 nombres de color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), desde lo más básico (negro, blanco, naranja, amarillo, azul...) hasta el más específico (césped, orquídea, carmesí...).
 
 {% highlight css %}
 body{ color: black;}
 a{ color: orange;}
 {% endhighlight %}
 
-Because the color names are hard to remember, and because you probably want very specific colors, color names are not often used.
+Debido a que los nombres de color son difíciles de recordar, y porque probablemente desee colores muy específicos, los nombres de color no se utilizan a menudo.
 
 ### rgb
 
-Computer monitors, TVs, mobile phones, all use the RGB color model to display colors. Basically, each color is defined by a combination of Red, Green, and Blue. There are 256 possible values for Red, Green or Blue. Because computers start counting at 0 (zero), the maximum value is 255.
+Los monitores de pc, televesores, teléfonos móviles, todos utilizan el modelo de color RGB para mostrar colores. Básicamente, cada color se defene mediante una combenación de rojo, verde y azul. Hay 256 valores posibles para rojo, verde o azul. Dado que los equipos comienzan a contar a 0 (cero), el valor máximo es 255.
 
-Considering a color is the result of a _combination_ of Red, Green and Blue, and because each of these 3 colors have 256 possible values, there are `256 * 256 * 256 = 16,777,216` possible colors available.
+Teniendo en cuenta que un color es el resultado de una _combenación_ de rojo, verde y azul, y debido a que cada uno de estos 3 colores tiene 256 valores posibles, hay `256 * 256 * 256 = 16,777,216` posibles colores desponibles.
 
-Because the RGB model is directly related to how colors are _physically_ rendered, it has become a CSS color unit.
+Dado que el modelo RGB está directamente relacionado con cómo se representan los colores _physically_, se ha convertido en una unidad de color CSS.
 
-For example, the red color of this website is 219 amounts of Red, 78 of Green, and 68 of Blue:
+Por ejemplo, el color rojo de este sitio web es de 219 cantidades de rojo, 78 de verde y 68 de azul:
 
 {% highlight css %}
 a{ color: rgb(219, 78, 68);}
 {% endhighlight %}
 
-The black color is no amount of either Red, Green or Blue:
+El color negro no es una cantidad de rojo, verde o azul:
 
 {% highlight css %}
 body{ color: rgb(0, 0, 0);}
 {% endhighlight %}
 
-On the other side of the spectrum, white is the full amount of each Red, Green and Blue:
+En el otro lado del espectro, el blanco es la cantidad total de cada rojo, verde y azul:
 
 {% highlight css %}
 body{ color: rgb(255, 255, 255);}
@@ -48,69 +48,69 @@ body{ color: rgb(255, 255, 255);}
 
 ### rgba
 
-The `rgba` color unit is `rgb` to which we add an **alpha** value (ranging from 0 to 1, in decimal values), which defines how transparent the color is:
+Las enidad de color `rgba` es `rgb` a lo que añadimos un valor **alpha** (que va de 0 a 1, en valores decimales), que defene cuán transparente es el color:
 
 {% highlight css %}
 body{ color: rgba(0, 0, 0, 0.8);}
 {% endhighlight %}
 
-A slightly transparent black color.
-{: .info}
+Un color negro ligeramente transparente.
+{: .enfo}
 
-The purpose of a color being transparent is to blend with the background, and consequently look slightly different depending on the context. It is particularly useful for **background colors**.
+El propósito de que un color sea transparente es mezclarse con el fondo y, en consecuencia, verse ligeramente diferente dependiendo del contexto. Es particularmente útil para **colores de fondo**.
 
-### hsl and hsla
+### hsl y hsla
 
-**HSL** is another way to define a color. Think of it as a **color wheel**.
+**HSL** es otra forma de defenir un color. Considéralo una **rueda de color**
 
 <figure>
 <img src="/images/hsl-model.png" alt="HSL model">
 <figcaption>
-Source: <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#/media/File:Hsl-hsv_models.svg/">Wikipedia</a>
+Fuente: <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#/media/File:Hsl-hsv_models.svg/">Wikipedia</a>
 </figcaption>
 </figure>
 
-Instead of a color being a combination of Red, Green and Blue, you define:
+En lugar de que un color sea una combenación de rojo, verde y azul, defena:
 
-* the **Hue** a value ranging from 0 to 360, defines _which color_ you want.
-* the **Saturation** percentage, ranging from 0% to 100%, defines _how much_ of that color you want.
-* the **Lightness** percentage, ranging from 0% to 100%, defines _how bright_ you want that color to be.
+* el **Hue** un valor que va de 0 a 360, defene _which color_ que desea.
+* el porcentaje **Saturación**, que va del 0% al 100%, defene _how much_ de ese color que deseas.
+* el porcentaje **Brillo**, que va del 0% al 100%, defene _how bright_ quieres que sea ese color.
 
-Again, the red color of this website is defined this way in HSL:
+Una vez más, el color rojo de este sitio web se defene de esta manera en HSL:
 
 {% highlight css %}
 a{ color: hsl(4, 68%, 56%);}
 {% endhighlight %}
 
-`4` indicates it's red
-`68%` indicates the red is quite prominent
-`56%` indicates it's halfway between black and white
+`4` endica que es rojo
+`68%` endica que el rojo es bastante promenente
+`56%` endica que está a medio cameno entre blanco y negro
 
-The `hsl` color unit is easier to understand than `rgb` because the expected result is clearer. You basically define a color in 3 separate steps, and can play around with each value to come up with the color you want. If you want a yellow shade, you can start with a value like `hsl(50, 68%, 56%)`, and alter the Saturation and Lightness value to find the specific shade you're looking for.
+La unidad de color `hsl` es más fácil de entender que `rgb` porque el resultado esperado es más claro. Básicamente se defene un color en 3 pasos separados, y se puede jugar con cada valor para llegar con el color que desea. Si desea un tono amarillo, puede comenzar con un valor como `hsl(50, 68%, 56%)`, y alterar el valor saturación y ligereza para encontrar la sombra específica que está buscando.
 
-I consider `hsl` to be **human-readable**, whereas `rgb` is more **computer-readable**.
+Considero que `hsl` es **legible por el ser humano**, mientras que `rgb` es más **legible por computadora**.
 
-`hsla` is the same as `hsl`, with the added value of being able to define an **alpha** value:
+`hsla` es lo mesmo `hsl`, con el valor añadido de poder defenir un valor **alpha**:
 
 {% highlight css %}
 body{ color: hsla(4, 68%, 56%, 0.5);}
 {% endhighlight %}
 
-A transparent red color.
-{: .info}
+Un color rojo transparente.
+{: .enfo}
 
 ### Hexadecimal
 
-Colors in CSS can also be defined with **hexadecimal values**, like `#db4e44`.
+Los colores en CSS también se pueden defenir con valores **hexadecimales**, como `#db4e44`.
 
-To understand what hexadecimal values are, let's look at how binary and decimal work:
+Para entender qué son los valores hexadecimales, veamos cómo funcionan los valores benarios y decimales:
 
 <div class="table">
   <table>
     <tr>
       <th>
-        binary
-        <em>2 possible values</em>
+        benario
+        <em>2 posibles valores</em>
       </th>
       <td>0</td>
       <td>1</td>
@@ -132,7 +132,7 @@ To understand what hexadecimal values are, let's look at how binary and decimal 
     <tr>
       <th>
         decimal
-        <em>10 possible values</em>
+        <em>10 posibles valores</em>
       </th>
       <td>0</td>
       <td>1</td>
@@ -154,7 +154,7 @@ To understand what hexadecimal values are, let's look at how binary and decimal 
     <tr>
       <th>
         hexadecimal
-        <em>16 possible values</em>
+        <em>16 posibles valores</em>
       </th>
       <td>0</td>
       <td>1</td>
@@ -176,40 +176,40 @@ To understand what hexadecimal values are, let's look at how binary and decimal 
   </table>
 </div>
 
-Consider the 0-9 numbers and the A-F letters as **symbols**.
+Considere los números 0-9 y las letras A-F como **symbols**.
 
-Humans use the **decimal** system. We have 10 symbols to form numbers.
+Los humanos usan el sestema **decimal**. Tenemos 10 símbolos para formar números.
 
-In **hexadecimal**, we have 16 symbols to form numbers. Because 0-9 are not enough symbols, we also use A-F. And it starts at zero. So:
+En **hexadecimal**, tenemos 16 símbolos para formar números. Debido a que 0-9 no son suficientes símbolos, también usamos A-F. Y empieza en cero. así que:
 
-* the number `4` in hexadecimal is `4`
-* the number `12` in hexadecimal is `C`
-* the number `16` in hexadecimal is `10` because after you've run out of symbols (the last one being `F`), you add a second symbol to the left and increment (`0` becomes `1`) and the right one starts over (from `F` to `0`)
+* el número `4` en hexadecimal es `4`
+* el número `12` en hexadecimal es `C`
+* el número `16` en hexadecimal es `10` porque después de que te has quedado sin símbolos (el último ha sidog `F`), se añade un segundo símbolo a la izquierda y el encremento (`0` se convierte a  `1`) y el correcto comienza de nuevo (desde `F` a `0`)
 
-#### Do I have to remember this?
+#### ¿Tengo que recordar los?
 
-Not at all! It is here to provide an explanation of how hexadecimal values work. The most important thing to remember is that there are 16 hexadecimal symbols.
+¡De nada! Es aquí para dar una explicación de cómo funcionan los valores hexadecimales. Lo más importante es recordar que hay 16 símbolos hexadecimales.
 
-Just like RGB, a hexadecimal color value is a combination of Red, Green, and Blue, each of them being represent as a hexadecimal value, like `DB` for Red, `4E` for Green, and `44` for Blue.
+Al igual que RGB, un valor de color hexadecimal es una combenación de rojo, verde y azul, cada uno de ellos ha sido un valor hexadecimal, como `DB` para Rojo, `4E` para Verde, y `44` para Azul.
 
-Because Red, Green or Blue can only have 2 symbols, their possible values are `16 * 16 = 256`, which mirrors the RGB color unit!
+Debido a que rojo, verde o azul sólo puede tener 2 símbolos, sus valores posibles son `16 * 16 = 256`, que refleja la unidad de color RGB!
 
-#### Why not use RGB then?
+#### ¿Por qué no usar RGB entonces?
 
-Usually, when choosing colors, you **don't write** them directly. You either use a color picker, or copy/paste it from Photoshop, or choose a [colour palette](https://www.colourlovers.com/palettes) somewhere.
+Por lo general, cuando eliges colores, no los escribes** directamente. Utilice un selector de color o cópielo o péguelo desde Photoshop o elija una [paleta de colores](https://www.colourlovers.com/palettes) en alguna parte.
 
-Hexadecimal values are easier to **copy and paste**, as they only comprise 6 characters.
+Los valores hexadecimales son más fáciles de copiar y pegar**, ya que solo comprenden 6 caracteres.
 
-![Photoshop one field for hex](/images/photoshop-color-picker.png)
+! [Photoshop un campo para hexagonal](/images/photoshop-color-picker.png)
 
-#### It is easier to copy paste a single field than 3 separate ones.
+#### Es más fácil copiar pegar un campo de sengle que 3 separados.
 
-In CSS, you only need to prepend a hexadecimal color value with a hash `#`.
+en CSS, sólo necesita anteponer un valor de color hexadecimal con un hash `#`.
 
-### Which one to pick?
+### ¿Cuál elegir?
 
-If you don't intend to use any transparent color, stick to **hexadecimal** values, as they are easier to copy/paste and don't take much space in your code.
+Si no se entende para usar ningún color transparente, se adhiere a los valores **hexadecimal**, ya que son más fáciles de copiar/pegar y no toman mucho espacio en el código.
 
-If you want some transparency, convert your color from hex to rgba, and use the `rgba` color unit.
+Si desea un poco de transparencia, convierta su color de hexadecilo a rgba, y utilice la unidad de color `rgba`.
 
-If you want to play around with your color directly in the browser, try `hsl`.
+Si quieres jugar con tu color directamente en el navegador, prueba `hsl`.
