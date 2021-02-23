@@ -1,45 +1,45 @@
 ---
-layout: post
-title: "CSS <strong>Inheritance</strong>"
-subtitle: "Using the HTML <strong>hierarchy</strong>"
-section: css
+diseño: post
+título: "CSS <strong> Herencia </strong>"
+subtítulo: "Uso de la <strong> jerarquía </strong> HTML"
+sección: css
 ---
 
-Let's say we want to change the **text color** of a webpage. It would be tedious to specify a color for _every_ HTML element:
+Digamos que queremos cambiar el **color del texto** de una página web. Sería tedioso especificar un color para _ cada_ elemento HTML:
 
-{% highlight css %}
-p,
+{% highlight css%}
+pag,
 ul,
-ol,
+ol
 li,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6{ color: grey;}
-{% endhighlight %}
+h6 {color: gris;}
+{% endhighlight%}
 
-### Value propagation
+### Propagación de valor
 
-The `color` value can be inherited from an **ancestor**. Considering we want to alter the _whole_ webpage, we will choose the ancestor of all HTML elements, the `body` tag:
+El valor de `color` se puede heredar de un **ancestro**. Teniendo en cuenta que queremos alterar la página web _completa_, elegiremos el ancestro de todos los elementos HTML, la etiqueta `body`:
 
-{% highlight css %}
-body{ color: grey;}
-{% endhighlight %}
+{% highlight css%}
+cuerpo {color: gris;}
+{% endhighlight%}
 
-All child and descendant elements will **inherit** the value `grey` from their common ancestor `body`, which naturally encompasses _all_ elements.
+Todos los elementos secundarios y descendientes **heredarán** el valor `grey` de su ancestro común` body`, que naturalmente abarca _todos_ los_ elementos.
 
-We could also use the `html` tag.
+También podríamos usar la etiqueta `html`.
 {: .info}
 
-### Inherited properties
+### Propiedades heredadas
 
-Only a few CSS properties can be inherited from ancestors. They are mainly **text** properties:
+Solo unas pocas propiedades CSS pueden heredarse de los antepasados. Son principalmente propiedades de ** texto **:
 
-* text color
-* font (family, size, style, weight)
-* line-height
+* color de texto
+* fuente (familia, tamaño, estilo, peso)
+* altura de la línea
 
-Some HTML elements don't inherit from their ancestors. Links for example don't inherit the `color` property.
+Algunos elementos HTML no heredan de sus antepasados. Los enlaces, por ejemplo, no heredan la propiedad `color`.
 {: .info}
