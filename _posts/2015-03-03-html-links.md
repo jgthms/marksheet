@@ -1,56 +1,56 @@
 ---
-layout: post
-title: "HTML <strong>Links</strong>"
-subtitle: "The <strong>core</strong> of the Web"
-section: html
+Capa: post
+Título: "HTML <strong>Enlaces</strong>"
+Subtítulo: "El <strong>centro</strong> de la web"
+Sección: html
 ---
 
-**Links** are essential in HTML, as the Web was initially designed to be an information network of documents **linked** between each other.
+**Los enlaces** son esenciales en HTML, ya que la Web se diseñó inicialmente para ser una red de información de documentos **enlazados** entre sí.
 
-The _"HyperText"_ part of HTML defines what kind of links we use: _hypertext_ links, a.k.a **hyperlinks**.
+La parte _"Hipertexto"_ de HTML define qué tipo de enlaces usamos: enlaces _hipertexto_, también conocidos como ** hipervínculos **.
 
-In HTML, links are **inline elements** written with the `<a>` tag.
+En HTML, los enlaces son **elementos en línea** escritos con la etiqueta `<a>`.
 
-The `href` attribute (hypertext reference) is used to define the **target** of the link (where you navigate to when you click).
+El atributo `href` (referencia de hipertexto) se utiliza para definir el **destino** del enlace (hacia donde navega cuando hace clic).
 
-{% highlight html %}
+{% Destacar html %}
 <p>
-  To search for something, visit <a href="https://www.google.com">Google</a>.
+  Para buscar algo, visita <a href="https://www.google.com">Google</a>.
 </p>
-{% endhighlight %}
+{% resaltar %}
 
 <div class="result">
   <p>
-    To search for something, visit <a href="https://www.google.com">Google</a>.
+    Para buscar algo, visita <a href="https://www.google.com">Google</a>.
   </p>
 </div>
 
-Links are the **primary** interaction of a webpage: you navigate from one document to another by clicking on links.
+Los enlaces son la interacción **principal** de una página web: navega de un documento a otro haciendo clic en los enlaces.
 
-There are **3** types of target you can define.
+Hay **3** tipos de objetivos que puede definir.
 
-* **anchor** targets, to navigate within the _same page_
-* **relative** URLs, usually to navigate within the _same website_
-* **absolute** URLs, usually to navigate to _another_ website
+* **objetivos de anclaje**, para navegar dentro de la _misma página_
+* **URL relativas**, normalmente para navegar dentro del _mismo sitio web_
+* **URL absolutas**, generalmente para navegar a _ otro_ sitio web
 
 ### Anchor targets
 
-**Anchor** target to navigate _within_ the **same** page. By prepending your href with `#`, you can target an HTML element with a specific `id` attribute.
+**Ancla** destino para navegar _dentro_ de la **misma** página. Al anteponer su href con `#`, puede apuntar a un elemento HTML con un atributo `id` específico.
 
-For example, `<a href="#footer">` will navigate to the `<div id="footer">` within the same HTML document. This type of href is often used to navigate back to the top of the page.
+Por ejemplo, `<a href="#footer">` navegará hasta `<div id ="footer">` dentro del mismo documento HTML. Este tipo de href se utiliza a menudo para volver a la parte superior de la página.
 
-### Relative URLs
+### URL relativas
 
-If you want to define a link to another page of the _same_ website, you can use **relative** URLs.
+Si desea definir un enlace a otra página del _mismo_ sitio web, puede utilizar URL **relativas**.
 
-But relative to what? Well, relative to the **current page**.
+¿Pero relativo a qué? Bueno, en relación con la **página actual**.
 
-Let's use a simple example where the folder `my-first-website` contains 2 HTML files:
+Usemos un ejemplo simple donde la carpeta `my-first-website` contiene 2 archivos HTML:
 
-<ul class="files">
+<ul class="ficheros">
   <li>
     <i class="fa fa-folder-o"></i>
-    my-first-website
+    mi-primer-sitio-web
     <ul>
       <li>
         <i class="fa fa-file-code-o"></i>
@@ -64,27 +64,27 @@ Let's use a simple example where the folder `my-first-website` contains 2 HTML f
   </li>
 </ul>
 
-In `home.html`, you want to define a link to `contact.html`.
+En `home.html`, desea definir un enlace a` contact.html`.
 
-As the two files are **in the same folder**, you can simply write in `home.html`:
+Como los dos archivos están **en la misma carpeta**, simplemente puede escribir en `home.html`:
 
-{% highlight html %}
+{% Destacar html %}
 <p>
-  Go to the <a href="contact.html">contact page</a>.
+  Ve a <a href="contacto.html">Página de contacto</a>.
 </p>
-{% endhighlight %}
+{% Resaltar %}
 
 <div class="result">
   <p>
-    Go to the <a href="contact.html">contact page</a>.
+    Ve a <a href="contact.html">Página de contacto</a>.
   </p>
 </div>
 
-On an actual website, the process is similar.
+En un sitio web real, el proceso es similar.
 
-Let's say you have a website called `https://ireallylovecats.com` on which you have 2 webpages: `index.html` and `gallery.html`:
+Supongamos que tiene un sitio web llamado `https://ireallylovecats.com` en el que tiene 2 páginas web:` index.html` y `galeria.html`:
 
-<ul class="files">
+<ul class="ficheros">
   <li>
     <i class="fa fa-folder-o"></i>
     ireallylovecats.com
@@ -95,49 +95,49 @@ Let's say you have a website called `https://ireallylovecats.com` on which you h
       </li>
       <li>
         <i class="fa fa-file-code-o"></i>
-        gallery.html
+        galeria.html
       </li>
     </ul>
   </li>
 </ul>
 
-In `index.html` you could write the following link:
+En `index.html` puedes escribir el siguiente enlace:
 
-{% highlight html %}
+{% Destacar html %}
 <p>
-  Visit the <a href="gallery.html">Gallery</a>!
+  Ve a <a href="galeria.html">Galería</a>!
 </p>
-{% endhighlight %}
+{% Resaltar %}
 
-Remember: websites are hosted on **computers** just like the one you're currently using. They are simply called **"servers"** because their sole purpose is to host websites. But they still have **files** and **folders** like "regular" computers.
+Recuerde: los sitios web están alojados en **computadoras** como la que está usando actualmente. Simplemente se les llama **"servidores"** porque su único propósito es alojar sitios web. Pero todavía tienen **archivos** y **carpetas** como computadoras "normales".
 {: .info}
 
-### Absolute URLs
+### URLs absolutas
 
-If you wanted to share your cats gallery with a friend, you wouldn't be able to just send `gallery.html`, as this **relative** URL only works for HTML documents that are on the same **computer** or same **domain**.
+Si quisieras compartir tu galería de gatos con un amigo, no podrías enviar simplemente `gallery.html`, ya que esta URL **relativa** solo funciona para documentos HTML que están en la misma **computadora** o el mismo **dominio**.
 
-You need the _complete_ URL to your HTML document: `https://ireallylovecats.com/gallery.html`.
+Necesita la URL _completa_ de su documento HTML: `https://ireallylovecats.com/gallery.html`.
 
-This URL can be segmented in 3 parts:
+Esta URL se puede segmentar en 3 partes:
 
-* **protocol** `https://`
-* **domain** `ireallylovecats.com`
-* **file path** `gallery.html`
+* **protocolo** `https://`
+* **dominio** `ireallylovecats.com`
+* **ruta de archivo** `gallery.html`
 
-This **absolute URL** is **self-sufficient**: no matter where you use the link form, it contains _all_ the information required to find the correct file, on the correct domain, with the correct protocol.
+Esta **URL absoluta** es **autosuficiente**: no importa dónde utilice el formulario de enlace, contiene _toda_ la información necesaria para encontrar el archivo correcto, en el dominio correcto, con el protocolo correcto.
 
-You usually use absolute URLs defining a link from _your_ website to _another_ website.
+Por lo general, utiliza URL absolutas que definen un enlace desde _su_ sitio web a _otro_ sitio web.
 
-In your `https://ireallylovecats.com/gallery.html` file, you could write:
+En su archivo `https://ireallylovecats.com/galeria.html`, podría escribir:
 
-{% highlight html %}
+{% Destacar html %}
 <p>
-  Find more images of my cats on my <a href="https://twitter.com/ireallylovecats">Twitter account</a>!
+  ¡Encuentra más imágenes de mis gatos en mi <a href="https://twitter.com/ireallylovecats"> cuenta de Twitter </a>!
 </p>
-{% endhighlight %}
+{% Resaltar %}
 
-### Relative or absolute links?
+### Enlaces relativos o absolutos?
 
-Let's say you want to link from the first to the second. The most direct approach is to use the absolute URL. So you add `<a href="https://ireallylovecats.com/gallery.html">Go the second page</a>` in your `index.html` file.
+Digamos que desea vincular del primero al segundo. El enfoque más directo es utilizar la URL absoluta. Así que agrega `<a href="https://ireallylovecats.com/gallery.html"> Vaya a la segunda página </a>` en su archivo `index.html`.
 
-Because the two files are in the same directory, you could use the **relative** URL by using `<a href="first-blog-post.html">`. This is useful if you decide to move your directory: your links won't be broken because the link targets are relative to each other, as long as you move both files simultaneously and keep them in the same directory. This relative approach is particularly useful when switching domains.
+Debido a que los dos archivos están en el mismo directorio, puede usar la URL ** relativa ** usando `<a href="first-blog-post.html">`. Esto es útil si decide mover su directorio: sus enlaces no se romperán porque los destinos de los enlaces son relativos entre sí, siempre que mueva ambos archivos simultáneamente y los mantenga en el mismo directorio. Este enfoque relativo es particularmente útil al cambiar de dominio.
