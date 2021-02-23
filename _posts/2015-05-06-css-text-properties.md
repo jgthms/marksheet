@@ -1,62 +1,62 @@
 ---
 layout: post
-title: "CSS <strong>text</strong> properties"
-subtitle: "Other <strong>text</strong> alterations"
+title: "Propiedades de <strong>texto</strong> CSS"
+subtitle: "Otras alteraciones de <strong>texto</strong>"
 section: css
 ---
 
-Alongside the several `font-*` properties, CSS provides many `text-*` properties.
+Junto a las diversas propiedades de `font- *`, CSS proporciona muchas propiedades de `text- *`.
 
 ### text-align
 
-The `text-align` property must be applied on a block-level element and defines how its text and children inline elements are horizontally aligned.
+La propiedad `text-align` debe ser aplicada en un elemento de nivel de bloque y define cómo se alinean horizontalmente su texto y los elementos en línea secundarios.
 
 {% highlight css %}
 body{ text-align: left;}
 {% endhighlight %}
 
-The most used values are:
+Los valores más usados:
 
 * **left**
 * **right**
 * **center**
 * **justify**
 
-These values correspond to the same alignment buttons you find in Microsoft Word or Photohop:
+Estos valores corresponden a los mismos botones de alineación que se encuentran en Microsoft Word o Photoshop:
 
 <i class="fa fa-align-left"></i> <i class="fa fa-align-right"></i> <i class="fa fa-align-center"></i> <i class="fa fa-align-justify"></i>
 
-The `justify` value is **not** recommended. Although it might look visually appealing because it forms a rectangle of text, it is very hard to read.
+El valor `justify` es **no** recomendado. Aunque puede parecer visualmente atractivo porque forma un rectángulo de texto, es muy difícil de leer.
 {: .info}
 
-The `text-align` default value is `start`. Basically, `start` can either be `left` or `right`, depending on the **direction** set on the HTML document.
+El valor por defecto de `text-align` es `start`. Basicamente, `start` puede ser `left` o `right`, dependiendo de la ** dirección ** establecida en el documento HTML.
 
-`direction` is a CSS property that can either be `ltr` (left to right) or `rtl` (right to left):
+`direction` es una propiedad CSS que puede ser `ltr` (de izquierda a derecha) o `rtl` (de derecha a izquierda):
 
-* if `ltr` is chosen, `start` equals to `left`
-* if `rtl` is chosen, `start` equals to `right`
+* si `ltr` está elegido, `start` es igual a `left`
+* if `rtl` está elegido, `start` es igual a `right`
 
 ### text-decoration
 
-The `text-decoration` property is used to add a line on your text.
+La propiedad `text-decoration` se utiliza para agregar una línea en su texto.
 
-Default value: `none`
+Valor por defecto: `none`
 
 {% highlight css %}
 .deleted{ text-decoration: line-through;}
 {% endhighlight %}
 
 <div class="result">
-  <p style="text-decoration: line-through;">Deleted</p>
+  <p style="text-decoration: line-through;">Borrado</p>
 </div>
 
-Possible values:
+Posibles valores:
 
 * `overline`
 * `underline`
 * `line-through`
 
-By default, HTML links (`<a>`) have a `text-decoration: underline;` applied to them. One of the first things coders usually do is to remove this default styling:
+Por defecto, los links HTML (`<a>`) tienen una `text-decoration: underline;` aplicado a ellos. Una de las primeras cosas que suelen hacer los programadores es eliminar este estilo predeterminado:
 
 {% highlight css %}
 a{ text-decoration: none;}
@@ -64,44 +64,44 @@ a{ text-decoration: none;}
 
 ### text-indent
 
-The `text-indent` property allows to add space before the first letter of the first line of a block-level element.
+La propiedad `text-indent` permite agregar espacio antes de la primera letra de la primera línea de un elemento a nivel de bloque.
 
-Default value: `0` (zero)
+Valor por defecto: `0` (cero)
 
 {% highlight css %}
 blockquote{ text-indent: 30px;}
 {% endhighlight %}
 
 <div class="result" style="max-width: 400px;">
-  <blockquote style="text-indent: 30px;">People always make the mistake of thinking art is created for them. But really, art is a private language for sophisticates to congratulate themselves on their superiority to the rest of the world. As my artist’s statement explains, my work is utterly incomprehensible and is therefore full of deep significance.</blockquote>
+  <blockquote style="text-indent: 30px;">La gente siempre comete el error de pensar que el arte fue creado para ellos. Pero en realidad, el arte es un lenguaje privado para que los sofisticados se feliciten por su superioridad sobre el resto del mundo. Como explica la declaración de mi artista, mi trabajo es absolutamente incomprensible y, por lo tanto, está lleno de un significado profundo.</blockquote>
 </div>
 
-Notice how only the **first line** is indented. If you want to offset the whole block of text, use [paddings](/css-padding.html).
+Observa cómo solo la ** primera línea ** tiene sangría. Si deseas compensar todo el bloque de texto, usa [paddings](/css-padding.html).
 
-As for the `font-size` property, you can use `px`, `em`, or even `%` values.
+En cuanto a la propiedad `font-size`, puedes usar valores` px`, `em` o incluso`% `.
 {: .info}
 
 
 ### text-shadow
 
-If you've ever used Photoshop, you've probably used the drop shadow tool. In CSS, you can add shadow to a text, to make it either fancier or more readable.
+Si alguna vez usó Photoshop, probablemente haya usado la herramienta de sombra paralela. En CSS, puede agregar sombras a un texto, para hacerlo más elegante o más legible.
 
-You define:
+Tú defines:
 
-* `x` the horizontal offset
-* `y` the vertical offset
-* the `blur`
-* the `color`
+* `x` el desplazamiento horizontal
+* `y` el desplazamiento vertical
+* el `blur`
+* el `color`
 
 {% highlight css %}
 h1{ text-shadow: 0 2px 5px rgba(0,0,0,0.5);}
 {% endhighlight %}
 
 <div class="result">
-  <h1 style="text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Hello World</h1>
+  <h1 style="text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Hola Mundo</h1>
 </div>
 
-Only the `x` and `y` values are required. The `blur` defaults to `0` (zero), while the `color` defaults to the color of the text.
+Solo se requieren los valores `x` e` y`. El "blur" predeterminado es "0" (cero), mientras que el "color" predeterminado es el color del texto.
 
-This property is tricky, so use it with parsimony and don't go crazy!
+Esta propiedad es complicada, ¡así que úsala con parsimonia y no te vuelvas loco!
 {: .info}
