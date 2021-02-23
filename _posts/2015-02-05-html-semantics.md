@@ -1,109 +1,109 @@
 ---
 layout: post
-title: "HTML <strong>Semantics</strong>"
-subtitle: "HTML is about <strong>meaning</strong>"
+title: "HTML <strong>Semanticas</strong>"
+subtitle: "HTML da <strong>significado</strong>"
 section: html
 ---
 
-The purpose of HTML tags is to deliver **meaning** to a document. Don't be concerned about how your webpage looks like. Focus on the significance of each tag you'll use.
+El propósito de las etiquetas HTML es dar significado a un documento. No te preocupes por cómo se ve tu página web. Concéntrate en la importancia de cada etiqueta que usarás.
 
-Depending on the content you're writing, you can choose the appropriate element that matches the meaning of your text.
+Dependiendo del contenido que esté escribiendo, puede elegir el elemento adecuado que coincida con el significado del texto.
 
-This **range** of elements is wide enough to both accomodate for **general** purpose matter (like paragraphs or lists), and more **specific** content like `<output>` (to display the result of a calculation) or `<progress>` (to display the progress of a task).
+Este **rango** de elementos es lo suficientemente amplio como para adaptarse tanto a la materia de propósito **general** (como párrafos o listas), como a contenido más **específico** como '<output>' (para mostrar el resultado de un cálculo) o '<progress>' (para mostrar el progreso de una tarea).
 
-### Structure elements: organizing your page
+### Elementos de estructura: organizar tu página
 
-Structure elements allow you to organize the **main parts** of your page. They usually contain other HTML elements.
+Los elementos de estructura le permiten organizar las partes **principales** de la página. Normalmente contienen otros elementos HTML.
 
-Here's what a typical webpage could include:
+Esto es lo que una página web típica podría incluir:
 
-* `<header>` as the **first** element of the page, that can include the logo and the tagline.
-* `<nav>` as a list of **links** that go to the different pages of the website.
-* `<h1>` as the title of the page.
-* `<article>` as the main content of the page, like a blog post.
-* `<footer>` as the **last** element of the page, located at the bottom.
+- `<header>` como el **primer** elemento de la página, que puede incluir el logotipo y el eslogan.
+- `<nav>` como una lista de **links** que van a las diferentes páginas del sitio web.
+- `<h1>` como el título de la página.
+- `<article>` como el contenido principal de la página, como una entrada de blog.
+- `<footer>` como el **último** elemento de la página, situado en la parte inferior.
 
-### Text elements: defining your content
+### Elementos de texto: definir tu contenido
 
-Inside these structure elements, you usually find **text** elements meant to define the **purpose** of your content.
+Dentro de estos elementos de estructura, normalmente se encuentran elementos **text** destinados a definir el **propósito** de su contenido.
 
-You'll mainly use:
+Usted utilizará principalmente:
 
-* `<p>` for paragraphs
-* `<ul>` for (unordered) lists
-* `<ol>` for (ordered) lists
-* `<li>` for individual list items
-* `<blockquote>` for quotes
+- `<p>` para párrafos
+- `<ul>` para listas (desordenadas)
+- `<ol>` para listas (ordenadas)
+- `<li>` para elementos de lista
+- `<blockquote>` para citas
 
-### Inline elements: distinguishing your text
+### Elementos en línea: distinguir el texto
 
-Because text elements can be long but with varied content, **inline** elements allow to **distinguish** parts of your text.
+Dado que los elementos de texto pueden ser largos pero con contenido variado, los elementos **inline** permiten **distinguir** partes del texto.
 
-There are a lot of inline elements available, but you'll usually come across the following:
+Hay una gran cantidad de elementos en línea disponibles, pero por lo general se encontrará con lo siguiente:
 
 <ul>
-  <li><code>&lt;strong&gt;</code> for <strong>important</strong> words</li>
-  <li><code>&lt;em&gt;</code> for <em>emphasized</em> words</li>
-  <li><code>&lt;a&gt;</code> for <a href="#">links</a></li>
-  <li><code>&lt;small&gt;</code> for <small>less important</small> words</li>
-  <li><code>&lt;abbr&gt;</code> for abbreviations like W3C</li>
+  <li><code>&lt;strong&gt;</code> para <strong>palabras</strong> importantes</li>
+  <li><code>&lt;em&gt;</code> para <em>palabras</em> enfatizadas</li>
+  <li><code>&lt;a&gt;</code> para <a href="#">links</a></li>
+  <li><code>&lt;small&gt;</code> para <small>palabras poco importantes</small></li>
+  <li><code>&lt;abbr&gt;</code> para abreviaturas como W3SC</li>
 </ul>
 
 <aside class="comments">
-  Just by reading this HTML code, you can easily understand what each <strong>HTML element</strong> means.
+  Con solo leer este código HTML, puede comprender fácilmente lo que significa cada elemento <strong>HTML</strong>.
 </aside>
 
 {% highlight html %}
+
 <article>
-  <h1>Main title of the page</h1>
-  <h2>A subtitle</h2>
+  <h1>Titulo de la página</h1>
+  <h2>Subtítulo</h2>
   <p>
-    Something something an other stuff and some <em>emphasis</em> and even <strong>important</strong> words.
+    Algunas cosas con <em>énfasis</em> y algunas palabras  <strong>importantes </strong>
   </p>
   <p>
-    Another paragraph.
+    Otro párrafo.
   </p>
   <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
+    <li>Uno</li>
+    <li>Dos</li>
+    <li>Tres</li>
   </ul>
   <blockquote>
-    Once said
+    Alguien dijo.
   </blockquote>
 </article>
 <aside>
-  <h3>My latest posts</h3>
+  <h3>Mis últimos posts</h3>
   <ul>
-    <li><a href="#">One</a></li>
-    <li><a href="#">One</a></li>
-    <li><a href="#">One</a></li>
+    <li><a href="#">Uno</a></li>
+    <li><a href="#">Uno</a></li>
+    <li><a href="#">Uno</a></li>
   </ul>
 </aside>
-{% endhighlight %}
+{% findelacita %}
 
+### Elementos genéricos
 
-### Generic elements
+Cuando aparentemente ningún elemento _semantico_ parece adecuado para su contenido, pero todavía desea insertar un elemento HTML (ya sea para propósitos de agrupación o estilo), puede conformarse con uno de los dos elementos **genéricos**:
 
-When apparently no _semantic_ element seems suited for your content but you still want to insert an HTML element (either for grouping or styling purposes), you can settle for one of the two **generic** elements:
+- `<div>` para elementos de bloque
+- `<span>` para elementos en línea
 
-* `<div>` for block-level elements
-* `<span>` for inline elements
+Aunque estos elementos HTML en realidad no _mean_ nada, serán útiles cuando empecemos a usar CSS.
 
-Although these HTML elements don't actually _mean_ anything, they will come in handy when we'll start using CSS.
+### No pienses demasiado en semántica
 
-### Don't overthink semantics
+Hay aproximadamente [100 semantic HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) Puede ser abrumador pasar por esa lista y elegir el elemento _appropriate_ para su contenido.
 
-There are about [100 semantic HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to choose from. That's a _lot_. It can be overwhelming to go through that list and choose the _appropriate_ element for your content.
-
-But don't spend too much time worrying about that. If you stick to the following list for now, you'll be well enough:
+Pero no pases mucho tiempo preocupándote por eso. Si te atenemos a la siguiente lista por ahora, estarás lo suficientemente bien:
 
 <div class="table">
   <table>
     <tr>
-      <th>Structure</th>
-      <th>Text</th>
-      <th>Inline</th>
+      <th>Estructura</th>
+      <th>Texto</th>
+      <th>En línea</th>
     </tr>
     <tr>
       <td>
@@ -135,4 +135,4 @@ But don't spend too much time worrying about that. If you stick to the following
   </table>
 </div>
 
-*[W3C]: World Wide Web Consortium
+\*[W3C]: World Wide Web Consortium
