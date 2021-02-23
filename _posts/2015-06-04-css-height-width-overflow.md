@@ -1,73 +1,73 @@
 ---
-layout: post
-title: "CSS <strong>height</strong> and <strong>width</strong>"
-subtitle: "Setting <strong>fixed</strong> dimensions to your rectangles"
-section: css
+diseño: poste
+título: "CSS <strong> alto </strong> y <strong> ancho </strong>"
+subtítulo: "Establecer dimensiones <strong> fijas </strong> para sus rectángulos"
+sección: css
 ---
 
-The dimensions (or height and width) of an element are **dynamic**, as they fluctuate in order to fit the content. It is somehow possible to set **specific** dimensions.
+Las dimensiones (o altura y ancho) de un elemento son ** dinámicas **, ya que fluctúan para adaptarse al contenido. De alguna manera es posible establecer dimensiones ** específicas **.
 
-{% highlight css %}
-blockquote{ width: 600px;}
-{% endhighlight %}
+{% highlight css%}
+blockquote {ancho: 600px;}
+{% endhighlight%}
 
-The blockquote will not take up the whole width available, but will remain 600px wide **in any situation**:
+El blockquote no ocupará todo el ancho disponible, pero seguirá siendo de 600px de ancho **en cualquier situación**:
 
-* if the browser window is less wide than 600px, it will show a horizontal scrolling bar
-* if the browser window is wider than 600px, the blockquote will stay 600px wide and not take up the whole space
+* si la ventana del navegador tiene menos de 600 px de ancho, mostrará una barra de desplazamiento horizontal
+* si la ventana del navegador es más ancha que 600px, la cita en bloque permanecerá 600px de ancho y no ocupará todo el espacio
 
-Because we've only set the width, the blockquote remains fluid in **height**: the height becomes the variable dimension to fit the blockquote's content.
+Debido a que solo hemos establecido el ancho, la cita en bloque permanece fluida en **altura**: la altura se convierte en la dimensión variable para ajustarse al contenido de la cita en bloque.
 
-### Setting both height and width
+### Configuración de altura y ancho
 
-By setting the dimensions of an element, it will remain fixed no matter the length of its content.
+Al establecer las dimensiones de un elemento, permanecerá fijo sin importar la longitud de su contenido.
 
-What happens if the content is longer than the element can contain?
-{: .question}
+¿Qué sucede si el contenido es más largo de lo que puede contener el elemento?
+{: .pregunta}
 
-Because we prevent the element to dynamically alter its dimensions, there is a chance the content will be longer than the element accomodates for and will subsequently **overflow**.
+Debido a que evitamos que el elemento altere dinámicamente sus dimensiones, existe la posibilidad de que el contenido sea más largo de lo que el elemento admite y posteriormente **se desborde**.
 
-The default behavior can be surprising: the content will be displayed anyway!
+El comportamiento predeterminado puede ser sorprendente: ¡el contenido se mostrará de todos modos!
 
-{% highlight css %}
-blockquote{ background: yellow; height: 50px; width: 100px;}
-{% endhighlight %}
+{% highlight css%}
+blockquote {fondo: amarillo; altura: 50px; ancho: 100px;}
+{% endhighlight%}
 
-{% highlight html %}
-<blockquote>The content er... finds a way</blockquote>
-{% endhighlight %}
+{% highlight html%}
+<blockquote> El contenido er ... encuentra un camino </blockquote>
+{% endhighlight%}
 
-<div class="result">
-  <blockquote style="background: yellow; height: 50px; width: 100px;">The content er... finds a way</blockquote>
+<div class = "resultado">
+  <blockquote style = "background: yellow; height: 50px; width: 100px;"> El contenido er ... encuentra un camino </blockquote>
 </div>
 
-### CSS overflow
+### Desbordamiento de CSS
 
-The `overflow` CSS property allows us to manage the case of content being longer than its container.
+La propiedad CSS `overflow` nos permite gestionar el caso de que el contenido sea más largo que su contenedor.
 
-The default value is `visible`: the content will be displayed anyway, because _"Why would you want to prevent content from being read by the user if it's present in the code?"_. You can consider **HTML as prevalent to CSS**.
+El valor predeterminado es `visible`: el contenido se mostrará de todos modos, porque _" ¿Por qué querría evitar que el usuario lea el contenido si está presente en el código? "_. Puede considerar ** HTML como predominante en CSS **.
 
-By applying `overflow: hidden;`, you simply _forbid_ any overflowing content to be seen.
+Al aplicar `overflow: hidden;`, simplemente _prohíbe_ que se vea cualquier contenido desbordado.
 
-<div class="result">
-  <blockquote style="background: yellow; height: 50px; overflow: hidden; width: 100px;">The content er... finds a way</blockquote>
+<div class = "resultado">
+  <blockquote style = "background: yellow; height: 50px; overflow: hidden; width: 100px;"> El contenido er ... encuentra un camino </blockquote>
 </div>
 
-If you want your content to overflow but still want to make it accessible, you can decide to display scrollbars by applying `overflow: scroll`.
+Si desea que su contenido se desborde pero aún desea que sea accesible, puede decidir mostrar las barras de desplazamiento aplicando `overflow: scroll`.
 
-<div class="result">
-  <blockquote style="background: yellow; height: 50px; overflow: scroll; width: 100px;">The content er... finds a way</blockquote>
+<div class = "resultado">
+  <blockquote style = "background: yellow; height: 50px; overflow: scroll; width: 100px;"> El contenido er ... encuentra un camino </blockquote>
 </div>
 
-A better option is use `overflow: auto`, as the scrollbars will only appear _if_ the content is overflowing, but will remain hidden until then.
+Una mejor opción es usar `overflow: auto`, ya que las barras de desplazamiento solo aparecerán _si_ el contenido se desborda, pero permanecerán ocultas hasta entonces.
 
-<div class="result">
-  <blockquote style="background: yellow; height: 50px; overflow: auto; width: 100px;">The content er... finds a way</blockquote>
+<div class = "resultado">
+  <blockquote style = "background: yellow; height: 50px; overflow: auto; width: 100px;"> El contenido er ... encuentra un camino </blockquote>
 </div>
 
-### Beware of fixed dimensions
+### Cuidado con las dimensiones fijas
 
-Applying specific dimensions are often required for a design to look visually appealing but can have unintended consequences. In that regard:
+A menudo se requiere aplicar dimensiones específicas para que un diseño se vea visualmente atractivo, pero puede tener consecuencias no deseadas. En ese sentido:
 
-* make sure your content doesn't overflow
-* if it does, use `overflow: hidden` or `overflow: auto` to prevent your design from breaking
+* asegúrese de que su contenido no se desborde
+* si lo hace, use `overflow: hidden` o `overflow: auto` para evitar que su diseño se rompa
