@@ -1,44 +1,45 @@
 ---
-layout: post
-title: "CSS <strong>font</strong> shorthand"
-subtitle: "A <strong>shortcut</strong> for several font properties"
-section: css
+diseño: post
+título: "CSS <strong> abreviatura de fuente </strong>"
+subtítulo: "Un <strong> atajo </strong> para varias propiedades de fuente"
+sección: css
 ---
 
-In CSS, some properties can be **grouped** together under another property, to save time and space. The `font` property regroups (in this particular order):
+En CSS, algunas propiedades se pueden ** agrupar ** juntas bajo otra propiedad, para ahorrar tiempo y espacio. La propiedad `font` se reagrupa (en este orden en particular):
 
-* `font-style`
-* `font-variant`
+* `estilo de fuente`
+* `variante de fuente`
 * `font-weight`
-* `font-size`
-* `line-height`
-* `font-family`
+* `tamaño de fuente`
+* `altura de línea`
+* `familia de fuentes`
 
-You can thus define 6 properties through a single one:
+De esta forma, puede definir 6 propiedades a través de una sola:
 
-{% highlight css %}
-body{ font: italic small-caps bold 16px/1.5 Arial, sans-serif;}
-{% endhighlight %}
+{% highlight css%}
+cuerpo {fuente: cursiva minúscula negrita 16px / 1.5 Arial, sans-serif;}
+{% endhighlight%}
 
-They have to be written in this particular order and there must be a slash `/` between the `font-size` and the `line-height`.
+Deben escribirse en este orden en particular y debe haber una barra inclinada `/` entre el `tamaño de fuente` y la `altura de línea`.
 
-Although I've defined all 6 properties, only the `font-size` and `font-family` are mandatory. You can thus omit to define the other properties if you intend to keep their **default** values:
+Aunque he definido las 6 propiedades, solo el `font-size` y`font-family` son obligatorios. Por lo tanto, puede omitir la definición de las otras propiedades si tiene la intención de mantener sus valores **predeterminados**:
 
-{% highlight css %}
-body{ font: bold 16px/1.5 Arial, sans-serif;}
-{% endhighlight %}
+{% highlight css%}
+cuerpo {fuente: negrita 16px / 1.5 Arial, sans-serif;}
+{% endhighlight%}
 
-Because `font-style` and `font-variant` have not been defined, they'll use their default value `normal`.
+Debido a que no se han definido `font-style` y `font-variant`, usarán su valor predeterminado `normal`.
 {: .info}
 
-Beware! If you've previously define one of the font properties and use the `font` shorthand afterwards, it will **override** the previously defined values.
+¡Tener cuidado! Si ha definido previamente una de las propiedades de la fuente y usa la abreviatura `font` después, **anulará** los valores definidos previamente.
 
-{% highlight css %}
-body{ font-size: 16px; line-height: 1.5;}
-ul{ font: 14px Georgia, serif;}
-{% endhighlight %}
+{% highlight css%}
+cuerpo {tamaño de fuente: 16px; altura de línea: 1,5;}
+ul {fuente: 14px Georgia, serif;}
+{% endhighlight%}
 
-In the `font` shorthand, the `line-height` has not been defined, and will lose its ancestor's value of `1.5` and will revert to its default value `medium` (which is usually `1.2`).
+En la abreviatura de `font`, la`line-height` no se ha definido, y perderá el valor de su ancestro de `1.5` y volverá a su valor predeterminado `medium` (que normalmente es `1.2`).
 {: .info}
 
-Other shorthand properties exist, like `background`, `border` and `margin`.
+Existen otras propiedades abreviadas, como `background`, `border` y `margin`.
+
