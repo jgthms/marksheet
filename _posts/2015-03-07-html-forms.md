@@ -4,478 +4,477 @@ title: "HTML <strong>Forms</strong>"
 subtitle: "To make a page <strong>interactive</strong>"
 section: html
 ---
+Mientras navega por la Web, la interacción de un usuario consiste principalmente en hacer clic en **enlaces** para navegar por las páginas web.
 
-While navigating the Web, a user's interaction is mostly only to click on **links** in order to navigate through webpages.
+Pero la Web entiende que a veces se requiere que un usuario proporcione su propia **entrada**. Estos tipos de interacción incluyen:
 
-But the Web understands that a user is sometimes required to provide his own **input**. These types of interaction include:
+* registrarse e iniciar sesión en sitios web
+* ingresar información personal (nombre, dirección, detalles de la tarjeta de crédito ...)
+* filtrado de contenido (mediante menús desplegables, casillas de verificación ...)
+* realizar una búsqueda
+* carga de archivos
 
-* signing up and logging in to websites
-* entering personal information (name, address, credit card details...)
-* filtering content (by using dropdowns, checkboxes...)
-* performing a search
-* uploading files
+Para adaptarse a estas necesidades, HTML proporciona **controles de formulario** interactivos:
 
-To accomodate for these needs, HTML provides interactive **form controls**:
+* entradas de texto (para una o varias líneas)
+* botones de radio
+* casillas de verificación
+* Listas deplegables
+* cargar widgets
+* enviar botones
 
-* text inputs (for one or multiple lines)
-* radio buttons
-* checkboxes
-* dropdowns
-* upload widgets
-* submit buttons
+Estos controles usan diferentes etiquetas ** HTML **, pero la mayoría de ellos usa la etiqueta `<input>`. Debido a que es un elemento de cierre automático, el _tipo_ de entrada se define por su atributo `type`:
 
-These controls use different HTML **tags**, but most of them use the `<input>` tag. Because it is a self-closing element, the _type_ of input is defined by its `type` attribute:
+{% highlight html%}
+<! - Una entrada de texto ->
+<input type = "texto">
+<! - Una casilla de verificación ->
+<input type = "casilla de verificación">
+<! - Un botón de radio ->
+<input type = "radio">
+{% endhighlight%}
 
-{% highlight html %}
-<!-- A text input -->
-<input type="text">
-<!-- A checkbox -->
-<input type="checkbox">
-<!-- A radio button -->
-<input type="radio">
-{% endhighlight %}
-
-<div class="result">
-  <input type="text">
+<div class = "resultado">
+  <input type = "texto">
   <br>
-  <input type="checkbox">
+  <input type = "casilla de verificación">
   <br>
-  <input type="radio">
+  <input type = "radio">
 </div>
 
-### The Form element
+### El elemento Form
 
-The `<form>` is a block-level element thats defines an **interactive** part of a webpage. As a result, all form controls (like `<input>`, `<textarea>` or `<button>`) must appear _within_ a `<form>` element.
+El `<form>` es un elemento a nivel de bloque que define una parte **interactiva** de una página web. Como resultado, todos los controles de formulario (como `<input>`, `<textarea>` o `<button>`) deben aparecer _dentro de_ un elemento `<form>`.
 
-Two HTML attributes are **required**:
+**Se requieren dos atributos HTML**:
 
-* `action` contains an address that defines _where_ the form information will be sent
-* `method` can be either GET or POST and defines _how_ the form information will be sent
+* `action` contiene una dirección que define _donde_ se enviará la información del formulario
+* `método` puede ser GET o POST y define _cómo_ se enviará la información del formulario
 
-Usually, the form information is sent to a **server**. _How_ this data will then be processed goes beyond the scope of this tutorial.
+Por lo general, la información del formulario se envía a un **servidor**. _Cómo_ se procesarán estos datos va más allá del alcance de este tutorial.
 
-Think of a form as a collection of input controls that work together to perform a **single** operation. If you wrote a login form, you could have **3** controls:
+Piense en un formulario como una colección de controles de entrada que trabajan juntos para realizar una operación **única**. Si escribió un formulario de inicio de sesión, podría tener ** 3 ** controles:
 
-* a email input `<input type="email">`
-* a password input `<input type="password">`
-* a submit button `<input type="submit">`
+* una entrada de correo electrónico `<input type =" email ">`
+* una entrada de contraseña `<tipo de entrada =" contraseña ">`
+* un botón de envío `<input type =" submit ">`
 
-These 3 HTML elements would be enclosed within a single `<form action="/login" method="POST">`.
+Estos 3 elementos HTML se incluirían dentro de un único `<form action =" / login "method =" POST ">`.
 
-You could similarly add a signup form within the same HTML page, in a separate `<form>` element.
+De manera similar, podría agregar un formulario de registro dentro de la misma página HTML, en un elemento `<form>` separado.
 
-### Text inputs
+### Entradas de texto
 
-Almost all forms require **textual** input from users, in order for them to enter their name, email, password, address... Text form controls come in different variations:
+Casi todos los formularios requieren entrada **textual** de los usuarios, para que ingresen su nombre, correo electrónico, contraseña, dirección ... Los controles de formulario de texto vienen en diferentes variaciones:
 
-<div class="table">
-  <table>
+<div class = "tabla">
+  <tabla>
     <tr>
-      <th>Text</th>
-      <td><code>&lt;input type="text"&gt;</code></td>
-      <td><input type="text"></td>
-      <td>Allows any type of character</td>
+      <th> Texto </th>
+      <td> <code> & lt; input type = "text" & gt; </code> </td>
+      <td> <input type = "text"> </td>
+      <td> Permite cualquier tipo de carácter </td>
     </tr>
     <tr>
-      <th>Email</th>
-      <td><code>&lt;input type="email"&gt;</code></td>
-      <td><input type="email"></td>
-      <td>Might display a warning if an invalid email is entered</td>
+      <th> Correo electrónico </th>
+      <td> <code> & lt; input type = "email" & gt; </code> </td>
+      <td> <input type = "email"> </td>
+      <td> Puede mostrar una advertencia si se ingresa un correo electrónico no válido </td>
     </tr>
     <tr>
-      <th>Password</th>
-      <td><code>&lt;input type="password"&gt;</code></td>
-      <td><input type="password"></td>
-      <td>Shows dots as characters</td>
+      <th> Contraseña </th>
+      <td> <code> & lt; input type = "contraseña" & gt; </code> </td>
+      <td> <input type = "contraseña"> </td>
+      <td> Muestra puntos como caracteres </td>
     </tr>
     <tr>
-      <th>Number</th>
-      <td><code>&lt;input type="number"&gt;</code></td>
-      <td><input type="number"></td>
-      <td>Up/Down keyboard keys can be used</td>
+      <th> Número </th>
+      <td> <code> & lt; input type = "number" & gt; </code> </td>
+      <td> <input type = "number"> </td>
+      <td> Se pueden usar las teclas arriba / abajo del teclado </td>
     </tr>
     <tr>
-      <th>Telephone</th>
-      <td><code>&lt;input type="tel"&gt;</code></td>
-      <td><input type="text"></td>
-      <td>Can trigger an autofill</td>
+      <th> Teléfono </th>
+      <td> <code> & lt; input type = "tel" & gt; </code> </td>
+      <td> <input type = "text"> </td>
+      <td> Puede activar un autocompletado </td>
     </tr>
     <tr>
-      <th>Multiple line text</th>
-      <td><code>&lt;textarea&gt;&lt;/textarea&gt;</code></td>
-      <td><textarea></textarea></td>
-      <td>Can be resized</td>
+      <th> Texto de varias líneas </th>
+      <td><code><textarea></textarea></code> </td>
+      <td><textarea></textarea> </td>
+      <td> Se puede cambiar de tamaño </td>
     </tr>
   </table>
 </div>
 
-Although these inputs look very similar and allow users to enter _any_ kind of text (even wrong input), their _type_ provides specific **semantics** to the input, by defining what kind of information it is **supposed** to contain.
+Aunque estas entradas se ven muy similares y permiten a los usuarios ingresar _cualquier_ tipo de texto (incluso una entrada incorrecta), su _tipo_ proporciona ** semántica **específica a la entrada, al definir qué tipo de información** se supone ** que contiene.
 
-Browsers can subsequently slightly alter a control's interface to increase its _interactivity_ or hint at what kind of content is _expected_.
+Posteriormente, los navegadores pueden alterar levemente la interfaz de un control para aumentar su _interactividad_ o indicar qué tipo de contenido se _espera_.
 
-For example, password inputs show dots instead of characters.
+Por ejemplo, las entradas de contraseña muestran puntos en lugar de caracteres.
 
-<div class="result">
-  <input type="password" value="hunter2">
+<div class = "resultado">
+  <input type = "contraseña" value = "hunter2">
 </div>
 
-And number inputs allow their value to be increased/decreased using up and down keys.
+Y las entradas numéricas permiten aumentar / disminuir su valor usando las teclas arriba y abajo.
 
-<div class="result">
-  <input type="number" value="12">
+<div class = "resultado">
+  <input type = "number" value = "12">
 </div>
 
-### Placeholders
+### Marcadores de posición
 
-Text inputs can display a **placeholder** text, that will disappear as soon as some text is entered.
+Las entradas de texto pueden mostrar un **marcador de posición** texto, que desaparecerá tan pronto como se introduzca algo de texto.
 
-{% highlight html %}
-<input type="text" placeholder="Enter your name">
-{% endhighlight %}
+{% highlight html%}
+<input type = "text" placeholder = "Ingrese su nombre">
+{% endhighlight%}
 
-<div class="result">
-  <input type="text" placeholder="Enter your name">
+<div class = "resultado">
+  <input type = "text" placeholder = "Ingrese su nombre">
 </div>
 
-If you start typing something, you'll see the text _"Enter your name"_ disappear.
+Si comienza a escribir algo, verá que el texto _"Ingrese su nombre"_ desaparecerá.
 
-### Labels
+### Etiquetas
 
-Because form elements on their own are not very descriptive, they are usually preceded by a text **label**.
+Debido a que los elementos de formulario por sí solos no son muy descriptivos, suelen ir precedidos de una **etiqueta** de texto.
 
-{% highlight html %}
-<label>Email</label>
-<input type="email">
-{% endhighlight %}
+{% highlight html%}
+<label> Correo electrónico </label>
+<input type = "email">
+{% endhighlight%}
 
-<div class="result">
-  <label>Email</label>
-  <input type="email">
+<div class = "resultado">
+  <label> Correo electrónico </label>
+  <input type = "email">
 </div>
 
-While placeholders already provide some hint at what content is expected, labels have the advantage of remaining visible at all times, and can be used alongside other types of form controls, like checkboxes or radio buttons.
+Si bien los marcadores de posición ya brindan alguna pista sobre el contenido que se espera, las etiquetas tienen la ventaja de permanecer visibles en todo momento y se pueden usar junto con otros tipos de controles de formulario, como casillas de verificación o botones de opción.
 
-Although you could use short paragraphs to describe form elements, using `<label>` is semantically more valid because they only exist within forms, and can be paired with a specific form control by using the `for` attribute and matching its value with the input's `id`.
+Aunque podría usar párrafos cortos para describir elementos de formulario, usar `<etiqueta>` es semánticamente más válido porque solo existen dentro de los formularios, y pueden emparejarse con un control de formulario específico usando el atributo `for` y haciendo coincidir su valor con el "id" de la entrada.
 
-{% highlight html %}
-<label for="first_name">First name</label>
-<input id="first_name" type="text">
-{% endhighlight %}
+{% highlight html%}
+<label for = "first_name"> Nombre </label>
+<input id = "first_name" type = "text">
+{% endhighlight%}
 
-<div class="result">
-  <label for="first_name">First name</label>
-  <input id="first_name" type="text">
+<div class = "resultado">
+  <label for = "first_name"> Nombre </label>
+  <input id = "first_name" type = "text">
 </div>
 
-Clicking on the label will focus the text input and place the text cursor inside. While this pairing seems useless, it will come in handy with checkboxes and radio buttons.
+Al hacer clic en la etiqueta, se enfocará la entrada de texto y colocará el cursor de texto dentro. Si bien este emparejamiento parece inútil, será útil con casillas de verificación y botones de opción.
 
-### Checkboxes
+### Casillas de verificación
 
-**Checkboxes** are form controls that only have 2 states: checked or unchecked. They basically allow the user to say "Yes" or "No" to something.
+**Las casillas de verificación** son controles de formulario que solo tienen 2 estados: marcado o no marcado. Básicamente, permiten al usuario decir "Sí" o "No" a algo.
 
-{% highlight html %}
-<input type="checkbox"> Remember me
-{% endhighlight %}
+{% highlight html%}
+<input type = "checkbox"> Recordarme
+{% endhighlight%}
 
-<div class="result">
-  <input type="checkbox"> Remember me
+<div class = "resultado">
+  <input type = "checkbox"> Recordarme
 </div>
 
-Because it can be hard to click on a small checkbox, it is recommended to wrap a `<label>` around the checkbox **and** its description.
+Debido a que puede ser difícil hacer clic en una casilla de verificación pequeña, se recomienda colocar una `<etiqueta>` alrededor de la casilla de verificación **y** su descripción.
 
-{% highlight html %}
-<label>
-  <input type="checkbox"> I agree to the terms
+{% highlight html%}
+<etiqueta>
+  <input type = "checkbox"> Acepto los términos
 </label>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <label>
-    <input type="checkbox"> I agree to the terms
+<div class = "resultado">
+  <etiqueta>
+    <input type = "checkbox"> Acepto los términos
   </label>
 </div>
 
-You can click on _"I agree to the terms"_ to toggle the checkbox.
+Puede hacer clic en _"Acepto los términos"_ para alternar la casilla de verificación.
 
-By default, a checkbox input is unchecked. You can mark it as checked by using the simply called `checked` attribute.
+De forma predeterminada, la entrada de una casilla de verificación no está marcada. Puede marcarlo como comprobado utilizando el atributo simplemente llamado "comprobado".
 
-{% highlight html %}
-<label>
-  <input type="checkbox" checked> Use as my billing address
+{% highlight html%}
+<etiqueta>
+  <input type = "checkbox" check> Usar como mi dirección de facturación
 </label>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <label>
-    <input type="checkbox" checked> Use as my billing address
+<div class = "resultado">
+  <etiqueta>
+    <input type = "checkbox" check> Usar como mi dirección de facturación
   </label>
 </div>
 
-### Radio buttons
+### Botones de radio
 
-You can present the user a **list of options** to choose from by using radio buttons.
+Puede presentar al usuario una **lista de opciones** para elegir mediante el uso de botones de opción.
 
-For this form control to work, your HTML code needs to **group** a list of radio buttons together. This is achieved by using the _same_ value for the `name` attribute:
+Para que este control de formulario funcione, su código HTML necesita **agrupar** una lista de botones de opción. Esto se logra usando el mismo valor para el atributo `name`:
 
-{% highlight html %}
-<label>Marital status</label>
-<label>
-  <input type="radio" name="status">
-  Single
+{% highlight html%}
+<label> Estado civil </label>
+<etiqueta>
+  <input type = "radio" name = "status">
+  Único
 </label>
-<label>
-  <input type="radio" name="status">
-  Married
+<etiqueta>
+  <input type = "radio" name = "status">
+  Casado
 </label>
-<label>
-  <input type="radio" name="status">
-  Divorced
+<etiqueta>
+  <input type = "radio" name = "status">
+  Divorciado
 </label>
-<label>
-  <input type="radio" name="status">
-  Widowed
+<etiqueta>
+  <input type = "radio" name = "status">
+  Viudo
 </label>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <label>Marital status</label>
+<div class = "resultado">
+  <label> Estado civil </label>
   <br>
-  <label>
-    <input type="radio" name="status">
-    Single
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="status">
-    Married
+  <etiqueta>
+    <input type = "radio" name = "status">
+    Único
   </label>
   <br>
-  <label>
-    <input type="radio" name="status">
-    Divorced
+  <etiqueta>
+    <input type = "radio" name = "status">
+    Casado
   </label>
   <br>
-  <label>
-    <input type="radio" name="status">
-    Widowed
+  <etiqueta>
+    <input type = "radio" name = "status">
+    Divorciado
+  </label>
+  <br>
+  <etiqueta>
+    <input type = "radio" name = "status">
+    Viudo
   </label>
 </div>
 
-Because all radio buttons use the same _value_ for their `name` attribute (in this case the value `"status"`), selecting one option will unselect all other ones. Radio buttons are said to be **mutually exclusive**.
+Debido a que todos los botones de opción usan el mismo _valor_ para su atributo `nombre` (en este caso, el valor` "estado" `), al seleccionar una opción se deseleccionarán todas las demás. Se dice que los botones de radio son **mutuamente excluyentes**.
 
-#### Difference between radio buttons and checkboxes
+#### Diferencia entre botones de radio y casillas de verificación
 
-While a checkbox exists **on its own**, radio buttons can only appear as a **list** (which means having at least _2_ options).
+Si bien existe una casilla de verificación **por sí sola**, los botones de opción solo pueden aparecer como una **lista** (lo que significa tener al menos _2_ opciones).
 
-Also, clicking a checkbox is **optional** while choosing one of the radio buttons is **mandatory**. That's why it is impossible to uncheck a radio button unless choosing a sibling option. But in the end, one of the radio buttons is always selected.
+Además, hacer clic en una casilla de verificación es ** opcional **, mientras que elegir uno de los botones de opción es ** obligatorio **. Por eso es imposible desmarcar un botón de opción a menos que elija una opción de hermano. Pero al final, uno de los botones de opción siempre está seleccionado.
 
-### Dropdown menus
+### Menús desplegables
 
-If the number of options to choose from takes up too much space, you can use `<select>` dropdown menus.
+Si el número de opciones para elegir ocupa demasiado espacio, puede usar los menús desplegables `<seleccionar>`.
 
-They work like radio buttons. Only their layout is different.
+Funcionan como botones de radio. Solo su diseño es diferente.
 
-{% highlight html %}
-<select>
-  <option>January</option>
-  <option>February</option>
-  <option>March</option>
-  <option>April</option>
-  <option>May</option>
-  <option>June</option>
-  <option>July</option>
-  <option>August</option>
-  <option>September</option>
-  <option>October</option>
-  <option>November</option>
-  <option>December</option>
+{% highlight html%}
+<seleccionar>
+  <option> enero </option>
+  <option> febrero </option>
+  <option> marzo </option>
+  <option> abril </option>
+  <option> mayo </option>
+  <option> junio </option>
+  <option> julio </option>
+  <option> agosto </option>
+  <option> septiembre </option>
+  <option> Octubre </option>
+  <option> noviembre </option>
+  <option> diciembre </option>
 </select>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <select>
-    <option>January</option>
-    <option>February</option>
-    <option>March</option>
-    <option>April</option>
-    <option>May</option>
-    <option>June</option>
-    <option>July</option>
-    <option>August</option>
-    <option>September</option>
-    <option>October</option>
-    <option>November</option>
-    <option>December</option>
+<div class = "resultado">
+  <seleccionar>
+    <option> enero </option>
+    <option> febrero </option>
+    <option> marzo </option>
+    <option> abril </option>
+    <option> mayo </option>
+    <option> junio </option>
+    <option> julio </option>
+    <option> agosto </option>
+    <option> septiembre </option>
+    <option> Octubre </option>
+    <option> noviembre </option>
+    <option> diciembre </option>
   </select>
 </div>
 
-#### Multiple choice dropdown menus
+#### Menús desplegables de opción múltiple
 
-If you add the `multiple` attribute, you can provide the ability to select multiple choices.
+Si agrega el atributo `multiple`, puede brindar la posibilidad de seleccionar múltiples opciones.
 
-{% highlight html %}
-<label>Which browsers do you have?</label>
-<select multiple>
-  <option>Google Chrome</option>
-  <option>Internet Explorer</option>
-  <option>Mozilla Firefox</option>
-  <option>Opera</option>
-  <option>Safari</option>
+{% highlight html%}
+<label> ¿Qué navegadores tienes? </label>
+<seleccionar varios>
+  <option> Google Chrome </option>
+  <option> Internet Explorer </option>
+  <option> Mozilla Firefox </option>
+  <option> Opera </option>
+  <option> Safari </option>
 </select>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <label>Which browsers do you have?</label>
+<div class = "resultado">
+  <label> ¿Qué navegadores tienes? </label>
   <br>
-  <select multiple>
-    <option>Google Chrome</option>
-    <option>Internet Explorer</option>
-    <option>Mozilla Firefox</option>
-    <option>Opera</option>
-    <option>Safari</option>
+  <seleccionar varios>
+    <option> Google Chrome </option>
+    <option> Internet Explorer </option>
+    <option> Mozilla Firefox </option>
+    <option> Opera </option>
+    <option> Safari </option>
   </select>
 </div>
 
-Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a good alternative to using multiple checkboxes in a row.
+Seleccione varias opciones manteniendo Ctrl (o ⌘) y haciendo clic. Esta puede ser una buena alternativa al uso de varias casillas de verificación seguidas.
 
-### Example: a complete signup form
+### Ejemplo: un formulario de registro completo
 
-{% highlight html %}
-<form action="/signup" method="POST">
+{% highlight html%}
+<form action = "/ signup" method = "POST">
   <p>
-    <label>Title</label>
-    <label>
-      <input type="radio" name="title" value="mr">
-      Mr
+    <label> Título </label>
+    <etiqueta>
+      <input type = "radio" name = "title" value = "mr">
+      señor
     </label>
-    <label>
-      <input type="radio" name="title" value="mrs">
-      Mrs
+    <etiqueta>
+      <input type = "radio" name = "title" value = "mrs">
+      Sra
     </label>
-    <label>
-      <input type="radio" name="title" value="miss">
-      Miss
+    <etiqueta>
+      <input type = "radio" name = "title" value = "miss">
+      Pierda
     </label>
   </p>
   <p>
-    <label>First name</label>
-    <input type="text" value="first_name">
+    <label> Nombre </label>
+    <input type = "text" value = "first_name">
   </p>
   <p>
-    <label>Last name</label>
-    <input type="text" value="last_name">
+    <label> Apellido </label>
+    <input type = "text" value = "last_name">
   </p>
   <p>
-    <label>Email</label>
-    <input type="email" value="email">
+    <label> Correo electrónico </label>
+    <input type = "email" value = "email">
   </p>
   <p>
-    <label>Phone number</label>
-    <input type="tel" value="phone">
+    <label> Número de teléfono </label>
+    <input type = "tel" value = "phone">
   </p>
   <p>
-    <label>Password</label>
-    <input type="password" value="password">
+    <label> Contraseña </label>
+    <input type = "contraseña" valor = "contraseña">
   </p>
   <p>
-    <label>Confirm your password</label>
-    <input type="password" value="password_confirm">
+    <label> Confirme su contraseña </label>
+    <input type = "password" value = "password_confirm">
   </p>
   <p>
-    <label>Country</label>
-    <select>
-      <option>Canada</option>
-      <option>France</option>
-      <option>Germany</option>
-      <option>Italy</option>
-      <option>Japan</option>
-      <option>Russia</option>
-      <option>United Kingdom</option>
-      <option>United States</option>
+    <label> País </label>
+    <seleccionar>
+      <option> Canadá </option>
+      <option> Francia </option>
+      <option> Alemania </option>
+      <option> Italia </option>
+      <option> Japón </option>
+      <option> Rusia </option>
+      <option> Reino Unido </option>
+      <option> Estados Unidos </option>
     </select>
   </p>
   <p>
-    <label>
-      <input type="checkbox" value="terms">
-      I agree to the <a href="/terms">terms and conditions</a>
+    <etiqueta>
+      <input type = "checkbox" value = "terms">
+      Acepto los <a href="/terms"> términos y condiciones </a>
     </label>
   </p>
   <p>
-    <button>
-      Sign up
+    <botón>
+      Inscribirse
     </button>
   </p>
 </form>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <form action="/signup" method="POST">
+<div class = "resultado">
+  <form action = "/ signup" method = "POST">
     <p>
-      <label>Title</label>
-      <label>
-        <input type="radio" name="title" value="mr">
-        Mr
+      <label> Título </label>
+      <etiqueta>
+        <input type = "radio" name = "title" value = "mr">
+        señor
       </label>
-      <label>
-        <input type="radio" name="title" value="mrs">
-        Mrs
+      <etiqueta>
+        <input type = "radio" name = "title" value = "mrs">
+        Sra
       </label>
-      <label>
-        <input type="radio" name="title" value="miss">
-        Miss
+      <etiqueta>
+        <input type = "radio" name = "title" value = "miss">
+        Pierda
       </label>
     </p>
     <p>
-      <label>First name</label>
-      <input type="text">
+      <label> Nombre </label>
+      <input type = "texto">
     </p>
     <p>
-      <label>Last name</label>
-      <input type="text">
+      <label> Apellido </label>
+      <input type = "texto">
     </p>
     <p>
-      <label>Email</label>
-      <input type="email">
+      <label> Correo electrónico </label>
+      <input type = "email">
     </p>
     <p>
-      <label>Phone number</label>
-      <input type="tel">
+      <label> Número de teléfono </label>
+      <input type = "tel">
     </p>
     <p>
-      <label>Password</label>
-      <input type="password">
+      <label> Contraseña </label>
+      <input type = "contraseña">
     </p>
     <p>
-      <label>Confirm your password</label>
-      <input type="password">
+      <label> Confirme su contraseña </label>
+      <input type = "contraseña">
     </p>
     <p>
-      <label>Country</label>
-      <select>
-        <option>Canada</option>
-        <option>France</option>
-        <option>Germany</option>
-        <option>Italy</option>
-        <option>Japan</option>
-        <option>Russia</option>
-        <option>United Kingdom</option>
-        <option>United States</option>
+      <label> País </label>
+      <seleccionar>
+        <option> Canadá </option>
+        <option> Francia </option>
+        <option> Alemania </option>
+        <option> Italia </option>
+        <option> Japón </option>
+        <option> Rusia </option>
+        <option> Reino Unido </option>
+        <option> Estados Unidos </option>
       </select>
     </p>
     <p>
-      <label>
-        <input type="checkbox">
-        I agree to the <a href="/terms">terms and conditions</a>
+      <etiqueta>
+        <input type = "casilla de verificación">
+        Acepto los <a href="/terms"> términos y condiciones </a>
       </label>
     </p>
     <p>
-      <button>
-        Sign up
+      <botón>
+        Inscribirse
       </button>
     </p>
   </form>
 </div>
 
-There are other form controls available, but we've covered the ones who'll mostly use.
+Hay otros controles de formulario disponibles, pero hemos cubierto los que usarán principalmente.
 
-It's time to start **styling** our page.
+Es hora de comenzar a **diseñar** nuestra página.
