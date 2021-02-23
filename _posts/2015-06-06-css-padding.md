@@ -1,46 +1,46 @@
 ---
-layout: post
-title: "CSS <strong>padding</strong>"
-subtitle: "To give <strong>space</strong> to your inner content"
-section: css
+diseño: poste
+título: "CSS <strong> relleno </strong>"
+subtítulo: "Para dar <strong> espacio </strong> a tu contenido interior"
+sección: css
 ---
 
-The **padding** is the space between an element's _border_ and its _content_.
+El ** relleno ** es el espacio entre el _border_ de un elemento y su _contenido_.
 
-The amount of space can be defined using any of the [size units](css-size-units.html).
+La cantidad de espacio se puede definir usando cualquiera de las [unidades de tamaño] (css-size-units.html).
 
-{% highlight css %}
-blockquote{ padding: 20px;}
-{% endhighlight %}
+{% highlight css%}
+blockquote {relleno: 20px;}
+{% endhighlight%}
 
-As for borders, the padding can be set _individually_ for any of the 4 sides.
+En cuanto a los bordes, el acolchado se puede configurar _individualmente_ para cualquiera de los 4 lados.
 
-{% highlight css %}
-blockquote{ padding-bottom: 20px;}
-{% endhighlight %}
+{% highlight css%}
+blockquote {padding-bottom: 20px;}
+{% endhighlight%}
 
-Because the padding lies **between** the _border_ and the _content_, it's easier to visualize the inner space with a border applied:
+Debido a que el relleno se encuentra ** entre ** el _border_ y el _content_, es más fácil visualizar el espacio interior con un borde aplicado:
 
-{% highlight css %}
-blockquote{ background: yellow; border: 1px solid blue;}
-{% endhighlight %}
+{% highlight css%}
+blockquote {fondo: amarillo; borde: 1 px azul sólido;}
+{% endhighlight%}
 
-<div class="result">
-  <blockquote style="background: yellow; border: 1px solid blue;">
-    Good night, good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.
+<div class = "result">
+  <blockquote style = "background: yellow; border: 1px solid blue;">
+    ¡Buenas noches buenas noches! La despedida es una pena tan dulce, que diré buenas noches hasta que sea mañana.
   </blockquote>
 </div>
 
-Adding a padding will provide space between the textual content and the borders:
+Agregar un relleno proporcionará espacio entre el contenido textual y los bordes:
 
-{% highlight css %}
-blockquote{ background: yellow; border: 1px solid blue; padding: 20px;}
-{% endhighlight %}
+{% highlight css%}
+blockquote {fondo: amarillo; borde: 1px azul sólido; relleno: 20px;}
+{% endhighlight%}
 
-<div class="result">
-  <blockquote style="background: yellow; border: 1px solid blue; padding: 20px;">
-    Good night, good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.
+<div class = "result">
+  <blockquote style = "background: yellow; border: 1px solid blue; padding: 20px;">
+    ¡Buenas noches buenas noches! La despedida es una pena tan dulce, que diré buenas noches hasta que sea mañana.
   </blockquote>
 </div>
 
-Notice how the element's background stretches until its borders. Applying padding allows to extend that background.
+Observe cómo el fondo del elemento se extiende hasta sus bordes. La aplicación de relleno permite extender ese fondo.
