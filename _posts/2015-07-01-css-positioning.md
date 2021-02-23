@@ -5,6 +5,6 @@ subtitle: "Breaking the <strong>flow</strong>"
 section: css
 ---
 
-Even without applying any CSS, an HTML document is already **styled**. Its content follows a natural **Flow**, directly dependent on the HTML structure.
+Incluso sin aplicar CSS, un documento HTML ya tiene ** estilo **. Su contenido sigue un ** Flujo ** natural, directamente dependiente de la estructura HTML.
 
-But webpages often want elements to be **positioned** in a certain way to accomodate for particular design needs, which requires **breaking** the Flow.
+Pero las páginas web a menudo quieren que los elementos estén ** posicionados ** de una manera determinada para adaptarse a necesidades de diseño particulares, lo que requiere ** romper ** el flujo.
