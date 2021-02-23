@@ -5,59 +5,59 @@ subtitle: "Some boilerplate"
 section: html
 ---
 
-Up until now, we've been looking at _isolated_ snippets of HTML code. But an **HTML document** (or webpage, it means the same thing) requires a specific structure in order to be **valid**.
+Hasta ahora, hemos visto en fragmentos aislados de codigo HTML. Pero un **documento HTML** (o pagina web, que es lo mismo) requiere una estructura específica para ser **valido**.
 
-Why do we care about _validating_ an HTML document?
+¿Por qué nos preocupamos por _validar_ un documento HTML?
 
-* **correct**: a valid document is _correctly displayed_ by the browser
-* **debugging**: invalid HTML code can trigger bugs hard to target
-* **maintenance**: a valid document is easier to _update_ later, even by someone else
+* **correct**: el navegador _ muestra correctamente_ un documento válido
+* **debugging**: El código HTML no válido puede generar errores difíciles de identificar.
+* **maintenance**: un documento válido es más fácil de _actualizar_ más tarde, incluso por otra persona
 
 ### Doctype
 
-The first information to provide is the _type_ of HTML document we're writing: the **Doctype**.
+La primera información que debe proporcionar es el _tipo_ de documento HTML que estamos escribiendo: el ** Doctype **.
 
-Think of the doctype as the version of a car throughout the years: a Ford Fiesta bought in 1986 was a Fiesta 2. If you buy one today, it's a Fiesta 7.
+Piense en el doctype como la versión de un automóvil a lo largo de los años: un Ford Fiesta comprado en 1986 era un Fiesta 2. Si compra uno hoy, es un Fiesta 7.
 
-There used to be multiple versions of HTML coexisting (XHTML and HTML 4.01 have been competing standards). Nowadays, **HTML 5** is the norm.
+Solía ​​haber varias versiones de HTML coexistiendo (XHTML y HTML 4.01 han sido estándares en competencia). Hoy en día, ** HTML 5 ** es la norma.
 
-To tell the browser that the HTML document is an HTML 5, just start your document with the following line:
+Para decirle al navegador que el documento HTML es un HTML 5, simplemente comience su documento con la siguiente línea:
 
 {% highlight html %}
 <!DOCTYPE html>
 {% endhighlight %}
 
-That's it. Just set it and forget it.
+Eso es. Solo configúralo y olvídalo.
 
-You may wonder why this HTML 5 doctype doesn't mention the number "5". The W3C thought the previous doctype definitions were too confusing and took the opportunity to simplify it by removing any mention of the HTML version.
+Quizás se pregunte por qué este tipo de documento HTML 5 no menciona el número "5". El W3C pensó que las definiciones de tipos de documentos anteriores eran demasiado confusas y aprovechó la oportunidad para simplificarlas eliminando cualquier mención a la versión HTML.
 {: .info}
 
-### The <html> element
+### El <html> elemento
 
-Apart from the doctype line, **all** your HTML document must be wrapped inside an `<html>` element:
+Aparte de la línea doctype, ** todo ** su documento HTML debe estar envuelto dentro de un elemento `<html>`:
 
 {% highlight html %}
 <!DOCTYPE html>
 <html>
-  <!-- The rest of your HTML code is here -->
+  <!-- El resto de su código HTML está aquí. -->
 </html>
 {% endhighlight %}
 
-The `<html>` is technically the **ancestor** of all HTML elements.
+El `<html>` es técnicamente el ** ancestro ** de todos los elementos HTML.
 
 ### <head>
 
-The same way attributes carry additional information for an HTML element, the `<head>` element carries additional information for the _whole_ webpage.
+De la misma manera que los atributos llevan información adicional para un elemento HTML, el elemento `<head>` lleva información adicional para la página web _completa_.
 
-For example, the **title** of the page (displayed on the tab) is located in the `<head>`:
+Por ejemplo, el ** título ** de la página (que se muestra en la pestaña) se encuentra en el `<head>`:
 
 {% highlight html %}
 <head>
-  <title>My fabulous blog</title>
+  <title>Mi fabuloso blog</title>
 </head>
 {% endhighlight %}
 
-Other HTML elements can appear in the `<head>`, and _only_ in the `<head>`:
+Otros elementos HTML pueden aparecer en el `<head>`, y _solo_ en el `<head>`:
 
 * `<link>`
 * `<meta>`
@@ -65,11 +65,11 @@ Other HTML elements can appear in the `<head>`, and _only_ in the `<head>`:
 
 ### <body>
 
-While the `<head>` only contains metadata not meant to be displayed anywhere (apart from the `<title>`), the `<body>` element is where we write all our content. Everything _inside_ the `<body>` will be **displayed** in the browser window.
+Mientras que el `<head>` solo contiene metadatos que no están destinados a ser mostrados en ningún lugar (aparte del `<title>`), el elemento `<body>` es donde escribimos todo nuestro contenido. Todo _dentro_ del `<body>` se ** mostrará ** en la ventana del navegador.
 
 ### A complete valid HTML document
 
-Combining all these requirements, we can write a simple and valid HTML document:
+Combinando todos estos requisitos, podemos escribir un documento HTML simple y válido:
 
 {% highlight html %}
 <!DOCTYPE html>
@@ -85,9 +85,9 @@ Combining all these requirements, we can write a simple and valid HTML document:
 </html>
 {% endhighlight %}
 
-If you view this example in your browser, you'll see that:
+Si ve este ejemplo en su navegador, verá que:
 
-* _"MarkSheet"_ is written on the browser tab
-* _"Hello World!"_ is the only text displayed in the window, because it's the only content _within_ the `<body>`
+* _ "MarkSheet" _ está escrito en la pestaña del navegador
+* _ "¡Hola mundo!" _ Es el único texto que se muestra en la ventana, porque es el único contenido _dentro_ del `<body>`
 
-<p>The <abbr title="World Wide Web Consortium">W3C</abbr> provides a <a href="https://validator.w3.org/#validate_by_input">Markup Validation Service</a> to check any HTML document for errors and warnings.</p>
+<p> El <abbr title = "World Wide Web Consortium"> W3C </abbr> proporciona un <a href="https://validator.w3.org/#validate_by_input"> Servicio de validación de marcado </a> para verificar cualquier documento HTML para detectar errores y advertencias. </p>
