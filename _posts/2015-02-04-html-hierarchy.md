@@ -5,123 +5,123 @@ subtitle: "It's a big family <strong>tree</strong>"
 section: html
 ---
 
-An HTML document is like a big **family tree**, with parents, siblings, children, ancestors, and descendants.
+Un documento HTML es como un gran ** árbol genealógico **, con padres, hermanos, hijos, antepasados ​​y descendientes.
 
-It comes from the ability to **nest** HTML elements within one another.
+Viene de la capacidad de ** anidar ** elementos HTML entre sí.
 
-### Nesting
+### Anidamiento
 
-Let's write a simple paragraph and enhance it by _differentiating_ parts of the text, by inserting two **inline** elements:
+Vamos a escribir un párrafo simple y mejorarlo _diferenciando_ partes del texto, insertando dos elementos ** en línea **:
 
-{% highlight html %}
+{% highlight html%}
 <p>
-  Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi:<q>"That lad must have been born offside."</q>.
+  Sir <strong> Alex Ferguson </strong> dijo una vez sobre Filipo Inzaghi: <q> "Ese muchacho debe haber nacido fuera de juego" </q>.
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result"><p>Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi: <q>"That lad must have been born offside."</q>.</p></div>
+<div class = "result"> <p> Sir <strong> Alex Ferguson </strong> dijo una vez sobre Filipo Inzaghi: <q> "Ese muchacho debe haber nacido fuera de juego". </q>. </p> < / div>
 
-In this setup:
+En esta configuración:
 
-* the `<strong>` element gives the words "Alex Ferguson" more importance
-* the `<q>` marks his quote about Inzaghi
+* el elemento `<strong>` da más importancia a las palabras "Alex Ferguson"
+* el `<q>` marca su cita sobre Inzaghi
 
-The fact that `<strong>` is displayed in **bold** is **only the browser's default behavior**. Remember that you have to choose HTML elements according to their _meaning_, not how they look like.
+El hecho de que "<strong>" se muestre en ** negrita ** es ** solo el comportamiento predeterminado del navegador **. Recuerde que debe elegir los elementos HTML según su _significado_, no cómo se ven.
 
-In this case:
+En este caso:
 
-* `<p>` is the **parent** element of `<strong>` and `<q>`
-* `<strong>` and `<q>` are **child** elements of `<p>`
-* `<strong>` and `<q>` are **sibling** elements
+* `<p>` es el ** elemento principal ** de `<strong>` y `<q>`
+* `<strong>` y `<q>` son elementos ** secundarios ** de `<p>`
+* `<strong>` y `<q>` son elementos ** hermanos **
 
-### Order
+### Orden
 
-How **nesting** works depends on the location of _opening_ and _closing_ tags.
+El funcionamiento del ** anidamiento ** depende de la ubicación de las etiquetas _opening_ y _closing_.
 
-Because an HTML element comprises an opening tag, a closing tag, and _everything in between_, a _child_ element must be closed **before** closing the _parent_ element.
+Debido a que un elemento HTML comprende una etiqueta de apertura, una etiqueta de cierre y _todo en el medio_, un elemento _child_ debe cerrarse ** antes ** de cerrar el elemento _parent_.
 
 
-{% highlight html %}
-<!-- This is INVALID code! :-( -->
+{% highlight html%}
+<! - ¡Este es un código NO VÁLIDO! :-( ->
 <p>
-  This HTML code won't work because I the "strong" tag is opened here <strong>but is only closed after the paragraph.
-</p></strong>
-{% endhighlight %}
+  Este código HTML no funcionará porque la etiqueta "fuerte" se abre aquí <strong> pero solo se cierra después del párrafo.
+</p> </strong>
+{% endhighlight%}
 
-Because the `<strong>` was opened _after_ the `<p>` (and is thus considered a **child** of `<p>`), the `<strong>` element must be closed **before** its parent `<p>`. 
+Debido a que el `<strong>` se abrió _ después_ el `<p>` (y por lo tanto se considera un ** hijo ** de `<p>`), el elemento `<strong>` debe cerrarse ** antes ** su padre `<p>`. 
 
-{% highlight html %}
-<!-- This is valid code. :-) -->
+{% highlight html%}
+<! - Este es un código válido. :-) ->
 <p>
-  This HTML code will work because I the "strong" tag is opened <strong>and closed</strong> properly.
+  Este código HTML funcionará porque la etiqueta "fuerte" se abre <strong> y se cierra </strong> correctamente.
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-### Depth
+### Profundidad
 
-Because child elements can themselves contain _other_ child elements, it's possible to write a **deeper hierarchy** within an HTML document.
+Debido a que los elementos secundarios pueden contener por sí mismos _otros_ elementos secundarios, es posible escribir una ** jerarquía más profunda ** dentro de un documento HTML.
 
-Our above paragraph could be part of a blog **article**:
+Nuestro párrafo anterior podría ser parte de un ** artículo ** de blog:
 
-{% highlight html %}
-<article>
-  <h1>Famous football quotes</h1>
+{% highlight html%}
+<artículo>
+  <h1> Frases de fútbol famosas </h1>
   <p>
-    Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi:<q>"That lad must have been born offside"</q>.
+    Sir <strong> Alex Ferguson </strong> dijo una vez sobre Filipo Inzaghi: <q> "Ese muchacho debe haber nacido fuera de juego" </q>.
   </p>
   <p>
-    When criticized by John Carew, <strong>Zlatan Ibrahimovic</strong> replied: <q>"What Carew does with a football, I can do with an orange"</q>.
+    Cuando fue criticado por John Carew, <strong> Zlatan Ibrahimovic </strong> respondió: <q> "Lo que Carew hace con una pelota de fútbol, ​​yo puedo hacerlo con una naranja" </q>.
   </p>
   <p>
-    <strong>George Best</strong> said <q>"I spent a lot of money on booze, birds and fast cars. The rest I just squandered."</q> when asked about his lifestyle.
+    <strong> George Best </strong> dijo <q> "Gasté mucho dinero en alcohol, pájaros y autos rápidos. El resto lo desperdicié" </q> cuando se le preguntó sobre su estilo de vida.
   </p>
-</article>
-{% endhighlight %}
+</artículo>
+{% endhighlight%}
 
-<div class="result">
-  <article>
-    <h1>Famous football quotes</h1>
+<div class = "resultado">
+  <artículo>
+    <h1> Frases de fútbol famosas </h1>
     <p>
-      Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi:<q>"That lad must have been born offside"</q>.
+      Sir <strong> Alex Ferguson </strong> dijo una vez sobre Filipo Inzaghi: <q> "Ese muchacho debe haber nacido fuera de juego" </q>.
     </p>
     <p>
-      When criticized by John Carew, <strong>Zlatan Ibrahimovic</strong> replied: <q>"What Carew does with a football, I can do with an orange"</q>.
+      Cuando fue criticado por John Carew, <strong> Zlatan Ibrahimovic </strong> respondió: <q> "Lo que Carew hace con una pelota de fútbol, ​​yo puedo hacerlo con una naranja" </q>.
     </p>
     <p>
-      <strong>George Best</strong> replied <q>"I spent a lot of money on booze, birds and fast cars. The rest I just squandered"</q> when asked about his lifestyle.
+      <strong> George Best </strong> respondió <q> "Gasté mucho dinero en alcohol, pájaros y autos rápidos. El resto lo desperdicié" </q> cuando se le preguntó sobre su estilo de vida.
     </p>
-  </article>
+  </artículo>
 </div>
 
-In this setup:
+En esta configuración:
 
-* `<article>` is the **ancestor** of _every_ other element
-* `<article>` is the **parent** of the `<h1>` and the 3 `<p>`
-* `<h1>` and the 3 `<p>` are **siblings**
-* each `<p>` is the **parent** of the `<strong>` and `<q>` they contain
-* every `<h1>`, `<p>`, `<strong>` and `<q>` are all **descendants** of `<article>`
+* `<article>` es el ** ancestro ** de _todos_ los demás elementos
+* `<article>` es el ** padre ** de `<h1>` y 3 `<p>`
+* `<h1>` y los 3 `<p>` son ** hermanos **
+* cada `<p>` es el ** padre ** del `<strong>` y `<q>` que contienen
+* cada `<h1>`, `<p>`, `<strong>` y `<q>` son todos ** descendientes ** de `<article>`
 
-The family tree analogy still applies when **traversing** several layers of HTML nesting:
+La analogía del árbol genealógico todavía se aplica al ** atravesar ** varias capas de anidación HTML:
 
-* a **descendant** of element X is any element _contained_ within X
-* a **child** is just a _direct_ descendant
-* an **ancestor** of element Y is any element that _contains_ Y
-* the **parent** is just the first _direct_ ancestor
-* a **sibling** of element X is any element which has the _same_ parent
+* un ** descendiente ** del elemento X es cualquier elemento _contenido_ dentro de X
+* un ** hijo ** es solo un descendiente _directo_
+* un ** ancestro ** del elemento Y es cualquier elemento que _contiene_ Y
+* el ** padre ** es solo el primer antepasado _directo_
+* un ** hermano ** del elemento X es cualquier elemento que tenga el mismo padre
 
-### Block and inline nesting
+### Anidamiento en bloque y en línea
 
-**Block** elements can contain either block or inline elements.
+Los elementos ** Bloque ** pueden contener elementos de bloque o en línea.
 
-However, **inline** elements can only contain other _inline_ elements [^1].
+Sin embargo, los elementos ** en línea ** solo pueden contener otros elementos _en línea_ [^ 1].
 
-{% highlight html %}
-<!-- This is INVALID code! :-( -->
+{% highlight html%}
+<! - ¡Este es un código NO VÁLIDO! :-( ->
 <strong>
-  <p>You can't put a paragraph inside a "strong" tag.
+  <p> No puede poner un párrafo dentro de una etiqueta "fuerte".
 </strong>
-{% endhighlight %}
+{% endhighlight%}
 
-Just remember ancestor/descendant, parent/child, and siblings. This hierarchy will be useful in CSS.
+Solo recuerde antepasado / descendiente, padre / hijo y hermanos. Esta jerarquía será útil en CSS.
 
-[^1]: the link element `<a>` is the only exception.
+[^ 1]: el elemento de enlace `<a>` es la única excepción.
