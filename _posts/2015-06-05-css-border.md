@@ -1,16 +1,15 @@
 ---
-layout: post
-title: "CSS <strong>border</strong>"
-subtitle: "The <strong>edges</strong> of the rectangle"
-section: css
+diseño: poste
+título: "CSS <strong> borde </strong>"
+subtítulo: "Los <strong> bordes </strong> del rectángulo"
+sección: css
 ---
 
-Because an HTML element is rendered as a rectangle, it can have up to **4 borders**: top, bottom, left and right. You can set a border on all sides at once, or on each side individually.
+Debido a que un elemento HTML se representa como un rectángulo, puede tener hasta ** 4 bordes **: superior, inferior, izquierda y derecha. Puede establecer un borde en todos los lados a la vez o en cada lado individualmente.
 
-### Border types and location
+### Tipos de borde y ubicación
 
-A CSS border has 3 properties:
-
+Un borde CSS tiene 3 propiedades:
 * `border-color` defined by using a [color unit](css-color-units.html)
 * `border-style` can be solid, dashed, dotted...
 * `border-width` defined by using a [size unit](css-size-units.html)
@@ -26,37 +25,38 @@ It also has 4 possible sides:
 blockquote{ border-color: yellow; border-style: solid; border-width: 1px;}
 {% endhighlight %}
 
-The shorthand property `border` allows to define all 3 properties at once:
+La propiedad abreviada `border` permite definir las 3 propiedades a la vez:
 
 {% highlight css %}
 blockquote{ border: 1px solid yellow;}
 {% endhighlight %}
 
-### Single border
+### Borde único
 
-If you want to set a border on only one of the four sides, you need to include the border's **position** in the CSS property. For example, for a bottom border, you can write:
+Si desea establecer un borde en solo uno de los cuatro lados, debe incluir la ** posición ** del borde en la propiedad CSS. Por ejemplo, para un borde inferior, puede escribir:
 
 {% highlight css %}
 blockquote{ border-bottom-color: yellow; border-bottom-style: solid; border-bottom-width: 1px;}
 {% endhighlight %}
 
-As for the `border` property, _each_ side has its shorthand version:
+
+En cuanto a la propiedad `border`, _cada_ lado tiene su versión abreviada:
 
 {% highlight css %}
 blockquote{ border-bottom: 1px solid yellow;}
 {% endhighlight %}
 
-#### What if I want 3 borders? Do I have to set them individually?
+#### ¿Qué pasa si quiero 3 bordes? ¿Tengo que configurarlos individualmente?
 
-As you would have guessed, the quickest way to have 3 borders is to set all 4 of them and then remove the one you don't want:
+Como habrás adivinado, la forma más rápida de tener 3 bordes es establecer los 4 y luego eliminar el que no quieres:
 
 {% highlight css %}
 blockquote{ border: 1px solid yellow; border-left: none;}
 {% endhighlight %}
 
-### Shorthand combinations
+### Combinaciones de taquigrafía
 
-Because there exist 3 border _properties_ and 4 border _locations_, there are **12** combinations possible:
+Debido a que existen 3 _propiedades_ de borde_ y 4_ubicaciones_ de borde, hay ** 12 ** combinaciones posibles:
 
 <div class="table">
   <table>
@@ -93,7 +93,7 @@ Because there exist 3 border _properties_ and 4 border _locations_, there are **
   </table>
 </div>
 
-That's a lot of CSS properties available. You'll usually end up using the **5 shorthand versions** only:
+Hay muchas propiedades CSS disponibles. Por lo general, terminará usando solo ** 5 versiones abreviadas **:
 
 * `border`
 * `border-top`
