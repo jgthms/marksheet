@@ -1,16 +1,16 @@
 ---
-layout: chapter
-title: "CSS <strong>Box Model</strong>"
-subtitle: "How <strong>rectangles</strong> are made"
+layout: capítulo
+title: "CSS <strong>Caja modelo</strong>"
+subtitle: "Como <strong>rectangulos</strong> están hechos"
 section: css
 ---
 
-By default, every HTML element is rendered in the browser as a **rectangle**. The dimensions of that rectangle are **dynamic**: they vary according to the _content_ of that element. You can consider these rectangles as **fluid**, altering their shape to fit the content.
+De forma predeterminada, cada elemento HTML se representa en el navegador como un ** rectángulo **. Las dimensiones de ese rectángulo son ** dinámicas **: varían según el _contenido_ de ese elemento. Puede considerar estos rectángulos como ** fluidos **, alterando su forma para adaptarse al contenido.
 
-That is because a webpage is a **living** element: just resize your browser window to see how most elements will adapt automatically to fit within the available space.
+Esto se debe a que una página web es un elemento ** vivo **: simplemente cambie el tamaño de la ventana de su navegador para ver cómo la mayoría de los elementos se adaptarán automáticamente para encajar en el espacio disponible.
 
-This is the default behavior of a webpage. But because the design of a webpage often requires to **fix** elements in place, with specific dimensions, CSS allows us to alter or even cancel this fluid behavior.
+Este es el comportamiento predeterminado de una página web. Pero debido a que el diseño de una página web a menudo requiere ** fijar ** elementos en su lugar, con dimensiones específicas, CSS nos permite alterar o incluso cancelar este comportamiento fluido.
 
-A block-level element, like a paragraph, will **horizontally** take up all the space it can, which by default is the width of your browser. Vertically, the paragraph will adapt its height to the length of its content.
+Un elemento a nivel de bloque, como un párrafo, ** horizontalmente ** ocupará todo el espacio que pueda, que por defecto es el ancho de su navegador. Verticalmente, el párrafo adaptará su altura a la longitud de su contenido.
 
-Many parameters are taken into account: the length of the content, the font used, its size, its spacing, the element's padding, the borders, if it's floating, its positioning...
+Se tienen en cuenta muchos parámetros: la longitud del contenido, la fuente utilizada, su tamaño, su espaciado, el relleno del elemento, los bordes, si es flotante, su posicionamiento ...
