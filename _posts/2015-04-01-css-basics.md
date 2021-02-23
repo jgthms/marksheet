@@ -1,12 +1,12 @@
 ---
-layout: chapter
-title: "CSS <strong>Basics</strong>"
-subtitle: "Painting with code"
-section: css
+composicion: capitulo
+Título: "CSS <Fuerte>Basico</Fuerte>"
+subtitulo: "Pintando con code"
+seccion: css
 ---
 
-While HTML is about defining the <em>content</em> of a webpage, CSS is about <strong>styling</strong> a webpage. It means setting colors, fonts, dimensions, margins, positions, of a webpage's <strong>elements</strong>.
+Mientras que HTML va definiendo el contenido <em>content</em> de una web, CSS se encarga de  <fuerte>estilar</fuerte> a una web. Significa configurar colores fuentes dimensiones, margenes,posiciones de los <fuerte>elementos</fuerte>una página
 
-HTML is inert. CSS is fluid.
+HTML es inerte CSS es fluido
 
-CSS brings a webpage to life, by applying a coat of paint on its static content, and elevates its purpose through color, space, emphasis and motion.
+CSS dá vida a la página web, aplicando una capa de pintura sobre su contenido estático, y eleva su propósito a través del color, el espacio, el énfasis y el movimiento.
