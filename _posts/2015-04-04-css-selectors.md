@@ -1,200 +1,166 @@
 ---
-layout: post
-title: "CSS <strong>Selectors</strong>"
-subtitle: "How to <strong>target</strong> HTML elements"
-section: css
+diseño: poste
+title: "CSS <strong> Selectores </strong>"
+subtítulo: "Cómo <strong> orientar </strong> elementos HTML"
+sección: css
 ---
 
-Because we don't want to style all our HTML elements at once, we need to be able to **target** a subset of these HTML elements.
+Debido a que no queremos diseñar todos nuestros elementos HTML a la vez, necesitamos poder ** apuntar ** a un subconjunto de estos elementos HTML.
 
-CSS selectors define _which_ elements we want our styling to be applied to.
+Los selectores CSS definen a qué elementos queremos que se aplique nuestro estilo.
 
-### Generic tag selectors
+### Selectores de etiquetas genéricos
 
-Targeting generic HTML tags is easy: just use the tag name.
+Apuntar a etiquetas HTML genéricas es fácil: solo use el nombre de la etiqueta.
 
-{% highlight css %}
-a{ /* Links */ }
-p{ /* Paragraphs */ }
-ul{ /* Unordered lists */ }
-li{ /* List items */ }
-{% endhighlight %}
+{% highlight css%}
+a {/ * Enlaces * /}
+p {/ * Párrafos * /}
+ul {/ * Listas desordenadas * /}
+li {/ * Elementos de lista * /}
+{% endhighlight%}
 
-There's a direct connection between the _name_ of the HTML tag and the CSS _selector_ used.
+Existe una conexión directa entre el _nombre_ de la etiqueta HTML y el _selector_ de CSS utilizado.
 
-### Classes
+### Clases
+Teniendo en cuenta que probablemente no queremos diseñar todos los párrafos o todos los títulos de manera idéntica, necesitamos _diferenciarlos_.
 
-Considering we probably don't want to style all paragraphs or all titles identically, we need to _differentiate_ them.
+De todos los atributos HTML, el atributo `class` es el más importante para CSS. Nos permite definir un ** grupo ** de elementos HTML que podemos _destinar específicamente_. Simplemente coloque un punto `.` delante del nombre de la clase que desea usar:
 
-Of all HTML attributes, the `class` attribute is the most important for CSS. It allows us to define a **group** of HTML elements that we can _target specifically_. Just put a dot `.` in front of the class name you want to use:
-
-{% highlight css %}
-.date {
-  color: red;
+{% highlight css%}
+.fecha {
+  color rojo;
 }
-{% endhighlight %}
+{% endhighlight%}
 
-On one side, there is the HTML `class` attribute with the value `date`. It must match the name of the CSS class.
+Por un lado, está el atributo HTML `class` con el valor` date`. Debe coincidir con el nombre de la clase CSS.
 
-You can use any name for your CSS class, as long as it doesn't start with a number.
+Puede usar cualquier nombre para su clase CSS, siempre que no comience con un número.
 {: .info}
 
-The `.date` class selector will target all HTML elements that have the `class="date"` attribute. So, the following HTML elements will **all** be styled:
-
-{% highlight html %}
-<p class="date">
-  Saturday Feb 21
-</p>
-<p>
-  The event will be on <em class="date">Saturday</em>.
-</p>
-{% endhighlight %}
-
-<div class="result">
-  <p style="color:red;">Saturday Feb 21</p>
-  <p>The event will be on <em style="color:red;">Saturday</em>.</p>
-</div>
-
-Bear in mind that the tag name is **irrelevant**. Only the `class` HTML attribute is.
-
-### IDs
-
-You can also use the `id` attribute in your HTML, and target it with a hash `#` in your CSS:
-
-{% highlight css %}
-#tagline{ color: orange;}
-{% endhighlight %}
-
-{% highlight html %}
-<h1 id="tagline">This heading will be orange.</h1>
-{% endhighlight %}
-
-ID are similar to Classes, as they rely upon an HTML attribute.
-
-### Example
-
-<div class="table">
-  <table>
+El selector de clases `.date` apuntará a todos los elementos HTML que tengan el atributo` class = "date" `. Por lo tanto, los siguientes elementos HTML tendrán ** todos ** estilos:
+<div class = "tabla">
+  <tabla>
     <thead>
       <tr>
-        <th>HTML</th>
-        <th>Possible CSS selectors</th>
-        <th>What it means</th>
+        <th> HTML </th>
+        <th> Posibles selectores de CSS </th>
+        <th> Qué significa </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><pre><code>&lt;p&gt;&lt;/p&gt;</code></pre></td>
-        <td><code>p</code></td>
-        <td><code>Every &lt;p&gt;</code></td>
+        <td><pre><code>&lt;p&gt;&lt;/p&gt;</code></pre> </td>
+        <td><code>p</code> </td>
+        <td> <code> Cada & lt; p & gt; </code> </td>
       </tr>
       <tr>
-        <td><pre><code>&lt;div class="global"&gt;&lt;/div&gt;</code></pre></td>
+        <td><pre> <code> & lt; div class = "global" & gt; & lt; / div & gt; </code> </pre> </td>
         <td>
-          <code>div</code><br>
-          <code>.global</code><br>
-          <code>div.global</code></td>
-          <td>Every <code>&lt;div&gt;</code><br>
-          Every elements with <code>class=”global”</code><br>
-          Every <code>&lt;div&gt;</code> with <code>class=”global”</code>
-        </td>
-      </tr>
-      <tr>
-        <td><pre><code>&lt;ul id="menu"&gt;</code></pre></td>
-        <td>
-          <code>#menu</code><br>
-          <code>ul#menu</code>
-        </td>
-        <td>
-          The only element with <code>id=”menu”</code><br>
-          The only <code>&lt;ul&gt;</code> with <code>id=”menu”</code>
+          <code> div </code> <br>
+          <code> .global </code> <br>
+          <code>div.global</code> </td>
+          <td> Cada <code> & lt; div & gt; </code> <br>
+          Todos los elementos con <code> class = ”global” </code> <br>
+          Cada <code> & lt; div & gt; </code> con <code> class = ”global” </code>
         </td>
       </tr>
       <tr>
+        <td><pre> <code> & lt; ul id = "menú" & gt; </code> </pre> </td>
         <td>
-          <pre><code>&lt;ol class="dico"&gt;
-  &lt;li&gt;Un cobaye&lt;/li&gt;
-  &lt;li&gt;Des cobaux&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
+          <code> #menu </code> <br>
+          <code> ul # menú </code>
         </td>
         <td>
-          <code>li</code><br>
-          <code>ol li</code><br>
-          <code>.dico li</code>
+          El único elemento con <code> id = ”menu” </code> <br>
+          El único <code> & lt; ul & gt; </code> con <code> id = ”menú” </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre> <código> & lt; ol class = "dico" & gt;
+  & lt; li & gt; Un cobaye & lt; / li & gt;
+  & lt; li & gt; Des cobaux & lt; / li & gt;
+& lt; / ol & gt; </code> </pre>
         </td>
         <td>
-          Every <code>&lt;li&gt;</code><br>
-          Every <code>&lt;li&gt;</code> with an <code>&lt;ol&gt;</code> as ancestor <br>
-          Every <code>&lt;li&gt;</code> with a <code>class="dico"</code> element as ancestor
+          <code> li </code> <br>
+          <code> ol li </code> <br>
+          <code> .dico li </code>
+        </td>
+        <td>
+          Cada <code> & lt; li & gt; </code> <br>
+          Cada <code> & lt; li & gt; </code> con un <code> & lt; ol & gt; </code> como ancestro <br>
+          Cada <code> & lt; li & gt; </code> con un elemento <code> class = "dico" </code> como ancestro
         </td>
       </tr>
     </tbody>
   </table>
 </div>
 
-### Combining selectors
+### Combinando selectores
 
-Let's reuse our previous example where we want our dates to be red:
+Reutilicemos nuestro ejemplo anterior donde queremos que nuestras fechas sean rojas:
 
-{% highlight css %}
-.date {
-  color: red;
+{% highlight css%}
+.fecha {
+  color rojo;
 }
-{% endhighlight %}
+{% endhighlight%}
 
-{% highlight html %}
-<p class="date">
-  Saturday Feb 21
+{% highlight html%}
+<p class = "fecha">
+  Sábado 21 de febrero
 </p>
 <p>
-  The event will be on <em class="date">Saturday</em>.
+  El evento será el <em class = "date"> sábado </em>.
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <p style="color:red;">Saturday Feb 21</p>
-  <p>The event will be on <em style="color:red;">Saturday</em>.</p>
+<div class = "resultado">
+  <p style = "color: red;"> Sábado 21 de febrero </p>
+  <p> El evento será el <em style = "color: red;"> sábado </em>. </p>
 </div>
 
-What if we want our dates that are in `em` elements to blue instead? We can **add** the following CSS rule:
+¿Qué pasa si queremos que nuestras fechas que están en los elementos `em` estén azules? Podemos ** agregar ** la siguiente regla CSS:
 
-{% highlight css %}
+{% highlight css%}
 em.date {
-  color: blue;
+  color azul;
 }
-{% endhighlight %}
+{% endhighlight%}
 
-The `em.date` combines:
+El `em.date` combina:
 
-* a tag selector `em`
-* a class selector `.date`
+* un selector de etiquetas `em`
+* un selector de clase `.date`
 
-It will only apply to `<em class="date"></em>` HTML elements. It **won't** affect other `.date` or `em`.
+Solo se aplicará a los elementos HTML `<em class =" date "> </em>`. ** No ** afectará a otros `.date` o` em`.
 
-### Hierarchy selectors
+### Selectores de jerarquía
 
-A **space** in a selector defines a ancestor/descendant relationship. Let's say we want the links in our header to be in red:
+Un ** espacio ** en un selector define una relación ancestro / descendiente. Digamos que queremos que los enlaces de nuestro encabezado estén en rojo:
 
-{% highlight css %}
-header a {
-  color: red;
+{% highlight css%}
+encabezado a {
+  color rojo;
 }
-{% endhighlight %}
+{% endhighlight%}
 
-This can be read from right to left as: _"Select all `a` elements that are within a `header` element"_. This will prevent all other links (that aren't in the header) from being affected.
+Esto se puede leer de derecha a izquierda como: _ "Seleccionar todos los elementos` a` que están dentro de un elemento `header`" _. Esto evitará que todos los demás enlaces (que no están en el encabezado) se vean afectados.
 
-### Pseudo-class selectors
+### Selectores de pseudoclase
 
-HTML elements can have different **states**. The most common case is when you hover over a link. It's possible in CSS to apply a different style when such an event occurs.
+Los elementos HTML pueden tener diferentes ** estados **. El caso más común es cuando pasa el cursor sobre un enlace. Es posible en CSS aplicar un estilo diferente cuando ocurre tal evento.
 
-Pseudo-class selectors are attached to usual selectors and start with a **colon** `:`:
+Los selectores de pseudoclase se adjuntan a los selectores habituales y comienzan con ** dos puntos ** `:`:
 
-{% highlight css %}
+{% highlight css%}
 a {
-  color: blue;
+  color azul;
 }
 
-a:hover {
-  color: red;
+a: hover {
+  color rojo;
 }
-{% endhighlight %}
+{% endhighlight%}
