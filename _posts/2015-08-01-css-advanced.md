@@ -1,10 +1,11 @@
 ---
-layout: chapter
-title: "Advanced CSS"
-subtitle: "From layout to life"
-section: css
+diseño: capítulo
+título: "CSS avanzado"
+subtítulo: "Del diseño a la vida"
+sección: css
 ---
 
-For a while, CSS has remained **one-sided**: one color, one state, one instant, one device.
+Durante un tiempo, CSS ha permanecido ** unilateral **: un color, un estado, un instante, un dispositivo.
 
-Throughout the years, it has developed new features that alter interactions, intermediate states, and even time.
+A lo largo de los años, ha desarrollado nuevas funciones que alteran las interacciones, los estados intermedios e incluso el tiempo.
+
