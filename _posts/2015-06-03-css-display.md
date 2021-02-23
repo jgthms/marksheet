@@ -33,9 +33,9 @@ Esto convertirá cualquier elemento en un elemento **bloque**.
 
 Esta técnica se usa a menudo en **enlaces** para aumentar su zona en la que se puede hacer clic, que se puede evaluar fácilmente estableciendo un color de fondo.
 
-{% destacar css %}
+{% highlight css %}
 .menu a{ background: red; color: white;}
-{% resaltar %}
+{% endhighlight %}
 
 {% highlight html %}
 <ul class="menu">
