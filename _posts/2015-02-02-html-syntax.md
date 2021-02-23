@@ -1,107 +1,107 @@
 ---
 layout: post
 title: "HTML <strong>Syntax</strong>"
-subtitle: "As any language, HTML has <strong>rules</strong>"
+subtitle: "Como cualquier lenguaje, HTML tiene <strong>reglas</strong>"
 section: html
 ---
 
-**HTML** stands for **H**yper**T**ext **M**arkup **L**anguage:
+**HTML** representa **H**yper**T**ext **M**arkup **L**anguage (Lenguaje de Marcado de Hipertexto):
 
-* **HyperText** means that it uses the HTTP part of the Internet
-* **Markup** means the code you write is annotated with keywords
-* **Language** means it can be read by both a human and a computer
+* **HyperText** significa que utiliza la parte HTTP de Internet
+* **Markup** significa que el código que escribe está anotado con palabras clave
+* **Language** significa que puede ser leído tanto por humanos como por computadora
 
-Like any language, HTML comes with a set of **rules**. These rules are relatively simple. It comes down to defining **boundaries**, to know where something _starts_ and where something _ends_.
+Como cualquier lenguaje, HTML viene con un conjunto de ** reglas **. Estas reglas son relativamente simples. Se trata de definir ** límites **, saber dónde algo _ comienza_ y dónde algo _ termina.
 
-Here is a sample paragraph in HTML:
-
-{% highlight html %}
-<p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p>
-{% endhighlight %}
-
-<div class="result"><p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p></div>
-
-What you see in **angle brackets** `<`{:.language-html} and `>`{:.language-html} are HTML **tags**. They define where something _starts_ and where it _ends_.
-
-Each of them carry a specific **meaning**. In this case, `p`{:.language-html} stands for **paragraph**.
-
-They usually go in pairs:
-
-* the _opening_ tag `<p>`{:.language-html} defines the **start** of the paragraph
-* the _closing_ tag `</p>`{:.language-html} defines its **end**
-
-The only difference between an opening and closing tag is the **slash** `/`{:.language-html} that precedes the name of the tag.
-
-When you combine an opening tag, a closing tag, and everything in between, you obtain an **HTML element**. The whole line is an HTML element that uses the HTML tags `<p>`{:.language-html} and `</p>`{:.language-html}.
-
-If you [view this sample in your browser](/html/sample-paragraph.html), you'll notice that **HTML tags are not displayed** by the browser. They are only _read_ by the browser to know what _type_ of **content** you've written.
-
-### Where to write HTML
-
-You've probably come across simple text files, those that have a `.txt` extension.
-
-For such a text file to become an **HTML document** (instead of a text document), you need to use an `.html` extension.
-
-Open your **text editor**, and copy paste the following:
+Aquí hay un párrafo de muestra en HTML:
 
 {% highlight html %}
-<p>This is my firstwebpage!</p>
+<p>Si algo me ha enseñado el Tetris es que los errores se acumulan y los logros desaparecen.</p>
 {% endhighlight %}
 
-Save this file as `my-first-webpage.html` and just open it with your browser, and you'll see:
+<div class="result"><p>Si algo me ha enseñado el Tetris es que los errores se acumulan y los logros desaparecen.</p></div>
 
-<div class="result"><p>This is my firstwebpage!</p></div>
+Lo que ves entre ** corchetes angulares ** `<`{:.language-html} y `>`{:.language-html} son **etiquetas** HTML. Definen dónde _comienza_ algo y dónde _termina.
 
-Remember:
+Cada uno de ellos tiene un **significado** específico. En este caso, `p`{:.language-html} representa **párrafo**.
 
-* use a text editor like Notepad++ to **create** HTML documents
-* use a browser like Firefox to **open** HTML documents
+Suelen ir en parejas:
 
-### Attributes
+* la etiqueta _opening_ `<p>`{:.language-html} define el **inicio** del párrafo.
+* la etiqueta _closing_ `</p>`{:.language-html} define su **final**.
 
-Attributes act like **extra** information tied to an HTML element. They are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
+La única diferencia entre una etiqueta de apertura y cierre es la **barra** `/`{:.language-html} que precede al nombre de la etiqueta.
 
-For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag):
+Cuando combinas una etiqueta de apertura, una etiqueta de cierre y todo lo que hay entre ellas, obtienes un **elemento HTML**. Toda la línea es un elemento HTML que usa las etiquetas HTML `<p>`{:.language-html} y `</p>`{:.language-html}.
+
+Si tu [ves esta muestra en tu navegador](/html/sample-paragraph.html), notarás que **el navegador no muestra** etiquetas HTML. Solo el navegador los _lee_ para saber qué _tipo_ de **contenido** has escrito.
+
+### Dónde escribir HTML
+
+Probablemente te hayas encontrado con archivos de texto simples, aquellos que tienen una extensión `.txt`.
+
+Para que un archivo de texto de este tipo se convierta en un **documento HTML** (en lugar de un documento de texto), debes utilizar una extensión `.html`.
+
+Abre tu **editor de texto**, y copia y pega lo siguiente:
 
 {% highlight html %}
-<a href="https://www.mozilla.com/firefox">Download Firefox</a>
+<p>¡Esta es mi primera página web!</p>
 {% endhighlight %}
 
-<div class="result"><a href="https://www.mozilla.com/firefox">Download Firefox</a></div>
+Guarda este archivo como `my-first-webpage.html` y simplemente ábrelo con tu navegador, y verás:
 
-There are [16 HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that can be used on _any_ HTML element. All of them are **optional**.
+<div class="result"><p>¡Esta es mi primera página web!</p></div>
 
-You'll mostly use `class` (which is used for CSS), and `title` (which is the tooltip that appears when hovering an item like this one).
+Recuerda:
 
-Some HTML elements have **obligatory** attributes. For example, when inserting an image, you have to provide the location of the image, using the `src` (source) attribute:
+* usa un editor de texto como Notepad++ para **crear** documentos HTML.
+* usa un navegador como Firefox para ** abrir ** documentos HTML.
+
+### Atributos
+
+Los atributos actúan como información ** extra ** vinculada a un elemento HTML. Están escritos _dentro de_ una _etiqueta_ HTML. Como tal, el navegador tampoco los muestra.
+
+Por ejemplo, el atributo `href` se usa para definir el objetivo de un **enlace** (que usa una etiqueta de **a**nclaje):
 
 {% highlight html %}
-<img src="#" alt="Description of the image">
+<a href="https://www.mozilla.com/firefox">Descarga Firefox</a>
 {% endhighlight %}
 
-Considering that the purpose of the `<img>` element is to display an image, it makes sense for the path to the image to be **required**.
+<div class="result"><a href="https://www.mozilla.com/firefox">Descarga Firefox</a></div>
 
-### Comments
+Hay [16 atributos HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) que se puede utilizar en _cualquier_ elemento HTML. Todos ellos son **opcionales**.
 
-If you write something in your code without disrupting how the browser will display your page, you can write **comments**. They will be _ignored_ by the browser, and are only useful for us humans who write the code.
+Usarás principalmente `class` (que es usado por CSS), y `title` (que es la información sobre herramientas que aparece al colocar el cursor sobre un elemento como este).
 
-A comment starts with `<!--` and ends with `-->`.
+Algunos elementos HTML tienen atributos **obligatorios**. Por ejemplo, cuando insertas una imagen, tienes que proporcionar la ubicación de la imagen, usando el atributo `src` (source):
 
 {% highlight html %}
-<!-- This sentence will be ignored by the browser -->
-<p>Hello World!</p>
+<img src="#" alt="Descripción de la imagen">
 {% endhighlight %}
 
-<div class="result"><p>Hello World!</p></div>
+Teniendo en cuenta que el propósito del elemento `<img>` es mostrar una imagen, tiene sentido que la ruta a la imagen sea **obligatoria**.
 
-### Self-enclosing elements
+### Comentarios
 
-Some HTML elements only have an opening tag:
+Si escribes algo en tu código sin interrumpir la forma en la que el navegador mostrará tu página, puedes escribir **comentarios**. Estos pueden ser _ignorados_ por el navegador, y solo son útiles para nosotros, los humanos que escribimos el código.
+
+Un comentario comienza con `<! -` y termina con `->`.
 
 {% highlight html %}
-<br> <!-- line-break -->
-<img src="https://placehold.it/50x50" alt="Description"> <!-- image -->
-<input type="text"> <!-- text input -->
+<!-- Esta frase será ignorada por el navegador. -->
+<p>Hola Mundo!</p>
 {% endhighlight %}
 
-Because they don't have a closing tag and consequently can't contain anything _inside_ them, self-enclosing elements usually carry a few attributes, to provide them with additional information.
+<div class="result"><p>Hola Mundo!</p></div>
+
+### Elementos autocerrantes
+
+Algunos elementos HTML solo tienen una etiqueta de apertura:
+
+{% highlight html %}
+<br> <!-- salto de linea -->
+<img src="https://placehold.it/50x50" alt="Descripcion"> <!-- imagen -->
+<input type="text"> <!-- input de tipo texto -->
+{% endhighlight %}
+
+Debido a que no tienen una etiqueta de cierre y, por lo tanto, no pueden contener nada _dentro_ de ellos, los elementos auto-adjuntos suelen llevar algunos atributos, para proporcionarles información adicional.
