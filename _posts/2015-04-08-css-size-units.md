@@ -1,77 +1,78 @@
 ---
-layout: post
-title: "CSS <strong>Size</strong> units"
-subtitle: "Sizing for <strong>content</strong> and <strong>space</strong>"
-section: css
+Composición: Capítulo
+Título: "CSS <strong>unidades de tamaño</strong>"
+Subtítulo: "Dimensionamiento para <strong> contenido </strong> y <strong> espacio </strong>"
+Sección: css
 ---
 
-There many CSS properties that require **size units**:
 
-* `font-size` defines the size of the text
-* `border-width` defines the weight of element borders
-* `margin` defines the spacing between elements
-* `left/right/top/bottom` allows to position and move elements
+Hay muchas propiedades CSS que requieren **unidades de tamaño**:
 
-The most used units are:
+* `font-size` define el tamaño del texto
+* `border-width` define el ancho de los bordes de los elementos
+* `margin` define el espacio entre elementos
+* `left/right/top/bottom` permite posicionar y mover elementos
 
-* `px` for pixels
-* `%` for percentage
-* `em` for sizing relative to the parent's `font-size` value.
+Las unidades más usadas son:
 
-### Pixels
+* `px` pixeles
+* `%` porcentaje
+* `em` para el tamaño relativo al valor de `tamaño de fuente` del padre.
 
-Because computer screens use pixels to display the content, it is the **most common size unit in CSS**.
+### Píxeles
 
-It can be used to fix the **width** of an element:
+Debido a que las pantallas de computadora usan píxeles para mostrar el contenido, es la **unidad de tamaño más común en CSS**.
+
+Puede usarse para fijar el **ancho** de un elemento:
 
 {% highlight css %}
 body{ width: 400px;}
 {% endhighlight %}
 
-Or set the **text size**:
+O configure el **tamaño del texto**:
 
 {% highlight css %}
 body{ font-size: 20px;}
 {% endhighlight %}
 
-Pixels in CSS are straightforward because they define **absolute values**: they are not affected by other inherited CSS properties.
+Los píxeles en CSS son sencillos porque definen **valores absolutos**: no se ven afectados por otras propiedades CSS heredadas.
 
-They are also widely used for **positioning** and **spacing** purposes.
+También se utilizan ampliamente con fines de **posicionamiento** y **espaciado**.
 
-### Percentages
+### Porcentajes
 
-Percentages are **relative units**: they rely upon the element's parent and/or ancestor.
+Los porcentajes son **unidades relativas**: se basan en el padre y / o antepasado del elemento.
 
-For example, block-level elements like paragraphs naturally take up the **whole width available**. The following CSS rule will resize them to **half** of the width available.
+Por ejemplo, los elementos a nivel de bloque, como los párrafos, ocupan naturalmente el **ancho completo disponible**. La siguiente regla CSS los redimensionará a **la mitad** del ancho disponible.
 
 {% highlight css %}
 p{ width: 50%;}
 {% endhighlight %}
 
-Percentages can help set other CSS properties, like text size:
+Los porcentajes pueden ayudar a establecer otras propiedades CSS, como el tamaño del texto:
 
 {% highlight css %}
 strong{ font-size: 150%;}
 {% endhighlight %}
 
 {% highlight html %}
-<p>There are <strong>important</strong> challenges ahead of us.</p>
+<p>Hay <strong>importantes</strong> retos.</p>
 {% endhighlight %}
 
 <div class="result">
-  <p>There are <strong style="font-size: 150%;">important</strong> challenges ahead of us.</p>
+  <p>Hay <strong style="font-size: 150%;">importantes</strong> retos.</p>
 </div>
 
 ### Em
 
-`em` is a **relative** unit: it depends upon the value of the element's `font-size`.
+`em` es una unidad **relativa**: depende del valor del` font-size` del elemento.
 
-For example, if the parent has a font-size of `20px` and you apply `font-size: 0.8em` to a child element, this child element will render a font-size of `16px`.
+Por ejemplo, si el padre tiene un tamaño de fuente de `20px` y usted aplica` font-size: 0.8em` a un elemento secundario, este elemento secundario representará un tamaño de fuente de `16px`.
 
-Don't confuse the `em` CSS size unit and the `em` CSS selector, which targets `<em>` HTML elements
+No confunda la unidad de tamaño CSS `em` y el selector CSS` em`, que apunta a elementos HTML `<em>`
 {: .info}
 
-The `em` unit is interesting as you define font sizes of HTML elements _relative_ to one another. To design a pleasing and easy to read webpage, you need consistent visual depth. For example, you want your `<h1>` to be twice as big as your body text, your `<h2>` only 1.5 times as big, and your sidebar slightly smaller. This could easily be achieved in CSS:
+La unidad `em` es interesante ya que define los tamaños de fuente de los elementos HTML _relativos_ entre sí. Para diseñar una página web agradable y fácil de leer, necesita una profundidad visual constante. Por ejemplo, desea que su `<h1>` sea dos veces más grande que el texto de su cuerpo, su `<h2>` solo 1.5 veces más grande y su barra lateral un poco más pequeña. Esto podría lograrse fácilmente en CSS:
 
 {% highlight css %}
 body{ font-size: 16px;}
@@ -80,9 +81,9 @@ h2{ font-size: 1.5em;}      /* = 24px */
 aside{ font-size: 0.75em;}  /* = 12px */
 {% endhighlight %}
 
-If you decide to change the size of your body text, the relative sizes of your headings and sidebar will **change accordingly**, and your webpage will remain **visually balanced**.
+Si decide cambiar el tamaño de su cuerpo de texto, los tamaños relativos de sus encabezados y barra lateral **cambiarán en consecuencia**, y su página web permanecerá **visualmente equilibrada**.
 
-By just changing one value, all other values are altered:
+Con solo cambiar un valor, todos los demás valores se modifican:
 
 {% highlight css %}
 body{ font-size: 20px;}
@@ -93,7 +94,7 @@ aside{ font-size: 0.75em;}  /* = 16px */
 
 ### Rem
 
-The `rem` unit is similar to `em`, but instead of depending upon the _parent's_ value, it relies upon the **root element's** value, which is the `<html>` element.
+La unidad `rem` es similar a` em`, pero en lugar de depender del valor de _parent_, se basa en el valor del ** elemento raíz **, que es el elemento `<html>`.
 
 {% highlight css %}
 html{ font-size: 18px;}
@@ -102,14 +103,15 @@ h1{ font-size: 2rem;}       /* = 36px */
 h2{ font-size: 1.5rem;}     /* = 27px */
 {% endhighlight %}
 
-The difference between `rem` and `em` is that `rem` values are **fixed** while `em` values can _multiply_ between each other.
+La diferencia entre `rem` y` em` es que los valores de `rem` son **fijos** mientras que los valores de` em` pueden _multiplicarse_ entre sí.
 
-If you set your `html{ font-size: 18px;}`:
 
-* `2rem` will always be equal to `36px`, no matter where you use in your CSS
-* `2em` will always be equal to **double** the parent's `font-size`, so not necessarily `36px`
+Si pones `html{ font-size: 18px;}`:
 
-Quick example where `2em` is different from `2rem`:
+* `2rem` siempre será igual a` 36px`, sin importar dónde lo uses en tu CSS
+* `2em` siempre será igual al **doble** del` font-size` del padre, por lo que no necesariamente `36px`
+
+Ejemplo rápido donde `2em` es diferente de` 2rem`:
 
 {% highlight css %}
 html{ font-size: 20px;}
@@ -118,10 +120,10 @@ p span{ font-size: 2em;}      /* = 16px * 2 = 32px */
 p strong{ font-size: 2rem;}   /* = 20px * 2 = 40px */
 {% endhighlight %}
 
-The `span` rely upon the `p` font-size value while the `strong` rely upon the `html` font-size value.
+El `intervalo` se basa en el valor de tamaño de fuente` p` mientras que el `fuerte` se basa en el valor de tamaño de fuente` html`.
 
-### Which unit to use?
+### ¿Qué unidad usar?
 
-I'd recommend **pixels** to start with: as they're absolute values, they aren't affected by the element's context. They are straightforward, allow to set the text size, image dimensions, border width, position coordinates...
+Recomendaría **píxeles** para empezar: como son valores absolutos, no se ven afectados por el contexto del elemento. Son sencillos, permiten establecer el tamaño del texto, las dimensiones de la imagen, el ancho del borde, las coordenadas de posición ...
 
-**Percentage** and **em** values can be used alongside pixels, for relative text sizes especially.
+Los valores de **porcentaje** y **em** se pueden usar junto con píxeles, especialmente para tamaños de texto relativos.
