@@ -1,10 +1,11 @@
 ---
-layout: chapter
-title: "Introduction"
-subtitle: "An overview of how the <strong>Web</strong> works"
-section: web
+composición: capítulo
+título: "Introdución"
+subtítulo: "Una descripción general de cómo funciona <strong>la web</strong> "
+sección: web
 ---
 
-Before diving into the technical and practical aspect of coding, you need to have a **basic** understanding of how the underlying _environment_ works.
 
-This introduction is meant to provide a quick overview of both the **Internet** and the **Web**.
+Antes de sumergirse en el aspecto técnico y práctico de la codificación, debe tener una comprensión **básica** de cómo funciona el _entorno_ subyacente.
+
+Esta introducción está destinada a proporcionar una descripción general rápida de **Internet** y **Web**.
