@@ -1,71 +1,71 @@
 ---
-layout: post
-title: "CSS <strong>font-family</strong>"
-subtitle: "Choosing a <strong>font</strong>"
-section: css
+diseño: poste
+título: "CSS <strong> familia de fuentes </strong>"
+subtítulo: "Elegir una <strong> fuente </strong>"
+sección: css
 ---
 
-CSS provides several **font** properties, that directly affect text rendering. The `font-family` property defines _which_ font to use.
+CSS proporciona varias propiedades de ** fuente ** que afectan directamente la representación del texto. La propiedad `font-family` define _qué_ fuente usar.
 
-### Generic font families
+### Familias de fuentes genéricas
 
-Fonts are grouped in 5 **generic** families:
+Las fuentes se agrupan en 5 familias ** genéricas **:
 
-* `serif` fonts have small lines attached to the end of each character
+* Las fuentes `serif` tienen pequeñas líneas adjuntas al final de cada carácter
 * `sans-serif`
-* `monospace`
-* `cursive`
-* `fantasy`
+* `monoespacio`
+* `cursiva`
+* `fantasía`
 
-`cursive` and `fantasy` are never used.
+`cursive` y` fantasy` nunca se utilizan.
 {: .info}
 
-Because the `font-family` property is inherited by all HTML children elements, you can apply a font for the whole HTML document by applying it on the ancestor of all HTML elements: the `<body>` element.
+Debido a que la propiedad `font-family` es heredada por todos los elementos secundarios HTML, puede aplicar una fuente para todo el documento HTML aplicándola en el antepasado de todos los elementos HTML: el elemento` <body> `.
 
-{% highlight css %}
-body{ font-family: sans-serif;}
-{% endhighlight %}
+{% highlight css%}
+cuerpo {familia de fuentes: sans-serif;}
+{% endhighlight%}
 
-With this CSS rule, the webpage will use the **sans-serif** font defined by the user in his preferences.
+Con esta regla CSS, la página web utilizará la fuente ** sans-serif ** definida por el usuario en sus preferencias.
 
-### Web-safe fonts
+### Fuentes compatibles con la Web
 
-The problem with using generic font names is that the design of your webpage will rely upon the font set by the user in his settings.
+El problema con el uso de nombres de fuentes genéricos es que el diseño de su página web dependerá de la fuente establecida por el usuario en su configuración.
 
-As you probably want your webpage to look the same on anyone's computer, you'll want to define a **specific** font to be used. To do so, just use the **name** of the font.
+Como probablemente desee que su página web tenga el mismo aspecto en la computadora de cualquier persona, querrá definir una fuente ** específica ** para usar. Para hacerlo, simplemente use el ** nombre ** de la fuente.
 
-{% highlight css %}
-body{ font-family: Arial;}
-{% endhighlight %}
+{% highlight css%}
+body {font-family: Arial;}
+{% endhighlight%}
 
-Your webpage will use Arial **provided it is installed on the user's computer**. If the Arial font is not available on the user's computer, it will use the browser's default serif font (which is usually Times).
+Su página web utilizará Arial ** siempre que esté instalada en la computadora del usuario **. Si la fuente Arial no está disponible en la computadora del usuario, utilizará la fuente serif predeterminada del navegador (que suele ser Times).
 
-Arial is a safe choice though, because it is installed on all Windows and Mac computers, and on most Linux systems. That is why Arial is considered a **web-safe** font: you can safely use it in your CSS and be almost sure that the user's computer will have it installed.
+Sin embargo, Arial es una opción segura porque está instalado en todas las computadoras Windows y Mac, y en la mayoría de los sistemas Linux. Es por eso que Arial se considera una fuente ** segura para la web **: puede usarla de manera segura en su CSS y estar casi seguro de que la computadora del usuario la tendrá instalada.
 
-There are **9** web-safe fonts:
+Hay ** 9 ** fuentes seguras para la web:
 
 * Arial
-* Arial Black
+* Arial Negro
 * Comic Sans MS
-* Courier New
+* Courier Nuevo
 * Georgia
-* Impact
+* Impacto
 * Times New Roman
 * Trebuchet MS
 * Verdana
 
-### Applying a list of fonts
+### Aplicar una lista de fuentes
 
-Although using _any_ of these values for the `font-family` property is a safe bet, you can define **fallback** values by writing a **list of font families**:
+Aunque usar _cualquier_ de estos valores para la propiedad `font-family` es una apuesta segura, puede definir valores ** alternativos ** escribiendo una ** lista de familias de fuentes **:
 
-{% highlight css %}
-body{ font-family: Arial, Verdana, sans-serif;}
-{% endhighlight %}
+{% highlight css%}
+cuerpo {familia de fuentes: Arial, Verdana, sans-serif;}
+{% endhighlight%}
 
-By defining **multiple values** for `font-family`, the browser will look for the first value `Arial` and use it. If it's not available, it will use the following one `Verdana`. Finally, if that one isn't available either, it will use the browser's default sans-serif font.
+Al definir ** valores múltiples ** para `font-family`, el navegador buscará el primer valor` Arial` y lo usará. Si no está disponible, usará el siguiente `Verdana`. Finalmente, si ese tampoco está disponible, usará la fuente sans-serif predeterminada del navegador.
 
-It is good practice to use a **generic family** as the last value. If you can't define the specific font to use, you can at least define the _type_ of font you want.
+Es una buena práctica utilizar una ** familia genérica ** como último valor. Si no puede definir la fuente específica a usar, al menos puede definir el _tipo_ de fuente que desea.
 
-Because designers want to use more original fonts but still want their webpage to look exactly the same on anyone's computer, it is possible to **include a font** in a webpage. That way, they make sure the font is available even if it's not present on the user's computer, simply because the website provides the font.
+Debido a que los diseñadores quieren usar fuentes más originales pero aún quieren que su página web se vea exactamente igual en la computadora de cualquier persona, es posible ** incluir una fuente ** en una página web. De esa manera, se aseguran de que la fuente esté disponible incluso si no está presente en la computadora del usuario, simplemente porque el sitio web proporciona la fuente.
 
-We'll look into this method called `@font-face`, and see how services like Google Fonts or Typekit can help you.
+Analizaremos este método llamado `@ font-face` y veremos cómo los servicios como Google Fonts o Typekit pueden ayudarlo.
