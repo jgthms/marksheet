@@ -1,41 +1,41 @@
 ---
-layout: post
-title: "CSS <strong>display</strong>"
-subtitle: "Changing the <strong>type</strong> of an HTML element"
-section: css
+Diseño: post
+Título: "CSS <strong>mostrar</strong>"
+Subtítulo: "Cambiando el <strong>tipo</strong> de un elemento HTML"
+sección: css
 ---
 
-We've seen how there are mainly [2 types of HTML elements](/html-block-inline.html): **block-level** elements and **inline** ones. We've also mentioned a few alternatives, like **list-item** or **table-cell**.
+Hemos visto que hay principalmente [2 tipos de elementos HTML] (/ html-block-inline.html): elementos **a nivel de bloque** y **en línea**. También hemos mencionado algunas alternativas, como **elemento de lista** o **celda de tabla**.
 
-The `display` property allows to change the _type_ of HTML element. By default, a paragraph `<p>` (a **block-level** element) will have a default `display` value of `block`, but can be rendered as an **inline** one:
+La propiedad `display` permite cambiar el _tipo_ del elemento HTML. Por defecto, un párrafo `<p>` (un elemento de **nivel de bloque**) tendrá un valor de `display` predeterminado de` block`, pero se puede representar como un **en línea** uno:
 
-{% highlight css %}
+{% Destacar css %}
 p{ display: inline;}
-{% endhighlight %}
+{% resaltar %}
 
-### Why not use an HTML inline element, like `<span>` then?
+### ¿Por qué no utilizar un elemento HTML en línea, como `<span>` entonces?
 
-Because you choose an HTML element for its **meaning**, not its rendering. If we've decided that a paragraph is what suited our content best, we must not change the tag _only for styling purposes_. CSS is here to take care of the styling.
+Porque elige un elemento HTML por su **significado**, no por su representación. Si hemos decidido que un párrafo es lo que mejor se adapta a nuestro contenido, no debemos cambiar la etiqueta _sólo con fines de estilo_. CSS está aquí para encargarse del estilo.
 
-In short, `display` allows to alter the **type** of an element _without_ changing its **meaning**.
+En resumen, `display` permite alterar el **tipo** de un elemento _sin_ cambiar su **significado**.
 
-Each `display` options have specific rendering behaviors:
+Cada opción de `display` tiene comportamientos de representación específicos:
 
-* `block` will take up the whole width available
-* `inline` will act as plain text
-* `inline-block` is, as its name suggests, a compound of block and inline behavior, a _"best of both worlds"_ option
-* `list-item` is similar to `block` as it takes up the whole width available, but shows an additional bullet point
-* `table`, `table-row` and `table-cell` all have very specific, albeit unexpected, behavior that allow more interesting layouts
+* `block` ocupará todo el ancho disponible
+* `inline` actuará como texto sin formato
+* `inline-block` es, como su nombre indica, un compuesto de comportamiento en bloque y en línea, una opción _ "lo mejor de ambos mundos" _
+* `list-item` es similar a `block` ya que ocupa todo el ancho disponible, pero muestra un punto adicional
+* `table`, `table-row` y `table-cell` tienen un comportamiento muy específico, aunque inesperado, que permite diseños más interesantes
 
 ### display: block
 
-This will turn any element into a **block** element.
+Esto convertirá cualquier elemento en un elemento **bloque**.
 
-This technique is often used on **links** in order to increase their clickable zone, which can be easily evaluated by setting a background color.
+Esta técnica se usa a menudo en **enlaces** para aumentar su zona en la que se puede hacer clic, que se puede evaluar fácilmente estableciendo un color de fondo.
 
-{% highlight css %}
+{% destacar css %}
 .menu a{ background: red; color: white;}
-{% endhighlight %}
+{% resaltar %}
 
 {% highlight html %}
 <ul class="menu">
