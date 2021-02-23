@@ -1,108 +1,107 @@
 ---
-layout: post
-title: "CSS <strong>float</strong>"
-subtitle: "The most unpredictable property"
-section: css
+diseño: poste
+título: "CSS <strong> float </strong>"
+subtítulo: "La propiedad más impredecible"
+sección: css
 ---
 
-Behind the word `float`, an endless sea of possibilities (and misbehaviors).
+Detrás de la palabra "flotar", un mar infinito de posibilidades (y malos comportamientos).
 
-`float` is probably the most difficult CSS concept to grasp. Its behavior can be intriguing, unexpected, and magical. Probably because, of all _positioning_ properties there are, it is the one that most _influences_ its **surroundings**.
+`float` es probablemente el concepto CSS más difícil de comprender. Su comportamiento puede ser intrigante, inesperado y mágico. Probablemente porque, de todas las propiedades de _posicionamiento_ que hay, es la que más _influencia_ en su ** entorno **.
 
-In other words, applying a float not only modifies the element it's applied upon **but also alters its ancestors, siblings, descendants, and following elements**.
+En otras palabras, la aplicación de un flotante no solo modifica el elemento sobre el que se aplica **, sino que también altera sus ancestros, hermanos, descendientes y siguientes elementos **.
 
-`float` can only have one of these 3 values:
+`float` solo puede tener uno de estos 3 valores:
 
-* `left` and `right` turns an element into a **floating** one
-* `none` removes the floating aspect
+* `left` y` right` convierten un elemento en uno ** flotante **
+* `none` elimina el aspecto flotante
 
-### When to use float
+### Cuándo usar float
 
-The purpose of **floating** an element is to **push it to one side** and make the text **wrap around it**.
+El propósito de ** flotar ** un elemento es ** empujarlo hacia un lado ** y hacer que el texto ** se envuelva **.
 
-To explain the behaviour, let's use a common example: floating an image within a paragraph.
+Para explicar el comportamiento, usemos un ejemplo común: hacer flotar una imagen dentro de un párrafo.
 
-{% highlight html %}
+{% highlight html%}
 <p>
-  <img src="https://placehold.it/150x150">
-  The bells of the neighbouring church made a jangling tumult, a cart carelessly driven smashed, amid shrieks and curses, against the water trough up the street.  Sickly yellow lights went to and fro in the houses, and some of the passing cabs flaunted unextinguished lamps. And overhead the dawn was growing brighter, clear and steady and calm.
+  <img src = "https://placehold.it/150x150">
+  Las campanas de la iglesia vecina hicieron un tintineo tintineante, un carro conducido descuidadamente se estrelló, entre gritos y maldiciones, contra el abrevadero de la calle. Las enfermizas luces amarillas iban y venían en las casas, y algunos de los taxis que pasaban lucían lámparas sin apagar. Y en lo alto, el amanecer se hacía más brillante, claro, firme y tranquilo.
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <p style="background: gold; padding: 10px; width: 600px;">
-    <img src="https://placehold.it/150x150">
-    It was while the curate had sat and talked so wildly to me under the hedge in the flat meadows near Halliford, and while my brother was watching the fugitives stream over Westminster Bridge, that the Martians had resumed the offensive. So far as one can ascertain from the conflicting accounts that have been put forth, the majority of them remained busied with preparations in the Horsell pit until nine that night, hurrying on some operation that disengaged huge volumes of green smoke.
+<div class = "result">
+  <p style = "background: gold; padding: 10px; width: 600px;">
+    <img src = "https://placehold.it/150x150">
+    Fue mientras el coadjutor se había sentado y me hablaba tan salvajemente bajo el seto en los prados planos cerca de Halliford, y mientras mi hermano observaba a los fugitivos cruzar el puente de Westminster, cuando los marcianos reanudaron la ofensiva. Por lo que se desprende de los relatos contradictorios que se han presentado, la mayoría de ellos permanecieron ocupados con los preparativos en el foso de Horsell hasta las nueve de la noche, apurados en alguna operación que desencadenó enormes volúmenes de humo verde.
   </p>
 </div>
 
-The problem when inserting an image within a text is that **an image must fit on a single line of text**, and will therefore _extend_ the height of the line it's on. In our case, our image is 150px high.
+El problema al insertar una imagen dentro de un texto es que ** una imagen debe caber en una sola línea de texto ** y, por lo tanto, _extenderá_ la altura de la línea en la que se encuentra. En nuestro caso, nuestra imagen tiene 150px de alto.
 
-What we want is to wrap the text _around_ the image:
+Lo que queremos es envolver el texto _ alrededor_ de la imagen:
 
-{% highlight css %}
-img{ float: left;}
-{% endhighlight %}
+{% highlight css%}
+img {flotar: izquierda;}
+{% endhighlight%}
 
-<div class="result">
-  <p style="background: gold; padding: 10px; width: 600px;">
-    <img style="float: left;" src="https://placehold.it/150x150">
-    It was while the curate had sat and talked so wildly to me under the hedge in the flat meadows near Halliford, and while my brother was watching the fugitives stream over Westminster Bridge, that the Martians had resumed the offensive. So far as one can ascertain from the conflicting accounts that have been put forth, the majority of them remained busied with preparations in the Horsell pit until nine that night, hurrying on some operation that disengaged huge volumes of green smoke.
+<div class = "result">
+  <p style = "background: gold; padding: 10px; width: 600px;">
+    <img style = "float: left;" src = "https://placehold.it/150x150">
+    Fue mientras el coadjutor se había sentado y me hablaba tan salvajemente bajo el seto en los prados planos cerca de Halliford, y mientras mi hermano observaba a los fugitivos cruzar el puente de Westminster, cuando los marcianos reanudaron la ofensiva. Por lo que se desprende de los relatos contradictorios que se han presentado, la mayoría de ellos permanecieron ocupados con los preparativos en el foso de Horsell hasta las nueve de la noche, apurados en alguna operación que desencadenó enormes volúmenes de humo verde.
   </p>
 </div>
 
-As you can see, the image is **pushed to the left**, and the text that follows just wraps around the image:
+Como puede ver, la imagen se ** empuja hacia la izquierda ** y el texto que sigue simplemente se ajusta a la imagen:
 
-* first, the text is pushed to the right, _next_ to the image
-* then, when there's space available _below_ the image, the text will fill that space
+* primero, el texto se empuja hacia la derecha, _siguiente_ a la imagen
+* luego, cuando haya espacio disponible _ debajo_ de la imagen, el texto llenará ese espacio
 
-#### What if the text isn't long enough?
+#### ¿Qué pasa si el texto no es lo suficientemente largo?
 
-<div class="result">
-  <p style="background: gold; padding: 10px; width: 600px;">
-    <img style="float: left;" src="https://placehold.it/150x150">
-    He heard footsteps running to and fro in the rooms, and up and down stairs behind him
+<div class = "result">
+  <p style = "background: gold; padding: 10px; width: 600px;">
+    <img style = "float: left;" src = "https://placehold.it/150x150">
+    Escuchó pasos corriendo de un lado a otro en las habitaciones, y escaleras arriba y abajo detrás de él.
   </p>
 </div>
 
-The floating image will **overflow** because it's higher than its yellow container. And as you can _actually_ see, it even visually breaks **this paragraph you're reading**.
+La imagen flotante ** se desbordará ** porque es más alta que su contenedor amarillo. Y como puede ver, en realidad, incluso rompe visualmente ** este párrafo que está leyendo **.
 
-I've intentionally left this layout error to showcase _why_ floats are unpredictable: they can even break their parent's siblings!
+Dejé intencionalmente este error de diseño para mostrar _por qué_ los flotadores son impredecibles: ¡incluso pueden romper a los hermanos de sus padres!
 
-Because `float: left` takes the image _out of_ the flow, the yellow paragraph's height is only **the height of its text**. In other words, the height of the image _isn't taken into account_.
+Debido a que `float: left` saca la imagen _ del flujo, la altura del párrafo amarillo es solo ** la altura de su texto **. En otras palabras, no se tiene en cuenta la altura de la imagen.
 
-### Float = block
+### Float = bloque
 
-Floating elements will have a `display: block` applied to them automatically, and will mostly behave like blocks:
+Los elementos flotantes tendrán un `display: block` aplicado automáticamente, y se comportarán principalmente como bloques:
 
-* you can set a specific height and width
-* if no height is set, the element's height is that of the line-height
-* if a `width: 100%` is applied, it will look like a block-level element
+* puede establecer una altura y un ancho específicos
+* si no se establece una altura, la altura del elemento es la altura de la línea
+* si se aplica un `width: 100%`, se verá como un elemento a nivel de bloque
 
-### Clearing the float
+### Limpiando el flotador
 
-The `clear` property allows to **push elements _after_ the float**. It can only be applied on **block** elements.
+La propiedad `clear` permite ** empujar elementos _ después_ del flotador **. Solo se puede aplicar en elementos ** bloque **.
 
-{% highlight html %}
+{% highlight html%}
 <p>
-  <img src="https://placehold.it/150x150">
-  <span>He heard footsteps running to and fro in the rooms, and up and down stairs behind him</span>
+  <img src = "https://placehold.it/150x150">
+  <span> Escuchó pasos corriendo de un lado a otro en las habitaciones, y escaleras arriba y abajo detrás de él </span>
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-{% highlight css %}
-img{ float: left;}
-span{ clear: left; display: block;}
-{% endhighlight %}
+{% highlight css%}
+img {flotar: izquierda;}
+span {clear: left; bloqueo de pantalla;}
+{% endhighlight%}
 
-<div class="result">
-  <p style="background: gold; padding: 10px; width: 600px;">
-    <img style="float: left;" src="https://placehold.it/150x150">
-    <span style="clear: left; display: block;">He heard footsteps running to and fro in the rooms, and up and down stairs behind him</span>
+<div class = "result">
+  <p style = "background: gold; padding: 10px; width: 600px;">
+    <img style = "float: left;" src = "https://placehold.it/150x150">
+    <span style = "clear: left; display: block;"> Escuchó pasos corriendo de un lado a otro en las habitaciones, y escaleras arriba y abajo detrás de él </span>
   </p>
 </div>
 
-Instead of having the text pushed _next_ to the image, the `clear: left` pushes the text **below** the image.
+En lugar de tener el texto empujado _siguiente_ a la imagen, el `clear: left` empuja el texto ** debajo ** de la imagen.
 
-It's different from having no float or clear at all, as the image is on its own line and _not_ on the same line as the text.
-
+Es diferente de no tener nada flotante o claro, ya que la imagen está en su propia línea y _no_ en la misma línea que el texto.
