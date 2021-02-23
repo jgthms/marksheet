@@ -5,35 +5,35 @@ subtitle: "The <strong>default</strong> behavior of a webpage"
 section: css
 ---
 
-An HTML document is a **living** document
+Un documento HTML es un documento **living** 
 
-Even without any CSS applied, an HTML document already has its own rules:
+Incluso sin ningun CSS aplicado, un documento HTML ya tiene sus propias reglas:
 
-* **fluidity**: how the content adapts to browser dimensions
-* **ordering**: in which order elements appear
-* **stacking**: how elements appear on top of each other
+* **fluidity**: como el contenido se adapta en las dimensiones del navegador
+* **ordering**: en que orden aparecen los elementos
+* **stacking**: como los elementos apareces encima de otros
 
-This natural behavior is **logical**.
+Este comportamiento natural es **logical**.
 
 ### Fluidity
 
-In HTML, the **content** is King.
+En HTML, el **content** es Rey.
 
-All `block` elements are **fluid**. They will naturally adapt their layout to accommodate their inner content:
+Todos los elementos `block` son **fluid**. Ellos naturalmente adaptaran su composición para acomodar su contenido interno:
 
 * **width: 100%**  
-a block will take up the whole width available
+Un bloque ocupará todo el ancho disponible
 * **word wrap**  
-if a block's inline content doesn't fit on a single line, it will continue on a new line
+Si un contenido bloque esta en linea no cabe en una sola linea, estará en una nueva linea
 * **height: auto**  
-a block's height varies automatically to match its content's size
+La altura de una bloque varia automaticamente para coincidir con el tamaño de su contenido
 
 <div class="result" id="result-fluidity">
   <div>
-    A block element will fill up the whole <strong>width</strong> available, while its <strong>height</strong> will vary automatically according to the size of its content.
+    Un elemento en bloque llenará toda <strong>la altura</strong> posible, mientras sea <strong>height</strong> variará automaticamente de acuerdo con el tamaño del contenido.
   </div>
   <div>
-    This element will be pushed downwards depending on the height of its predecessors.
+    Este elemento será empujado hacia abajo dependiendo de la altura de su predecesor.
   </div>
 </div>
 
@@ -48,41 +48,41 @@ a block's height varies automatically to match its content's size
 }
 </style>
 
-* A `block` is by default in **full width**
-* Its **height** is the height of its content
+* Un `block` es por defecto en **full width**
+* El **height** es la altura del contenido
 
 ### Ordering
 
-HTML elements are displayed in the **order** in which they are written **in the code**.
-First in the code -> first in the browser.
+El elemento HTML es presentado en el **order** en el que van escritos **in the code**.
+Primero en el código -> primero en el navegador.
 
-Each <code>block</code> appears in the order in which they appear in the HTML code, from <strong>top</strong> to <strong>bottom</strong>.
+Cada <code>block</code> aparece en el orden en el que aparece en el código HTML, de <strong>arriba</strong> hacia <strong>abajo</strong>.
 
 {% highlight html %}
-<p>First</p>
-<p>Second</p>
-<p>Third</p>
-<p>Fourth</p>
-<p>Fifth</p>
+<p>Primero</p>
+<p>Segundo</p>
+<p>Tercero</p>
+<p>Cuarto</p>
+<p>Quinto</p>
 {% endhighlight %}
 
 <div class="result">
-  <p>First</p>
-  <p>Second</p>
-  <p>Third</p>
-  <p>Fourth</p>
-  <p>Fifth</p>
+  <p>Primero</p>
+  <p>Segundo</p>
+  <p>Tercero</p>
+  <p>Cuarto</p>
+  <p>Quinto</p>
 </div>
 
 ### Stacking
 
-A browser has **3 dimensions**.
+Un navegador tiene **3 dimensions**.
 
-Each HTML element belongs to an imaginary **layer**.
+Casa elemento HTML pertenece a una imaginaria **layer**.
 
-The **stack order** depends on how elements are **nested**: child elements appear **on top** of their respective parents.
+El **stack order** depende de como el elemento es **nested**: elemento child aparece **on top** de sus respectivos padres.
 
-* Each **nested** element appears _on top_ of its parent.
+* Casa **nested** elemento aparece _on top_ of its parent.
 * The **deeper** in the hierarchy, the _higher_ in the stack.
 
 {% highlight html %}
