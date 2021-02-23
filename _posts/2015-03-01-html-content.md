@@ -5,6 +5,6 @@ subtitle: "What the <strong>Web</strong> is all about"
 section: html
 ---
 
-The **Web** was created to share _documents_ via Internet, and **HTML** is the _language_ in which these documents are written.
+La **Web** fué creada para compartir documentos via Internet, y **HTML** es el lenguage en el cual estos documentos estan escritos.
 
-While **text** has always been the primary medium, HTML evolved to incorporate other types of content like **images** and **videos**.
+Mientras **text** siempre fue el primer medio, HTML evolucionó para incorporar otro tipo de contenido como **images** y **videos**.
