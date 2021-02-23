@@ -1,88 +1,88 @@
 ---
-layout: post
-title: "CSS <strong>Priority</strong>"
-subtitle: "When several rules <strong>collide</strong>"
-section: css
+diseño: poste
+title: "CSS <strong> Prioridad </strong>"
+subtítulo: "Cuando varias reglas <strong> chocan </strong>"
+sección: css
 ---
 
-An HTML element can be targeted by **multiple CSS rules**. Let's use a simple paragraph for example:
+Un elemento HTML puede ser dirigido por ** múltiples reglas CSS **. Usemos un párrafo simple por ejemplo:
 
-{% highlight html %}
-<p class="message" id="introduction">
-  MarkSheet is a free HTML and CSS tutorial.
+{% highlight html%}
+<p class = "message" id = "introducción">
+  MarkSheet es un tutorial gratuito de HTML y CSS.
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-We can alter this paragraph just by using its **tag name**:
+Podemos modificar este párrafo simplemente usando su ** nombre de etiqueta **:
 
-{% highlight css %}
-p{ color: blue;}
-{% endhighlight %}
+{% highlight css%}
+p {color: azul;}
+{% endhighlight%}
 
-Or we can use its **class name**:
+O podemos usar su ** nombre de clase **:
 
-{% highlight css %}
-.message{ color: green;}
-{% endhighlight %}
+{% highlight css%}
+.message {color: verde;}
+{% endhighlight%}
 
-Or we can use its **id**:
+O podemos usar su ** id **:
 
-{% highlight css %}
-#introduction{ color: red;}
-{% endhighlight %}
+{% highlight css%}
+# introducción {color: rojo;}
+{% endhighlight%}
 
-Because the browser can only pick **one color** to apply on this paragraph, it will have to decide which CSS rule takes **priority** over other ones. This is what CSS priority (or CSS _specificity_ is about).
+Debido a que el navegador solo puede elegir ** un color ** para aplicar en este párrafo, tendrá que decidir qué regla CSS tiene ** prioridad ** sobre otras. De esto se trata la prioridad CSS (o CSS _specificity_).
 
-In our example, the paragraph will be **red** because an `#id` selector is more _specific_ and thus more **important** than other selectors.
+En nuestro ejemplo, el párrafo será ** rojo ** porque un selector `# id` es más _específico_ y por lo tanto más ** importante ** que otros selectores.
 
-### Order of CSS rules
+### Orden de las reglas CSS
 
-If similar selectors are in your CSS, the last one defined will take priority.
+Si hay selectores similares en su CSS, el último definido tendrá prioridad.
 
-{% highlight css %}
-p{ color: green;}
-p{ color: red;}
-/* Paragraphs will be red */
-{% endhighlight %}
+{% highlight css%}
+p {color: verde;}
+p {color: rojo;}
+/ * Los párrafos serán rojos * /
+{% endhighlight%}
 
-### The 100 measure
+### La medida 100
 
-One quick way to figure out how "powerful" a CSS rule is, is by measuring the specificty of the **selectors**:
+Una forma rápida de averiguar qué tan "poderosa" es una regla CSS es midiendo la especificidad de los ** selectores **:
 
-* `#id` selectors are worth 100
-* `.class` selectors are worth 10
-* `tag` selectors are worth 1
+* Los selectores `# id` valen 100
+* Los selectores `.class` valen 10
+* Los selectores de `etiqueta` valen 1
 
-The selector with the highest "score" will prevail, _no matter the order in which the CSS rules appear_.
+El selector con la "puntuación" más alta prevalecerá, _in importar el orden en que aparezcan las reglas CSS_.
 
-{% highlight css %}
-#introduction{ color: red;}
-.message{ color: green;}
-p{ color: blue;}
-{% endhighlight %}
+{% highlight css%}
+# introducción {color: rojo;}
+.message {color: verde;}
+p {color: azul;}
+{% endhighlight%}
 
-{% highlight html %}
-<p class="message" id="introduction">
-  MarkSheet is a free HTML and CSS tutorial.
+{% highlight html%}
+<p class = "message" id = "introducción">
+  MarkSheet es un tutorial gratuito de HTML y CSS.
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
-  <p style="color: red;">
-    MarkSheet is a free HTML and CSS tutorial.
+<div class = "resultado">
+  <p style = "color: red;">
+    MarkSheet es un tutorial gratuito de HTML y CSS.
   </p>
 </div>
 
-The `#introduction{ color: red;}` rule is more _specific_ than the others because ids must be **unique** throughout a webpage, and can thus only target **one** element.
+La regla `#introduction {color: red;}` es más _específica_ que las demás porque los identificadores deben ser ** únicos ** en una página web y, por lo tanto, solo pueden apuntar a ** un ** elemento.
 
-`.message{ color: green;}` can target _any_ HTML element with a `class="message"` attribute, and is consequently less specific. Same goes for `p{ color: blue;}` which can target _any_ HTML paragraph.
+`.message {color: green;}` puede apuntar a _cualquier_ elemento HTML con un atributo `class =" message "` y, en consecuencia, es menos específico. Lo mismo ocurre con `p {color: blue;}` que puede apuntar a _cualquier_ párrafo HTML.
 
-### How to avoid conflicts
+### Cómo evitar conflictos
 
-While writing your CSS, it's easy to write **conflicting rules**, where the same _property_ is applied several times.
+Mientras escribe su CSS, es fácil escribir ** reglas conflictivas **, donde la misma _propiedad_ se aplica varias veces.
 
-To avoid that:
+Para evitar eso:
 
-* only use **classes**: use `.introduction` instead of `#introduction`, even if that element only appears once in your webpage
-* avoid applying **multiple classes** on a single HTML element: don't write `<p class="big red important">` but rather `<p class="title">` which is more semantically descriptive
-* don't use **inline styles** like `<div style="background: blue;">`
+* solo use ** clases **: use `.introduction` en lugar de` # Introduction`, incluso si ese elemento solo aparece una vez en su página web
+* evite aplicar ** múltiples clases ** en un solo elemento HTML: no escriba `<p class =" big red important ">` sino más bien `<p class =" title ">` que es más semánticamente descriptivo
+* no use ** estilos en línea ** como `<div style =" background: blue; ">`
