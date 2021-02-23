@@ -1,82 +1,82 @@
 ---
-layout: post
-title: "HTML <strong>Images</strong>"
-subtitle: "The major <strong>media</strong> on the Web"
-section: html
+diseño: poste
+título: "HTML <strong> Imágenes </strong>"
+subtítulo: "Los <strong> principales medios </strong> de la Web"
+sección: html
 ---
 
-**Images** are the first non-textual content to have appeared on the Web. Most image formats you can find on your computer can also be displayed in your browser: `.jpg`, `.gif` (animated or not), `.png` (transparent or not), `.bmp`...
+**Las imágenes** son el primer contenido no textual que apareció en la Web. La mayoría de los formatos de imagen que puede encontrar en su computadora también se pueden mostrar en su navegador: `.jpg`,` .gif` (animado o no), `.png` (transparente o no),` .bmp` ...
 
-### Syntax
+### Sintaxis
 
-**Images** use the `<img>` element, which is a **self-closing** element (it only has an opening tag).
+**Imágenes** usan el elemento `<img>`, que es un elemento **de cierre automático** (solo tiene una etiqueta de apertura).
 
-The `src` attribute defines the **location** of the image. As with links, you can either use _relative_ or _absolute_ URLs.
+El atributo `src` define la ** ubicación ** de la imagen. Al igual que con los enlaces, puede utilizar URL _relativas_ o _absolutas_.
 
-<ul class="files">
+<ul class = "archivos">
   <li>
-    <i class="fa fa-folder-o"></i>
-    my-first-website
+    <i class = "fa fa-folder-o"> </i>
+    mi-primer-sitio-web
     <ul>
       <li>
-        <i class="fa fa-file-code-o"></i>
+        <i class = "fa fa-file-code-o"> </i>
         home.html
       </li>
       <li>
-        <i class="fa fa-image"></i>
+        <i class = "fa fa-image"> </i>
         soyuz-spacecraft.jpg
       </li>
     </ul>
   </li>
 </ul>
 
-{% highlight html %}
+{% highlight html%}
 <p>
-  Look at this spacecraft landing!
+  ¡Mira el aterrizaje de esta nave espacial!
   <br>
-  <img src="soyuz-spacecraft.jpg">
+  <img src = "soyuz-spacecraft.jpg">
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
+<div class = "resultado">
   <p>
-    Look at this spacecraft landing!
+    ¡Mira el aterrizaje de esta nave espacial!
     <br>
-    <img src="/images/soyuz-spacecraft.jpg">
+    <img src = "/ images / soyuz-spacecraft.jpg">
   </p>
 </div>
 
-### Dimensions
+### Dimensiones
 
-Every image has **2 dimensions**: a **width** and a **height**. The previously shown spacecraft image is 394 pixels wide and 284 high.
+Cada imagen tiene **2 dimensiones**: un **ancho** y una **altura**. La imagen de la nave espacial mostrada anteriormente tiene 394 píxeles de ancho y 284 de alto.
 
-When inserting an image in HTML, you **don't need to specify its dimensions**: the browser will automatically display it in **full size**.
+Al insertar una imagen en HTML, **no es necesario que especifique sus dimensiones**: el navegador la mostrará automáticamente en **tamaño completo**.
 
-If you want to alter the dimensions of an image, although it is possible in HTML, it's recommended to use CSS, as we'll see in later chapters.
+Si desea alterar las dimensiones de una imagen, aunque es posible en HTML, se recomienda utilizar CSS, como veremos en capítulos posteriores.
 {: .info}
 
-### Block or inline?
+### ¿Bloquear o en línea?
 
-Although an image has a width and a height, and is visually a big rectangle, an image is **not an HTML block element** but actually an **inline element**.
+Aunque una imagen tiene un ancho y una altura, y visualmente es un gran rectángulo, una imagen **no es un elemento de bloque HTML** sino en realidad un **elemento en línea**.
 
-This is due to the `<img>` element being a **self-closing** element: it can't technically contain any other HTML element, and is thus considered an inline element, like `<a>`, `<strong>` or `<em>`.
+Esto se debe a que el elemento `<img>` es un elemento **de cierre automático**: técnicamente no puede contener ningún otro elemento HTML y, por lo tanto, se considera un elemento en línea, como `<a>`, `<fuerte> `o` <em> `.
 
-This inline behavior can have unexpected results:
+Este comportamiento en línea puede tener resultados inesperados:
 
-{% highlight html %}
+{% highlight html%}
 <p>
-  There is a frog
-  <img src="frog.jpg">
-  in the middle of the paragraph!
+  Hay una rana
+  <img src = "rana.jpg">
+  en medio del párrafo!
 </p>
-{% endhighlight %}
+{% endhighlight%}
 
-<div class="result">
+<div class = "resultado">
   <p>
-    There is a frog
-    <img src="/images/frog.jpg">
-    in the middle of the paragraph!
+    Hay una rana
+    <img src = "/ images / frog.jpg">
+    en medio del párrafo!
   </p>
 </div>
 
-Because in HTML the **content is king**, images will be displayed regardless of the quirky layout it might induce, and thoughtfully so.
+Debido a que en HTML el **contenido es el rey**, las imágenes se mostrarán independientemente del diseño peculiar que pueda inducir, y cuidadosamente.
