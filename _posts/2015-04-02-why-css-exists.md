@@ -1,34 +1,34 @@
 ---
-layout: post
-title: "<strong>Why</strong> CSS exists"
-subtitle: "<strong>Separating</strong> content and styling"
-section: css
+composición: capítulo
+título: Por qué existe <strong>CSS</strong>?
+subtítulo: "Separando contenidos y estilos"
+sección: css
 ---
 
-As the Web grew in popularity in the 90s, the intent to apply a specific design to a website grew as well. Web developers relied upon specific HTML tags to enhance webpages:
+A medida que la Web creció en popularidad en los años 90, también creció la intención de aplicar un diseño específico a un sitio web. Los desarrolladores web confiaban en etiquetas HTML específicas para mejorar las páginas web:
 
-* `<basefont>` defined a font for a whole HTML document
-* `<font>` defined a typeface, a color, and a size for the text it contains
-* `<center>` horizontally centered all its content
-* `<big>` increased the size of the text
-* `<strike>` rendered text with a strikethrough
+* `<fuente base>` define una fuente para un documento HTML completo
+* `<fuente>` define un tipo de letra, un color y un tamaño para el texto que contiene
+* `<centro>` centrado horizontalmente todo su contenido
+* `<grande>` aumenta el tamaño del texto
+* `<strike>` texto renderizado tachado
 
-Several HTML attributes could also be used:
+También se pueden utilizar varios atributos HTML:
 
-* `bgcolor` defined a background color on the element
-* `text` defined the text color
-* several `margin` attributes could be used to add space on any side of the element
+* `bgcolor` define un color de fondo en el elemento
+* `text` define the text color
+* Se pueden usar varios atributos de `margen` para agregar espacio en cualquier lado del elemento.
 
-### Why avoid tables
+### Por que evitar las mesas
 
-But most of all, in order to create columns, visually align elements, and generally position elements relatively to each other, Web developers used the `<table>` element to design their webpages because it naturally provided a visual **grid**:
+Pero sobre todo, para crear columnas, alinear elementos visualmente y, en general, colocar elementos entre sí, los desarrolladores web utilizaron el elemento `<table>` para diseñar sus páginas web porque, naturalmente, proporcionaba una **cuadrícula** visual:
 
 {% highlight html %}
 <table>
   <thead>
     <tr>
       <th>Logo</th>
-      <th colspan="2">Tagline</th>
+      <th colspan="2">linea de tag</th>
     </tr>
   </thead>
   <tfoot>
@@ -38,72 +38,72 @@ But most of all, in order to create columns, visually align elements, and genera
   </tfoot>
   <tbody>
     <tr>
-      <td>Left menu</td>
-      <td>Main content</td>
-      <td>Right sidebar</td>
+      <td>menu izquierdo</td>
+      <td>contenido principal</td>
+      <td>barra derecha</td>
     </tr>
   </tbody>
 </table>
 {% endhighlight %}
 
-This approach was cumbersome for several reasons:
+Este enfoque fue engorroso por varias razones:
 
-* HTML tables are **verbose**: they require a lot of boilerplate code
-* the markup was **semantically wrong**: tables should be used for multidimensional data
-* changing the layout required to change the markup: if we wanted to move the left column to the right, we had to **modify the HTML structure**
-* tables were prone to **syntax errors**: rows and cells need to be ordered and nested in a specific way to be valid
-* the markup was **unreadable**: tables were nested within tables to provide additional columns _within_ columns
+* Las tablas HTML son **detalladas**: requieren una gran cantidad de código estándar
+* el marcado era **semánticamente incorrecto**: las tablas deben usarse para datos multidimensionales
+* cambiar el diseño requerido para cambiar el marcado: si queríamos mover la columna izquierda a la derecha, teníamos que **modificar la estructura HTML**
+* las tablas eran propensas a **errores de sintaxis**: las filas y celdas deben ordenarse y anidarse de una manera específica para que sean válidas
+* el marcado era **ilegible**: las tablas estaban anidadas dentro de las tablas para proporcionar columnas adicionales _dentro_ de las columnas
 
-That is why using tables _for layout purposes_ was slowly abandoned, and CSS was used instead.
+Es por eso que el uso de tablas con _fines de diseño_ se abandonó lentamente y se utilizó CSS ​​en su lugar.
 
-### What CSS is
+### Que es CSS
 
-**CSS** stands for **C**ascading **S**tyle **S**heets. Its purpose is to _style_ markup languages (like HTML or XML). Therefore, CSS is worthless on its own, unless associated with an HTML document.
+**CSS** significa **C** ascading **S** tyle **S** heets. Su propósito es _estilar_ lenguajes de marcado (como HTML o XML). Por lo tanto, CSS no tiene valor por sí solo, a menos que esté asociado con un documento HTML.
 
-CSS brings an HTML document to **life**, by choosing fonts, applying colors, defining margins, positioning elements, animating interactions, and much more.
+CSS le da **vida** a un documento HTML, eligiendo fuentes, aplicando colores, definiendo márgenes, colocando elementos, animando interacciones y mucho más.
 
-### How CSS works
+### Como funciona CSS
 
-How CSS works is by **selecting** an HTML element (like a paragraph), choosing a **property** to alter (like the color), and applying a certain **value** (like red):
+El funcionamiento de CSS es **seleccionando** un elemento HTML (como un párrafo), eligiendo una **propiedad** para modificar (como el color) y aplicando un determinado **valor** (como el rojo):
 
 {% highlight css %}
 p{ color: red;}
 {% endhighlight %}
 
-The word _"Style"_ can be deceiving. You might think CSS is only used to change the text's color, size, and font. But CSS is able to define an HTML document's **layout**, by defining heights, widths, inner and outer margins, positions, columns...
+La palabra _"Estilo"_ puede engañar. Puede pensar que CSS solo se usa para cambiar el color, el tamaño y la fuente del texto. Pero CSS es capaz de definir el **diseño** de un documento HTML, definiendo alturas, anchos, márgenes internos y externos, posiciones, columnas ...
 {: .info}
 
-### Where do I write CSS?
+### Dónde escribo CSS?
 
-#### CSS as an attribute
+#### CSS como atributo
 
-You can write CSS directly on an HTML elements, by using the `style` attribute:
+Puede escribir CSS directamente en un elemento HTML, utilizando el atributo `style`:
 
 {% highlight html %}
-<p style="color: red;">This text is important.</p>
+<p style="color: red;">Este texto es importante</p>
 {% endhighlight %}
 
-#### CSS in the <head>
+#### CSS en el <head>
 
-You can use a `<style>` tag in the `<head>` of your HTML document:
+Puede usar una etiqueta `<style>` en el `<head>` de su documento HTML:
 
 {% highlight html %}
 <html>
   <head>
-    <title>Hello World</title>
+    <title>Hola Mundo</title>
     <style type="text/css">
       p{ color: red;}
     </style>
   </head>
   <body>
-    <p>This paragraph will be red.</p>
+    <p>Este párrafo es rojo</p>
   </body>
 </html>
 {% endhighlight %}
 
-#### CSS in a separate file
+#### CSS en archivo separado
 
-You can write your CSS in a separate file with a `.css` extension, and then link it to your HTML by using the `<link>` HTML tag.
+Puede escribir su CSS en un archivo separado con una extensión `.css`, y luego vincularlo a su HTML usando la etiqueta HTML` <link> `.
 
 {% highlight css %}
 p{ color: red;}
@@ -112,23 +112,23 @@ p{ color: red;}
 {% highlight html %}
 <html>
   <head>
-    <title>Hello World</title>
+    <title>Hola Mundo</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <p>This paragraph will be red.</p>
+    <p>Este párrafo es rojo</p>
   </body>
 </html>
 {% endhighlight %}
 
-It is the HTML document who "calls" the CSS file, in this case a file called `style.css` located in the same folder as the HTML file.
+Es el documento HTML el que "llama" al archivo CSS, en este caso un archivo llamado `style.css` ubicado en la misma carpeta que el archivo HTML.
 
-This **3rd method** of using a separate CSS file is **preferred**.
+Este **tercer método** de usar un archivo CSS separado es **preferido**.
 
-### Why not style directly in the HTML?
+### ¿Por qué no diseñar directamente en HTML?
 
-Because we want to separate the **content** (HTML) from its **presentation** (CSS).
+Porque queremos separar el **contenido** (HTML) de su **presentación** (CSS).
 
-If you want to visualize the purpose of this distinction, head towards the wonderful [CSS Zen Garden](https://www.csszengarden.com/): each design uses the _exact_ same HTML but a _different_ CSS each time.
+Si desea visualizar el propósito de esta distinción, diríjase hacia el maravilloso [CSS Zen Garden](https://www.csszengarden.com/): cada diseño usa el mismo HTML _exact_ pero un CSS _diferente_ cada vez.
 
-It makes **maintenance** easier as well: the same CSS file can be used for a whole website. It provides **flexiblity**: focus on the content on one side, the styling on the other. SEO purposes, different concerns.
+También facilita el **mantenimiento**: el mismo archivo CSS se puede utilizar para todo un sitio web. Proporciona **flexibilidad**: se centra en el contenido por un lado y el estilo por el otro. Fines de SEO, diferentes preocupaciones.
