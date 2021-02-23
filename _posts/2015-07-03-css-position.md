@@ -1,36 +1,37 @@
 ---
 layout: post
 title: "CSS <strong>position</strong>"
-subtitle: "Going manual"
+subtitle: "Yendo manual"
 section: css
 ---
 
-The CSS `position` property is versatile and powerful. It allows to _set_ or _alter_ an element's position. It has 4 possible **values**:
+La propiedad CSS `position` es versátil y poderosa. Permite _configurar_ o _alterar_ la posición de un elemento. Tiene 4 ** valores ** posibles:
 
 * `static` (default value)
 * `relative`
 * `absolute`
 * `fixed`
 
-It's often used alongside the 4 **coordinates** properties:
+
+A menudo se usa junto con las propiedades de 4 ** coordenadas **:
 
 * `left`
 * `right`
 * `top`
 * `bottom`
 
-### static
+### estática
 
-This is the **default** `position` value: static elements just follow the [natural flow](css-the-flow.html). They aren't affected by any `left`, `right`, `top` or `bottom` value.
+Este es el ** valor predeterminado ** de `posición`: los elementos estáticos simplemente siguen el [flujo natural] (css-the-flow.html). No se ven afectados por ningún valor de "izquierda", "derecha", "superior" o "inferior".
 
-### relative
+### relativo
 
-When the `position` is set to **relative**, an element can move according to its **current position**.
+Cuando la `posición` se establece en ** relativa **, un elemento se puede mover de acuerdo con su ** posición actual **.
 
 {% highlight html %}
-<p>Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
-<p>I imagine the slow-witted sithic, as Ja called him, suddenly realized our intentions and that he was quite likely to lose all his meal instead of having it doubled as he had hoped</p>
-<p>When he saw me clambering up that spear he let out a hiss that fairly shook the ground, and came charging after me at a terrific rate</p>
+<p>Bueno, Ja debería saber sus propios asuntos, pensé, así que agarré la lanza y trepé hacia el hombre rojo tan rápido como pude, estando tan lejos de mis ancestros simiescos como yo.</p>
+<p>Me imagino que el sithico torpe, como lo llamaba Ja, de repente se dio cuenta de nuestras intenciones y de que era muy probable que perdiera toda su comida en lugar de duplicarla como esperaba.</p>
+<p>Cuando me vio trepar por esa lanza, dejó escapar un silbido que sacudió el suelo y vino corriendo detrás de mí a un ritmo tremendo.</p>
 {% endhighlight %}
 
 {% highlight css %}
@@ -38,17 +39,17 @@ p{ border: 1px solid blue;}
 {% endhighlight %}
 
 <div class="result">
-  <p style="border: 1px solid blue;">Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
-  <p style="border: 1px solid blue;">I imagine the slow-witted sithic, as Ja called him, suddenly realized our intentions and that he was quite likely to lose all his meal instead of having it doubled as he had hoped</p>
-  <p style="border: 1px solid blue;">When he saw me clambering up that spear he let out a hiss that fairly shook the ground, and came charging after me at a terrific rate</p>
+  <p style="border: 1px solid blue;">Well, Ja debería saber sus propios asuntos, pensé, así que agarré la lanza y trepé hacia el hombre rojo tan rápido como pude, estando tan alejado de mis ancestros simiescos como yo.</p>
+  <p style="border: 1px solid blue;">Me imagino que el sithico torpe, como lo llamaba Ja, de repente se dio cuenta de nuestras intenciones y de que era muy probable que perdiera toda su comida en lugar de duplicarla como esperaba.</p>
+  <p style="border: 1px solid blue;">Cuando me vio trepar por esa lanza, dejó escapar un silbido que sacudió el suelo y se lanzó tras de mí a una velocidad tremenda.</p>
 </div>
 
-Let's move the **second** paragraph:
+Muevamos el ** segundo ** párrafo:
 
 {% highlight html %}
-<p>Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
-<p class="second">I imagine the slow-witted sithic, as Ja called him, suddenly realized our intentions and that he was quite likely to lose all his meal instead of having it doubled as he had hoped</p>
-<p>When he saw me clambering up that spear he let out a hiss that fairly shook the ground, and came charging after me at a terrific rate</p>
+<p>Bueno, Ja debería saber sus propios asuntos, pensé, así que agarré la lanza y trepé hacia el hombre rojo tan rápido como pude, estando tan lejos de mis ancestros simiescos como yo.</p>
+<p class="second">Me imagino que el sithico torpe, como lo llamaba Ja, de repente se dio cuenta de nuestras intenciones y de que era muy probable que perdiera toda su comida en lugar de duplicarla como había esperado </p>
+<p> Cuando me vio trepar por la lanza, dejó escapar un silbido que hizo temblar el suelo y se lanzó tras de mí a una velocidad tremenda </p>
 {% endhighlight %}
 
 {% highlight css %}
@@ -56,32 +57,33 @@ Let's move the **second** paragraph:
 {% endhighlight %}
 
 <div class="result">
-  <p style="border: 1px solid blue;">Well, Ja should know his own business, I thought, and so I grasped the spear and clambered up toward the red man as rapidly as I could - being so far removed from my simian ancestors as I am</p>
-  <p style="border: 1px solid red; position: relative; left: 20px; top: 10px;">I imagine the slow-witted sithic, as Ja called him, suddenly realized our intentions and that he was quite likely to lose all his meal instead of having it doubled as he had hoped</p>
-  <p style="border: 1px solid blue;">When he saw me clambering up that spear he let out a hiss that fairly shook the ground, and came charging after me at a terrific rate</p>
+  <p style="border: 1px solid blue;">Bueno, Ja debería saber sus propios asuntos, pensé, así que agarré la lanza y trepé hacia el hombre rojo tan rápido como pude, estando tan alejado de mis ancestros simiescos como yo. </p>
+  <p style="border: 1px solid red; position: relative; left: 20px; top: 10px;">Me imagino que el sithico torpe, como lo llamaba Ja, de repente se dio cuenta de nuestras intenciones y de que era muy probable que perdiera toda su comida en lugar de duplicarla como había esperado </p>
+  <p style="border: 1px solid blue;">Cuando me vio trepar por esa lanza, dejó escapar un silbido que sacudió el suelo y se lanzó tras de mí a una velocidad tremenda.</p>
 </div>
 
-The red paragraph has moved 20px **from the left** and 10px **from the top**, relative to its _natural_ position, where it's _supposed_ to be.
+El párrafo rojo se ha movido 20px ** desde la izquierda ** y 10px ** desde la parte superior **, en relación con su posición _natural_, donde se _supuesta_ debe estar.
 
-Notice how the blue paragraphs haven't moved at all. By using relative positioning, the red paragraph can freely move without disrupting the layout. The only thing out of place is _itself_. All the other elements **don't know that element has moved**.
+Observe cómo los párrafos azules no se han movido en absoluto. Al usar el posicionamiento relativo, el párrafo rojo puede moverse libremente sin interrumpir el diseño. Lo único fuera de lugar es _el mismo_. Todos los demás elementos ** no saben que el elemento se ha movido **.
 
-### absolute
+### absoluto
 
-When the `position` is set to **absolute**, an element can move according to the **first positioned ancestor**.
+Cuando la `posición` se establece en ** absoluta **, un elemento puede moverse de acuerdo con el ** primer ancestro posicionado **.
 
-#### "Positioned?? What is a _positioned_ element?"
+#### "¿Posicionado ?? ¿Qué es un elemento _posicionado_?"
 
-A **positioned** element is one whose `position` value is either `relative`, `absolute` or `fixed`. So unless the position is not set _or_ static, an element is **positioned**.
+Un elemento ** posicionado ** es aquel cuyo valor de "posición" es "relativo", "absoluto" o "fijo". Entonces, a menos que la posición no esté establecida _o_ estática, un elemento está ** posicionado **.
 
-The characteristic of a _positioned_ element is that it can act as a **reference point for its child elements**.
+La característica de un elemento _positioned_ es que puede actuar como ** punto de referencia para sus elementos secundarios **.
 
-Let's imagine a simple **hierarchy**:
+Imaginemos una ** jerarquía ** simple:
+
 
 {% highlight html %}
 <section>
-  I'm in position relative.
+ Estoy en posición relativa.
   <p>
-    I'm in position absolute!
+    ¡Estoy en posición absoluta!
   </p>
 </section>
 {% endhighlight %}
@@ -91,7 +93,7 @@ section {
   background: gold;
   height: 200px;
   padding: 10px;
-  position: relative; /* This turns the <section> into a point of reference for the <p> */
+  position: relative; /* Esto convierte la <section> en un punto de referencia para el<p> */
 }
 
 p {
@@ -106,25 +108,27 @@ p {
 
 <div class="result">
   <section style="background: gold; height: 200px; margin: 1em 0; padding: 10px; position: relative;">
-    I'm in position relative.
+    
+Estoy en posición relativa.
     <p style="background: limegreen; bottom: 10px; color: white; left: 20px; margin: 0; padding: 10px; position: absolute;">
-      I'm in position absolute!
+      
+¡Estoy en posición absoluta!
     </p>
   </section>
 </div>
 
-The yellow section has a height of `200px` and its position set to `relative`, which turns it into a **point of reference for all my child elements**.
+La sección amarilla tiene una altura de "200px" y su posición se establece en "relativa", lo que la convierte en un ** punto de referencia para todos mis elementos secundarios **.
 
-As the green paragraph's position is set to `absolute`, it can freely move _according to_ the yellow section. By setting both `bottom` and `left` values, it will move _from_ the bottom left corner.
+Como la posición del párrafo verde se establece en "absoluta", puede moverse libremente _ de acuerdo con_ la sección amarilla. Al establecer los valores `bottom` e` left`, se moverá _desde_ la esquina inferior izquierda.
 
-#### What happens if we set both left AND right?
+#### ¿Qué sucede si configuramos tanto a la izquierda como a la derecha?
 
-If the `width` is not set, applying `left: 0` and `right: 0` will **stretch the element across the whole width**. It's the equivalent of setting `left: 0` and `width: 100%`.
+Si no se establece el `ancho`, aplicar` left: 0` y `right: 0` ** estirará el elemento en todo el ancho **. Es el equivalente a establecer `left: 0` y` width: 100% `.
 
-If the `width` is set, then the `right` value is discarded.
+Si se establece el "ancho", se descarta el valor "derecho".
 
-### fixed
+### reparado
 
-When the `position` is set to **fixed**, it acts like **absolute**: you can set left/right and top/bottom coordinates.
+Cuando la `posición` se establece en ** fija **, actúa como ** absoluta **: puede establecer las coordenadas izquierda / derecha y superior / inferior.
 
-The only difference is that the **point of reference is the viewport**. It means that a fixed element _won't scroll_ with the page ; it is _fixed_ on the screen.
+La única diferencia es que el ** punto de referencia es la ventana gráfica **. Significa que un elemento fijo _no se desplazará_ con la página; está _fijada_ en la pantalla.
