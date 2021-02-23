@@ -1,45 +1,45 @@
 ---
 layout: post
 title: "CSS <strong>animations</strong>"
-subtitle: "A set sequence of CSS rules"
+subtitle: "Una secuencia determinada de reglas CSS"
 section: css
 ---
 
-We've just seen how CSS **transitions** are just a way to **animate** CSS properties between a _starting_ state, and an _end_ state.
+Acabamos de ver cómo las ** transiciones ** de CSS son solo una forma de ** animar ** las propiedades de CSS entre un estado _starting_ y un estado _end_.
 
-So CSS transitions are _specific_ kind of animations, where:
+Entonces, las transiciones CSS son animaciones de tipo _específico_, donde:
 
-* there's only 2 states: start and end
-* the animation doesn't loop
-* the intermediate states are only controlled by the timing function
+* solo hay 2 estados: inicio y final
+* la animación no se repite
+* los estados intermedios solo están controlados por la función de temporización
 
-Well what if you want:
+Bueno, ¿y si quieres?
 
-* to have control over the **intermediate** states?
-* to make an animation **loop**?
-* different animations on the _same_ element?
-* to animate a specific property only **halfway** through the animation?
-* to simulate **different timing functions** for different properties?
+* tener control sobre los ** estados intermedios **?
+* para hacer una animación ** bucle **?
+* diferentes animaciones en el _mismo_ elemento?
+* ¿animar una propiedad específica solo ** a la mitad ** de la animación?
+* para simular ** diferentes funciones de temporización ** para diferentes propiedades?
 
-CSS animations allow all of this, and more.
+Las animaciones CSS permiten todo esto y más.
 
-**CSS animations are like mini movies where you are the director giving out instructions (CSS rules) to your actors (HTML elements) for different scenes (keyframes).**
+** Las animaciones CSS son como mini películas en las que tú eres el director dando instrucciones (reglas CSS) a tus actores (elementos HTML) para diferentes escenas (fotogramas clave). **
 
-### Animation properties
+### Propiedades de animación
 
-Like the `transition` property, `animation` is a **shorthand** property for several others:
+Al igual que la propiedad `transición`,` animación` es una propiedad ** abreviada ** para varias otras:
 
-* **name**: the animation's name
-* **duration**: how long the transition lasts
-* **timing-function**: how the intermediate states are calculated
-* **delay**: to start the animation after a certain amount of time
-* **iteration-count**: how many times the animation should be performed
-* **direction**: if the animation should be reversed or not
-* **fill-mode**: what styles are applied before the animation starts and after it ends
+* ** nombre **: el nombre de la animación
+* ** duración **: cuánto dura la transición
+* ** función de temporización **: cómo se calculan los estados intermedios
+* ** retraso **: para iniciar la animación después de un cierto período de tiempo
+* ** iteration-count **: cuántas veces se debe realizar la animación
+* ** dirección **: si la animación debe invertirse o no
+* ** modo de relleno **: qué estilos se aplican antes de que comience la animación y después de que finalice
 
-### Quick example
+### Ejemplo rápido
 
-To animate a loading button, you could write a **bouncing** animation:
+Para animar un botón de carga, puede escribir una animación ** rebotando **:
 
 {% highlight css %}
 @keyframes bouncing{
@@ -54,34 +54,34 @@ To animate a loading button, you could write a **bouncing** animation:
   <a>Loading</a>
 </div>
 
-You first need to write the actual bouncing animation using **keyframes** and name it `bouncing`. _Then_ you can use that animation by applying it to `.loading-button`.
+Primero debe escribir la animación de rebote real usando ** fotogramas clave ** y nombrarla `rebote '. _Entonces_ puedes usar esa animación aplicándola a `.loading-button`.
 
-I used the **shorthand** `animation` property, and included all options:
+Usé la propiedad ** shorthand ** `animation` e incluí todas las opciones:
 
-* **name**: bouncing _(matches the keyframes name)_
-* **duration**: 0.5s _(half a second)_
-* **timing-function**: [cubic-bezier(0.1,0.25,0.1,1)](https://cubic-bezier.com/#.1,.25,.1,1)
-* **delay**: 0s _(no delay)_
-* **iteration-count**: infinite _(plays indefinitely)_
-* **direction**: alternate _(goes back and forth)_
-* **fill-mode**: both
+* ** nombre **: rebotando _ (coincide con el nombre de los fotogramas clave) _
+* ** duración **: 0.5s _ (medio segundo) _
+* ** función de sincronización **: [cubic-bezier (0.1,0.25,0.1,1)] (https://cubic-bezier.com/#.1,.25,.1,1)
+* ** retraso **: 0 s _ (sin retraso) _
+* ** iteration-count **: infinito _ (se reproduce indefinidamente) _
+* ** dirección **: alterno _ (va hacia adelante y hacia atrás) _
+* ** modo de relleno **: ambos
 
 ### @keyframes
 
-Before applying animations to HTML elements, you need to **write animations using keyframes**. Basically, keyframes are each **intermediate step** in an animation. They are defined using **percentages**:
+Antes de aplicar animaciones a elementos HTML, es necesario ** escribir animaciones utilizando fotogramas clave **. Básicamente, los fotogramas clave son cada ** paso intermedio ** en una animación. Se definen mediante ** porcentajes **:
 
 * `0%` is the first step of the animation
 * `50%` is the step halfway through the animation
 * `100%` is the last step
 
-You can also use the keywords `from` and `to` instead of `0%` and `100%` respectively.
+También puede utilizar las palabras clave "from" y "to" en lugar de "0%" y "100%" respectivamente.
 {: .info}
 
-You can define _as many keyframes as you want_, like `33%`, `4%` or even `29.86%`. In practice, you'll only write a few.
+Puede definir _ tantos fotogramas clave como desee_, como "33%", "4%" o incluso "29,86%". En la práctica, solo escribirás unos pocos.
 
-Each keyframe is **CSS rule**, meaning that you can write CSS properties just like usual.
+Cada fotograma clave es ** regla CSS **, lo que significa que puede escribir propiedades CSS como de costumbre.
 
-To define an animation, just write the keyword `@keyframes` followed by its **name**:
+Para definir una animación, simplemente escriba la palabra clave `@ keyframes` seguida de su ** nombre **:
 
 {% highlight css %}
 @keyframes around {
@@ -98,14 +98,14 @@ p{ animation: around 4s linear infinite;}
   <p>Hello</p>
 </div>
 
-Notice how the start `0%` and the end `100%` have the **same CSS rules**. This ensures that the animation loops perfectly. Because the iteration count is set to `infinite`, the animation will go from `0%` to `100%`, and then _back to_ `0%` instantly and indefinitely.
+Observe cómo el inicio "0%" y el final "100%" tienen las ** mismas reglas CSS **. Esto asegura que la animación se repita perfectamente. Debido a que el recuento de iteraciones se establece en "infinito", la animación pasará de "0%" a "100%", y luego _volverá a_ "0%" de forma instantánea e indefinida.
 
-### animation-name
+### nombre-animación
 
-The animation's **name** is used at least **twice**:
+El ** nombre ** de la animación se usa al menos ** dos veces **:
 
-* when **writing** the animation using `@keyframes`
-* when **using** the animation using the `animation-name` property (or with the `animation` shorthand)
+* al ** escribir ** la animación usando `@ keyframes`
+* cuando ** se usa ** la animación usando la propiedad `animation-name` (o con la abreviatura` animation`)
 
 {% highlight css %}
 @keyframes whatever{
@@ -115,45 +115,44 @@ The animation's **name** is used at least **twice**:
 .selector{ animation-name: whatever;}
 {% endhighlight %}
 
-Like CSS class names, animation names can only include:
+Al igual que los nombres de las clases CSS, los nombres de las animaciones solo pueden incluir:
 
-* letters (a-z)
-* numbers (0-9)
-* underscores (_)
-* dashes (-)
+* letras (a-z)
+* números (0-9)
+* guiones bajos (_)
+* guiones (-)
 
-It can not start with a number or two dashes.
+No puede comenzar con un número o dos guiones.
 
-### animation-duration
+### duración de la animación
 
-Just like [transition durations](/css-transitions.html#transition-duration), animation durations can be set in **seconds** `1s` or **milliseconds** `200ms`.
-
+Al igual que las [duraciones de transición] (/ css-transitions.html # transición-duración), las duraciones de la animación se pueden establecer en ** segundos ** `1 s` o ** milisegundos **` 200 ms`.
 {% highlight css %}
 .selector{ animation-duration: 0.5s;}
 {% endhighlight %}
 
-It defaults to `0s`, which means no animation at all.
+El valor predeterminado es "0", lo que significa que no hay animación en absoluto.
 
-### animation-timing-function
+### función de temporización de animación
 
-Just like [transition timing functions](/css-transitions.html#transition-timing-function), animation timing functions can use **keywords** like `linear`, `ease-out`, or be defined using custom **cubic bezier** functions.
+Al igual que las [funciones de tiempo de transición] (/ css-transitions.html # función de tiempo de transición), las funciones de tiempo de animación pueden usar ** palabras clave ** como `linear`,` easy-out`, o definirse usando custom ** funciones bezier ** cúbicas.
 
 {% highlight css %}
 .selector{ animation-timing-function: ease-in-out;}
 {% endhighlight %}
 
-It defaults to `ease`.
+Su valor predeterminado es "facilidad".
 
-Because CSS animations use keyframes, you can set a **linear** timing function and **simulate** a specific cubic bezier curve by defining a _lot_ of _very specific_ keyframes. Check out [Bounce.js](https://bouncejs.com/) to generate advanced animations.
+Debido a que las animaciones CSS utilizan fotogramas clave, puede establecer una función de tiempo ** lineal ** y ** simular ** una curva Bézier cúbica específica definiendo un _ lote_ de _ fotogramas clave _muy específicos_. Consulte [Bounce.js] (https://bouncejs.com/) para generar animaciones avanzadas.
 {: .info}
 
-### animation-delay
+### retardo de animación
 
-Just like [transition delays](/css-transitions.html#transition-delay), animation delays can be set in **seconds** `1s` or **milliseconds** `200ms`.
+Al igual que las [demoras de transición] (/ css-transitions.html # transición-demora), las demoras de la animación se pueden configurar en ** segundos ** `1s` o ** milisegundos **` 200ms`.
 
-It defaults to `0s`, which means no delay at all.
+El valor predeterminado es "0", lo que significa que no hay ningún retraso.
 
-It's useful when triggering multiple animations **in sequence**.
+Es útil para activar múltiples animaciones ** en secuencia **.
 
 {% highlight css %}
 .a,.b,.c{ animation: bouncing 1s;}
@@ -161,28 +160,28 @@ It's useful when triggering multiple animations **in sequence**.
 .c{ animation-delay: 0.5s;}
 {% endhighlight %}
 
-### animation-iteration-count
+### recuento de iteraciones de animación
 
-By default, animations are only played **once** (value of `1`). You can set 3 types of values:
+De forma predeterminada, las animaciones solo se reproducen ** una vez ** (valor de `1`). Puede establecer 3 tipos de valores:
 
-* **integers** like `2` or `3`
-* **non-integers** like `0.5` which will play only half the animation
-* the **keyword** `infinite` which will repeat the animation indefinitely
+* ** enteros ** como `2` o` 3`
+* ** no enteros ** como `0.5` que reproducirá solo la mitad de la animación
+* la ** palabra clave ** `infinito` que repetirá la animación indefinidamente
 
 {% highlight css %}
 .selector{ animation-iteration-count: infinite;}
 {% endhighlight %}
 
-### animation-direction
+### dirección de animación
 
-The animation's **direction** defines _in which order_ the keyframes are read.
+La ** dirección ** de la animación define _en qué orden_ se leen los fotogramas clave.
 
-* **normal**: starts at `0%`, ends at `100%`, starts at `0%` again
-* **reverse**: starts at `100%`, ends at `0%`, starts at `100%` again
-* **alternate**: starts at `0%`, goes to `100%`, goes to `0%`
-* **alternate-reverse**: starts at `100%`, goes to `0%`, goes to `100%`
+* ** normal **: comienza en "0%", termina en "100%", comienza en "0%" nuevamente
+* ** reverso **: comienza en `100%`, termina en `0%`, comienza en `100%` nuevamente
+* ** alternativo **: comienza en `0%`, pasa a `100%`, pasa a `0%`
+* ** alternativo-inverso **: comienza en `100%`, pasa a `0%`, pasa a `100%`
 
-It's easier to visualise if the animation's iteration count is set to `infinite`.
+Es más fácil de visualizar si el recuento de iteraciones de la animación se establece en "infinito".
 
 <div class="result" id="result-3">
   <p><strong>Normal</strong>: 0% --> 100%</p>
@@ -195,20 +194,19 @@ It's easier to visualise if the animation's iteration count is set to `infinite`
   <div class="alternate-reverse"><div></div></div>
 </div>
 
-### animation-fill-mode
+### modo de relleno de animación
 
-An animation's **fill mode** defines what happens _before_ the animation starts and _after_ it ends.
+El ** modo de relleno ** de una animación define lo que sucede _antes_ que comience la animación y _después_ de que finalice.
 
-When you define **keyframes** you define **CSS rules** to be applied at different steps of the animation. Now, these CSS rules can _clash_ with the ones _already applied_ on the elements being animated.
+Cuando define ** fotogramas clave **, define ** reglas CSS ** que se aplicarán en los diferentes pasos de la animación. Ahora, estas reglas CSS pueden _ chocar_ con las que ya se han aplicado en los elementos que se están animando.
 
-The fill mode allows to tell the browser if the _animation's styles_ should **also** be applied **outside of the animation**.
+El modo de relleno permite decirle al navegador si los _estilos de animación_ deben ** también ** aplicarse ** fuera de la animación **.
 
-Let's imagine a **button** that is:
+Imaginemos un ** botón ** que es:
 
-* **red** by default
-* turns **blue** at the start of the animation
-* ends up **green** when the animation is over
-
+* ** rojo ** por defecto
+* se vuelve ** azul ** al comienzo de la animación
+* termina ** verde ** cuando termina la animación
 <div class="table">
   <table>
     <tr>
@@ -255,28 +253,28 @@ Let's imagine a **button** that is:
     <span><strong>2.</strong> During the animation</span>
     <span><strong>3.</strong> After the animation</span>
   </p>
-  <p><strong>None</strong>: the animation styles do not affect the default style</p>
+  <p><strong>None</strong>: los estilos de animación no afectan el estilo predeterminado</p>
   <p>
     <span>Default red</span>
     <span>From blue to green</span>
     <span>Back to red again</span>
   </p>
   <div class="none"><div></div></div>
-  <p><strong>Forwards</strong>: the last styles applied at the end of the animation are retained afterwards</p>
+  <p><strong>Forwards</strong>: los últimos estilos aplicados al final de la animación se conservan posteriormente</p>
   <p>
-    <span>Default red</span>
-    <span>From blue to green</span>
-    <span>Remains green</span>
+    <span>Rojo predeterminado</span>
+    <span>De azul a verde</span>
+    <span>Permanece verde</span>
   </p>
   <div class="forwards"><div></div></div>
-  <p><strong>Backwards</strong>: the animation's styles will already be applied before the animation actually starts</p>
+  <p><strong>Hacia atrás</strong>: Los estilos de la animación ya se aplicarán antes de que comience la animación.</p>
   <p>
-    <span>Already blue</span>
-    <span>From blue to green</span>
-    <span>Back to red again</span>
+    <span>Ya azul</span>
+    <span>De azul a verde</span>
+    <span>De vuelta al rojo otra vez</span>
   </p>
-  <div class="backwards"><div></div></div>
-  <p><strong>Both</strong>: the styles are applied before and after the animation plays</p>
+  <div class="hacia atrás"><div></div></div>
+  <p><strong>Both</strong>:los estilos se aplican antes y después de que se reproduzca la animación</p>
   <p>
     <span>Already blue</span>
     <span>From blue to green</span>
