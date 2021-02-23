@@ -1,68 +1,68 @@
 ---
 layout: post
-title: "<strong>Sass</strong> vs <strong>SCSS</strong> vs <strong>Less</strong>"
-subtitle: "The Sass way"
+title: "<strong>Sass</strong> frente a <strong>SCSS</strong> frente a <strong>Less</strong>"
+subtitle: "El camino de Sass"
 section: sass
 ---
 
-There are 2 CSS preprocessors to choose from:
+Hay 2 preprocesadores CSS para elegir:
 
 * **Less** [https://lesscss.org/](https://lesscss.org)
 * **Sass** [https://sass-lang.com/](https://sass-lang.com)
 
-They both have been around for several years. We're going to use **Sass**.
+Ambos han existido durante varios años. Usaremos **Sass**.
 
 ### Sass vs SCSS
 
-Sass has 2 **syntaxes** available:
+Sass tiene 2 **sintaxis** disponibles:
 
-* **Sass** itself (Syntactically Awesome StyleSheets) in `.sass` files
-* **SCSS** (Sassy CSS) in `.scss` files, which is something halfway between regular CSS and Sass
+* **Sass** en sí mismo (Hojas de estilo sintácticamente impresionantes) en archivos `.sass`.
+* **SCSS** (Sassy CSS) en archivos `.scss`, que es algo a medio camino entre CSS normal y Sass.
 
-The difference between Sass and SCSS is [quite subtle](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#syntax).
+La diferencia entre Sass y SCSS es [bastante sutil](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#syntax).
 
-Remember that:
+Recuérdalo:
 
-* Sass is the name of the preprocessor
-* SCSS is easier to learn
-* all resources on the internet (like [The Sass Way](https://thesassway.com/)) mention Sass, not SCSS
-* all features are available for both syntaxes
-* everything in SCSS is available in Sass
+* Sass es el nombre del preprocesador
+* SCSS es más fácil de aprender
+* todos los recursos en Internet (como [The Sass Way](https://thesassway.com/)) mencionar Sass, no SCSS
+* todas las funciones están disponibles para ambas sintaxis
+* todo en SCSS está disponible en Sass
 
-We're actually going to write **SCSS** but still call it **Sass**.
+De hecho, vamos a escribir **SCSS** pero aún así lo llamaremos **Sass**.
 
-### Why SCSS first
+### Por qué SCSS primero
 
-We're gonna use **SCSS** for a few reasons:
+Usaremos ** SCSS ** por algunas razones:
 
-* **readibility**: the syntax is very similar to CSS
-* **learning curve**: it only adds a few additional features on top of CSS
-* **compatibility**; a CSS file is a valid SCSS file
-* **resources**: lots of online articles to read and open source libraries to use
-* **expandibility**: it's easy to go from SCSS to Sass
+* **legibilidad**: la sintaxis es muy similar a CSS
+* **curva de aprendizaje**: solo agrega algunas características adicionales además de CSS
+* **compatibilidad**; un archivo CSS es un archivo SCSS válido
+* **recursos**: muchos artículos en línea para leer y bibliotecas de código abierto para usar
+* **expandibilidad**: es fácil pasar de SCSS a Sass
 
-### Features
+### Características
 
-What Sass provides[^1] is:
+Lo que ofrece Sass [^ 1] es:
 
-* **variables**: instead of repeating `#fce473` throughout your CSS file, just set `$yellow: #fce473` once
-* **nesting**: CSS rules can be nested within each other
-* **mixins**: custom functions that can accept parameters and will prevent useless repetitions
-* **extensions**: an easy way to inherit the same properties of another selector
-* **operators**: adding/substracting/multiplying/dividing values, like `960px / 4` or `$space * 2`
+* ** variables **: en lugar de repetir `#fce473` en todo su archivo CSS, simplemente configure` $yellow: # fce473` una vez
+* **anidamiento**: las reglas CSS se pueden anidar entre sí
+* **mixins**: funciones personalizadas que pueden aceptar parámetros y evitarán repeticiones inútiles
+* **extensiones**: una forma fácil de heredar las mismas propiedades de otro selector
+* **operadores**: sumar / restar / multiplicar / dividir valores, como `960px / 4` o` $ espacio * 2`
 
-### DRY code
+### Código DRY
 
-Everything about Sass is to provide tools to **prevent repeating yourself** in your code: it's the [DRY principle](https://en.wikipedia.org/wiki/Don't_repeat_yourself), which stands for _Don't repeat yourself_.
+Todo en Sass es proporcionar herramientas para ** evitar que se repita ** en su código: es el [principio DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself), que significa _No te repitas_.
 
-* **variables** prevents repeating _values_
-* **nesting** prevents repeating _selectors_
-* **mixins** and **extensions** prevent repeating _properties_
+* **variables** evita la repetición de _valores_
+* **anidamiento** evita la repetición de _selectores_
+* **mixins** y **extensiones** evitan la repetición de _propiedades_
 
-### Installing Sass
+### Instalando Sass
 
-Head towards [https://sass-lang.com/install](https://sass-lang.com/install) to install Sass on your computer.
+Dirigirse hacia [https://sass-lang.com/install](https://sass-lang.com/install) para instalar Sass en su computadora.
 
-[^1]: and any CSS preprocessor for that matter, but I'll refer to Sass only from now on.
+[^1]: y cualquier preprocesador CSS para el caso, pero me referiré a Sass solo de ahora en adelante.
 
 
