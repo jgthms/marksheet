@@ -1,68 +1,67 @@
 ---
-layout: post
-title: "CSS <strong>font properties</strong>"
-subtitle: "For <strong>bold</strong> and <em>italic</em> text"
-section: css
+diseño: poste
+título: "CSS <strong> propiedades de fuente </strong>"
+subtítulo: "Para texto en <strong> negrita </strong> y <em> cursiva </em>"
+sección: css
 ---
 
-### font-size
+### tamaño de fuente
 
-We've already covered **[CSS size units](/css-size-units.html)**, which are used to set the font size among other things.
+Ya hemos cubierto ** [unidades de tamaño CSS] (/ css-size-units.html) **, que se utilizan para establecer el tamaño de fuente, entre otras cosas.
 
-{% highlight css %}
-p{ font-size: 16px;}
-{% endhighlight %}
+{% highlight css%}
+p {tamaño de fuente: 16px;}
+{% endhighlight%}
 
-Bear in mind that setting a font size of `16px` won't make each letter `16px` high. The _actual_ size of each letter depends on the font-family used.
+Tenga en cuenta que establecer un tamaño de fuente de `16px` no hará que cada letra tenga una altura de` 16px`. El tamaño _actual_ de cada letra depende de la familia de fuentes utilizada.
 
-### font-style
+### Estilo de fuente
 
-This property can make your text _italic_:
+Esta propiedad puede hacer que su texto sea _italico_:
 
-{% highlight css %}
-h2{ font-style: italic;}
-{% endhighlight %}
+{% highlight css%}
+h2 {estilo de fuente: cursiva;}
+{% endhighlight%}
 
-Default value: `font-style: normal;`.
+Valor predeterminado: `font-style: normal;`.
 
-Another possible value is `oblique` but is never used.
+Otro valor posible es "oblicuo", pero nunca se utiliza.
 
-### font-weight
+### peso de la fuente
+Esta propiedad puede hacer que su texto sea ** negrita **:
 
-This property can make your text **bold**:
+{% highlight css%}
+h2 {font-weight: bold;}
+{% endhighlight%}
 
-{% highlight css %}
-h2{ font-weight: bold;}
-{% endhighlight %}
+Valor predeterminado: `font-weight: normal;`.
 
-Default value: `font-weight: normal;`.
+Dependiendo de la `familia de fuentes` utilizada, hay un rango de pesos de fuente disponibles, desde` 100` a `900`:
 
-Depending on the `font-family` used, there is a range of font weights available, from `100` to `900`:
+{% highlight css%}
+peso de fuente: 100; /* Delgado */
+peso de fuente: 200; /* Extra ligero */
+peso de fuente: 300; /* Ligero */
+peso de fuente: 400; / * Que es como font-weight: normal; * /
+peso de fuente: 500; /* Medio */
+peso de fuente: 600; / * Semi Negrita * /
+peso de fuente: 700; / * Que es como font-weight: bold; * /
+peso de fuente: 800; / * Extra Bold * /
+peso de fuente: 900; / * Ultra audaz * /
+{% endhighlight%}
 
-{% highlight css %}
-font-weight: 100; /* Thin */
-font-weight: 200; /* Extra Light */
-font-weight: 300; /* Light */
-font-weight: 400; /* Which is like font-weight: normal; */
-font-weight: 500; /* Medium */
-font-weight: 600; /* Semi Bold */
-font-weight: 700; /* Which is like font-weight: bold; */
-font-weight: 800; /* Extra Bold */
-font-weight: 900; /* Ultra Bold */
-{% endhighlight %}
+Muy pocas fuentes proporcionan los 9 pesos. La [fuente Exo] (https://www.google.com/fonts/specimen/Exo) es una de ellas.
 
-Very few fonts provide all 9 weights. The [Exo font](https://www.google.com/fonts/specimen/Exo) is one of them.
+En su mayoría, encontrará 400 (normal) y 700 (negrita) y, a veces, 300 (claro) y 500 (medio).
 
-You'll mostly find 400 (normal) and 700 (bold), and sometimes 300 (light) and 500 (medium).
+### variante de fuente
 
-### font-variant
+Esta propiedad convierte su texto en versalitas:
 
-This property turn your text into small caps:
+{% highlight css%}
+h2 {variante de fuente: versalitas;}
+{% endhighlight%}
 
-{% highlight css %}
-h2{ font-variant: small-caps;}
-{% endhighlight %}
+Valor predeterminado: `font-variant: normal;`.
 
-Default value: `font-variant: normal;`.
-
-It's not a widely used property.
+No es una propiedad muy utilizada.
