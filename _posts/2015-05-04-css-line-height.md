@@ -5,42 +5,42 @@ subtitle: "For <strong>readibility</strong> concerns"
 section: css
 ---
 
-The `line-height` property, when applied to block-level element, defines, as its name literally suggests, the **height of each line**. It is **not** to be confused with the line spacing (a.k.a "leading") found in most graphical softwares (like Photoshop) which determines the amount of space _between_ lines in a paragraph. Although they both carry the same purpose (spacing lines of text), they do so in different ways.
+El `line-height` La propiedad, cuando se aplica a un elemento a nivel de bloque, define, como su nombre sugiere literalmente, la **altura de cada línea**. **No** debe confundirse con el interlineado (también conocido como "interlineado") que se encuentra en la mayoría de los softwares gráficos (como Photoshop) que determina la cantidad de espacio _entre_ líneas en un párrafo. Aunque ambos tienen el mismo propósito (espaciar líneas de texto), lo hacen de diferentes maneras.
 
-The `line-height` property uses the following units:
+El `line-height` propiedad utiliza las siguientes unidades:
 
 * `px`
 * `em`
 * `%`
-* unitless numbers, like `1.5`
+* números sin unidades, como `1.5`
 
-The unitless values basically act like percentages. So `150%` is equal to `1.5`. The latter is just more compact and readable.
+Los valores sin unidades actúan básicamente como porcentajes. Asi que `150%` es igual que `1.5`. Este último es más compacto y legible.
 
-### Why line-height is important
+### Por qué es importante la altura de la línea
 
-The purpose of the `line-height` is to define a readable line spacing for your text. Because readibility is dependent upon the size of the text, it is recommended to use a **dynamic** value that is relative to the size of the text. Using `px` is therefore not recommended because it defines a **static** value.
+El propósito de `line-height` es definir un interlineado legible para su texto. Como la legibilidad depende del tamaño del texto, se recomienda utilizar un valor ** dinámico ** que sea relativo al tamaño del texto. Usando `px` por lo tanto, no se recomienda porque define un valor **estático**.
 
-In some cases, using `px` does come in handy (when you wish to vertically align text according to another element and not according to the font size).
+En algunos casos, usar `px` es útil (cuando desea alinear el texto verticalmente según otro elemento y no según el tamaño de fuente).
 {: .info}
 
-Because using `%` or `em` values can have unexpected values, the recommended method is **unitless numbers**:
+Porque usando `%` o `em` Los valores pueden tener valores inesperados, el método recomendado es **números sin unidad**:
 
-* for body text, a line height of 1.5 times the size of the text is recommended.
-* for headings, a line height of 1.2 is recommended
+* para el cuerpo del texto, se recomienda una altura de línea de 1,5 veces el tamaño del texto.
+* para los títulos, se recomienda una altura de línea de 1,2
 
 {% highlight css %}
 body{ font-size: 16px; line-height: 1.5;}
 {% endhighlight %}
 
-The computed line height will thus be 16 * 1.5 = `24px`.
+La altura de la línea calculada será, por tanto, 16 * 1,5 = `24px`.
 
-### Line-height inheritance
+### Herencia de altura de línea
 
-Because the `line-height` property is inherited by the child elements, it will remain consistent no matter what `font-size` is subsequently applied.
+Porque `line-height` la propiedad es heredada por los elementos secundarios, permanecerá consistente sin importar lo `font-size` se aplica posteriormente.
 
 {% highlight css %}
 body{ font-size: 16px; line-height: 1.5;}
 blockquote{ font-size: 18px;}
 {% endhighlight %}
 
-The `blockquote` element will have a line height of `27px`.
+Los `blockquote` el elemento tendrá una altura de línea de `27px`.
