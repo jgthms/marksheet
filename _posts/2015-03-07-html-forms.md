@@ -452,27 +452,27 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
     </p>
     <p>
       <label>First name</label>
-      <input type="text">
+      <input type="text" name="first-name">
     </p>
     <p>
       <label>Last name</label>
-      <input type="text">
+      <input type="text" name="last-name">
     </p>
     <p>
       <label>Email</label>
-      <input type="email">
+      <input type="email" name="email">
     </p>
     <p>
       <label>Phone number</label>
-      <input type="tel">
+      <input type="tel" name="phone">
     </p>
     <p>
       <label>Password</label>
-      <input type="password">
+      <input type="password" name="pass-1">
     </p>
     <p>
       <label>Confirm your password</label>
-      <input type="password">
+      <input type="password" name="pass-2">
     </p>
     <p>
       <label>Country</label>
@@ -489,7 +489,7 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
     </p>
     <p>
       <label>
-        <input type="checkbox">
+        <input type="checkbox" name="terms">
         I agree to the <a href="/terms">terms and conditions</a>
       </label>
     </p>
