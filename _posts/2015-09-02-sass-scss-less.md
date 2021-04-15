@@ -25,7 +25,7 @@ Remember that:
 
 * Sass is the name of the preprocessor
 * SCSS is easier to learn
-* all resources on the internet (like [The Sass Way](https://thesassway.com/)) mention Sass, not SCSS
+* all resources on the internet (like [The Sass Way](https://github.com/thesassway/thesassway.com)) mention Sass, not SCSS
 * all features are available for both syntaxes
 * everything in SCSS is available in Sass
 
