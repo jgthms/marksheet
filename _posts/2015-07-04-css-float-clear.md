@@ -24,14 +24,14 @@ To explain the behaviour, let's use a common example: floating an image within a
 
 {% highlight html %}
 <p>
-  <img src="https://placehold.it/150x150">
+  <img src="https://via.placeholder.com/150">
   The bells of the neighbouring church made a jangling tumult, a cart carelessly driven smashed, amid shrieks and curses, against the water trough up the street.  Sickly yellow lights went to and fro in the houses, and some of the passing cabs flaunted unextinguished lamps. And overhead the dawn was growing brighter, clear and steady and calm.
 </p>
 {% endhighlight %}
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">
-    <img src="https://placehold.it/150x150">
+    <img src="https://via.placeholder.com/150">
     It was while the curate had sat and talked so wildly to me under the hedge in the flat meadows near Halliford, and while my brother was watching the fugitives stream over Westminster Bridge, that the Martians had resumed the offensive. So far as one can ascertain from the conflicting accounts that have been put forth, the majority of them remained busied with preparations in the Horsell pit until nine that night, hurrying on some operation that disengaged huge volumes of green smoke.
   </p>
 </div>
@@ -46,7 +46,7 @@ img{ float: left;}
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">
-    <img style="float: left;" src="https://placehold.it/150x150">
+    <img style="float: left;" src="https://via.placeholder.com/150">
     It was while the curate had sat and talked so wildly to me under the hedge in the flat meadows near Halliford, and while my brother was watching the fugitives stream over Westminster Bridge, that the Martians had resumed the offensive. So far as one can ascertain from the conflicting accounts that have been put forth, the majority of them remained busied with preparations in the Horsell pit until nine that night, hurrying on some operation that disengaged huge volumes of green smoke.
   </p>
 </div>
@@ -60,7 +60,7 @@ As you can see, the image is **pushed to the left**, and the text that follows j
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">
-    <img style="float: left;" src="https://placehold.it/150x150">
+    <img style="float: left;" src="https://via.placeholder.com/150">
     He heard footsteps running to and fro in the rooms, and up and down stairs behind him
   </p>
 </div>
@@ -85,7 +85,7 @@ The `clear` property allows to **push elements _after_ the float**. It can only 
 
 {% highlight html %}
 <p>
-  <img src="https://placehold.it/150x150">
+  <img src="https://via.placeholder.com/150">
   <span>He heard footsteps running to and fro in the rooms, and up and down stairs behind him</span>
 </p>
 {% endhighlight %}
@@ -97,7 +97,7 @@ span{ clear: left; display: block;}
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">
-    <img style="float: left;" src="https://placehold.it/150x150">
+    <img style="float: left;" src="https://via.placeholder.com/150">
     <span style="clear: left; display: block;">He heard footsteps running to and fro in the rooms, and up and down stairs behind him</span>
   </p>
 </div>
