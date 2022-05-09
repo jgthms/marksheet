@@ -100,7 +100,7 @@ Some HTML elements only have an opening tag:
 
 {% highlight html %}
 <br> <!-- line-break -->
-<img src="https://placehold.it/50x50" alt="Description"> <!-- image -->
+<img src="https://via.placeholder.com/50" alt="Description"> <!-- image -->
 <input type="text"> <!-- text input -->
 {% endhighlight %}
 
