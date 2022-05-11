@@ -43,6 +43,31 @@ These controls use different HTML **tags**, but most of them use the `<input>` t
   <input type="radio">
 </div>
 
+### Control name and value
+
+We have omitted `name` and `value` attributes from most of the examples on this page so we can focus the the control itself. In a production website every **form control** that allows the user to provide input should have a `name` attribute, and depending on the control type, a `value` attribute as well.
+
+Here are two text inputs demonstrating this concept. The first has a name attribute and a default value assigned to the input, the second has only a name attribute:
+
+{% highlight html %}
+<!-- An input with a name attribute and a default value -->
+<input type="text" name="subject" value="Hello!">
+
+<!-- An input with a name attribute -->
+<input type="text" name="message">
+{% endhighlight %}
+
+If a user were to submit a form that contained these two inputs, without adding any additional data, a message similar to the followg would be sent to the server for processing:
+
+{% highlight json %}
+{
+  "subject": "Hello!",
+  "message": "" 
+}
+{% endhighlight %}
+
+Please take a look at the [Dropdown menus](#dropdown-menus) and [Example: a complete signup form](#example-a-complete-signup-form) for an example of using `name` and `value` attributes with form controls.
+
 ### The Form element
 
 The `<form>` is a block-level element thats defines an **interactive** part of a webpage. As a result, all form controls (like `<input>`, `<textarea>` or `<button>`) must appear _within_ a `<form>` element.
@@ -276,36 +301,36 @@ If the number of options to choose from takes up too much space, you can use `<s
 They work like radio buttons. Only their layout is different.
 
 {% highlight html %}
-<select>
-  <option>January</option>
-  <option>February</option>
-  <option>March</option>
-  <option>April</option>
-  <option>May</option>
-  <option>June</option>
-  <option>July</option>
-  <option>August</option>
-  <option>September</option>
-  <option>October</option>
-  <option>November</option>
-  <option>December</option>
+<select name="months">
+  <option value="Jan">January</option>
+  <option value="Feb">February</option>
+  <option value="Mar">March</option>
+  <option value="Apr">April</option>
+  <option value="May">May</option>
+  <option value="Jun">June</option>
+  <option value="Jul">July</option>
+  <option value="Aug">August</option>
+  <option value="Sep">September</option>
+  <option value="Oct">October</option>
+  <option value="Nov">November</option>
+  <option value="Dec">December</option>
 </select>
 {% endhighlight %}
 
 <div class="result">
-  <select>
-    <option>January</option>
-    <option>February</option>
-    <option>March</option>
-    <option>April</option>
-    <option>May</option>
-    <option>June</option>
-    <option>July</option>
-    <option>August</option>
-    <option>September</option>
-    <option>October</option>
-    <option>November</option>
-    <option>December</option>
+  <select name="months">
+    <option value="Jan">January</option>
+    <option value="Feb">February</option>
+    <option value="Mar">March</option>
+    <option value="Apr">April</option>
+    <option value="May">May</option>
+    <option value="Jun">June</option>
+    <option value="Jul">July</option>
+    <option value="Aug">August</option>
+    <option value="Sep">September</option>
+    <option value="Oct">October</option>
+    <option value="Nov">November</option>
+    <option value="Dec">December</option>
   </select>
 </div>
 
@@ -315,24 +340,24 @@ If you add the `multiple` attribute, you can provide the ability to select multi
 
 {% highlight html %}
 <label>Which browsers do you have?</label>
-<select multiple>
-  <option>Google Chrome</option>
-  <option>Internet Explorer</option>
-  <option>Mozilla Firefox</option>
-  <option>Opera</option>
-  <option>Safari</option>
+<select name="browsers" multiple>
+  <option value="Google Chrome">Google Chrome</option>
+  <option value="Internet Explorer">Internet Explorer</option>
+  <option value="Mozilla Firefox">Mozilla Firefox</option>
+  <option value="Opera">Opera</option>
+  <option value="Safari">Safari</option>
 </select>
 {% endhighlight %}
 
 <div class="result">
   <label>Which browsers do you have?</label>
   <br>
-  <select multiple>
-    <option>Google Chrome</option>
-    <option>Internet Explorer</option>
-    <option>Mozilla Firefox</option>
-    <option>Opera</option>
-    <option>Safari</option>
+  <select name="browsers" multiple>
+    <option value="Google Chrome">Google Chrome</option>
+    <option value="Internet Explorer">Internet Explorer</option>
+    <option value="Mozilla Firefox">Mozilla Firefox</option>
+    <option value="Opera">Opera</option>
+    <option value="Safari">Safari</option>
   </select>
 </div>
 
@@ -383,15 +408,15 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
   </p>
   <p>
     <label>Country</label>
-    <select>
-      <option>Canada</option>
-      <option>France</option>
-      <option>Germany</option>
-      <option>Italy</option>
-      <option>Japan</option>
-      <option>Russia</option>
-      <option>United Kingdom</option>
-      <option>United States</option>
+    <select name="country">
+      <option value="Canada">Canada</option>
+      <option value="France">France</option>
+      <option value="Germany">Germany</option>
+      <option value="Italy">Italy</option>
+      <option value="Japan">Japan</option>
+      <option value="Russia">Russia</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="United States">United States</option>
     </select>
   </p>
   <p>
@@ -427,44 +452,44 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
     </p>
     <p>
       <label>First name</label>
-      <input type="text">
+      <input type="text" name="first-name">
     </p>
     <p>
       <label>Last name</label>
-      <input type="text">
+      <input type="text" name="last-name">
     </p>
     <p>
       <label>Email</label>
-      <input type="email">
+      <input type="email" name="email">
     </p>
     <p>
       <label>Phone number</label>
-      <input type="tel">
+      <input type="tel" name="phone">
     </p>
     <p>
       <label>Password</label>
-      <input type="password">
+      <input type="password" name="pass-1">
     </p>
     <p>
       <label>Confirm your password</label>
-      <input type="password">
+      <input type="password" name="pass-2">
     </p>
     <p>
       <label>Country</label>
-      <select>
-        <option>Canada</option>
-        <option>France</option>
-        <option>Germany</option>
-        <option>Italy</option>
-        <option>Japan</option>
-        <option>Russia</option>
-        <option>United Kingdom</option>
-        <option>United States</option>
+      <select name="country">
+        <option value="Canada">Canada</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="Italy">Italy</option>
+        <option value="Japan">Japan</option>
+        <option value="Russia">Russia</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States">United States</option>
       </select>
     </p>
     <p>
       <label>
-        <input type="checkbox">
+        <input type="checkbox" name="terms">
         I agree to the <a href="/terms">terms and conditions</a>
       </label>
     </p>
