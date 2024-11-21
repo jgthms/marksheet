@@ -427,27 +427,27 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
     </p>
     <p>
       <label>First name</label>
-      <input type="text">
+      <input type="text" value="first_name">
     </p>
     <p>
       <label>Last name</label>
-      <input type="text">
+      <input type="text" value="last_name">
     </p>
     <p>
       <label>Email</label>
-      <input type="email">
+      <input type="email" value="email">
     </p>
     <p>
       <label>Phone number</label>
-      <input type="tel">
+      <input type="tel" value="phone">
     </p>
     <p>
       <label>Password</label>
-      <input type="password">
+      <input type="password" value="password">
     </p>
     <p>
       <label>Confirm your password</label>
-      <input type="password">
+      <input type="password" value="password_confirm">
     </p>
     <p>
       <label>Country</label>
@@ -464,7 +464,7 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
     </p>
     <p>
       <label>
-        <input type="checkbox">
+        <input type="checkbox" value="terms">
         I agree to the <a href="/terms">terms and conditions</a>
       </label>
     </p>
